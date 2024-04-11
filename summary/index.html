@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../summary/summary.css">
     <script src="script.js"></script>
+    <script src="summary.js"></script>
     <link rel="icon" href="../img/join_logo_white.png">
     <title>Join</title>
 </head>
 
-<body>
+<body onload="init()">
     <div id="div_body">
         <div id="side">
             <div>
@@ -81,7 +82,7 @@
                                     <img class="icon_normal" src="../img/todo_icon.png" alt="Todo Icon">
                                     <img class="icon_other" src="../img/todo_icon_white.svg" alt="Todo Icon">
                                     <div id="todo_text">
-                                        <span id="todo">1</span>
+                                        <span id="todo"></span>
                                         <span id="todo_second">To-do</span>
                                     </div>
                                 </a>
@@ -89,7 +90,7 @@
                                     <img class="icon_normal" src="../img/done_icon.png" alt="Done Icon">
                                     <img class="icon_other" src="../img/done_icon_white.svg" alt="Done Icon">
                                     <div id="done_text">
-                                        <span id="done">1</span>
+                                        <span id="done"></span>
                                         <span id="done_second">Done</span>
                                     </div>
                                 </a>
@@ -99,7 +100,7 @@
                                     <div id="urgent_div">
                                         <img src="../img/urgent_icon.png" alt="Urgent Icon">
                                         <div id="urgent_text">
-                                            <span id="urgent">1</span>
+                                            <span id="urgent"></span>
                                             <span id="urgent_second">Urgent</span>
                                         </div>
                                     </div>
@@ -107,7 +108,7 @@
 
                                     <div id="date_div" class="second_container_class">
                                         <div id="date_text">
-                                            <span id="date">October 16, 2022</span>
+                                            <span id="date"></span>
                                             <span id="upcoming_deadline">Upcoming Deadline</span>
                                         </div>
                                     </div>
@@ -115,15 +116,15 @@
                             </div>
                             <div id="fourth_container">
                                 <a href="../board/index.html" class="fourth_under_container" id="board">
-                                    <span id="number_in_board">5</span>
+                                    <span id="number_in_board"></span>
                                     <span id="in_board">Tasks in Board</span>
                                 </a>
                                 <a href="../board/index.html" class="fourth_under_container" id="progress">
-                                    <span id="number_in_progress">2</span>
+                                    <span id="number_in_progress"></span>
                                     <span id="in_progress">Tasks in Progress</span>
                                 </a>
                                 <a href="../board/index.html" class="fourth_under_container" id="awaiting">
-                                    <span id="number_awaiting_feedback">5</span>
+                                    <span id="number_awaiting_feedback"></span>
                                     <span id="in_awaiting_feedback">Awaiting Feedback</span>
                                 </a>
                             </div>
@@ -131,7 +132,7 @@
                         </div>
                     </div>
                     <div id="greet">
-                        <span id="greet_info">Good morning,</span>
+                        <span id="greet_info"></span>
                         <span id="greet_name">Alex Zeiser</span>
                     </div>
                 </div>
