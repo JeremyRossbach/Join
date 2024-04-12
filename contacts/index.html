@@ -12,8 +12,7 @@
     <title>Join</title>
 </head>
 
-<body>
-    <!-- Das ist ein Template für alle andere Seiten -->
+<body onload="init();">
     <div id="div_body">
         <div id="side">
             <div>
@@ -59,18 +58,169 @@
                         <img src="../img/help_icon.png" alt="Summary">
                     </a>
                     <a href="../index.html" id="nav_right_menu">
-                        VN
+                        AZ
                     </a>
                 </div>
             </div>
-            <!-- Hier kommt der HTML Code von Euch rein -->
             <div id="content">
-                
-            </div>
-            <!--  -->
-        </div>
+                <div id="contacts_content">
+                    <div id="first_contact_container">
+                        <div id="button_container">
+                            <button id="button_new_contact" onclick="openAddNewContactWindow();">Add new contact</button>
+                        </div>
+                        <div id="first_contact_under_container">  
 
-    </div>
+                        </div>
+                        
+                    </div>
+
+                    <div id="second_contact_container">
+                        <div id="second_contact_title">
+                            <div id="contact_title">Contacts</div>
+                            <div id="vertikal_div_four">
+                            </div>
+                            <div id="better_team">Better with a team</div>
+                        </div>
+                        <div id="second_contact_infos">
+                            <div id="first_info_container">
+                                <div id="name_div_small">
+                                    AZ
+                                </div>
+                                <div id="name_big_edit_delete_div">
+                                    <div id="name_div_big">
+                                        Alex Zeiser
+                                    </div>
+                                    <div id="edit_delete_div">
+                                        <div id="edit_div">
+                                            <img src="../img/edit.png" alt="Todo Icon">
+                                            <span>Edit</span>
+                                        </div>
+                                        <div id="delete_div">
+                                            <img src="../img/delete.png" alt="Todo Icon">
+                                            <span>Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="second_info_container">
+                                <div id="contact_information">Contact Information</div>
+                            </div>
+                            <div id="third_info_container">
+                                <div id="email_div">
+                                    <span><b>Email</b></span>
+                                    <span id="email_optionen">alex.zeiser@example.com</span>
+                                </div>
+                                <div id="phone_div">
+                                    <span><b>Phone</b></span>
+                                    <span>+49111111111111</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- add_new_contact_window -->
+                <div id="new_contact_container" style="display: none;">
+                    <div id="new_contact_div">
+                        <div id="new_contact_div_position">
+                            <div id="new_contact_div_title">
+                                <img src="../img/join_logo_white.png" alt="Logo White">
+                                <h2>Add contact</h2>
+                                <span>Tasks are better with a team!</span>
+                                <div id="horizontal_underline"></div>
+                            </div>
+                        </div>
+                        <div id="new_contact_div_infos_position">
+                            <div id="new_contact_div_infos_content">
+                                <div id="close_button">
+                                    <img src="../img/clear.png" onclick="closeAddNewContactWindow();" alt="">
+                                </div>
+                                <div id="new_contact_content">
+                                    <div id="profil_image_optionen">
+                                        <img src="../img/profil.png" alt="Profil Image">
+                                    </div>
+                                    <div id="inputs_container">
+                                        <div class="input_icon">
+                                            <input type="text" id="create_name" placeholder="Name">
+                                            <img class="icon_position" id="person_icon" src="../img/person.png"
+                                                alt="Person Icon">
+                                        </div>
+                                        <div class="input_icon">
+                                            <input type="text" id="create_mail" placeholder="Email">
+                                            <img class="icon_position" id="email_icon" src="../img/mail.png"
+                                                alt="Mail Icon">
+                                        </div>
+                                        <div class="input_icon">
+                                            <input type="text" id="create_phone" placeholder="Phone">
+                                            <img class="icon_position" id="phone_icon" src="../img/call.png"
+                                                alt="Call Icon">
+                                        </div>
+                                        <div class="buttons_div">
+                                            <button class="buttons_optionen" id="cancel_button" onclick="closeAddNewContactWindow();">Cancel x<!-- <img
+                                                    src="../img/clear.png" alt="Clear Icon"> --></button>
+                                            <button class="buttons_optionen" id="create_contact_button" onclick="createContact();">Create
+                                                contact<img src="../img/check.png" alt="Check Icon"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- edit_window -->
+                <div id="edit_contact_container" style="display: none;">
+                    <div id="edit_contact_div">
+                        <div id="edit_contact_div_position">
+                            <div id="edit_contact_div_title">
+                                <img src="../img/join_logo_white.png" alt="Logo White">
+                                <h2>Edit contact </h2>
+                                <div id="horizontal_underline"></div>
+                            </div>
+                        </div>
+                        <div id="edit_contact_div_infos_position">
+                            <div id="edit_contact_div_infos_content">
+                                <div id="discard_button">
+                                    <img src="../img/clear.png" alt="">
+                                </div>
+                                <div id="edit_contact_content">
+                                    <div id="profil_name_initialen">
+                                        <span>AZ</span>
+                                    </div>
+                                    <div id="inputs_container">
+                                        <div class="input_icon">
+                                            <input type="text" id="edit_name" placeholder="Name">
+                                            <img class="icon_position" id="person_icon" src="../img/person.png"
+                                                alt="Person Icon">
+                                        </div>
+                                        <div class="input_icon">
+                                            <input type="text" id="edit_mail" placeholder="Email">
+                                            <img class="icon_position" id="email_icon" src="../img/mail.png"
+                                                alt="Mail Icon">
+                                        </div>
+                                        <div class="input_icon">
+                                            <input type="text" id="edit_phone" placeholder="Phone">
+                                            <img class="icon_position" id="phone_icon" src="../img/call.png"
+                                                alt="Call Icon">
+                                        </div>
+                                        <div class="buttons_div">
+                                            <button class="buttons_optionen" id="cancel_button">Delete</button>
+                                            <button class="buttons_optionen" id="create_contact_button">Save<img
+                                                    src="../img/check.png" alt="Check Icon"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
 
 </body>
 
