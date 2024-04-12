@@ -66,8 +66,32 @@
             <!-- Hier kommt der HTML Code von Euch rein -->
             <div id="content">
                     <header>
-                        <h1>Board</h1><form action=""><input type="text" placeholder="Find Task"><button>Add task</button></form>
+                        <h1>Board</h1>
+                        <form action="">
+                            <input type="text" placeholder="Find Task">
+                            <div onclick="" id="searchButton"></div> <!-- not finished yet -->
+                            <button onclick="">Add task <img id="addImage" src="./img/add.png"></button> <!-- Box Shadow when hover missing ! -->
+                        </form>
                     </header>
+
+                    <div id="sections">
+                        <div id="toDoSection">
+                            <div id="toDoHeader"><p>To do</p><img onclick="" id="addToDo" src="./img/plusbutton.png"></div>
+                            <div onclick="" id="toDoContent"></div>
+                        </div>
+                        <div id="inProgressSection">
+                            <div id="inProgressHeader"><p>In progress</p><img onclick="" id="addInProgress" src="./img/plusbutton.png"></div>
+                            <div onclick="" id="inProgressContent"></div>
+                        </div>
+                        <div id="awaitFeedbackSection">
+                            <div id="awaitFeedbackHeader"><p>Await Feedback</p><img onclick="" id="addAwaitFeedback" src="./img/plusbutton.png"></div>
+                            <div onclick="" id="awaitFeedbackContent"></div>
+                        </div>
+                        <div id="doneSection">
+                            <div id="doneHeader"><p>Done</p></div>
+                            <div onclick="" id="doneContent"></div>
+                        </div>
+                    </div>
             </div>
         </div>
 

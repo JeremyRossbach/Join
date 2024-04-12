@@ -1,11 +1,13 @@
 body {
-    font-family: inter; /* muss noch hinzugefügt werden ! */
+    font-family: inter; /* download and implement */
+    cursor: default;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 64px;
 }
 
 h1 {
@@ -21,18 +23,77 @@ form {
 }
 
 input {
+    position: relative;
+    background: url(./img/spacer_search.png) no-repeat;
+    background-position: 286px;
     width: 312px;
-    height: 48px;
+    padding: 8px;
+    padding-inline: 16px;
     border-radius: 10px;
     border: 1px solid #A8A8A8;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#searchButton { /* hover = display: flex; missing */
+    position: absolute;
+    display: none;
+    margin-top: 8px;
+    margin-left: 304px;
+    background-color: #00000020;
+    width: 32px;
+    height: 32px;
+    border-radius: 90px;
+    cursor: pointer;
 }
 
 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 160px;
     height: 48px;
+    gap: 4px;
     border-radius: 10px;
+    border: 0;
     background-color: #2A3647;
     color: #FFFFFF;
     font-weight: 700;
     font-size: 21px;
+    transition: 0.1s;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #28ABE2;
+}
+
+#sections {
+    display: flex;
+    justify-content: space-between;
+}
+
+#toDoSection, #inProgressSection, #awaitFeedbackSection, #doneSection {
+    display: flex;
+    flex-direction: column;
+}
+
+#toDoHeader, #inProgressHeader, #awaitFeedbackHeader, #doneHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 244px;
+}
+
+p {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#addToDo, #addInProgress, #addAwaitFeedback { /* if hover change color missing */
+    cursor: pointer;
 }
