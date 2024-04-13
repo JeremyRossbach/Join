@@ -42,17 +42,20 @@ input {
 
 #searchButton { /* hover = display: flex; missing */
     position: absolute;
-    display: none;
     margin-top: 8px;
     margin-left: 304px;
-    background-color: #00000020;
+    background-color: rgba(255, 255, 255, 0);
     width: 32px;
     height: 32px;
     border-radius: 90px;
     cursor: pointer;
 }
 
-button {
+#searchButton:hover {
+    background-color: #00000010;
+}
+
+#addButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,9 +71,10 @@ button {
     transition: 0.1s;
 }
 
-button:hover {
+#addButton:hover {
     cursor: pointer;
     background-color: #28ABE2;
+    box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.3);
 }
 
 #sections {
@@ -95,5 +99,16 @@ p {
 }
 
 #addToDo, #addInProgress, #addAwaitFeedback { /* if hover change color missing */
+    width: 25px;
+    height: 25px;
+    background: url(./img/plusbutton.png) no-repeat;
+    background-color: #00000000;
+    border: 0;
     cursor: pointer;
+}
+
+
+
+#addToDo:hover, #addInProgress:hover, #addAwaitFeedback:hover {
+    background: url(./img/plusbuttonblue.png) no-repeat;
 }

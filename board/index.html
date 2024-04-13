@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../board/board.css">
-    <script src="script.js"></script>
+    <script src="../board/board.js"></script>
+    <script src="../data.js"></script>
     <link rel="icon" href="../img/join_logo_white.png">
 
     <title>Join</title>
@@ -64,27 +65,27 @@
                 </div>
             </div>
             <!-- Hier kommt der HTML Code von Euch rein -->
-            <div id="content">
+            <div id="content" onload="init()">
                     <header>
                         <h1>Board</h1>
                         <form action="">
                             <input type="text" placeholder="Find Task">
-                            <div onclick="" id="searchButton"></div> <!-- not finished yet -->
-                            <button onclick="">Add task <img id="addImage" src="./img/add.png"></button> <!-- Box Shadow when hover missing ! -->
+                            <div onclick="" id="searchButton"></div>
+                            <button onclick="" id="addButton">Add task <img id="addImage" src="./img/add.png"></button>
                         </form>
                     </header>
 
                     <div id="sections">
                         <div id="toDoSection">
-                            <div id="toDoHeader"><p>To do</p><img onclick="" id="addToDo" src="./img/plusbutton.png"></div>
+                            <div id="toDoHeader"><p>To do</p><button onclick="" id="addToDo"></button></div>
                             <div onclick="" id="toDoContent"></div>
                         </div>
                         <div id="inProgressSection">
-                            <div id="inProgressHeader"><p>In progress</p><img onclick="" id="addInProgress" src="./img/plusbutton.png"></div>
+                            <div id="inProgressHeader"><p>In progress</p><button onclick="" id="addInProgress"></button></div>
                             <div onclick="" id="inProgressContent"></div>
                         </div>
                         <div id="awaitFeedbackSection">
-                            <div id="awaitFeedbackHeader"><p>Await Feedback</p><img onclick="" id="addAwaitFeedback" src="./img/plusbutton.png"></div>
+                            <div id="awaitFeedbackHeader"><p>Await Feedback</p><button onclick="" id="addAwaitFeedback"></button></div>
                             <div onclick="" id="awaitFeedbackContent"></div>
                         </div>
                         <div id="doneSection">

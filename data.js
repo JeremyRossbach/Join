@@ -50,7 +50,8 @@ let tasks = [
         'dueDate': '01/01/2024',
         'prio': 'Urgent',
         'category': 'User Story',
-        'subtask': ['', '']
+        'subtask': ['', ''],
+        'section': 'In progress'
     },
     {
         'title': 'HTML Base Tamplate Creation',
@@ -59,7 +60,8 @@ let tasks = [
         'dueDate': '01/01/2024',
         'prio': 'Low',
         'category': 'Technical Task',
-        'subtask': ['']
+        'subtask': [''],
+        'section': 'Await Feedback'
     },
     {
         'title': 'Daily Kochwelt Recipe',
@@ -68,7 +70,8 @@ let tasks = [
         'dueDate': '01/01/2024',
         'prio': 'Medium',
         'category': 'User Story',
-        'subtask': ['']
+        'subtask': [''],
+        'section': 'Await Feedback'
     },
     {
         'title': 'CSS Architecture Planning',
@@ -77,6 +80,7 @@ let tasks = [
         'dueDate': '02/09/2023',
         'prio': 'Urgent',
         'category': 'Technical Task',
-        'subtask': ['Establish CSS Methodology', 'Setup Base Styles']
+        'subtask': ['Establish CSS Methodology', 'Setup Base Styles'],
+        'section': 'Done'
     }
 ];
