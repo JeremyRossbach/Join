@@ -78,13 +78,13 @@ function showBoardInfos() {
     // taskList wird nach status gefiltert und die Anzahl wird ausgegeben
     todoCounter.innerHTML = taskList.filter(task => task.Status == `todo`).length;
     doneCounter.innerHTML = taskList.filter(task => task.Status == `done`).length;
-    inprogressCounter.innerHTML = taskList.filter(task => task.Status == `inprogress`).length; 
+    inprogressCounter.innerHTML = taskList.filter(task => task.Status == `inprogress`).length;
     awaitCounter.innerHTML = taskList.filter(task => task.Status == `await`).length;
     // taskList wird nach prio gefiltert und die Anzahl wird ausgegeben
     urgentCounter.innerHTML = taskList.filter(task => task.Prio == `urgent`).length;
-    
+
     let nextDateTasks = taskList.filter(task => task.Status != `done`).sort((a, b) => new Date(a.Due) - new Date(b.Due));
-    
+
     date.innerHTML = new Date(nextDateTasks[0].Due).toLocaleDateString('de-DE');
 }
 
@@ -101,7 +101,7 @@ function displayGreeting() {
     } else {
         greeting = "Good evening,";
     }
-    
+
     const greetingDiv = document.getElementById("greet_info");
     greetingDiv.textContent = greeting;
 }

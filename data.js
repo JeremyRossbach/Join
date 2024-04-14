@@ -84,3 +84,37 @@ let tasks = [
         'section': 'Done'
     }
 ];
+
+// speichert alles
+function save(){
+
+}
+
+
+// lädt alles
+function load(){
+    
+}
+
+// gemeinsames Init
+function sharedInit() {
+    let loginInitial = document.getElementById(`nav_right_menu`);
+    loginInitial.innerHTML = getInitials(`Vorname Nachname`);
+}
+
+
+// gibt die ersten Buchstaben von Wörter zurück, z.B: Vorname Nachname -> VN
+function getInitials(inputString) {
+    const words = inputString.split(` `);
+    let initials = "";
+
+    for (const word of words) {
+
+        if (initials.length < 2) {
+            initials += word.charAt(0);
+        }
+
+    }
+
+    return initials.toUpperCase();
+}
