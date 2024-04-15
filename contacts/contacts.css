@@ -29,13 +29,13 @@
 }
 .contact_initials{
     border-radius: 50%;
-    border: solid 2px black;
+    border: solid 2px white;
     width: 42px;
     height: 42px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #29ABE2;
+    color: white;
     cursor: pointer;
 }
 
@@ -477,6 +477,10 @@
     justify-content: center;
     flex-direction: column;
     gap: 10px;
+}
+
+.alphabet_div{
+    padding-left: 28px;
 }
 
 #edit_contact_div_title img {
