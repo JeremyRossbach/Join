@@ -12,7 +12,7 @@
     <title>Join</title>
 </head>
 
-<body>
+<body onload="sharedInit();">
     <!-- Das ist ein Template für alle andere Seiten -->
     <div id="div_body">
         <div id="side">
@@ -58,9 +58,8 @@
                     <a href="../help/index.html" id="nav_right_img">
                         <img src="../img/help_icon.png" alt="Summary">
                     </a>
-                    <a href="../index.html" id="nav_right_menu">
-                        VN
-                    </a>
+                    <div id="nav_right_menu" onclick="jura_window();">                        
+                    </div>
                 </div>
             </div>
             <div id="jura_container">

@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="../style.css">    
+    <script src="../data.js"></script>
     <link rel="icon" href="../img/join_logo_white.png">
     <title>Join</title>
 </head>
 
-<body>
+<body onload="sharedInit();">
     <!-- Das ist ein Template für alle andere Seiten -->
     <div id="div_body">
         <div id="side">
@@ -56,9 +56,8 @@
                     <a href="../help/index.html" id="nav_right_img">
                         <img src="../img/help_icon.png" alt="Summary">
                     </a>
-                    <a href="../index.html" id="nav_right_menu">
-                        VN
-                    </a>
+                    <div id="nav_right_menu" onclick="jura_window();">                        
+                    </div>
                 </div>
             </div>
             <div id="jura_container">

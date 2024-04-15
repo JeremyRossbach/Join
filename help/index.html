@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <script src="script.js"></script>
+    <script src="../data.js"></script>
     <link rel="icon" href="../img/join_logo_white.png">
     <title>Join</title>
 </head>
 
-<body>
+<body onload="sharedInit();">
     <div id="div_body">
         <div id="side">
             <div>
@@ -55,9 +56,8 @@
                     <a href="../help/index.html" id="nav_right_img">
                         <img src="../img/help_icon.png" alt="Summary">
                     </a>
-                    <a href="../index.html" id="nav_right_menu">
-                        AZ
-                    </a>
+                    <div id="nav_right_menu" onclick="jura_window();">                        
+                    </div>
                 </div>
             </div>
             <div id="jura_container">
