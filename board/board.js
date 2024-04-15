@@ -15,9 +15,20 @@ function renderContent(section, containerId) {
 
 function showContent(section, containerId, i) {
     if (tasks[i]['section'] === section) {
-        content(containerId, i);
+        checkContent(containerId, i);
         renderCategoryColor(i);
     }
+}
+
+
+function checkContent(containerId, i) {
+    checkEmptySection(containerId);
+    content(containerId, i);
+}
+
+
+function checkEmptySection(containerId) {
+    document.getElementById('empty' + containerId + 'Section').style.display = 'none';
 }
 
 
@@ -25,20 +36,20 @@ function content(containerId, i) {
     let container = document.getElementById(containerId);
 
     container.innerHTML += /* html */`
-            <div onclick="" id="card${i}" class="card">
-                <div id="category${i}" class="category">${tasks[i]['category']}</div>
-                <div class="titleAndDescription">
-                    <div class="title">${tasks[i]['title']}</div>
-                    <div class="description">${tasks[i]['description']}</div>
-                </div>
-                <!-- details missisng ! -->
-                <div class="subtasks">Subtasks</div>
-                <div class="cardBottom">  
-                    <div class="assignedTo">assignedTo</div>
-                    <div class="prio">prio</div>
-                </div>
+        <div onclick="" id="card${i}" class="card">
+            <div id="category${i}" class="category">${tasks[i]['category']}</div>
+            <div class="titleAndDescription">
+                <div class="title">${tasks[i]['title']}</div>
+                <div class="description">${tasks[i]['description']}</div>
             </div>
-        `;
+            <!-- details missisng ! -->
+            <div class="subtasks">Subtasks</div>
+            <div class="cardBottom">
+                <div class="assignedTo">assignedTo</div>
+                <div class="prio">prio</div>
+            </div>
+        </div>
+    `;
 }
 
 
