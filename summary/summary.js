@@ -1,64 +1,3 @@
-let taskList = [
-    {
-        Title: "",
-        Description: "",
-        Due: "2024-04-17",
-        Prio: "",
-        Assigned: [
-
-        ],
-        Category: "",
-        Subtasks: [
-
-        ],
-        Status: "",
-    },
-    {
-        Title: "",
-        Description: "",
-        Due: "2024-03-12",
-        Prio: "",
-        Assigned: [
-
-        ],
-        Category: "",
-        Subtasks: [
-
-        ],
-        Status: "done",
-    },
-    {
-        Title: "",
-        Description: "",
-        Due: "2024-04-22",
-        Prio: "urgent",
-        Assigned: [
-
-        ],
-        Category: "",
-        Subtasks: [
-
-        ],
-        Status: "",
-    },
-    {
-        Title: "",
-        Description: "",
-        Due: "2024-02-18",
-        Prio: "",
-        Assigned: [
-
-        ],
-        Category: "",
-        Subtasks: [
-
-        ],
-        Status: "inprogress",
-    },
-
-];
-
-
 function init() {
     showBoardInfos();
     displayGreeting();
@@ -73,19 +12,19 @@ function showBoardInfos() {
     let awaitCounter = document.getElementById(`number_awaiting_feedback`);
     let date = document.getElementById(`date`);
 
-    totalCounter.innerHTML = taskList.length;
+    totalCounter.innerHTML = tasks.length;
 
-    // taskList wird nach status gefiltert und die Anzahl wird ausgegeben
-    todoCounter.innerHTML = taskList.filter(task => task.Status == `todo`).length;
-    doneCounter.innerHTML = taskList.filter(task => task.Status == `done`).length;
-    inprogressCounter.innerHTML = taskList.filter(task => task.Status == `inprogress`).length;
-    awaitCounter.innerHTML = taskList.filter(task => task.Status == `await`).length;
-    // taskList wird nach prio gefiltert und die Anzahl wird ausgegeben
-    urgentCounter.innerHTML = taskList.filter(task => task.Prio == `urgent`).length;
+    // tasks wird nach status gefiltert und die Anzahl wird ausgegeben
+    todoCounter.innerHTML = tasks.filter(task => task.section == `To do`).length;
+    doneCounter.innerHTML = tasks.filter(task => task.section == `Done`).length;
+    inprogressCounter.innerHTML = tasks.filter(task => task.section == `In progress`).length;
+    awaitCounter.innerHTML = tasks.filter(task => task.section == `Await Feedback`).length;
+    // tasks wird nach prio gefiltert und die Anzahl wird ausgegeben
+    urgentCounter.innerHTML = tasks.filter(task => task.prio == `Urgent`).length;
 
-    let nextDateTasks = taskList.filter(task => task.Status != `done`).sort((a, b) => new Date(a.Due) - new Date(b.Due));
+    let nextDateTasks = tasks.filter(task => task.section != `Done`).sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
 
-    date.innerHTML = new Date(nextDateTasks[0].Due).toLocaleDateString('de-DE');
+    date.innerHTML = new Date(nextDateTasks[0].dueDate).toLocaleDateString('de-DE');
 }
 
 

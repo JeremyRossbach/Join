@@ -82,6 +82,16 @@ let tasks = [
         'category': 'Technical Task',
         'subtask': ['Establish CSS Methodology', 'Setup Base Styles'],
         'section': 'Done'
+    },
+    {
+        'title': 'Responsivity of all Site',
+        'description': 'Define CSS naming conventions nad structure.',
+        'assignedTo': ['Eva Fischer', 'David Eisenberg'],
+        'dueDate': '05/15/2024',
+        'prio': 'Urgent',
+        'category': 'Technical Task',
+        'subtask': ['Establish CSS Methodology', 'Setup Base Styles'],
+        'section': 'To do'
     }
 ];
 
