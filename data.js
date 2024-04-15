@@ -1,42 +1,42 @@
 let contactData = [
     {
         'name': 'Anton Mayer',
-        'e-mail': 'antom@gmail.com',
+        'email': 'antom@gmail.com',
         'phoneNumber': '+49 1111 111 11 1'
     },
     {
         'name': 'Anja Schulz',
-        'e-mail': 'schulz@hotmail.com',
+        'email': 'schulz@hotmail.com',
         'phoneNumber': '+49 2222 222 22 2'
     },
     {
         'name': 'Benedikt Ziegler',
-        'e-mail': 'benedikt@gmail.com',
+        'email': 'benedikt@gmail.com',
         'phoneNumber': '+49 3333 333 33 3'
     },
     {
         'name': 'David Eisenberg',
-        'e-mail': 'davidberg@gmail.com',
+        'email': 'davidberg@gmail.com',
         'phoneNumber': '+49 4444 444 44 4'
     },
     {
         'name': 'Eva Fischer',
-        'e-mail': 'eva@gmail.com',
+        'email': 'eva@gmail.com',
         'phoneNumber': '+49 5555 555 55 5'
     },
     {
         'name': 'Emmanuel Mauer',
-        'e-mail': 'emmanuelma@gmail.com',
+        'email': 'emmanuelma@gmail.com',
         'phoneNumber': '+49 6666 666 66 6'
     },
     {
         'name': 'Marcel Bauer',
-        'e-mail': 'bauer@gmail.com',
+        'email': 'bauer@gmail.com',
         'phoneNumber': '+49 7777 777 77 7'
     },
     {
         'name': 'Tatjana Wolf',
-        'e-mail': 'wolf@gmail.com',
+        'email': 'wolf@gmail.com',
         'phoneNumber': '+49 8888 888 88 8'
     }
 ];
