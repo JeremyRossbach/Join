@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="task.css">
+    <script src="task.js"></script>
+    <script src="../data.js"></script>
     <link rel="icon" href="../img/join_logo_white.png">
     <title>Join</title>
 </head>
@@ -62,9 +64,47 @@
                 </div>
             </div>
             <!-- Hier kommt der HTML Code von Euch rein -->
-            <div id="content">
-
+        <H1>Add Task</H1>
+        <div class="content" id="content">
+            <div class="leftside">
+                <div class="spanandvalue">
+            <span>Title*</span>
+            <input class="input" placeholder="Enter a title" type="text">
             </div>
+            <div class="spanandvalue">
+            <span>Description</span>
+            <input placeholder="Enter a Description" type="text">
+            </div>
+            <div class="spanandvalue">
+            <span>Assigned to</span>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Select contacts to assign</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#about">About</a>
+                    <a href="#base">Base</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#custom">Custom</a>
+                    <a href="#support">Support</a>
+                    <a href="#tools">Tools</a>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="roomdivider"></div>
+        
+        <div class="rightside">
+            <div class="datepicker">
+                <span>Due date*</span>
+<form action="/action_page.php">
+    <label placeholder="dd/mm/yyyy" for=""></label>
+    <input type="date" id="birthday" name="birthday">
+    <input type="submit">
+</form>
+
+        </div>
+        </div>
             <!--  -->
         </div>
 
