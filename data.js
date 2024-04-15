@@ -95,6 +95,20 @@ let tasks = [
     }
 ];
 
+
+const colorPool = [
+    '#FF5733', '#FFC300', '#C70039', '#900C3F', '#581845',
+    '#FF7F50', '#FFD700', '#DAF7A6', '#1287A5', '#1B9CFC',
+    '#FDA7DF', '#B53471', '#4834d4', '#ff5252', '#7bed9f',
+    '#ffa502', '#ff6b81', '#ff3838', '#7158e2', '#3ae374',
+    '#ff7f50', '#1e90ff', '#ff6348', '#ffa07a', '#20b2aa',
+    '#87ceeb', '#f1c40f', '#c0392b', '#f368e0', '#00cec9',
+    '#fd79a8', '#6c5ce7', '#e84393', '#fd79a8', '#d63031',
+    '#7bed9f', '#a4b0be'
+];
+
+
+
 // speichert alles
 function save(){
 

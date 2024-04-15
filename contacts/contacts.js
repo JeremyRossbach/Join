@@ -26,7 +26,7 @@ function createContact() {
 function generateContactList() {
 
     let contactContainer = document.getElementById(`first_contact_under_container`);
-    let lastChar = "";
+    let lastChar = "";    
 
     contactContainer.innerHTML = "";
 
@@ -34,16 +34,17 @@ function generateContactList() {
 
 
     for (let i = 0; i < contactData.length; i++) {
-        const contact = contactData[i];
+        const contact = contactData[i]; 
+        let randomBackgroundColor = colorPool[Math.floor(Math.random() * colorPool.length)];
 
         if (lastChar != contact.name.charAt(0).toUpperCase()) {
-            contactContainer.innerHTML += `<div>${contact.name.charAt(0).toUpperCase()}</div><hr>`;
+            contactContainer.innerHTML += `<div class="alphabet_div">${contact.name.charAt(0).toUpperCase()}</div><hr>`;
             lastChar = contact.name.charAt(0).toUpperCase();
         }
 
         contactContainer.innerHTML += `
         <div class="div_contact" id="div_contact_${i}" onclick="selectContact(${i})">
-            <div class="contact_initials">${getInitials(contact.name)}</div>
+            <div class="contact_initials" style="background-color: ${randomBackgroundColor};">${getInitials(contact.name)}</div>
             <div class="name_email_div">    
                 <div class="contact_name">${contact.name}</div>
                 <div class="contact_email">${contact.email}</div>
