@@ -4,12 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" type="image/x-icon" href="/img/join_logo_black.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="login.css">
-    
-
+    <link rel="icon" href="../img/join_logo_black.png">
     <title>Login</title>
 </head>
 
@@ -25,40 +22,39 @@
         </div>
     </div>
 
-    <div class="login">
+    <form class="login" action="summary/">
         <div class="login-title">
             <h1>Log in</h1>
             <div></div>
         </div>
         <div class="login-inputs">
             <div class="login-email-password">
-                <div class="input">
-                    <input id="email" type="email" placeholder="Email">
-                    <label for="email"><img src="/img/mail.png"></label>
-                </div>
-                <div class="input">
-                    <input id="password" type="password" placeholder="Password">
-                    <label for="password"><img src="/img/lock.png"></label>
+                <input class="input-field" type="email" placeholder="Email" required>
+                <div style="position: relative;">
+                    <input class="input-field" type="password" placeholder="Password" minlength="6"
+                        onfocus="showButtonPasswordVisible()" required>
+                    <!-- <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div> -->
+                    <div class="validation-password" style="display: none;">Wrong password Ups! Try again.</div>
                 </div>
             </div>
             <div class="login-remember-me">
-                
                 <input type="checkbox" id="remember-me">
                 <label for="remember-me">Remember me</label>
             </div>
 
         </div>
         <div class="login-buttons">
-            <a class="button-primary" href="summary">Log in</a>
-            <a class="button-secondary" href="summary">Guest Log in</a>
+            <button class="button-primary" type="submit" onclick="checkValidPassword()">Log in</button>
+            <button class="button-secondary">Guest Log in</button>
         </div>
-    </div>
+    </form>
 
     <div class="footer">
         <a class="link" href="#">Privacy Policy</a>
         <a class="link" href="#">Legal notice</a>
     </div>
 
+    <script src="login.js"></script>
 </body>
 
 </html>

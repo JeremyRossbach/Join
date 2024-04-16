@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="task.css">
     <script src="task.js"></script>
     <script src="../data.js"></script>
-    <link rel="icon" href="../img/join_logo_white.png">
+    <link rel="icon" href="../img/join_logo_black.png">
     <title>Join</title>
 </head>
 
-<body>
+<body onload="sharedInit();">
     <!-- Das ist ein Template für alle andere Seiten -->
     <div id="div_body">
         <div id="side">
@@ -58,10 +58,15 @@
                     <a href="../help/index.html" id="nav_right_img">
                         <img src="../img/help_icon.png" alt="Summary">
                     </a>
-                    <a href="../index.html" id="nav_right_menu">
-                        VN
-                    </a>
+                    <div id="nav_right_menu" onclick="jura_window();">                        
+                    </div>
                 </div>
+            </div>
+            <div id="jura_container">
+                <a href="../jura/privacy.html" class="jura_undercontainer">Privacy Policy</a>
+                <a href="../jura/legal.html" class="jura_undercontainer">Legal notice</a>
+                <a href="../jura/dataprotect.html" class="jura_undercontainer">Data Protection</a>
+                <a href="../index.html" class="jura_undercontainer">Log out</a>                
             </div>
             <!-- Hier kommt der HTML Code von Euch rein -->
         <H1>Add Task</H1>

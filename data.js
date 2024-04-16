@@ -110,20 +110,20 @@ const colorPool = [
 
 
 // speichert alles
-function save(){
+function save() {
 
 }
 
 
 // lädt alles
-function load(){
-    
+function load() {
+
 }
 
 // gemeinsames Init
 function sharedInit() {
     let loginInitial = document.getElementById(`nav_right_menu`);
-    loginInitial.innerHTML = getInitials(`Vorname Nachname`);
+    loginInitial.innerHTML = getInitials(`Max Mustermann`);
 }
 
 
@@ -142,3 +142,15 @@ function getInitials(inputString) {
 
     return initials.toUpperCase();
 }
+
+// kleine Fenster oben rechts, wo man sich ausloggen kann usw..
+function jura_window() {
+    let juraContainer = document.getElementById(`jura_container`);
+
+    if (juraContainer.style.display == "none" || juraContainer.style.display == "") {
+        juraContainer.style.display = "flex";
+    } else {
+        juraContainer.style.display = "none";
+    }
+
+}   

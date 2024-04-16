@@ -2,19 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-input {
-    border: none;
-    font-size: 20px;
-}
-
-input::placeholder {
-    color: #D1D1D1;
-}
-
-input:focus {
-    outline: none;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 label {
@@ -34,10 +23,6 @@ label {
     cursor: pointer;
     transition: all 125ms ease-in-out;
     text-decoration: none;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .button-primary:hover {
@@ -62,10 +47,6 @@ label {
     cursor: pointer;
     transition: all 125ms ease-in-out;
     text-decoration: none;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .button-secondary:hover {
@@ -88,16 +69,69 @@ label {
 
 .link:hover {
     color: #29ABE2;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 16px;
 }
 
 .link:focus {
     color: #29ABE2;
     text-decoration: underline;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 16px;
 }
+
+.input-field {
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #D1D1D1;
+    transition: all 200ms ease-in-out;
+    height: 48px;
+    padding: 0 21px;
+}
+
+.input-field::placeholder {
+    color: #D1D1D1;
+}
+
+.input-field:focus {
+    outline: 1px solid #29ABE2;
+    border: 1px solid #29ABE2;
+}
+
+input[type=email] {
+    background: url(/img/mail.png) no-repeat;
+    background-position: right 21px top 50%;
+}
+
+input[type=password] {
+    background: url(/img/lock.png) no-repeat;
+    background-position: right 21px top 50%;
+}
+
+input[type=password]:focus {
+    background: url(/img/visibility_off.png) no-repeat;
+    background-position: right 21px top 50%;
+}
+
+.password-visibility {
+    position: absolute;
+    width: 42px;
+    height: 48px;
+    right: -32px;
+    top: 1px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.validation-password {
+    color: #FF8190;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+
 
 
 
@@ -182,35 +216,6 @@ label {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.input {
-    width: 422px;
-    height: 48px;
-    border-radius: 10px;
-    border: 1px solid #D1D1D1;
-
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.input:hover {
-    cursor: text;
-}
-
-.input input {
-    width: 100%;
-    padding-left: 21px;
-}
-
-.input img {
-    padding-right: 21px;
-}
-
-.input label:hover {
-    cursor: text;
 }
 
 .login-email-password {
