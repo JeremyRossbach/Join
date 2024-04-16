@@ -77,3 +77,7 @@
     height: 400px;
     background-color: rgb(209, 209, 209);
 }
+.priobtns{
+    display: flex;
+    flex-direction: row;
+}
