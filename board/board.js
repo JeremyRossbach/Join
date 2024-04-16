@@ -43,13 +43,51 @@ function content(containerId, i) {
                 <div class="description">${tasks[i]['description']}</div>
             </div>
             <!-- details missisng ! -->
-            <div class="subtasks">Subtasks</div>
+            <div id="progressbarAndSubtask${i}" class="progressbarAndSubtask">
+                <div id="progressbar${i}" class="progressbar"><div id="progress${i}" class="progress"></div></div>
+                <div id="subtasks${i}" class="subtasks"><div id="subtask${i}" class="subtask"></div></div>
+            </div>
             <div class="cardBottom">
                 <div class="assignedTo">assignedTo</div>
                 <div class="prio">prio</div>
             </div>
         </div>
     `;
+    renderProgressbar(i);
+    renderSubtasks(i);
+}
+
+
+function renderProgressbar(i) {
+    let progressbar = document.getElementById(`progressbar${i}`);
+    let progressbarAndSubtask = document.getElementById(`progressbarAndSubtask${i}`);
+
+    if (tasks[i]['subtask'][i] === '') {
+        progressbar.style.display = 'none';
+    } else {
+        progressbarAndSubtask.style.marginBottom = '24px';
+    }
+}
+
+
+function renderSubtasks(i) {
+    let subtasks = document.getElementById(`subtask${i}`);
+
+    if (tasks[i]['subtask'][i] === '') {
+        subtasks.style.display = 'none';
+    } else {
+        subtasks.innerHTML += /* html */`
+        <div><!-- number of done subtasks -->?/${tasks[i]['subtask'].length} Subtasks</div>
+    `;
+    renderProgress(i);
+    }
+}
+
+
+function renderProgress(i) {
+    let progress = document.getElementById(`progress${i}`);
+
+    progress.style.width = `128px / ${tasks[i]['subtask'].length} * /* number of done subtasks */`;
 }
 
 
