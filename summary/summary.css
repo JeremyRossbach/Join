@@ -39,7 +39,8 @@
 #second_container {
     display: flex;
     justify-content: space-between;
-    padding-top: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     align-items: center;
     gap: 60px;
 
@@ -61,7 +62,7 @@
 }
 
 #todo_div:hover {
-    background-color: black;
+    background-color: #2A3647;
     color: white;
     transform: scale(1.1);
 }
@@ -82,7 +83,7 @@
 }
 
 #done_div:hover {
-    background-color: black;
+    background-color: #2A3647;
     color: white;
     transform: scale(1.1);
 }
@@ -134,7 +135,8 @@
 
 #third_container {
     display: flex;
-    padding-top: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     align-items: center;
 }
 
@@ -152,7 +154,7 @@
 }
 
 #third_under_container:hover {
-    background-color: black;
+    background-color: #2A3647;
     color: white;
     transform: scale(1.1);
 }
@@ -215,7 +217,8 @@
 
 #fourth_container {
     display: flex;
-    padding-top: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     align-items: center;
     justify-content: space-between;
 }
@@ -276,12 +279,14 @@
     font-weight: 400;
 }
 
-#awaiting {
-    cursor: pointer;
-}
 
 #board {
     cursor: pointer;
+}
+
+#board:hover {
+    background-color: #2A3647;
+    color: white;
 }
 
 #progress {
@@ -289,18 +294,17 @@
 
 }
 
-#awaiting:hover {
-    background-color: black;
-    color: white;
-}
-
-#board:hover {
-    background-color: black;
-    color: white;
-}
-
 #progress:hover {
-    background-color: black;
+    background-color: #2A3647;
+    color: white;
+}
+
+#awaiting {
+    cursor: pointer;
+}
+
+#awaiting:hover {
+    background-color: #2A3647;
     color: white;
 }
 
@@ -323,3 +327,4 @@
 .second_container_class:hover .icon_other {
     display: block;
 }
+

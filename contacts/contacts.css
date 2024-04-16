@@ -78,24 +78,26 @@
     padding: 20px;
 }
 
-#button_new_contact {
-    width: 450px;
+#button_new_contact {    
+    width: 350px;
     height: 55px;
+    border-radius: 10px;
+    border: 1px;
+    padding: 12px 16px 12px 16px;
     background-color: #2A3647;
     color: white;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    font-size: 22px;
-    text-decoration: none;
-    border: unset;
+    gap: 16px;
+    font-size: 22px;    
 }
 
 #button_new_contact:hover {
     background-color: #29ABE2;
     color: white;
+    border: unset;
 }
 
 #second_contact_container {
@@ -197,7 +199,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 40px;
+    gap: 54px;
 }
 
 #second_info_container {
@@ -393,41 +395,50 @@
     font-size: 22px;
 }
 
+#delete_button{
+    font-size: 16px;
+}
+#edit_button{
+    font-size: 16px;
+}
 
 .cancel_delete_button{
-    width: 130px;
-    height: 55px;
+    width: 126px;
+    height: 56px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     font-size: 22px;
+    padding: 16px;
     background-color: white;
-    border: solid 1px rgba(0, 0, 0, 0.5);
+    color: #2A3647;
+    border: solid 1px #2A3647;
 }
 
-#cancel_button:hover {
-    border-color: #29ABE2;
+.cancel_delete_button:hover {   
+    border: solid 1px #29ABE2;
     color: #29ABE2;
 }
 
 .create_contact_button {
     width: 200px;
-    height: 55px;
+    height: 56px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 4px;
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 21px;
+    font-weight: 700;
     background-color: #2A3647;
     color: white;
     border: none;
 }
 
-.create_contact_button:hover {
-    border-color: #29ABE2;
+.create_contact_button:hover {    
     background-color: #29ABE2;
     color: white;
 }
@@ -557,4 +568,35 @@
     font-size: 20px;
     font-weight: 400;
     color: #007CEE;
+}
+
+.edit_icon_normal {
+    display: block;
+}
+
+.edit_icon_other {
+    display: none;
+}
+
+#edit_div:hover .edit_icon_normal {
+    display: none;
+}
+
+#edit_div:hover .edit_icon_other {
+    display: block;
+}
+.delete_icon_normal {
+    display: block;
+}
+
+.delete_icon_other {
+    display: none;
+}
+
+#delete_div:hover .delete_icon_normal {
+    display: none;
+}
+
+#delete_div:hover .delete_icon_other {
+    display: block;
 }

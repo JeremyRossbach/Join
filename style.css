@@ -8,11 +8,12 @@
     padding: 0;
     font-family: Inter;
 }
-body{
+
+body {
     background-color: #F6F7F8;
 }
 
-#div_body{
+#div_body {
     position: absolute;
     display: flex;
     left: 0;
@@ -43,7 +44,8 @@ body{
     display: flex;
     gap: 16px;
 }
-#nav_right a{
+
+#nav_right a {
     text-decoration: none;
     color: #29ABE2;
 }
@@ -54,6 +56,7 @@ body{
     align-items: center;
     cursor: pointer;
 }
+
 #nav_right_img:hover {
     transform: scale(1.3);
 }
@@ -69,6 +72,7 @@ body{
     color: #29ABE2;
     cursor: pointer;
 }
+
 #nav_right_menu:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
@@ -78,12 +82,13 @@ body{
     flex-direction: column;
     flex: 1;
 }
-#required{
+
+#required {
     color: red;
     font-size: 30px;
 }
 
-#side {    
+#side {
     width: 232px;
     padding: 64px 0px 64px 0px;
     gap: 0px;
@@ -112,71 +117,66 @@ body{
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+    width: 100%;
 }
-#footer a{
+
+#footer a {
     text-decoration: none;
     color: #CDCDCD;
 }
 
-#priv_pol {
-    cursor: pointer;
-}
-#priv_pol:hover {
-    color: #29ABE2;
-}
-
-#leg_not {
-    cursor: pointer;
-}
-#leg_not:hover {
-    color: #29ABE2;
-}
-#data_protect{
-    cursor: pointer;
-}
-#data_protect:hover{
-    color: #29ABE2;
-}
-
 #side_menu {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-around;
     gap: 20px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    width: inherit;
 }
+
 #side_menu:hover {
     color: #29ABE2;
 }
-#side_menu a{
+
+#side_menu a {
     text-decoration: none;
     color: #CDCDCD;
 }
 
 .side_undermenu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
     cursor: pointer;
-}
-#dlph_position{    
     display: flex;
-    flex-direction: column;
-    gap: 10px;    
+    align-items: center;
+    width: 80%;
 }
 
-.side_menu_bg{
-    cursor: pointer;
-    width: 230px;
+.side_menu_text_position {
     display: flex;
-    padding-left: 100px;  
+    justify-content: flex-start;
 }
-.side_menu_bg:hover{
+
+#dlph_position {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side_menu_bg {
+    height: 40px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.side_menu_bg:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    width: 230px;    
+    width: 230px;
+    height: 40px;
 }
+
 /* START kleine Fenster oben rechts, wo man sich ausloggen kann usw.. */
-#jura_container{
+#jura_container {
     width: 150px;
     height: 158px;
     position: fixed;
@@ -195,14 +195,110 @@ body{
     align-content: center;
     flex-wrap: wrap;
 }
-.jura_undercontainer{
+
+.jura_undercontainer {
     text-decoration: none;
     padding: 6px;
     background-color: #2A3647;
     color: #CDCDCD;
 }
-.jura_undercontainer:hover{
+
+.jura_undercontainer:hover {
     text-decoration: none;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
+
 /* ENDE kleine Fenster oben rechts, wo man sich ausloggen kann usw..*/
+
+.menu_iconsWH {}
+
+.side_menu_bg.selected {
+    background-color: #091931;
+    color: white;
+}
+
+.side_undermenu.selected {
+    height: 40px;
+    display: flex;
+}
+
+.side_menu_bg img {
+    width: 30px;
+    height: 30px;
+}
+
+/* summary */
+.side_undermenu.selected .summary_icon_normal {
+    display: none;
+}
+
+.side_undermenu.selected .summary_icon_other {
+    display: flex;
+    margin-right: 20px;
+}
+
+.side_undermenu .summary_icon_normal {
+    display: flex;
+    margin-right: 20px;
+}
+
+.side_undermenu .summary_icon_other {
+    display: none;
+}
+
+/* addtask */
+.side_undermenu.selected .addtask_icon_normal {
+    display: none;
+}
+
+.side_undermenu.selected .addtask_icon_other {
+    display: flex;
+    margin-right: 20px;
+}
+
+.side_undermenu .addtask_icon_normal {
+    display: flex;
+    margin-right: 20px;
+}
+
+.side_undermenu .addtask_icon_other {
+    display: none;
+}
+
+/* board */
+.side_undermenu.selected .board_icon_normal {
+    display: none;
+}
+
+.side_undermenu.selected .board_icon_other {
+    display: flex;
+    margin-right: 20px;
+}
+
+.side_undermenu .board_icon_normal {
+    display: flex;
+    margin-right: 20px;
+}
+
+.side_undermenu .board_icon_other {
+    display: none;
+}
+
+/* contacts */
+.side_undermenu.selected .contacts_icon_normal {
+    display: none;
+}
+
+.side_undermenu.selected .contacts_icon_other {
+    display: flex;
+    margin-right: 20px;
+}
+
+.side_undermenu .contacts_icon_normal {
+    display: flex;
+    margin-right: 20px;
+}
+
+.side_undermenu .contacts_icon_other {
+    display: none;
+}
