@@ -40,7 +40,7 @@ input {
     font-size: 20px;
 }
 
-#searchButton { /* hover = display: flex; missing */
+#searchButton {
     position: absolute;
     margin-top: 8px;
     margin-left: 304px;
@@ -168,6 +168,7 @@ p {
 .cardBottom {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .emptySection {
@@ -209,4 +210,60 @@ p {
     font-weight: 400;
     font-size: 12px;
     color: rgba(0, 0, 0, 1);
+}
+
+.assignedTo {
+    display: flex;
+    margin-left: 10px;
+}
+
+.initials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 45px;
+    border: 1px solid white;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 400;
+    font-size: 12px;
+    background-color: #000000;
+    margin: 0 0 0 -10px;
+}
+
+#cardPopup {
+    position: absolute;
+    display: flex;
+    width: 525px;
+    height: 931px; /* delete at the end ! */
+    padding-inline: 40px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.popupCategoryAndClose {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 525px;
+    height: 36px;
+}
+
+.popupCategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    padding-inline: 24px;
+    border-radius: 8px;
+    background-color: rgba(0, 56, 255, 1);
+    color: white;
+}
+
+.closeImage {
+    width: 32px;
+    height: 32px;
 }

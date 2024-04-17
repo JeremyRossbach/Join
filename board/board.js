@@ -1,3 +1,10 @@
+const prioImages = {
+    'Urgent': './img/urgent.png',
+    'Medium': './img/medium.png',
+    'Low': './img/low.png'
+};
+
+
 function init() {
     renderContent('To do', 'toDoContent');
     renderContent('In progress', 'inProgressContent');
@@ -36,7 +43,7 @@ function content(containerId, i) {
     let container = document.getElementById(containerId);
 
     container.innerHTML += /* html */`
-        <div onclick="" id="card${i}" class="card">
+        <div onclick="showCardPopup(${i})" id="card${i}" class="card">
             <div id="category${i}" class="category">${tasks[i]['category']}</div>
             <div class="titleAndDescription">
                 <div class="title">${tasks[i]['title']}</div>
@@ -48,13 +55,28 @@ function content(containerId, i) {
                 <div id="subtasks${i}" class="subtasks"><div id="subtask${i}" class="subtask"></div></div>
             </div>
             <div class="cardBottom">
-                <div class="assignedTo">assignedTo</div>
-                <div class="prio">prio</div>
+                <div id="assignedTo${i}" class="assignedTo"></div>
+                <div id="prio${i}" class="prio"></div>
             </div>
         </div>
     `;
     renderProgressbar(i);
     renderSubtasks(i);
+    renderPrio(i);
+    renderAssignedTo(i);
+}
+
+
+function showCardPopup(i) {
+    let cardPopup = document.getElementById('cardPopup');
+    cardPopup.style.display = 'flex';
+
+    cardPopup.innerHTML += /* html */`
+        <div class="popupCategoryAndClose">
+        <div id="category${i}" class="popupCategory">${tasks[i]['category']}</div><img class="closeImage" src="./img/close.png">
+        </div>
+    `;
+    
 }
 
 
@@ -88,6 +110,33 @@ function renderProgress(i) {
     let progress = document.getElementById(`progress${i}`);
 
     progress.style.width = `128px / ${tasks[i]['subtask'].length} * /* number of done subtasks */`;
+}
+
+
+function renderPrio(i) {
+    let prio = document.getElementById(`prio${i}`);
+
+    if (prioImages.hasOwnProperty(tasks[i]['prio'])) {
+        prio.innerHTML += `<img src="${prioImages[tasks[i]['prio']]}">`;
+    }
+}
+
+
+function renderAssignedTo(i) {
+    for (let j = 0; j < tasks[i]['assignedTo'].length; j++) {
+        let name = tasks[i]['assignedTo'];
+        let initials = name[j].split(' ')[0].charAt(0) + name[j].split(' ')[1].charAt(0);
+        showAssignedTo(initials, i,j);
+    }
+}
+
+
+function showAssignedTo(initials, i, j) { /* solution for random colors missing ! */
+    let assignedTo = document.getElementById(`assignedTo${i}`);
+    let randomBackgroundColor = colorPool[Math.floor(Math.random() * colorPool.length)];
+    assignedTo.innerHTML += /* html */`
+            <div id="initals${j}" class="initials" style="background-color: ${randomBackgroundColor};">${initials}</div>
+        `;
 }
 
 
