@@ -22,51 +22,49 @@
             <div id="side_menu">
                 <div class="side_menu_bg">
                     <a href="../summary" class="side_undermenu">
-                        <img class="summary_icon_normal menu_iconsWH" src="../img/menu_summary_icon.png"
-                            alt="Summary">
+                        <img class="summary_icon_normal menu_iconsWH" src="../img/menu_summary_icon.png" alt="Summary">
                         <img class="summary_icon_other menu_iconsWH" src="../img/menu_summary_icon_white.png"
                             alt="Summary">
                         <span class="side_menu_text_position">Summary</span>
-                    </a>                  
+                    </a>
 
-            </div>
-            <div class="side_menu_bg selected">
+                </div>
+                <div class="side_menu_bg selected">
                     <a href="../task" class="side_undermenu">
-                        <img class="addtask_icon_normal menu_iconsWH" src="../img/menu_addtask_icon.png"
-                            alt="Add Task">
+                        <img class="addtask_icon_normal menu_iconsWH" src="../img/menu_addtask_icon.png" alt="Add Task">
                         <img class="addtask_icon_other menu_iconsWH" src="../img/menu_addtask_icon_white.png"
                             alt="Add Task">
                         <span class="side_menu_text_position">Add Task</span>
-                    </a>                    
+                    </a>
+                </div>
+                <div class="side_menu_bg">
+                    <a href="../board" class="side_undermenu">
+                        <img class="board_icon_normal menu_iconsWH" src="../img/menu_board_icon.png" alt="Board">
+                        <img class="board_icon_other menu_iconsWH" src="../img/menu_board_icon_white.png" alt="Board">
+                        <span class="side_menu_text_position">Board</span>
+                    </a>
+                </div>
+                <div class="side_menu_bg">
+                    <a href="../contacts" class="side_undermenu">
+                        <img class="contacts_icon_normal menu_iconsWH" src="../img/menu_contacts_icon.png"
+                            alt="Contacts">
+                        <img class="contacts_icon_other menu_iconsWH" src="../img/menu_contacts_icon_white.png"
+                            alt="Contacts">
+                        <span class="side_menu_text_position">Contacts</span>
+                    </a>
+                </div>
             </div>
-            <div class="side_menu_bg">
-                <a href="../board" class="side_undermenu">
-                    <img class="board_icon_normal menu_iconsWH" src="../img/menu_board_icon.png" alt="Board">
-                    <img class="board_icon_other menu_iconsWH" src="../img/menu_board_icon_white.png" alt="Board">
-                    <span class="side_menu_text_position">Board</span>
-                </a>
+            <div id="footer">
+                <div class="side_menu_bg">
+                    <a href="../jura/privacy.html" id="priv_pol" class="side_undermenu">Privacy Policy</a>
+                </div>
+                <div class="side_menu_bg">
+                    <a href="../jura/legal.html" id="leg_not" class="side_undermenu">Legal notice</a>
+                </div>
+                <div class="side_menu_bg">
+                    <a href="../jura/dataprotect.html" id="data_protect" class="side_undermenu">Data Protection</a>
+                </div>
             </div>
-            <div class="side_menu_bg">
-                <a href="../contacts" class="side_undermenu">
-                    <img class="contacts_icon_normal menu_iconsWH" src="../img/menu_contacts_icon.png"
-                        alt="Contacts">
-                    <img class="contacts_icon_other menu_iconsWH" src="../img/menu_contacts_icon_white.png"
-                        alt="Contacts">
-                    <span class="side_menu_text_position">Contacts</span>
-                </a>
-            </div>
-        </div>
-        <div id="footer">
-            <div class="side_menu_bg">
-                <a href="../jura/privacy.html" id="priv_pol" class="side_undermenu">Privacy Policy</a> 
-            </div>
-            <div class="side_menu_bg">
-                <a href="../jura/legal.html" id="leg_not" class="side_undermenu">Legal notice</a> 
-            </div>
-            <div class="side_menu_bg">
-                <a href="../jura/dataprotect.html" id="data_protect" class="side_undermenu">Data Protection</a> 
-            </div>                
-        </div>
         </div>
         <div id="header_content_position">
             <div id="header">
@@ -77,7 +75,7 @@
                     <a href="../help/index.html" id="nav_right_img">
                         <img src="../img/help_icon.png" alt="Summary">
                     </a>
-                    <div id="nav_right_menu" onclick="jura_window();">                        
+                    <div id="nav_right_menu" onclick="jura_window();">
                     </div>
                 </div>
             </div>
@@ -85,88 +83,78 @@
                 <a href="../jura/privacy.html" class="jura_undercontainer">Privacy Policy</a>
                 <a href="../jura/legal.html" class="jura_undercontainer">Legal notice</a>
                 <a href="../jura/dataprotect.html" class="jura_undercontainer">Data Protection</a>
-                <a href="../index.html" class="jura_undercontainer">Log out</a>                
+                <a href="../index.html" class="jura_undercontainer">Log out</a>
             </div>
             <!-- Hier kommt der HTML Code von Euch rein -->
-        <H1>Add Task</H1>
-        <div class="content" id="content">
-            <div class="leftside">
-                <div class="spanandvalue">
-            <span>Title*</span>
-            <input class="input" placeholder="Enter a title" type="text">
-            </div>
-            <div class="spanandvalue">
-            <span>Description</span>
-            <input class="descriptionInput" placeholder="Enter a Description" type="text">
-            </div>
-            <div class="spanandvalue">
-            <span>Assigned to</span>
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Select contacts to assign</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                    <a href="#about">About</a>
-                    <a href="#base">Base</a>
-                    <a href="#blog">Blog</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#custom">Custom</a>
-                    <a href="#support">Support</a>
-                    <a href="#tools">Tools</a>
+            <H1>Add Task</H1>
+            <div class="content" id="content">
+                <div class="leftside">
+                    <div class="spanandvalue">
+                        <span>Title*</span>
+                        <input class="input" placeholder="Enter a title" type="text">
+                    </div>
+                    <div class="spanandvalue">
+                        <span>Description</span>
+                        <input class="descriptionInput" placeholder="Enter a Description" type="text">
+                    </div>
+                    <div class="spanandvalue">
+                        <span>Assigned to</span>
+                        <div class="dropdown">
+                            <button onclick="myFunction(),showaAvailableContacts()" class="dropbtn">Select contacts to assign <img
+                                    src="img/arrow down.svg" alt=""></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                
+                                <div id="availableContacts">asi</div>
+                               
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>
-            </div>
-            <div class="roomdivider"></div>
-        
-        <div class="rightside">
-            <div  class="spanandvalue" class="datepicker">
-                <span>Due date*</span>
-<form action="/action_page.php">
-    <label placeholder="dd/mm/yyyy" for=""></label>
-    <input type="date" id="birthday" name="birthday">
-    <input type="submit">
-</form>
+                <div class="roomdivider"></div>
 
-        </div>
-        <div class="spanandvalue"class="prio">
-            <span>Prio</span>
-            <div class="priobtns">
-                <div class="priobtn">Urgent <img src="img/Prio high icon.svg" alt=""></div>
-                <div class="priobtn">Medium <img src="img/Prio medi icon.svg" alt=""></div>
-                <div class="priobtn">Low <img src="img/Prio low icon.svg" alt=""></div>
-            </div>
-        </div>
-        <div class="spanandvalue">
-            <span>Category*</span>
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Select tasks category</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                    <a href="#about">About</a>
-                    <a href="#base">Base</a>
-                    <a href="#blog">Blog</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#custom">Custom</a>
-                    <a href="#support">Support</a>
-                    <a href="#tools">Tools</a>
+                <div class="rightside">
+                    <div class="spanandvalue" class="datepicker">
+                        <span>Due date*</span>
+                        <form action="/action_page.php">
+                            <label placeholder="dd/mm/yyyy" for=""></label>
+                            <input type="date" id="birthday" name="birthday">
+                            <input type="submit">
+                        </form>
+
+                    </div>
+                    <div class="spanandvalue" class="prio">
+                        <span>Prio</span>
+                        <div class="priobtns">
+                            <div class="priobtn">Urgent <img src="img/Prio high icon.svg" alt=""></div>
+                            <div class="priobtn">Medium <img src="img/Prio medi icon.svg" alt=""></div>
+                            <div class="priobtn">Low <img src="img/Prio low icon.svg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="spanandvalue">
+                        <span>Category*</span>
+                        <div class="dropdown">
+                            <button onclick="showaAvailableContacts()" class="dropbtn">Select tasks category <img src="img/arrow down.svg" alt=""></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                
+                                <div id="availableContacts">asi</div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spanandvalue">
+                        <span>Subtasks</span>
+                        <input placeholder="Add new subtask" type="text">
+                    </div>
+                    <div class="priobtnClicked urgentClicked">Urgent <img src="img/Prio high icon clicked.svg" alt="">
+                    </div>
+                    <div class="priobtnClicked mediumClicked">Medium <img src="img/Prio media icon clicked.svg" alt="">
+                    </div>
+                    <div class="priobtnClicked lowClicked">Low <img src="img/Prio low icon clicked.svg" alt=""></div>
+                    <!--  -->
                 </div>
-        </div>
-        </div>
-        <div class="spanandvalue">
-            <span>Subtasks</span>
-            <input placeholder="Add new subtask" type="text">
-        </div>
-        <div class="priobtn">Urgent <img src="img/Prio high icon.svg" alt=""></div>
-        <div class="priobtn">Medium <img src="img/Prio medi icon.svg" alt=""></div>
-        <div class="priobtn">Low <img src="img/Prio low icon.svg" alt=""></div>
 
-        <div class="priobtnClicked urgentClicked">Urgent <img src="img/Prio high icon clicked.svg" alt=""></div>
-        <div class="priobtnClicked mediumClicked">Medium <img src="img/Prio media icon clicked.svg" alt=""></div>
-        <div class="priobtnClicked lowClicked">Low <img src="img/Prio low icon clicked.svg" alt=""></div>
-            <!--  -->
-        </div>
-
-    </div>
+            </div>
 
 </body>
 
