@@ -217,8 +217,9 @@
                                 </div>
                                 <div id="edit_contact_content">
                                     <div id="profil_name_initialen">
-                                    </div>                                    
-                                    <form id="inputs_container" onsubmit="updateContact();deleteContact();closeEditContactWindow(); return false;">
+                                    </div>
+                                    <form id="inputs_container"
+                                        onsubmit="updateContact();closeEditContactWindow(); return false;">
                                         <div class="input_icon">
                                             <input required type="text" id="edit_name" placeholder="Max Mustermann"
                                                 pattern="[A-Za-zÄÖÜäöüß\s]{1,50} [A-Za-zÄÖÜäöüß\s]{1,50}">
@@ -240,9 +241,8 @@
                                         </div>
                                         <div class="buttons_div">
                                             <button class="buttons_optionen cancel_delete_button"
-                                                >Delete</button>
-                                            <button class="buttons_optionen create_contact_button"
-                                                >Save<img
+                                                onclick="deleteContact();closeEditContactWindow();">Delete</button>
+                                            <button class="buttons_optionen create_contact_button">Save<img
                                                     src="../img/check.png" alt="Check Icon"></button>
                                         </div>
                                     </form>
