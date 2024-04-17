@@ -21,51 +21,49 @@
             <div id="side_menu">
                 <div class="side_menu_bg">
                     <a href="../summary" class="side_undermenu">
-                        <img class="summary_icon_normal menu_iconsWH" src="../img/menu_summary_icon.png"
-                            alt="Summary">
+                        <img class="summary_icon_normal menu_iconsWH" src="../img/menu_summary_icon.png" alt="Summary">
                         <img class="summary_icon_other menu_iconsWH" src="../img/menu_summary_icon_white.png"
                             alt="Summary">
                         <span class="side_menu_text_position">Summary</span>
-                    </a>                  
+                    </a>
 
-            </div>
-            <div class="side_menu_bg">
+                </div>
+                <div class="side_menu_bg">
                     <a href="../task" class="side_undermenu">
-                        <img class="addtask_icon_normal menu_iconsWH" src="../img/menu_addtask_icon.png"
-                            alt="Add Task">
+                        <img class="addtask_icon_normal menu_iconsWH" src="../img/menu_addtask_icon.png" alt="Add Task">
                         <img class="addtask_icon_other menu_iconsWH" src="../img/menu_addtask_icon_white.png"
                             alt="Add Task">
                         <span class="side_menu_text_position">Add Task</span>
-                    </a>                    
+                    </a>
+                </div>
+                <div class="side_menu_bg">
+                    <a href="../board" class="side_undermenu">
+                        <img class="board_icon_normal menu_iconsWH" src="../img/menu_board_icon.png" alt="Board">
+                        <img class="board_icon_other menu_iconsWH" src="../img/menu_board_icon_white.png" alt="Board">
+                        <span class="side_menu_text_position">Board</span>
+                    </a>
+                </div>
+                <div class="side_menu_bg selected">
+                    <a href="../contacts" class="side_undermenu">
+                        <img class="contacts_icon_normal menu_iconsWH" src="../img/menu_contacts_icon.png"
+                            alt="Contacts">
+                        <img class="contacts_icon_other menu_iconsWH" src="../img/menu_contacts_icon_white.png"
+                            alt="Contacts">
+                        <span class="side_menu_text_position">Contacts</span>
+                    </a>
+                </div>
             </div>
-            <div class="side_menu_bg">
-                <a href="../board" class="side_undermenu">
-                    <img class="board_icon_normal menu_iconsWH" src="../img/menu_board_icon.png" alt="Board">
-                    <img class="board_icon_other menu_iconsWH" src="../img/menu_board_icon_white.png" alt="Board">
-                    <span class="side_menu_text_position">Board</span>
-                </a>
+            <div id="footer">
+                <div class="side_menu_bg">
+                    <a href="../jura/privacy.html" id="priv_pol" class="side_undermenu">Privacy Policy</a>
+                </div>
+                <div class="side_menu_bg">
+                    <a href="../jura/legal.html" id="leg_not" class="side_undermenu">Legal notice</a>
+                </div>
+                <div class="side_menu_bg">
+                    <a href="../jura/dataprotect.html" id="data_protect" class="side_undermenu">Data Protection</a>
+                </div>
             </div>
-            <div class="side_menu_bg selected">
-                <a href="../contacts" class="side_undermenu">
-                    <img class="contacts_icon_normal menu_iconsWH" src="../img/menu_contacts_icon.png"
-                        alt="Contacts">
-                    <img class="contacts_icon_other menu_iconsWH" src="../img/menu_contacts_icon_white.png"
-                        alt="Contacts">
-                    <span class="side_menu_text_position">Contacts</span>
-                </a>
-            </div>
-        </div>
-        <div id="footer">
-            <div class="side_menu_bg">
-                <a href="../jura/privacy.html" id="priv_pol" class="side_undermenu">Privacy Policy</a> 
-            </div>
-            <div class="side_menu_bg">
-                <a href="../jura/legal.html" id="leg_not" class="side_undermenu">Legal notice</a> 
-            </div>
-            <div class="side_menu_bg">
-                <a href="../jura/dataprotect.html" id="data_protect" class="side_undermenu">Data Protection</a> 
-            </div>                
-        </div>
         </div>
         <div id="header_content_position">
             <div id="header">
@@ -164,30 +162,37 @@
                                     <div id="profil_image_optionen">
                                         <img src="../img/profil.png" alt="Profil Image">
                                     </div>
-                                    <div id="inputs_container">
+
+
+                                    <form id="inputs_container" onsubmit="createContact(); return false;">
                                         <div class="input_icon">
-                                            <input type="text" id="create_name" placeholder="Name">
+                                            <input required type="text" id="create_name" placeholder="Max Mustermann"
+                                                pattern="[A-Za-zÄÖÜäöüß\s]{1,50} [A-Za-zÄÖÜäöüß\s]{1,50}">
                                             <img class="icon_position" id="person_icon" src="../img/person.png"
                                                 alt="Person Icon">
                                         </div>
                                         <div class="input_icon">
-                                            <input type="text" id="create_mail" placeholder="Email">
+                                            <input required type="email" id="create_mail"
+                                                placeholder="example@example.com"
+                                                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
                                             <img class="icon_position" id="email_icon" src="../img/mail.png"
                                                 alt="Mail Icon">
                                         </div>
                                         <div class="input_icon">
-                                            <input type="text" id="create_phone" placeholder="Phone">
+                                            <input required type="tel" id="create_phone" placeholder="+49 (0)123 456789"
+                                                pattern="^\+(?:[0-9] ?){6,14}[0-9]$">
                                             <img class="icon_position" id="phone_icon" src="../img/call.png"
                                                 alt="Call Icon">
                                         </div>
                                         <div class="buttons_div">
                                             <button class="buttons_optionen cancel_delete_button"
                                                 onclick="closeAddNewContactWindow();">Cancel x</button>
-                                            <button class="buttons_optionen create_contact_button"
-                                                onclick="createContact();">Create
+                                            <button class="buttons_optionen create_contact_button">Create
                                                 contact<img src="../img/check.png" alt="Check Icon"></button>
                                         </div>
-                                    </div>
+                                    </form>
+
+
                                 </div>
 
                             </div>
@@ -212,32 +217,35 @@
                                 </div>
                                 <div id="edit_contact_content">
                                     <div id="profil_name_initialen">
-                                        <span></span>
-                                    </div>
-                                    <div id="inputs_container">
+                                    </div>                                    
+                                    <form id="inputs_container" onsubmit="updateContact();deleteContact();closeEditContactWindow(); return false;">
                                         <div class="input_icon">
-                                            <input type="text" id="edit_name" placeholder="Name">
+                                            <input required type="text" id="edit_name" placeholder="Max Mustermann"
+                                                pattern="[A-Za-zÄÖÜäöüß\s]{1,50} [A-Za-zÄÖÜäöüß\s]{1,50}">
                                             <img class="icon_position" id="person_icon" src="../img/person.png"
                                                 alt="Person Icon">
                                         </div>
                                         <div class="input_icon">
-                                            <input type="text" id="edit_mail" placeholder="Email">
+                                            <input required type="email" id="edit_mail"
+                                                placeholder="example@example.com"
+                                                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
                                             <img class="icon_position" id="email_icon" src="../img/mail.png"
                                                 alt="Mail Icon">
                                         </div>
                                         <div class="input_icon">
-                                            <input type="text" id="edit_phone" placeholder="Phone">
+                                            <input required type="tel" id="edit_phone" placeholder="+49 (0)123 456789"
+                                                pattern="^\+(?:[0-9] ?){6,14}[0-9]$">
                                             <img class="icon_position" id="phone_icon" src="../img/call.png"
                                                 alt="Call Icon">
                                         </div>
                                         <div class="buttons_div">
                                             <button class="buttons_optionen cancel_delete_button"
-                                                onclick="deleteContact(); closeEditContactWindow();">Delete</button>
+                                                >Delete</button>
                                             <button class="buttons_optionen create_contact_button"
-                                                onclick="updateContact(); closeEditContactWindow();">Save<img
+                                                >Save<img
                                                     src="../img/check.png" alt="Check Icon"></button>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
 
                             </div>

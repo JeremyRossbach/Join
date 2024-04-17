@@ -31,6 +31,9 @@ body {
     align-items: center;
     background-color: white;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    left: 232px;
+    right: 0;
 }
 
 #nav_left {
@@ -102,6 +105,8 @@ body {
 
 #content {
     margin: 100px;
+    position: relative;
+    top: 96px;
 }
 
 #join_logo_white {
@@ -194,6 +199,7 @@ body {
     align-items: flex-start;
     align-content: center;
     flex-wrap: wrap;
+    z-index: 1;
 }
 
 .jura_undercontainer {
