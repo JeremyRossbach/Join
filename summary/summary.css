@@ -63,7 +63,7 @@
 #todo_div:hover {
     background-color: #2A3647;
     color: white;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #done_div {
@@ -84,7 +84,7 @@
 #done_div:hover {
     background-color: #2A3647;
     color: white;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #todo_text {
@@ -108,7 +108,7 @@
 }
 
 #todo_second {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -118,7 +118,7 @@
 }
 
 #done_second {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -128,7 +128,7 @@
 }
 
 #urgent_second {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -155,7 +155,7 @@
 #third_under_container:hover {
     background-color: #2A3647;
     color: white;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #urgent_div {
@@ -246,7 +246,7 @@
 }
 
 .fourth_under_container:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #number_in_board {
@@ -267,21 +267,21 @@
 #in_board {
     display: flex;
     flex-wrap: wrap;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
 }
 
 #in_progress {
     display: flex;
     flex-wrap: wrap;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
 }
 
 #in_awaiting_feedback {
     display: flex;
     flex-wrap: wrap;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 400;
 }
 
