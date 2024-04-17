@@ -78,7 +78,7 @@
             </div>
             <div class="spanandvalue">
             <span>Description</span>
-            <input placeholder="Enter a Description" type="text">
+            <input class="descriptionInput" placeholder="Enter a Description" type="text">
             </div>
             <div class="spanandvalue">
             <span>Assigned to</span>
@@ -100,7 +100,7 @@
             <div class="roomdivider"></div>
         
         <div class="rightside">
-            <div class="datepicker">
+            <div  class="spanandvalue" class="datepicker">
                 <span>Due date*</span>
 <form action="/action_page.php">
     <label placeholder="dd/mm/yyyy" for=""></label>
@@ -109,15 +109,41 @@
 </form>
 
         </div>
-        <div class="prio">
+        <div class="spanandvalue"class="prio">
             <span>Prio</span>
             <div class="priobtns">
-                <img src="img/prio high btn.svg" alt="">
-                <img src="img/prio medium btn.svg" alt="">
-                <img src="img/prio low btn.svg" alt="">
+                <div class="priobtn">Urgent <img src="img/Prio high icon.svg" alt=""></div>
+                <div class="priobtn">Medium <img src="img/Prio medi icon.svg" alt=""></div>
+                <div class="priobtn">Low <img src="img/Prio low icon.svg" alt=""></div>
             </div>
         </div>
+        <div class="spanandvalue">
+            <span>Category*</span>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Select tasks category</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#about">About</a>
+                    <a href="#base">Base</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#custom">Custom</a>
+                    <a href="#support">Support</a>
+                    <a href="#tools">Tools</a>
+                </div>
         </div>
+        </div>
+        <div class="spanandvalue">
+            <span>Subtasks</span>
+            <input placeholder="Add new subtask" type="text">
+        </div>
+        <div class="priobtn">Urgent <img src="img/Prio high icon.svg" alt=""></div>
+        <div class="priobtn">Medium <img src="img/Prio medi icon.svg" alt=""></div>
+        <div class="priobtn">Low <img src="img/Prio low icon.svg" alt=""></div>
+
+        <div class="priobtnClicked urgentClicked">Urgent <img src="img/Prio high icon clicked.svg" alt=""></div>
+        <div class="priobtnClicked mediumClicked">Medium <img src="img/Prio media icon clicked.svg" alt=""></div>
+        <div class="priobtnClicked lowClicked">Low <img src="img/Prio low icon clicked.svg" alt=""></div>
             <!--  -->
         </div>
 

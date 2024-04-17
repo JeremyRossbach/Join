@@ -6,8 +6,15 @@
 .leftside{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-
+    justify-content: space-around;
+    width: 400px;
+    height: 400px;
+}
+.rightside{
+    display: flex;
+        flex-direction: column;
+        justify-content: space-evenly
+       
 }
 .spanandvalue{
     display: flex;
@@ -21,6 +28,12 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
+}
+input{
+    border: solid 1px;
+    border-radius: 4px;
+    border-color:rgb(209, 209, 209);
+    height: 24px;
 }
 
 .dropbtn:hover
@@ -77,7 +90,53 @@
     height: 400px;
     background-color: rgb(209, 209, 209);
 }
+.priobtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 112px;
+    height: 40px;
+    border-radius: 10px;
+        gap: 8px;
+        border:solid 2px rgb(238, 239, 240);
+        margin-right: 4px;
+        
+}
+.priobtnClicked{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        width: 120px;
+        height: 48px;
+        border-radius: 10px;
+        gap: 8px;
+        border: solid 2px rgb(238, 239, 240)
+}
+.priobtn:hover{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 .priobtns{
     display: flex;
     flex-direction: row;
+}
+
+.priobtns img:hover{
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 20px 8px 1px rgba(0, 0, 0, 0.08);
+        box-shadow: 0px 10px 13px -7px #000000, 0px 20px 8px 1px rgba(0, 0, 0, 0.08);
+}
+.urgentClicked{
+    background-color:rgb(255,61,0);
+}
+.mediumClicked{
+    background-color: rgb(255,168,0);
+}
+.lowClicked{
+    background-color:rgb(122,226,41) ;
+}
+.descriptionInput{
+    height: 72px;
+    display: flex;
+    text-align: start !important;
 }
