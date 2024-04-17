@@ -21,14 +21,16 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
-.div_contact{
+
+.div_contact {
     padding: 10px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     gap: 30px;
 }
-.contact_initials{
+
+.contact_initials {
     border-radius: 50%;
     border: solid 2px white;
     width: 42px;
@@ -40,27 +42,29 @@
     cursor: pointer;
 }
 
-.div_contact:hover{
+.div_contact:hover {
     background-color: rgb(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
 
-.div_contact.selected{
+.div_contact.selected {
     background-color: #2A3647;
-    cursor: pointer;    
+    cursor: pointer;
 }
-.div_contact.selected .contact_name{    
+
+.div_contact.selected .contact_name {
     color: white;
 }
 
-#first_contact_under_container{
-    font-size: 20px;    
+#first_contact_under_container {
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.span_email{
+
+.span_email {
     color: #29ABE2;
     cursor: pointer;
 }
@@ -79,7 +83,7 @@
     padding: 20px;
 }
 
-#button_new_contact {    
+#button_new_contact {
     width: 350px;
     height: 55px;
     border-radius: 10px;
@@ -92,7 +96,7 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
-    font-size: 22px;    
+    font-size: 22px;
 }
 
 #button_new_contact:hover {
@@ -175,11 +179,13 @@
     display: flex;
     flex-direction: column;
 }
-#email_optionen{
+
+#email_optionen {
     cursor: pointer;
     color: #29ABE2;
 }
-#phone_optionen{
+
+#phone_optionen {
     cursor: pointer;
 }
 
@@ -376,8 +382,8 @@
 
 input[required] {
     border-color: red;
-  }
-  
+}
+
 .icon_position {
     position: absolute;
     top: 20px;
@@ -400,14 +406,15 @@ input[required] {
     font-size: 22px;
 }
 
-#delete_button{
-    font-size: 16px;
-}
-#edit_button{
+#delete_button {
     font-size: 16px;
 }
 
-.cancel_delete_button{
+#edit_button {
+    font-size: 16px;
+}
+
+.cancel_delete_button {
     width: 126px;
     height: 56px;
     cursor: pointer;
@@ -422,7 +429,7 @@ input[required] {
     border: solid 1px #2A3647;
 }
 
-.cancel_delete_button:hover {   
+.cancel_delete_button:hover {
     border: solid 1px #29ABE2;
     color: #29ABE2;
 }
@@ -443,7 +450,7 @@ input[required] {
     border: none;
 }
 
-.create_contact_button:hover {    
+.create_contact_button:hover {
     background-color: #29ABE2;
     color: white;
 }
@@ -495,7 +502,7 @@ input[required] {
     gap: 10px;
 }
 
-.alphabet_div{
+.alphabet_div {
     padding-left: 28px;
 }
 
@@ -563,13 +570,13 @@ input[required] {
 }
 
 /* edit css end */
-.contact_name{
+.contact_name {
     font-size: 20px;
     font-weight: 400;
     color: black;
 }
 
-.contact_email{
+.contact_email {
     font-size: 20px;
     font-weight: 400;
     color: #007CEE;
@@ -590,6 +597,7 @@ input[required] {
 #edit_div:hover .edit_icon_other {
     display: block;
 }
+
 .delete_icon_normal {
     display: block;
 }

@@ -26,7 +26,7 @@ function createContact() {
 function generateContactList() {
 
     let contactContainer = document.getElementById(`first_contact_under_container`);
-    let lastChar = "";    
+    let lastChar = "";
 
     contactContainer.innerHTML = "";
 
@@ -34,7 +34,7 @@ function generateContactList() {
 
 
     for (let i = 0; i < contactData.length; i++) {
-        const contact = contactData[i]; 
+        const contact = contactData[i];
         let randomBackgroundColor = colorPool[Math.floor(Math.random() * colorPool.length)];
 
         if (lastChar != contact.name.charAt(0).toUpperCase()) {
@@ -98,6 +98,7 @@ function openAddNewContactWindow() {
     clearInputs();
 }
 
+
 function openEditContactWindow() {
     document.getElementById(`edit_contact_container`).style.display = "flex";
 
@@ -108,6 +109,8 @@ function closeAddNewContactWindow() {
     document.getElementById(`new_contact_container`).style.display = "none";
 
 }
+
+
 function closeEditContactWindow() {
     document.getElementById(`edit_contact_container`).style.display = "none";
 
@@ -136,6 +139,7 @@ function deleteContact() {
     generateContactList();
 }
 
+
 function editContact() {
     let nameDiv = document.getElementById(`edit_name`);
     let emailDiv = document.getElementById(`edit_mail`);
@@ -149,6 +153,7 @@ function editContact() {
 
     openEditContactWindow();
 }
+
 
 function updateContact() {
 

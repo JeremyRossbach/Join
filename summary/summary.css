@@ -10,7 +10,6 @@
 
 #summary_content {
     display: flex;
-    justify-content: space-evenly;
     gap: 200px;
 }
 
@@ -20,7 +19,7 @@
     align-items: center;
 }
 
-#join_360 {
+#join_155 {
     font-size: 40px;
     font-weight: bold;
 }
@@ -197,9 +196,16 @@
     font-weight: 400;
 }
 
+#greet_position {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
 #greet {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
 }
@@ -327,4 +333,3 @@
 .second_container_class:hover .icon_other {
     display: block;
 }
-

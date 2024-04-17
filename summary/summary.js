@@ -3,6 +3,7 @@ function init() {
     displayGreeting();
 }
 
+
 function showBoardInfos() {
     let todoCounter = document.getElementById(`todo`);
     let doneCounter = document.getElementById(`done`);
@@ -42,5 +43,6 @@ function displayGreeting() {
     }
 
     const greetingDiv = document.getElementById("greet_info");
+
     greetingDiv.textContent = greeting;
 }

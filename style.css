@@ -163,7 +163,7 @@ body {
 #dlph_position {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .side_menu_bg {
