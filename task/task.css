@@ -16,6 +16,9 @@
         justify-content: space-evenly
        
 }
+.redStar{
+    color: red;
+}
 .spanandvalue{
     display: flex;
     flex-direction: column;
@@ -147,8 +150,27 @@ input{
     text-align: start !important;
 }
 .contactBTN{
-    height: 24px;
+    height: 36px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     background-color: white;
+    cursor: pointer;
+
+}
+.contact_initials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4px;
+    margin-right: 12px;
+    border-radius: 15px;
+    width: 28px;
+    height: 28px;
+    border: solid 1px white;
+}
+.initialsAndContacts{
+    display: flex;
+    align-items: center;
+    
 }
