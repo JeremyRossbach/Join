@@ -156,9 +156,68 @@ input[type=text] {
 .img-logo {
     width: 100px;
     height: 122px;
-
     margin-top: 80px;
     margin-left: 77px;
+}
+
+.img-logo-animation {
+    width: 274px;
+    height: 334px;
+    content: url(img/splash_screen.png);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -167px;
+    margin-left: -137px;
+    z-index: 1000;
+
+    animation: logo-animation 1s forwards 500ms;
+}
+
+.img-logo-animation-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #F6F7F8;
+    z-index: 900;
+
+    animation: logo-animation-bg 1s forwards 500ms;
+}
+
+@keyframes logo-animation {
+    from {
+        width: 274px;
+        height: 334px;
+        content: url(img/splash_screen.png);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -167px;
+        margin-left: -137px;
+        z-index: 999;
+    }
+
+    to {
+        position: absolute;
+        top: 80px;
+        left: 77px;
+        width: 100px;
+        height: 122px;
+        margin: 0;
+        content: url(img/join_logo_black.png);
+    }
+}
+
+@keyframes logo-animation-bg {
+    from {
+        background-color: #F6F7F8;
+    }
+
+    to {
+        background-color: unset;
+    }
 }
 
 .nav-sign-up {
