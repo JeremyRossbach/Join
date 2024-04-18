@@ -217,6 +217,7 @@ input[type=text] {
 
     to {
         background-color: unset;
+        display: none;
     }
 }
 
