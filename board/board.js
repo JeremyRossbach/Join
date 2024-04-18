@@ -17,6 +17,7 @@ function renderContent(section, containerId) {
     for (let i = 0; i < tasks.length; i++) {
         showContent(section, containerId, i);
     }
+    
 }
 
 
@@ -71,12 +72,130 @@ function showCardPopup(i) {
     let cardPopup = document.getElementById('cardPopup');
     cardPopup.style.display = 'flex';
 
-    cardPopup.innerHTML += /* html */`
+    cardPopup.innerHTML = /* html */`
         <div class="popupCategoryAndClose">
-        <div id="category${i}" class="popupCategory">${tasks[i]['category']}</div><img class="closeImage" src="./img/close.png">
+            <div id="popupCategory${i}" class="popupCategory">${tasks[i]['category']}</div>
+            <img onclick="closePopup()" class="closeImage" src="./img/close.png">
+        </div>
+        <div class="popupTitle">${tasks[i]['title']}</div>
+        <div class="popupDescription">${tasks[i]['description']}</div>
+        <div class="popupDueDate">
+            <p class="dueDate">Due date:</p>
+            <div class="date">${tasks[i]['dueDate']}</div>
+        </div>
+        <div class="popupPriority">
+            <p class="priority">Priority:</p>
+            <div class="priorityAndImage">
+                <div>${tasks[i]['prio']}</div>
+                <div id="popupPrio${i}"></div>
+            </div>
+        </div>
+        <div class="popupAssignedTo">
+            <p class="assignedToText">Assigned To:</p>
+            <div id="popupAssignedTo${i}" class="popupAssignedToContent"></div>
+        </div>
+        <div class="popupSubtasks">
+            <p class="popupSubtasksText">Subtasks</p>
+            <div  id="popupSubtasks${i}" class="popupSubtasksContent"></div>
+        </div>
+        <div class="popupBottom">
+            <button class="deleteButtonImage"></button>
+            <div class="buttonSpacer"></div>
+            <button class="editButtonImage"></button>
         </div>
     `;
-    
+    renderPopupCategoryColor(i);
+    renderPopupPrio(i);
+    renderPopupAssignedTo(i);
+    renderPopupSubtasks(i);
+}
+
+
+function renderPopupCategoryColor(i) {
+    let content = document.getElementById(`popupCategory${i}`);
+    if (tasks[i]['category'] === 'Technical Task') {
+        content.style.backgroundColor = '#1FD7C1';
+    } else {
+        content.style.backgroundColor = '#0038FF';
+    }
+}
+
+
+function renderPopupPrio(i) {
+    let prio = document.getElementById(`popupPrio${i}`);
+
+    if (prioImages.hasOwnProperty(tasks[i]['prio'])) {
+        prio.innerHTML += `<img src="${prioImages[tasks[i]['prio']]}">`;
+    }
+}
+
+
+function renderPopupAssignedTo(i) {
+    for (let k = 0; k < tasks[i]['assignedTo'].length; k++) {
+        let name = tasks[i]['assignedTo'];
+        let initials = name[k].split(' ')[0].charAt(0) + name[k].split(' ')[1].charAt(0);
+        showPopupAssignedTo(initials, i, k);
+    }
+}
+
+
+function showPopupAssignedTo(initials, i, k) {
+    let assignedTo = document.getElementById(`popupAssignedTo${i}`);
+    let backgroundColor = colorPool[k % colorPool.length];
+
+    assignedTo.innerHTML += /* html */`
+        <div class="initialsAndName">
+            <div id="initals${k}" class="popupInitials" style="background-color: ${backgroundColor};">${initials}</div>
+            <div class="name">${tasks[i]['assignedTo'][k]}</div>
+        </div>
+    `;
+}
+
+
+function renderPopupSubtasks(i) {
+    for (let l = 0; l < tasks[i]['subtask'].length; l++) {
+        showPopupSubtasks(i, l)
+    }
+}
+
+
+function showPopupSubtasks(i, l) {
+    let subtasks = document.getElementById(`popupSubtasks${i}`);
+
+    subtasks.innerHTML += /* html */`
+        <div class="imageAndText">
+            <img onclick="checkbox(${l})" id="checkBoxButton${l}" class="checkboxImage" src="./img/checkbox.png">
+            <div class="popupSubtaskText">${tasks[i]['subtask'][l]}</div>
+        </div>
+    `;
+}
+
+
+function closePopup() {
+    document.getElementById('cardPopup').style.display = 'none';
+}
+
+
+function checkbox(l) {
+    let checkbox = document.getElementById(`checkBoxButton${l}`);
+
+    if (checkbox.src="./img/checkbox.png") {
+        clickedCheckbox(l);
+    } else { /* not working ! */
+        checkbox.src="./img/checkbox_clicked.png"
+    }
+}
+
+
+function clickedCheckbox(l) {
+    let checkbox = document.getElementById(`checkBoxButton${l}`);
+    checkbox.src="./img/checkbox_clicked.png";
+}
+
+
+function unclickedCheckbox(l) {
+    let checkbox = document.getElementById(`checkBoxButton${l}`);
+    checkbox.src="./img/checkbox.png";
 }
 
 
@@ -99,17 +218,17 @@ function renderSubtasks(i) {
         subtasks.style.display = 'none';
     } else {
         subtasks.innerHTML += /* html */`
-        <div><!-- number of done subtasks -->?/${tasks[i]['subtask'].length} Subtasks</div>
+        <div>0 / ${tasks[i]['subtask'].length} Subtasks</div>
     `;
     renderProgress(i);
     }
 }
 
 
-function renderProgress(i) {
+function renderProgress(i) { /* not finished */
     let progress = document.getElementById(`progress${i}`);
 
-    progress.style.width = `128px / ${tasks[i]['subtask'].length} * /* number of done subtasks */`;
+    progress.style.width = '128px' / `${tasks[i]['subtask'].length}` * 0;
 }
 
 
@@ -133,9 +252,9 @@ function renderAssignedTo(i) {
 
 function showAssignedTo(initials, i, j) { /* solution for random colors missing ! */
     let assignedTo = document.getElementById(`assignedTo${i}`);
-    let randomBackgroundColor = colorPool[Math.floor(Math.random() * colorPool.length)];
+    let backgroundColor = colorPool[j % colorPool.length];
     assignedTo.innerHTML += /* html */`
-            <div id="initals${j}" class="initials" style="background-color: ${randomBackgroundColor};">${initials}</div>
+            <div id="initals${j}" class="initials" style="background-color: ${backgroundColor};">${initials}</div>
         `;
 }
 

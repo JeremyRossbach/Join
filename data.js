@@ -50,7 +50,7 @@ let tasks = [
         'dueDate': '01/01/2024',
         'prio': 'Urgent',
         'category': 'User Story',
-        'subtask': ['', ''],
+        'subtask': ['Contact form', 'Imprint page'],
         'section': 'In progress'
     },
     {
@@ -60,7 +60,7 @@ let tasks = [
         'dueDate': '01/01/2024',
         'prio': 'Low',
         'category': 'Technical Task',
-        'subtask': [''],
+        'subtask': ['Reusable HTML base tamplates'],
         'section': 'Await Feedback'
     },
     {
@@ -70,7 +70,7 @@ let tasks = [
         'dueDate': '01/01/2024',
         'prio': 'Medium',
         'category': 'User Story',
-        'subtask': [''],
+        'subtask': ['Daily recipe and portion caltulator'],
         'section': 'Await Feedback'
     },
     {

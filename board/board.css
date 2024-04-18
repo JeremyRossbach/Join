@@ -1,5 +1,6 @@
 body {
-    font-family: inter; /* download and implement */
+    font-family: inter;
+    /* download and implement */
     cursor: default;
 }
 
@@ -83,13 +84,19 @@ input {
     gap: 26px;
 }
 
-#toDoSection, #inProgressSection, #awaitFeedbackSection, #doneSection {
+#toDoSection,
+#inProgressSection,
+#awaitFeedbackSection,
+#doneSection {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-#toDoHeader, #inProgressHeader, #awaitFeedbackHeader, #doneHeader {
+#toDoHeader,
+#inProgressHeader,
+#awaitFeedbackHeader,
+#doneHeader {
     display: flex;
     justify-content: space-between;
     width: 244px;
@@ -100,7 +107,10 @@ p {
     font-size: 20px;
 }
 
-#addToDo, #addInProgress, #addAwaitFeedback { /* if hover change color missing */
+#addToDo,
+#addInProgress,
+#addAwaitFeedback {
+    /* if hover change color missing */
     width: 25px;
     height: 25px;
     background: url(./img/plusbutton.png) no-repeat;
@@ -111,7 +121,9 @@ p {
 
 
 
-#addToDo:hover, #addInProgress:hover, #addAwaitFeedback:hover {
+#addToDo:hover,
+#addInProgress:hover,
+#addAwaitFeedback:hover {
     background: url(./img/plusbuttonblue.png) no-repeat;
 }
 
@@ -147,9 +159,6 @@ p {
 }
 
 .titleAndDescription {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
     margin-bottom: 24px;
 }
 
@@ -228,20 +237,21 @@ p {
     color: rgba(255, 255, 255, 1);
     font-weight: 400;
     font-size: 12px;
-    background-color: #000000;
     margin: 0 0 0 -10px;
 }
 
 #cardPopup {
     position: absolute;
-    display: flex;
+    display: none;
+    flex-direction: column;
+    gap: 24px;
     width: 525px;
-    height: 931px; /* delete at the end ! */
     padding-inline: 40px;
     padding-top: 48px;
     padding-bottom: 48px;
     border-radius: 30px;
     background-color: white;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
 }
 
 .popupCategoryAndClose {
@@ -266,4 +276,145 @@ p {
 .closeImage {
     width: 32px;
     height: 32px;
+}
+
+.closeImage:hover {
+    background-color: #00000010;
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+.popupTitle {
+    font-weight: 700;
+    font-size: 61px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.popupDescription,
+.date,
+.priorityAndImage,
+.name {
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.popupDueDate,
+.popupPriority {
+    display: flex;
+    gap: 25px;
+}
+
+.dueDate,
+.priority,
+.assignedToText {
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(42, 54, 71, 1);
+}
+
+.priorityAndImage {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.initialsAndName {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-inline: 16px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.popupInitials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 45px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.popupAssignedTo,
+.popupSubtasks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.imageAndText {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: fit-content;
+    padding-inline: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.imageAndText:hover {
+    border-radius: 10px;
+    background-color: #00000010;
+}
+
+.checkboxImage {
+    width: 24px;
+    height: 24px;
+}
+
+.checkboxImage:hover {
+    cursor: pointer;
+}
+
+.popupSubtaskText {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.popupBottom {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+}
+
+.deleteButtonImage {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 81px;
+    border: 0;
+    cursor: pointer;
+    background-color: white;
+    background-image: url('./img/deleteButton.png');
+}
+
+.deleteButtonImage:hover {
+    width: 83px;
+    background-image: url('./img/deleteButtonBlue.png');
+}
+
+.editButtonImage {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 62px;
+    border: 0;
+    cursor: pointer;
+    background-color: white;
+    background-image: url('./img/editButton.png');
+}
+
+.editButtonImage:hover {
+    background-image: url('./img/editButtonBlue.png');
+}
+
+.buttonSpacer {
+    width: 1px;
+    height: 24px;
+    background-color: rgba(209, 209, 209, 1);
 }
