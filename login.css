@@ -130,11 +130,6 @@ input[type=password] {
     background-position: right 21px top 50%;
 }
 
-/* input[type=password]:focus {
-    background: url(/img/visibility_off.png) no-repeat;
-    background-position: right 21px top 50%;
-} */
-
 input[type=text] {
     background: url(/img/visibility.png) no-repeat;
     background-position: right 21px top 50%;

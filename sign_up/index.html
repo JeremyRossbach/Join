@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="sign_up.css">
     <link rel="stylesheet" href="../login.css">
     <link rel="icon" href="../img/join_logo_black.png">
     <title>Sign up</title>
@@ -16,37 +17,37 @@
         <div class="img-logo">
             <img src="../img/join_logo_black.png">
         </div>
-        <div class="nav-sign-up">
-            <p>Not a Join user?</p>
-            <button class="button-primary">Sign up</button>
-        </div>
     </div>
 
-    <form class="login" action="summary/">
-        <div class="login-title">
-            <h1>Sign up</h1>
-            <div></div>
-        </div>
-        <div class="login-inputs">
-            <div class="login-email-password">
-                <input class="input-field" type="email" placeholder="Email" required>
-                <div style="position: relative;">
-                    <input class="input-field" type="password" placeholder="Password" minlength="6"
-                        onkeyup="checkInputPassword()" required>
-                    <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
-                    <div class="validation-password" style="display: none;">Wrong password Ups! Try again.</div>
-                </div>
+    <form class="sign-up" action="summary/">
+        <a class="button-back" href="../index.html">
+            <img src="../img/arrow-left-line-default.png" alt="">
+        </a>
+        <h1>Sign up</h1>
+        <div class="sign-up-inputs">
+            <input class="input-field" type="text" placeholder="Name" required>
+            <input class="input-field" type="email" placeholder="Email" required>
+            <div style="position: relative;">
+                <input class="input-field" type="password" placeholder="Password" minlength="6"
+                    onkeyup="" required>
+                <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
+                <div class="validation-password" style="display: none;">Wrong password Ups! Try again.</div>
             </div>
-            <div class="login-remember-me">
-                <input type="checkbox" id="remember-me">
-                <label for="remember-me">Remember me</label>
+            <div style="position: relative;">
+                <input class="input-field" type="password" placeholder="Password" minlength="6"
+                    onkeyup="" required>
+                <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
+                <div class="validation-password" style="display: none;">Wrong password Ups! Try again.</div>
             </div>
 
+            <div class="accept-policy">
+                <input type="checkbox" id="accept">
+                <label for="accept">I accept the <a class="link-policy" href="../jura/privacy.html">Privacy policy</a></label>
+            </div>
         </div>
-        <div class="login-buttons">
-            <button class="button-primary" type="submit" onclick="checkValidPassword()">Log in</button>
-            <button class="button-secondary">Guest Log in</button>
-        </div>
+
+        <button class="button-primary" type="submit" onclick="">Sign up</button>
+
     </form>
 
     <div class="footer">
