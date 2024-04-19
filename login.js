@@ -3,11 +3,13 @@ let validationText = document.querySelector('div[class="validation-password"]');
 let buttonPasswordVisibility = document.querySelector('div[class="password-visibility"]')
 
 function checkValidPassword() {
-    if (!inputPassword.checkValidity()) {
+    if (inputPassword.value.length < 1) {
         validationText.style.display = '';
-        inputPassword.style.outline = '1px solid #FF001F';
-        inputPassword.style.border = '1px solid #FF001F';
+        inputPassword.classList.add('input-danger');
+        return false;
     }
+
+    return true;
 }
 
 function showButtonPasswordVisible() {

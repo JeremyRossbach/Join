@@ -23,14 +23,13 @@
         </div>
     </div>
 
-    <form class="login" action="summary/">
+    <form class="login" action="summary/" onsubmit="return checkValidPassword()">
         <h1>Log in</h1>
         <div class="login-inputs">
             <div class="login-email-password">
                 <input class="input-field" type="email" placeholder="Email" required>
                 <div style="position: relative;">
-                    <input class="input-field" type="password" placeholder="Password" minlength="6"
-                        onkeyup="checkInputPassword()" required>
+                    <input class="input-field" type="password" placeholder="Password" onkeyup="checkInputPassword()">
                     <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
                     <div class="validation-password" style="display: none;">Wrong password Ups! Try again.</div>
                 </div>
@@ -42,7 +41,7 @@
 
         </div>
         <div class="login-buttons">
-            <button class="button-primary" type="submit" onclick="checkValidPassword()">Log in</button>
+            <button class="button-primary" type="submit">Log in</button>
             <button class="button-secondary">Guest Log in</button>
         </div>
     </form>

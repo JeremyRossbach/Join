@@ -1,3 +1,17 @@
+.link-policy {
+    text-decoration: none;
+    color: #29ABE2;
+    font-size: 16px;
+}
+
+.link-policy:hover {
+    text-decoration: underline;
+}
+
+.img-logo {
+    margin-top: 80px;
+}
+
 .button-back {
     width: 32px;
     height: 32px;
@@ -45,4 +59,28 @@
    align-items: center;
    justify-content: center;
    gap: 10px;
+}
+
+.accept-policy input[type=checkbox] {
+    appearance: none;
+    background-image: url(../img/checkbox_uncheck.png);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.accept-policy input[type=checkbox]:hover {
+    background-image: url(../img/checkbox_hover_uncheck.png);
+}
+
+.accept-policy input[type='checkbox']:checked {
+    appearance: none;
+    background-image: url(../img/checkbox_check.png);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.accept-policy input[type='checkbox']:checked:hover {
+    background-image: url(../img/checkbox_hover_check.png);
 }

@@ -120,6 +120,11 @@ h1::before {
     border: 1px solid #29ABE2;
 }
 
+.input-danger {
+    outline: 1px solid #FF001F;
+    border: 1px solid #FF001F;
+}
+
 input[type=email] {
     background: url(/img/mail.png) no-repeat;
     background-position: right 21px top 50%;
@@ -167,7 +172,7 @@ input[type=text] {
 .img-logo {
     width: 100px;
     height: 122px;
-    margin-top: 80px;
+    /* margin-top: 80px; */
     margin-left: 77px;
 }
 

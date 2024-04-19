@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <form class="sign-up" action="summary/">
+    <form class="sign-up" action="../index.html" onsubmit="return checkPasswordMatch()" name="sign-up">
         <a class="button-back" href="../index.html">
             <img src="../img/arrow-left-line-default.png" alt="">
         </a>
@@ -28,25 +28,24 @@
             <input class="input-field" type="text" placeholder="Name" required>
             <input class="input-field" type="email" placeholder="Email" required>
             <div style="position: relative;">
-                <input class="input-field" type="password" placeholder="Password" minlength="6"
-                    onkeyup="" required>
+                <input class="input-field" type="password" placeholder="Password" name="password" onkeyup="" required>
                 <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
-                <div class="validation-password" style="display: none;">Wrong password Ups! Try again.</div>
             </div>
             <div style="position: relative;">
-                <input class="input-field" type="password" placeholder="Password" minlength="6"
+                <input class="input-field" type="password" placeholder="Confirm Password" name="confirm-password"
                     onkeyup="" required>
                 <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
-                <div class="validation-password" style="display: none;">Wrong password Ups! Try again.</div>
+                <div class="validation-password" style="display: none;">Ups! your password don’t match</div>
             </div>
 
             <div class="accept-policy">
-                <input type="checkbox" id="accept">
-                <label for="accept">I accept the <a class="link-policy" href="../jura/privacy.html">Privacy policy</a></label>
+                <input type="checkbox" id="accept" required>
+                <label for="accept">I accept the <a class="link-policy" href="../jura/privacy.html">Privacy
+                        policy</a></label>
             </div>
         </div>
 
-        <button class="button-primary" type="submit" onclick="">Sign up</button>
+        <button class="button-primary" type="submit">Sign up</button>
 
     </form>
 
@@ -54,6 +53,8 @@
         <a class="link" href="jura/privacy.html">Privacy Policy</a>
         <a class="link" href="jura/legal.html">Legal notice</a>
     </div>
+
+    <script src="sign_up.js"></script>
 </body>
 
 </html>
