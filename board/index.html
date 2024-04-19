@@ -93,40 +93,41 @@
             </div>
             <!-- Hier kommt der HTML Code von Euch rein -->
             <div id="content">
-                    <header>
-                        <h1>Board</h1>
-                        <form action="">
-                            <input id="input" type="text" placeholder="Find Task">
-                            <div onclick="" id="searchButton"></div>
-                            <button onclick="" id="addButton">Add task <img id="addImage" src="./img/add.png"></button>
-                        </form>
-                    </header>
+                <header>
+                    <h1>Board</h1>
+                    <form action="">
+                        <input id="input" type="text" placeholder="Find Task">
+                        <div onclick="" id="searchButton"></div>
+                        <button onclick="" id="addButton">Add task <img id="addImage" src="./img/add.png"></button>
+                    </form>
+                </header>
 
-                    <section id="sections">
-                        <div id="toDoSection">
-                            <div id="toDoHeader"><p>To do</p><button onclick="" id="addToDo"></button></div>
-                            <div onclick="" id="toDoContent" class="content"><p id="emptytoDoContentSection" class="emptySection">No tasks to do</p></div>
-                        </div>
-                        <div id="inProgressSection">
-                            <div id="inProgressHeader"><p>In progress</p><button onclick="" id="addInProgress"></button></div>
-                            <div onclick="" id="inProgressContent" class="content"><p id="emptyinProgressContentSection" class="emptySection">No tasks in progress</p></div>
-                        </div>
-                        <div id="awaitFeedbackSection">
-                            <div id="awaitFeedbackHeader"><p>Await Feedback</p><button onclick="" id="addAwaitFeedback"></button></div>
-                            <div onclick="" id="awaitFeedbackContent" class="content"><p id="emptyawaitFeedbackContentSection" class="emptySection">No task awaits feedback</p></div>
-                        </div>
-                        <div id="doneSection">
-                            <div id="doneHeader"><p>Done</p></div>
-                            <div onclick="" id="doneContent" class="content"><p id="emptydoneContentSection" class="emptySection">No tasks done</p></div>
-                        </div>
-                    </section>
-
-                    <card id="cardPopup"></card>
+                <section id="sections">
+                    <div id="toDoSection">
+                        <div id="toDoHeader"><p>To do</p><button onclick="" id="addToDo"></button></div>
+                        <div onclick="" id="toDoContent" class="content"><p id="emptytoDoContentSection" class="emptySection">No tasks to do</p></div>
+                    </div>
+                    <div id="inProgressSection">
+                        <div id="inProgressHeader"><p>In progress</p><button onclick="" id="addInProgress"></button></div>
+                        <div onclick="" id="inProgressContent" class="content"><p id="emptyinProgressContentSection" class="emptySection">No tasks in progress</p></div>
+                    </div>
+                    <div id="awaitFeedbackSection">
+                        <div id="awaitFeedbackHeader"><p>Await Feedback</p><button onclick="" id="addAwaitFeedback"></button></div>
+                        <div onclick="" id="awaitFeedbackContent" class="content"><p id="emptyawaitFeedbackContentSection" class="emptySection">No task awaits feedback</p></div>
+                    </div>
+                    <div id="doneSection">
+                        <div id="doneHeader"><p>Done</p></div>
+                        <div onclick="" id="doneContent" class="content"><p id="emptydoneContentSection" class="emptySection">No tasks done</p></div>
+                    </div>
+                </section>
             </div>
         </div>
-
     </div>
 
+    <background id="background">
+        <card id="cardPopup"></card>
+    </background>
+    
 </body>
 
 </html>

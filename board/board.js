@@ -17,7 +17,6 @@ function renderContent(section, containerId) {
     for (let i = 0; i < tasks.length; i++) {
         showContent(section, containerId, i);
     }
-    
 }
 
 
@@ -69,6 +68,7 @@ function content(containerId, i) {
 
 
 function showCardPopup(i) {
+    document.getElementById('background').style.display = 'flex';
     let cardPopup = document.getElementById('cardPopup');
     cardPopup.style.display = 'flex';
 
@@ -99,7 +99,7 @@ function showCardPopup(i) {
             <div  id="popupSubtasks${i}" class="popupSubtasksContent"></div>
         </div>
         <div class="popupBottom">
-            <button class="deleteButtonImage"></button>
+            <button onclick="deleteTask(${i})" class="deleteButtonImage"></button>
             <div class="buttonSpacer"></div>
             <button class="editButtonImage"></button>
         </div>
@@ -173,6 +173,7 @@ function showPopupSubtasks(i, l) {
 
 function closePopup() {
     document.getElementById('cardPopup').style.display = 'none';
+    document.getElementById('background').style.display = 'none';
 }
 
 
@@ -193,9 +194,10 @@ function clickedCheckbox(l) {
 }
 
 
-function unclickedCheckbox(l) {
-    let checkbox = document.getElementById(`checkBoxButton${l}`);
-    checkbox.src="./img/checkbox.png";
+function deleteTask(i) {
+    tasks.splice(i);
+    closePopup();
+    renderContent();
 }
 
 
