@@ -97,24 +97,26 @@ function setContactInfo(contact) {
 function openAddNewContactWindow() {
     document.getElementById(`new_contact_container`).style.display = "flex";
     clearInputs();
+    document.body.style.overflow = "hidden";
 }
 
 
 function openEditContactWindow() {
     document.getElementById(`edit_contact_container`).style.display = "flex";
+    document.body.style.overflow = "hidden";
 
 }
 
 
 function closeAddNewContactWindow() {
     document.getElementById(`new_contact_container`).style.display = "none";
-
+    document.body.style.overflow = "auto";
 }
 
 
 function closeEditContactWindow() {
     document.getElementById(`edit_contact_container`).style.display = "none";
-
+    document.body.style.overflow = "auto";
 }
 
 

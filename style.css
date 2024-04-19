@@ -84,6 +84,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
+    padding-left: 232px;
 }
 
 #required {
@@ -101,12 +102,17 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 }
 
 #content {
-    margin: 100px;
+    padding: 50px;
+    padding-bottom: 0;
     position: relative;
-    top: 96px;
+    top: 140px;
+    scrollbar-width: none;
 }
 
 #join_logo_white {
@@ -133,7 +139,6 @@ body {
 #side_menu {
     display: flex;
     justify-content: space-around;
-    gap: 20px;
     align-items: flex-end;
     flex-wrap: wrap;
     width: inherit;
@@ -175,9 +180,7 @@ body {
 }
 
 .side_menu_bg:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    width: 230px;
-    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);    
 }
 
 /* START kleine Fenster oben rechts, wo man sich ausloggen kann usw.. */
@@ -308,3 +311,144 @@ body {
 .side_undermenu .contacts_icon_other {
     display: none;
 }
+
+@media only screen and (max-width: 5555px) {
+
+    #header_logo {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    #header_logo {
+        display: block;
+        width: 32px;
+        height: 39px;
+    }
+
+    #nav_left {
+        display: none;
+    }
+
+
+    #side {
+        width: 100%;
+        position: fixed;
+        top: auto;
+        right: 0;
+        left: 0;
+        z-index: 2;
+        padding: 0;
+    }
+
+    #side_menu {
+        display: flex;
+        width: 100%;
+        height: 110px;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .side_undermenu {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .side_undermenu .addtask_icon_normal {
+        margin-right: 0;
+    }
+
+    .side_undermenu .summary_icon_normal {
+        margin-right: 0;
+    }
+
+    .side_undermenu .board_icon_normal {
+        margin-right: 0;
+    }
+
+    .side_undermenu .contacts_icon_normal {
+        margin-right: 0;
+    }
+
+    .side_menu_bg {
+        height: inherit;
+        cursor: pointer;
+        width: 25%;
+        display: flex;
+    }
+
+    .side_logo {
+        display: none;
+    }
+
+    #header {
+        z-index: 2;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px 20px 40px;
+    }
+
+    #footer {
+        display: none;
+    }
+
+    #content {        
+        position: relative;
+        top: 140px;
+        scrollbar-width: none;
+    }
+
+    #join_logo_white {
+        display: none;
+    }
+
+    #header_content_position {
+        padding-left: 0;
+    }
+}
+
+
+@media only screen and (max-width: 950px) {}
+
+@media only screen and (max-width: 750px) {
+
+    #div_body {
+        overflow-x: hidden;
+    }
+
+    #join_155 {
+        font-size: 30px;
+    }
+
+    #KMaaG {
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (max-width: 650px) {
+
+    #div_body {
+        overflow-x: hidden;
+    }
+
+    #join_155 {
+        font-size: 20px;
+    }
+
+    #KMaaG {
+        font-size: 16px;
+    }
+
+
+}
+
+@media only screen and (max-width: 550px) {}
+
+@media only screen and (max-width: 500px) {}
