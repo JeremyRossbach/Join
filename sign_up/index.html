@@ -13,13 +13,17 @@
 
 <body>
 
+    <div id="dialog-message" style="display: none;">
+        <div>You Signed Up successfully</div>
+    </div>
+
     <div class="nav">
         <div class="img-logo">
             <img src="../img/join_logo_black.png">
         </div>
     </div>
 
-    <form class="sign-up" action="../index.html" onsubmit="return checkPasswordMatch()" name="sign-up">
+    <form class="sign-up" action="../index.html" onsubmit="return checkPasswordMatch(this)" name="sign-up">
         <a class="button-back" href="../index.html">
             <img src="../img/arrow-left-line-default.png" alt="">
         </a>
