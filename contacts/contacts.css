@@ -1,12 +1,11 @@
 #content {
     margin: 0;
-    margin-top: 40px;
+    padding: 0;
 }
 
 #contacts_content {
     display: flex;
 }
-
 #first_contact_container {
     background-color: white;
     width: 500px;
@@ -268,6 +267,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
 }
 
 #new_contact_div {
@@ -474,6 +474,7 @@ input[required] {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
 }
 
 #edit_contact_div {

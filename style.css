@@ -329,7 +329,9 @@ body {
     #nav_left {
         display: none;
     }
-
+    #nav_right_img {
+        display: none;
+    }
 
     #side {
         width: 100%;
