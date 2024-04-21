@@ -174,6 +174,12 @@ function showPopupSubtasks(i, l) {
 function closePopup() {
     document.getElementById('cardPopup').style.display = 'none';
     document.getElementById('background').style.display = 'none';
+    event.stopPropagation();
+}
+
+
+function dontClosePopup(event) {
+    event.stopPropagation();
 }
 
 
