@@ -51,6 +51,7 @@ let tasks = [
         'prio': 'Urgent',
         'category': 'User Story',
         'subtask': ['Contact form', 'Imprint page'],
+        'numberOfDoneSubtasks': 0,
         'section': 'In progress'
     },
     {
@@ -61,6 +62,7 @@ let tasks = [
         'prio': 'Low',
         'category': 'Technical Task',
         'subtask': ['Reusable HTML base tamplates'],
+        'numberOfDoneSubtasks': 0,
         'section': 'Await Feedback'
     },
     {
@@ -71,6 +73,18 @@ let tasks = [
         'prio': 'Medium',
         'category': 'User Story',
         'subtask': ['Daily recipe and portion caltulator'],
+        'numberOfDoneSubtasks': 0,
+        'section': 'Await Feedback'
+    },
+    {
+        'title': 'Daily Kochwelt Recipe',
+        'description': 'Implement daily recipe and portion caltulator...',
+        'assignedTo': ['Eva Fischer', 'Anja Schulz', 'Tatjana Wolf'],
+        'dueDate': '01/01/2024',
+        'prio': 'Medium',
+        'category': 'User Story',
+        'subtask': ['Daily recipe and portion caltulator'],
+        'numberOfDoneSubtasks': 0,
         'section': 'Await Feedback'
     },
     {
@@ -81,6 +95,7 @@ let tasks = [
         'prio': 'Urgent',
         'category': 'Technical Task',
         'subtask': ['Establish CSS Methodology', 'Setup Base Styles'],
+        'numberOfDoneSubtasks': 0,
         'section': 'Done'
     },
     {
@@ -91,6 +106,7 @@ let tasks = [
         'prio': 'Urgent',
         'category': 'Technical Task',
         'subtask': ['Establish CSS Methodology', 'Setup Base Styles'],
+        'numberOfDoneSubtasks': 0,
         'section': 'To do'
     }
 ];

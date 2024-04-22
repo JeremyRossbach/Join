@@ -5,11 +5,15 @@ const prioImages = {
 };
 
 
+let numberOfDoneSubtasks = 0;
+
+
 function init() {
     renderContent('To do', 'toDoContent');
     renderContent('In progress', 'inProgressContent');
     renderContent('Await Feedback', 'awaitFeedbackContent');
     renderContent('Done', 'doneContent');
+    
 }
 
 
@@ -35,8 +39,9 @@ function checkContent(containerId, i) {
 
 
 function checkEmptySection(containerId) {
-    document.getElementById('empty' + containerId + 'Section').style.display = 'none';
+        document.getElementById('empty' + containerId + 'Section').style.display = 'none';
 }
+
 
 
 function content(containerId, i) {
@@ -164,7 +169,7 @@ function showPopupSubtasks(i, l) {
 
     subtasks.innerHTML += /* html */`
         <div class="imageAndText">
-            <img onclick="checkbox(${l})" id="checkBoxButton${l}" class="checkboxImage" src="./img/checkbox.png">
+            <img onclick="checkbox(${i}, ${l})" id="checkBoxButton${l}" class="checkboxImage" src="./img/checkbox.png">
             <div class="popupSubtaskText">${tasks[i]['subtask'][l]}</div>
         </div>
     `;
@@ -183,14 +188,17 @@ function dontClosePopup(event) {
 }
 
 
-function checkbox(l) {
+function checkbox(i, l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
 
-    if (checkbox.src="./img/checkbox.png") {
+    if (checkbox.src === "http://127.0.0.1:5500/board/img/checkbox.png") {
+        tasks[i]['numberOfDoneSubtasks']++;
         clickedCheckbox(l);
-    } else { /* not working ! */
-        checkbox.src="./img/checkbox_clicked.png"
+    } else {
+        tasks[i]['numberOfDoneSubtasks']--;
+        checkbox.src="./img/checkbox.png"
     }
+    renderSubtasks(i);
 }
 
 
@@ -203,7 +211,7 @@ function clickedCheckbox(l) {
 function deleteTask(i) {
     tasks.splice(i);
     closePopup();
-    renderContent();
+    init();
 }
 
 
@@ -225,8 +233,8 @@ function renderSubtasks(i) {
     if (tasks[i]['subtask'][i] === '') {
         subtasks.style.display = 'none';
     } else {
-        subtasks.innerHTML += /* html */`
-        <div>0 / ${tasks[i]['subtask'].length} Subtasks</div>
+        subtasks.innerHTML = /* html */`
+        <div>${tasks[i]['numberOfDoneSubtasks']}/${tasks[i]['subtask'].length} Subtasks</div>
     `;
     renderProgress(i);
     }
@@ -236,7 +244,9 @@ function renderSubtasks(i) {
 function renderProgress(i) { /* not finished */
     let progress = document.getElementById(`progress${i}`);
 
-    progress.style.width = '128px' / `${tasks[i]['subtask'].length}` * 0;
+    let width = 128 / `${tasks[i]['subtask'].length}` * tasks[i]['numberOfDoneSubtasks'];
+
+    progress.style.width = width + 'px';
 }
 
 

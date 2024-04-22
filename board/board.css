@@ -3,6 +3,10 @@ body {
     cursor: default;
 }
 
+#content {
+    padding: 0;
+}
+
 #background {
     position: fixed;
     display: none;
@@ -11,13 +15,27 @@ body {
     width: 100%;
     height: 100vh;
     background-color: #00000052;
+    z-index: 9999;
+}
+
+#header {
+    z-index: 1;
+}
+
+#side {
+    z-index: 1;
 }
 
 header {
+    position: fixed;
+    top: 134px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 64px;
+    width: 1208px;
+    height: 260px;
+    padding-inline: 64px;
+    background-color: #F6F7F8;
 }
 
 h1 {
@@ -91,6 +109,10 @@ input {
     display: flex;
     justify-content: space-between;
     gap: 26px;
+    width: 1208px;
+    margin-bottom: 40px;
+    padding-inline: 64px;
+    margin-top: 34px;
 }
 
 #toDoSection,
@@ -100,15 +122,18 @@ input {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-top: 80px;
 }
 
 #toDoHeader,
 #inProgressHeader,
 #awaitFeedbackHeader,
 #doneHeader {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     width: 244px;
+    margin-top: 110px;
 }
 
 p {
@@ -119,7 +144,6 @@ p {
 #addToDo,
 #addInProgress,
 #addAwaitFeedback {
-    /* if hover change color missing */
     width: 25px;
     height: 25px;
     background: url(./img/plusbutton.png) no-repeat;
@@ -141,6 +165,7 @@ p {
     flex-direction: column;
     gap: 16px;
     max-width: 244px;
+    margin-top: 150px;
 }
 
 .card {
@@ -217,7 +242,6 @@ p {
 }
 
 .progress {
-    width: 50%;
     height: 8px;
     border-radius: 16px;
     background-color: rgba(69, 137, 255, 1);
