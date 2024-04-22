@@ -55,14 +55,18 @@ function generateContactList() {
 }
 
 
-
 function selectContact(i) {
     currentContact = contactData[i];
     let selectContact = document.getElementById(`div_contact_${i}`);
-
+    let contactInfo = document.getElementById(`second_contact_container`);
+    let contactList = document.getElementById(`first_contact_container`);
+    let second_contact_infos = document.getElementById(`second_contact_infos`);
     clearSelect();
 
     selectContact.classList.add(`selected`);
+    contactInfo.classList.add(`selected`);
+    contactList.classList.add(`selected`);
+    second_contact_infos.style.display = "flex";
 
     setContactInfo(currentContact);
 }
@@ -90,7 +94,7 @@ function setContactInfo(contact) {
     phoneDiv.innerHTML = contact.phoneNumber;
     initialDiv.innerHTML = getInitials(contact.name);
 
-    document.getElementById(`second_contact_infos`).style.display = "flex";
+    /* document.getElementById(`second_contact_infos`).style.display = "flex"; */
 }
 
 
@@ -132,14 +136,22 @@ function clearInputs() {
 
 
 function deleteContact() {
-
     let index = contactData.findIndex(contact => contact.name == currentContact.name);
-
+    let second_contact_infos = document.getElementById(`second_contact_infos`);
     contactData.splice(index, 1);
 
-    document.getElementById(`second_contact_infos`).style.display = "none";
+    second_contact_infos.style.display = "none";
+    closeEditContactWindow();
 
+    hideMenuEditDeleteContainer();
+    closeContactInfo();
     generateContactList();
+}
+
+
+function hideMenuEditDeleteContainer() {
+    let menu_edit_delete_container = document.getElementById(`menu_edit_delete_container`);
+    menu_edit_delete_container.style.display = "none";
 }
 
 
@@ -154,6 +166,7 @@ function editContact() {
     phoneDiv.value = currentContact.phoneNumber;
     initialDiv.innerHTML = getInitials(currentContact.name);
 
+    hideMenuEditDeleteContainer();
     openEditContactWindow();
 }
 
@@ -172,3 +185,27 @@ function updateContact() {
 
     generateContactList();
 }
+
+
+function closeContactInfo() {
+    let contactInfo = document.getElementById(`second_contact_container`);
+    let contactList = document.getElementById(`first_contact_container`);
+    clearSelect();
+
+    contactInfo.classList.remove(`selected`);
+    contactList.classList.remove(`selected`);
+
+    hideMenuEditDeleteContainer();
+}
+
+
+function menu_window() {
+    let menuContainer = document.getElementById(`menu_edit_delete_container`);
+
+    if (menuContainer.style.display == "none" || menuContainer.style.display == "") {
+        menuContainer.style.display = "flex";
+    } else {
+        menuContainer.style.display = "none";
+    }
+
+} 

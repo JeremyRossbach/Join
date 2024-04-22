@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../contacts/contacts.css">
+    <link rel="stylesheet" href="../contacts/contacts@media.css">
     <script src="../data.js"></script>
     <script src="contacts.js"></script>
     <link rel="icon" href="../img/join_logo_black.png">
@@ -85,8 +86,9 @@
                 <div id="contacts_content">
                     <div id="first_contact_container">
                         <div id="button_container">
-                            <button id="button_new_contact" onclick="openAddNewContactWindow();">Add new
-                                contact <img src="../img/person_add.png" alt=""></button>
+                            <button id="button_new_contact" onclick="openAddNewContactWindow();"><span
+                                    id="button_new_contact_text">Add new
+                                    contact</span><img src="../img/person_add.png" alt=""></button>
                         </div>
                         <div id="first_contact_under_container">
 
@@ -99,7 +101,7 @@
                             <div id="contact_title">Contacts</div>
                             <div id="vertikal_div_four">
                             </div>
-                            <div id="better_team">Better with a team</div>
+                            <div id="better_team"><span class="underlined-text">Better wit</span>h a team</div>
                         </div>
                         <div id="second_contact_infos">
                             <div id="first_info_container">
@@ -114,7 +116,7 @@
                                             <img class="edit_icon_other" src="../img/edit_blue.png" alt="edit icon">
                                             <span id="edit_button">Edit</span>
                                         </div>
-                                        <div id="delete_div" onclick="deleteContact();">
+                                        <div id="delete_div" onclick="deleteContact();closeEditContactWindow();">
                                             <img class="delete_icon_normal" src="../img/delete.png" alt="delete Icon">
                                             <img class="delete_icon_other" src="../img/delete_blue.png"
                                                 alt="delete Icon">
@@ -125,6 +127,30 @@
                             </div>
                             <div id="second_info_container">
                                 <div id="contact_information">Contact Information</div>
+                                <div id="button_back_container">
+                                    <img src="../img/arrow-left-line-default.png" class="button_back"
+                                        onclick="closeContactInfo();" alt="Button-Back">
+                                </div>
+                                <div id="button_menu_container" onclick="menu_window();">
+                                    <img src="../img/menu_contact_options.png" class="button_menu" onclick=";"
+                                        alt="Menu-Button">
+                                </div>
+                                <div id="menu_edit_delete_container">
+                                    <div id="menu_edit_delete_div">
+                                        <div id="edit_div" onclick="editContact();">
+                                            <img class="edit_icon_normal" src="../img/edit.png" alt="edit icon">
+                                            <img class="edit_icon_other" src="../img/edit_blue.png" alt="edit icon">
+                                            <span id="edit_button">Edit</span>
+                                        </div>
+                                        <div id="delete_div" onclick="deleteContact();closeEditContactWindow();">
+                                            <img class="delete_icon_normal" src="../img/delete.png" alt="delete Icon">
+                                            <img class="delete_icon_other" src="../img/delete_blue.png"
+                                                alt="delete Icon">
+                                            <span id="delete_button">Delete</span>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                             <div id="third_info_container">
                                 <div id="email_div">
@@ -159,7 +185,10 @@
                         <div id="new_contact_div_infos_position">
                             <div id="new_contact_div_infos_content">
                                 <div id="close_button">
-                                    <img src="../img/clear.png" onclick="closeAddNewContactWindow();" alt="">
+                                    <img id="close_button_img" src="../img/clear.png"
+                                        onclick="closeAddNewContactWindow();" alt="">
+                                    <img id="close_button_img_white" src="../img/clear_white.png"
+                                        onclick="closeAddNewContactWindow();" alt="">
                                 </div>
                                 <div id="new_contact_content">
                                     <div id="profil_image_optionen">
@@ -188,9 +217,9 @@
                                                 alt="Call Icon">
                                         </div>
                                         <div class="buttons_div">
-                                            <button class="buttons_optionen cancel_delete_button"
+                                            <button class="buttons_optionen cancel_delete_button cancel_button"
                                                 onclick="closeAddNewContactWindow();">Cancel x</button>
-                                            <button class="buttons_optionen create_contact_button">Create
+                                            <button class="buttons_optionen create_contact_button create_button">Create
                                                 contact<img src="../img/check.png" alt="Check Icon"></button>
                                         </div>
                                     </form>
@@ -216,11 +245,17 @@
                         <div id="edit_contact_div_infos_position">
                             <div id="edit_contact_div_infos_content">
                                 <div id="discard_button">
-                                    <img src="../img/clear.png" alt="" onclick="closeEditContactWindow();">
+                                    <img id="clear_button" src="../img/clear.png" alt=""
+                                        onclick="closeEditContactWindow();">
+                                    <img id="clear_button_white" src="../img/clear_white.png" alt=""
+                                        onclick="closeEditContactWindow();">
                                 </div>
                                 <div id="edit_contact_content">
-                                    <div id="profil_name_initialen">
+                                    <div class="profil_name_initialen_position">
+                                        <div id="profil_name_initialen">
+                                        </div>
                                     </div>
+
                                     <form id="inputs_container"
                                         onsubmit="updateContact();closeEditContactWindow(); return false;">
                                         <div class="input_icon">

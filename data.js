@@ -38,6 +38,56 @@ let contactData = [
         'name': 'Tatjana Wolf',
         'email': 'wolf@gmail.com',
         'phoneNumber': '+49 8888 888 88 8'
+    },
+    {
+        'name': 'Felix Schneider',
+        'email': 'felix.schneider@example.com',
+        'phoneNumber': '+49 9999 999 99 9'
+    },
+    {
+        'name': 'Hannah Werner',
+        'email': 'hannah.werner@example.com',
+        'phoneNumber': '+49 1010 101 10 1'
+    },
+    {
+        'name': 'Lena Hofmann',
+        'email': 'lena.hofmann@example.com',
+        'phoneNumber': '+49 1212 121 12 1'
+    },
+    {
+        'name': 'Simon Koch',
+        'email': 'simon.koch@example.com',
+        'phoneNumber': '+49 1313 131 13 1'
+    },
+    {
+        'name': 'Sophie Schmitt',
+        'email': 'sophie.schmitt@example.com',
+        'phoneNumber': '+49 1414 141 14 1'
+    },
+    {
+        'name': 'Julian Becker',
+        'email': 'julian.becker@example.com',
+        'phoneNumber': '+49 1515 151 15 1'
+    },
+    {
+        'name': 'Laura Mayer',
+        'email': 'laura.mayer@example.com',
+        'phoneNumber': '+49 1616 161 16 1'
+    },
+    {
+        'name': 'Maximilian Wagner',
+        'email': 'maximilian.wagner@example.com',
+        'phoneNumber': '+49 1717 171 17 1'
+    },
+    {
+        'name': 'Paula Huber',
+        'email': 'paula.huber@example.com',
+        'phoneNumber': '+49 1818 181 18 1'
+    },
+    {
+        'name': 'Tim Müller',
+        'email': 'tim.muller@example.com',
+        'phoneNumber': '+49 1919 191 19 1'
     }
 ];
 

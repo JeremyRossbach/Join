@@ -29,7 +29,7 @@ function showBoardInfos() {
 }
 
 
-/* function displayGreeting() {
+function displayGreeting() {
     const currentTime = new Date();
     const currentHour = currentTime.getHours();
 
@@ -45,27 +45,4 @@ function showBoardInfos() {
     const greetingDiv = document.getElementById("greet_info");
 
     greetingDiv.textContent = greeting;
-} */
-
-function displayGreeting(buttonType) {
-    const currentTime = new Date();
-    const currentHour = currentTime.getHours();
-    let greeting = "";
-
-    if (currentHour < 12) {
-        greeting = "Good morning,";
-    } else if (currentHour < 18) {
-        greeting = "Good afternoon,";
-    } else {
-        greeting = "Good evening,";
-    }
-
-    if (buttonType === 'user') {
-        const userName = prompt("Please enter your name:");
-        if (userName) {
-            greeting += ` ${userName}`;
-        }
-    }
-
-    document.getElementById("greet_info").textContent = greeting;
 }
