@@ -1,0 +1,45 @@
+@media (max-width: 1120px) {    
+    .container {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 47px;
+    }
+
+    h1::before {
+        margin-left: -44px;
+        width: 88px;
+    }
+
+    .login {
+        width: 396px;
+        height: 515px;
+    }
+
+    .input-field {
+        width: 364px;
+    }
+
+    .login-inputs {
+        height: 192px;
+    }
+
+    .login-remember-me {
+        width: 364px;
+        margin-left: 16px;
+    }
+
+    .login-buttons {
+        width: 180px;
+        height: 123px;
+        gap: 21px;
+        flex-direction: column;
+    }
+
+    .login-buttons button,
+    .login-buttons a {
+        width: 100%;
+        font-size: 16px;
+    }
+}

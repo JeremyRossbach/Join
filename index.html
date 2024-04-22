@@ -6,45 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login_responsiv.css">
     <link rel="icon" href="../img/join_logo_black.png">
     <title>Login</title>
 </head>
 
 <body>
 
-    <div class="nav">
-        <div class="img-logo">
-            <div class="img-logo-animation-bg"></div>
-            <img class="img-logo-animation" src="img/join_logo_black.png">
+    <div class="container">
+        <div class="nav">
+            <div class="img-logo">
+                <div class="img-logo-animation-bg"></div>
+                <img class="img-logo-animation" src="img/join_logo_black.png">
+            </div>
         </div>
+
+
+        <form class="login" action="summary/" onsubmit="return checkValidPassword()">
+            <h1>Log in</h1>
+            <div class="login-inputs">
+                <div class="login-email-password">
+                    <input class="input-field" type="email" placeholder="Email" required>
+                    <div style="position: relative;">
+                        <input class="input-field" type="password" placeholder="Password"
+                            onkeyup="checkInputPassword()">
+                        <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
+                        <div class="validation-password" style="display: none;">Wrong password Ups! Try again.</div>
+                    </div>
+                </div>
+                <div class="login-remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+
+            </div>
+            <div class="login-buttons">
+                <button class="button-primary" type="submit">Log in</button>
+                <a class="button-secondary button-guest" href="summary/">Guest Log in</a>
+            </div>
+        </form>
+
         <div class="nav-sign-up">
             <p>Not a Join user?</p>
             <a class="button-primary" href="/sign_up">Sign up</a>
         </div>
     </div>
-
-    <form class="login" action="summary/" onsubmit="return checkValidPassword()">
-        <h1>Log in</h1>
-        <div class="login-inputs">
-            <div class="login-email-password">
-                <input class="input-field" type="email" placeholder="Email" required>
-                <div style="position: relative;">
-                    <input class="input-field" type="password" placeholder="Password" onkeyup="checkInputPassword()">
-                    <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
-                    <div class="validation-password" style="display: none;">Wrong password Ups! Try again.</div>
-                </div>
-            </div>
-            <div class="login-remember-me">
-                <input type="checkbox" id="remember-me">
-                <label for="remember-me">Remember me</label>
-            </div>
-
-        </div>
-        <div class="login-buttons">
-            <button class="button-primary" type="submit">Log in</button>
-            <a class="button-secondary button-guest" href="summary/">Guest Log in</a>
-        </div>
-    </form>
 
     <div class="footer">
         <a class="link" href="jura/privacy.html">Privacy Policy</a>
@@ -52,6 +58,7 @@
     </div>
 
     <script src="login.js"></script>
+    <script src="data.js"></script>
 </body>
 
 </html>

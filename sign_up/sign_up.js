@@ -9,6 +9,13 @@ function checkPasswordMatch(form) {
 
     setTimeout(function() {
         form.submit();
+        users.push(
+            {
+                'email': 'bla@join.com',
+                'username': 'bla',
+                'password': '1234'
+            }
+        )
     }, 2000);
 
     return false;
