@@ -212,4 +212,9 @@ function jura_window() {
         juraContainer.style.display = "none";
     }
 
-}   
+}
+
+// Zurück auf die vorherige Seite wechseln / einfach die Funktion per onclick Event nutzen. 
+function goBack() {
+    window.location.href = document.referrer;
+}

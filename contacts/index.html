@@ -172,6 +172,16 @@
                     <a href="../index.html" class="jura_undercontainer">Log out</a>
                 </div>
                 <!-- add_new_contact_window -->
+                <div class="contact_successfully_div" id="new_contact_successfully_div" style="display: none;">
+                    <span class="contact_successfully_message">
+                        Contact successfully created
+                    </span>
+                </div>
+                <div class="contact_successfully_div" id="edit_contact_successfully_div" style="display: none;">
+                    <span class="contact_successfully_message">
+                        Contact successfully updated
+                    </span>
+                </div>
                 <div id="new_contact_container" style="display: none;">
                     <div id="new_contact_div">
                         <div id="new_contact_div_position">
@@ -184,18 +194,16 @@
                         </div>
                         <div id="new_contact_div_infos_position">
                             <div id="new_contact_div_infos_content">
-                                <div id="close_button">
+                                <div class="close_button">
                                     <img id="close_button_img" src="../img/clear.png"
                                         onclick="closeAddNewContactWindow();" alt="">
                                     <img id="close_button_img_white" src="../img/clear_white.png"
                                         onclick="closeAddNewContactWindow();" alt="">
                                 </div>
                                 <div id="new_contact_content">
-                                    <div id="profil_image_optionen">
-                                        <img src="../img/profil.png" alt="Profil Image">
-                                    </div>
-
-
+                                    <div class="profil_name_initialen_position">
+                                        <div class="profil_name_initialen"><img src="../img/profil.png" alt="Profil Image"></div>
+                                    </div>                                                                     
                                     <form id="inputs_container" onsubmit="createContact(); return false;">
                                         <div class="input_icon">
                                             <input required type="text" id="create_name" placeholder="Max Mustermann"
@@ -208,7 +216,7 @@
                                                 placeholder="example@example.com"
                                                 pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
                                             <img class="icon_position" id="email_icon" src="../img/mail.png"
-                                                alt="Mail Icon">
+                                                alt="Mail Icon">                                                
                                         </div>
                                         <div class="input_icon">
                                             <input required type="tel" id="create_phone" placeholder="+49 (0)123 456789"
@@ -222,9 +230,8 @@
                                             <button class="buttons_optionen create_contact_button create_button">Create
                                                 contact<img src="../img/check.png" alt="Check Icon"></button>
                                         </div>
-                                    </form>
-
-
+                                        <div id="new_contact_ready" class="contactReady" style="display: none;">Contact with this email address already exists!</div>
+                                    </form>                            
                                 </div>
 
                             </div>
@@ -244,7 +251,7 @@
                         </div>
                         <div id="edit_contact_div_infos_position">
                             <div id="edit_contact_div_infos_content">
-                                <div id="discard_button">
+                                <div class="close_button">
                                     <img id="clear_button" src="../img/clear.png" alt=""
                                         onclick="closeEditContactWindow();">
                                     <img id="clear_button_white" src="../img/clear_white.png" alt=""
@@ -252,12 +259,12 @@
                                 </div>
                                 <div id="edit_contact_content">
                                     <div class="profil_name_initialen_position">
-                                        <div id="profil_name_initialen">
+                                        <div id="profil_name_initialen" class="profil_name_initialen">
                                         </div>
                                     </div>
 
                                     <form id="inputs_container"
-                                        onsubmit="updateContact();closeEditContactWindow(); return false;">
+                                        onsubmit="updateContact(); return false;">
                                         <div class="input_icon">
                                             <input required type="text" id="edit_name" placeholder="Max Mustermann"
                                                 pattern="[A-Za-zÄÖÜäöüß\s]{1,50} [A-Za-zÄÖÜäöüß\s]{1,50}">
@@ -283,6 +290,7 @@
                                             <button class="buttons_optionen create_contact_button">Save<img
                                                     src="../img/check.png" alt="Check Icon"></button>
                                         </div>
+                                        <div id="edit_contact_ready" class="contactReady" style="display: none;">Contact with this email address already exists!</div>
                                     </form>
                                 </div>
 

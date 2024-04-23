@@ -340,15 +340,12 @@
     gap: 40px;
 }
 
-#close_button {
+.close_button {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     cursor: pointer;
-}
-
-#close_button img:hover {
-    cursor: pointer;
+    z-index: 999;
 }
 
 #profil_image_optionen {
@@ -550,16 +547,6 @@ input[required] {
     gap: 40px;
 }
 
-#discard_button {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-#discard_button img:hover {
-    cursor: pointer;
-}
-
 #edit_contact_content {
     display: flex;
     align-items: center;
@@ -569,13 +556,15 @@ input[required] {
 #profil_name_initialen {
     background-color: #FF7A00;
     color: white;
+    font-size: 50px;    
+}
+.profil_name_initialen {    
     width: 120px;
     height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    font-size: 50px;
+    border-radius: 50%;    
     border: solid 2px white;
 }
 
@@ -632,4 +621,43 @@ input[required] {
 .menu_edit_delete__undercontainer:hover {
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.contact_successfully_div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.contact_successfully_message {
+    height: 74px;
+    width: 326px;
+    border-radius: 20px;
+    color: white;
+    background-color: #2A3647;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animate {
+    animation: successfully_message 4s forwards;
+}
+
+
+.contactReady {
+    height: 24px;
+    width: 365px;
+    border-radius: 10px;
+    color: white;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
 }

@@ -10,6 +10,14 @@ function createContact() {
     let inputname = document.getElementById(`create_name`);
     let inputmail = document.getElementById(`create_mail`);
     let inputphone = document.getElementById(`create_phone`);
+    let contactReady = document.getElementById(`new_contact_ready`);
+    let index = contactData.findIndex(contact => contact.email == inputmail.value);
+
+    if (index != -1) {
+        contactReady.style.display = "flex";    
+        
+        return;
+    }
 
     let contact = {
         name: inputname.value,
@@ -17,7 +25,9 @@ function createContact() {
         phoneNumber: inputphone.value,
     };
 
-    contactData.push(contact);
+    contactData.push(contact);        
+
+    hideCreateContactMessage("new_contact_successfully_div");
     generateContactList();
     closeAddNewContactWindow();
 }
@@ -33,8 +43,12 @@ function generateContactList() {
 
     for (let i = 0; i < contactData.length; i++) {
         const contact = contactData[i];
+        let select = "";
 
-        // Hintergrundfarbe basierend auf dem Index des Kontakts
+        if (currentContact) {
+            select = contact.name == currentContact.name ? "selected" : "";
+        }
+
         let backgroundColor = colorPool[i % colorPool.length];
 
         if (lastChar !== contact.name.charAt(0).toUpperCase()) {
@@ -43,7 +57,7 @@ function generateContactList() {
         }
 
         contactContainer.innerHTML += `
-        <div class="div_contact" id="div_contact_${i}" onclick="selectContact(${i})">
+        <div class="div_contact ${select}" id="div_contact_${i}" onclick="selectContact(${i})">
             <div class="contact_initials" style="background-color: ${backgroundColor};">${getInitials(contact.name)}</div>
             <div class="name_email_div">    
                 <div class="contact_name">${contact.name}</div>
@@ -93,8 +107,6 @@ function setContactInfo(contact) {
     emailDiv.innerHTML = contact.email;
     phoneDiv.innerHTML = contact.phoneNumber;
     initialDiv.innerHTML = getInitials(contact.name);
-
-    /* document.getElementById(`second_contact_infos`).style.display = "flex"; */
 }
 
 
@@ -102,6 +114,8 @@ function openAddNewContactWindow() {
     document.getElementById(`new_contact_container`).style.display = "flex";
     clearInputs();
     document.body.style.overflow = "hidden";
+    let contactReady = document.getElementById(`new_contact_ready`);
+    contactReady.style.display = "none";
 }
 
 
@@ -117,6 +131,15 @@ function closeAddNewContactWindow() {
     document.body.style.overflow = "auto";
 }
 
+function hideCreateContactMessage(messageID) {
+    var messageDiv = document.getElementById(messageID);
+    messageDiv.style.display = "flex";
+    messageDiv.classList.add("animate");
+    setTimeout(function () {
+        messageDiv.style.display = "none";
+        messageDiv.classList.remove("animate");
+    }, 4000);
+}
 
 function closeEditContactWindow() {
     document.getElementById(`edit_contact_container`).style.display = "none";
@@ -160,7 +183,9 @@ function editContact() {
     let emailDiv = document.getElementById(`edit_mail`);
     let phoneDiv = document.getElementById(`edit_phone`);
     let initialDiv = document.getElementById(`profil_name_initialen`);
+    let contactReady = document.getElementById(`edit_contact_ready`);
 
+    contactReady.style.display = "none";
     nameDiv.value = currentContact.name;
     emailDiv.value = currentContact.email;
     phoneDiv.value = currentContact.phoneNumber;
@@ -175,14 +200,24 @@ function updateContact() {
 
     let name = document.getElementById(`edit_name`).value;
     let email = document.getElementById(`edit_mail`).value;
-    let phone = document.getElementById(`edit_phone`).value;
+    let phone = document.getElementById(`edit_phone`).value; let second_contact_infos = document.getElementById(`second_contact_infos`);
+    let contactReady = document.getElementById(`edit_contact_ready`);
+    let index = contactData.findIndex(contact => contact.email == email);
 
+    if (index != -1 && currentContact.email != email) {
+        contactReady.style.display = "flex";    
+        
+        return;
+    }
+    
     currentContact.name = name;
     currentContact.email = email;
     currentContact.phoneNumber = phone;
 
     setContactInfo(currentContact);
 
+    hideCreateContactMessage("edit_contact_successfully_div");
+    closeEditContactWindow();
     generateContactList();
 }
 
@@ -208,4 +243,4 @@ function menu_window() {
         menuContainer.style.display = "none";
     }
 
-} 
+}

@@ -312,6 +312,29 @@ body {
     display: none;
 }
 
+.back_container{
+    display: block;
+    width: 55px;
+    height: 55px;
+    position: fixed;
+    top: 188px;
+    right: 40px;
+    padding: 0;
+    cursor: pointer;
+}
+.back_container:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+.back{
+    display: block;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
 @media only screen and (max-width: 5555px) {
 
     #header_logo {
