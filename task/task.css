@@ -116,7 +116,7 @@ input{
     display: flex;
         justify-content: center;
         align-items: center;
-        color: white;
+        color: rgb(255, 255, 255);
         width: 120px;
         height: 48px;
         border-radius: 10px;
@@ -129,6 +129,7 @@ input{
 .priobtns{
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 .priobtns img:hover{
@@ -154,7 +155,7 @@ input{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
 
 }
@@ -173,4 +174,8 @@ input{
     display: flex;
     align-items: center;
     
+}
+.chosenInitals{
+    display: flex;
+    flex-direction: row;
 }
