@@ -71,9 +71,6 @@
                 <div id="nav_left">
                     Kanban Project Management Tool
                 </div>
-                <div id="header_logo_div">
-                    <img id="header_logo" src="../img/join_logo_black.png" alt="Header Logo">
-                </div>
                 <div id="nav_right">
                     <a href="../help/index.html" id="nav_right_img">
                         <img src="../img/help_icon.png" alt="Summary">
@@ -107,8 +104,9 @@
                                     src="img/arrow down.svg" alt=""></button>
                             <div id="myDropdown" class="dropdown-content">
                                 <div id="availableContacts">asi</div>
-                               <div id="chosenInitals"></div>
+                               
                             </div>
+                            <div class="chosenInitals" id="chosenInitals"></div>
                         </div>
                     </div>
                 </div>
@@ -127,9 +125,9 @@
                     <div class="spanandvalue" class="prio">
                         <span>Prio</span>
                         <div class="priobtns">
-                            <div class="priobtn">Urgent <img src="img/Prio high icon.svg" alt=""></div>
-                            <div class="priobtn">Medium <img src="img/Prio medi icon.svg" alt=""></div>
-                            <div class="priobtn">Low <img src="img/Prio low icon.svg" alt=""></div>
+                            <div id="urgentbtn" onclick="prioUrgent()" class="priobtn">Urgent <img id="highicon" src="img/Prio high icon.svg" alt=""></div>
+                            <div id= "midbtn" onclick="prioMed()" class="priobtn">Medium <img id='midicon' src="img/Prio medi icon.svg" alt=""></div>
+                            <div id="lowbtn" onclick="prioLow()" class="priobtn">Low <img id="lowicon" src="img/Prio low icon.svg" alt=""></div>
                         </div>
                     </div>
                     <div class="spanandvalue">
@@ -148,16 +146,11 @@
                         <span>Subtasks</span>
                         <input placeholder="Add new subtask" type="text">
                     </div>
-                    <div class="priobtnClicked urgentClicked">Urgent <img src="img/Prio high icon clicked.svg" alt="">
-                    </div>
-                    <div class="priobtnClicked mediumClicked">Medium <img src="img/Prio media icon clicked.svg" alt="">
-                    </div>
-                    <div class="priobtnClicked lowClicked">Low <img src="img/Prio low icon clicked.svg" alt=""></div>
+                    
                     <!--  -->
                 </div>
-<img src="img/selectionbox clicked.svg" alt="">
+
             </div>
 
 </body>
 
-</html>
