@@ -92,21 +92,6 @@
     align-items: center;
 }
 
-/* #done_text {
-    display: flex;
-    flex-direction: column;
-}
-
-#urgent_text {
-    display: flex;
-    flex-direction: column;
-}
-#date_text {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-} */
-
 #todo {
     font-size: 64px;
     font-weight: 600;

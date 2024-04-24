@@ -135,10 +135,10 @@ function hideCreateContactMessage(messageID) {
     var messageDiv = document.getElementById(messageID);
     messageDiv.style.display = "flex";
     messageDiv.classList.add("animate");
-    setTimeout(function () {
-        messageDiv.style.display = "none";
-        messageDiv.classList.remove("animate");
-    }, 4000);
+    
+    setTimeout(function() {
+        removeClassAnimate(messageDiv);
+    }, 5000);
 }
 
 function closeEditContactWindow() {
@@ -242,6 +242,10 @@ function menu_window() {
         menuContainer.style.display = "flex";
     } else {
         menuContainer.style.display = "none";
-    }
+    }    
+}
 
+function removeClassAnimate(messageDiv){
+    messageDiv.style.display = "none";
+    messageDiv.classList.remove("animate");
 }
