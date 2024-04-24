@@ -84,7 +84,7 @@ function renderProgressbar(i) {
     let progressbar = document.getElementById(`progressbar${i}`);
     let progressbarAndSubtask = document.getElementById(`progressbarAndSubtask${i}`);
 
-    if (tasks[i]['subtask'][i] === '') {
+    if (tasks[i]['subtask'] == null) {
         progressbar.style.display = 'none';
     } else {
         progressbarAndSubtask.style.marginBottom = '24px';
@@ -95,13 +95,13 @@ function renderProgressbar(i) {
 function renderSubtasks(i) {
     let subtasks = document.getElementById(`subtask${i}`);
 
-    if (tasks[i]['subtask'][i] === '') {
+    if (tasks[i]['subtask'] == null) {
         subtasks.style.display = 'none';
     } else {
         subtasks.innerHTML = /* html */`
         <div>${tasks[i]['numberOfDoneSubtasks']}/${tasks[i]['subtask'].length} Subtasks</div>
     `;
-    renderProgress(i);
+        renderProgress(i);
     }
 }
 
@@ -128,7 +128,7 @@ function renderAssignedTo(i) {
     for (let j = 0; j < tasks[i]['assignedTo'].length; j++) {
         let name = tasks[i]['assignedTo'];
         let initials = name[j].split(' ')[0].charAt(0) + name[j].split(' ')[1].charAt(0);
-        showAssignedTo(initials, i,j);
+        showAssignedTo(initials, i, j);
     }
 }
 
@@ -243,6 +243,19 @@ function showPopupSubtasks(i, l) {
             <div class="popupSubtaskText">${tasks[i]['subtask'][l]}</div>
         </div>
     `;
+    renderCheckboxImage(i, l);
+}
+
+
+function renderCheckboxImage(i, l) {
+    let checkbox = document.getElementById(`checkBoxButton${l}`);
+
+    if (tasks[i]['doneSubtask'][l] == false) {
+        checkbox.src = './img/checkbox_clicked.png';
+    } else {
+        tasks[i]['doneSubtask'][l] = true;
+        checkbox.src = './img/checkbox.png';
+    }
 }
 
 
@@ -261,33 +274,37 @@ function dontClosePopup(event) {
 function checkbox(i, l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
 
-    if (checkbox.src === "http://127.0.0.1:5500/board/img/checkbox.png") {
+    if (tasks[i]['doneSubtask'][l] == true) {
+        tasks[i]['doneSubtask'][l] = false;
         tasks[i]['numberOfDoneSubtasks']++;
         clickedCheckbox(l);
     } else {
+        tasks[i]['doneSubtask'][l] = true
         tasks[i]['numberOfDoneSubtasks']--;
-        checkbox.src="./img/checkbox.png"
+        checkbox.src = "./img/checkbox.png"
     }
+    saveTasks();
     renderSubtasks(i);
 }
 
 
+
 function clickedCheckbox(l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
-    checkbox.src="./img/checkbox_clicked.png";
+    checkbox.src = "./img/checkbox_clicked.png";
 }
 
 
 function deleteTask(i) {
-    tasks.splice(i);
+    tasks.splice(i, 1);
     closePopup();
     saveTasks();
-    emptyContentContainers();
+    emptyContentSections();
     init();
 }
 
 
-function emptyContentContainers() {
+function emptyContentSections() {
     document.getElementById('toDoContent').innerHTML = '';
     document.getElementById('inProgressContent').innerHTML = '';
     document.getElementById('awaitFeedbackContent').innerHTML = '';

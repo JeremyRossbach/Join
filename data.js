@@ -101,6 +101,7 @@ let tasks = [
         'prio': 'Urgent',
         'category': 'User Story',
         'subtask': ['Contact form', 'Imprint page'],
+        'doneSubtask': [true, true], /* probe */
         'numberOfDoneSubtasks': 0,
         'section': 'In progress'
     },
@@ -112,6 +113,7 @@ let tasks = [
         'prio': 'Low',
         'category': 'Technical Task',
         'subtask': ['Reusable HTML base tamplates'],
+        'doneSubtask': [true], /* probe */
         'numberOfDoneSubtasks': 0,
         'section': 'Await Feedback'
     },
@@ -123,6 +125,7 @@ let tasks = [
         'prio': 'Medium',
         'category': 'User Story',
         'subtask': ['Daily recipe and portion caltulator'],
+        'doneSubtask': [true], /* probe */
         'numberOfDoneSubtasks': 0,
         'section': 'Await Feedback'
     },
@@ -134,6 +137,7 @@ let tasks = [
         'prio': 'Medium',
         'category': 'User Story',
         'subtask': ['Daily recipe and portion caltulator'],
+        'doneSubtask': [true], /* probe */
         'numberOfDoneSubtasks': 0,
         'section': 'Await Feedback'
     },
@@ -145,6 +149,7 @@ let tasks = [
         'prio': 'Urgent',
         'category': 'Technical Task',
         'subtask': ['Establish CSS Methodology', 'Setup Base Styles'],
+        'doneSubtask': [true, true], /* probe */
         'numberOfDoneSubtasks': 0,
         'section': 'Done'
     },
@@ -156,6 +161,7 @@ let tasks = [
         'prio': 'Urgent',
         'category': 'Technical Task',
         'subtask': ['Establish CSS Methodology', 'Setup Base Styles'],
+        'doneSubtask': [true, true], /* probe */
         'numberOfDoneSubtasks': 0,
         'section': 'To do'
     }
