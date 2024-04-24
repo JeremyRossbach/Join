@@ -166,6 +166,7 @@ function deleteContact() {
     second_contact_infos.style.display = "none";
     closeEditContactWindow();
 
+    hideCreateContactMessage("delete_contact_successfully_div");
     hideMenuEditDeleteContainer();
     closeContactInfo();
     generateContactList();
@@ -200,7 +201,7 @@ function updateContact() {
 
     let name = document.getElementById(`edit_name`).value;
     let email = document.getElementById(`edit_mail`).value;
-    let phone = document.getElementById(`edit_phone`).value; let second_contact_infos = document.getElementById(`second_contact_infos`);
+    let phone = document.getElementById(`edit_phone`).value;
     let contactReady = document.getElementById(`edit_contact_ready`);
     let index = contactData.findIndex(contact => contact.email == email);
 
