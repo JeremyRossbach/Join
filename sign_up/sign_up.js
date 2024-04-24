@@ -16,7 +16,7 @@ function checkPasswordMatch(form) {
                 'password': '1234'
             }
         )
-    }, 2000);
+    }, 1000);
 
     return false;
 }

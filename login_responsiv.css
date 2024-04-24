@@ -1,6 +1,6 @@
 @media (max-width: 1120px) {
     body {
-        min-height: 926px;
+        min-height: calc(926px - 37px);
     }
 
     .container {
@@ -73,7 +73,7 @@
         height: 100%;
         top: 0;
         left: 0;
-        animation: nav 1s forwards 500ms;
+        animation: nav 800ms forwards 500ms;
     }
 
     .img-logo {
@@ -84,29 +84,29 @@
     }
 
     .img-logo-animation {
-        width: 274px;
-        height: 334px;
-        content: url(img/splash_screen.png);
+        width: 100px;
+        height: 122px;
+        content: url(img/join_logo_white.png);
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-top: -167px;
-        margin-left: -137px;
+        margin-top: -50px;
+        margin-left: -61px;
         z-index: 1000;
 
-        animation: logo-animation 1s forwards 500ms;
+        animation: logo-animation 800ms forwards 500ms;
     }
 
     .img-logo-animation-bg {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: #F6F7F8;
+        width: 100%;
+        height: 100%;
+        background-color: #2A3647;
         z-index: 900;
 
-        animation: logo-animation-bg 1s forwards 500ms;
+        animation: logo-animation-bg 800ms forwards 500ms;
     }
 
     @keyframes nav {
@@ -120,19 +120,24 @@
     }
 
     @keyframes logo-animation {
-        from {
-            width: 274px;
-            height: 334px;
-            content: url(img/splash_screen.png);
+        0% {
+            width: 100px;
+            height: 122px;
+            content: url(img/join_logo_white.png);
             position: absolute;
             top: 50%;
             left: 50%;
-            margin-top: -167px;
-            margin-left: -137px;
+            margin-top: -50px;
+            margin-left: -61px;
             z-index: 999;
+            opacity: 100%;
         }
 
-        to {
+        50% {
+            opacity: 0;
+        }
+
+        100% {
             position: absolute;
 
             width: 64px;
@@ -141,18 +146,23 @@
             left: 38px;
             margin: 0;
             content: url(img/join_logo_black.png);
+            opacity: 100%;
         }
     }
 
     @keyframes logo-animation-bg {
         from {
-            background-color: #F6F7F8;
+            background-color: #2A3647;
         }
 
         to {
             background-color: unset;
             display: none;
         }
+    }
+
+    .footer {
+        margin-bottom: 16px;
     }
 }
 
