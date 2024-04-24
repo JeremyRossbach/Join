@@ -340,9 +340,19 @@ body {
     #header_logo {
         display: none;
     }
+    #help_link{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 1300px) {
+    #help_link{
+        display: flex;
+    }
+    #jura_container{
+        height: 197px;
+    }
+    
     #header_logo {
         display: block;
         width: 32px;
