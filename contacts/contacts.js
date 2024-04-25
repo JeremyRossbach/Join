@@ -65,7 +65,7 @@ function generateContactList() {
             </div>
         </div>            
         `;
-    }
+    }    
 }
 
 
@@ -135,7 +135,7 @@ function hideCreateContactMessage(messageID) {
     var messageDiv = document.getElementById(messageID);
     messageDiv.style.display = "flex";
     messageDiv.classList.add("animate");
-    
+
     setTimeout(function() {
         removeClassAnimate(messageDiv);
     }, 5000);
@@ -159,7 +159,7 @@ function clearInputs() {
 
 
 function deleteContact() {
-    let index = contactData.findIndex(contact => contact.name == currentContact.name);
+    let index = contactData.findIndex(contact => contact.email == currentContact.email);
     let second_contact_infos = document.getElementById(`second_contact_infos`);
     contactData.splice(index, 1);
 
