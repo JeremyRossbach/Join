@@ -51,7 +51,6 @@ function content(containerId, i) {
                 <div class="title">${tasks[i]['title']}</div>
                 <div class="description">${tasks[i]['description']}</div>
             </div>
-            <!-- details missisng ! -->
             <div id="progressbarAndSubtask${i}" class="progressbarAndSubtask">
                 <div id="progressbar${i}" class="progressbar"><div id="progress${i}" class="progress"></div></div>
                 <div id="subtasks${i}" class="subtasks"><div id="subtask${i}" class="subtask"></div></div>
@@ -325,4 +324,35 @@ function saveTasks() {
 function loadData() {
     let tasksAsString = localStorage.getItem('tasks');
     tasks = JSON.parse(tasksAsString);
+}
+
+
+function findTask() {
+    let search = document.getElementById('input').value;
+    search = search.toLowerCase();
+
+    emptyContentSections();
+
+    for (let i = 0; i < tasks.length; i++) {
+        let task = tasks[i];
+        if (task['title'].toLowerCase().includes(search)) {
+            renderTask(i);
+        }
+    }
+}
+
+
+function renderTask(i) {
+    showTask('To do', 'toDoContent', i);
+    showTask('In progress', 'inProgressContent', i);
+    showTask('Await Feedback', 'awaitFeedbackContent', i);
+    showTask('Done', 'doneContent', i);
+}
+
+
+function showTask(section, containerId, i) {
+    if (tasks[i]['section'] === section) {
+        checkContent(containerId, i);
+        renderCategoryColor(i);
+    }
 }
