@@ -1,51 +1,62 @@
-let inputPassword = document.querySelector('input[type="password"]');
+let inputsPassword = document.querySelectorAll('input[type="password"]');
 let validationText = document.querySelector('div[class="validation-password"]');
-let buttonPasswordVisibility = document.querySelector('div[class="password-visibility"]')
+let buttonsPasswordVisibility = document.querySelectorAll('div[class="password-visibility"]')
 
 function checkValidPassword() {
-    if (inputPassword.value.length < 1) {
-        validationText.style.display = '';
-        inputPassword.classList.add('input-danger');
-        return false;
+    for (let i = 0; i < inputsPassword.length; i++) {
+        let inputPassword = inputsPassword[i];
+
+        if (inputPassword.value.length < 1) {
+            validationText.style.display = '';
+            inputPassword.classList.add('input-danger');
+            return false;
+        }
     }
 
     return true;
 }
 
 function showButtonPasswordVisible() {
-    buttonPasswordVisibility.style.display = '';
+    for (let i = 0; i < buttonsPasswordVisibility.length; i++) {
+        let buttonPasswordVisibility = buttonsPasswordVisibility[i];
+        buttonPasswordVisibility.style.display = '';
+    }
 }
 
 function hideButtonPasswordVisible() {
-    buttonPasswordVisibility.style.display = 'none';
+    for (let i = 0; i < buttonsPasswordVisibility.length; i++) {
+        let buttonPasswordVisibility = buttonsPasswordVisibility[i];
+        buttonPasswordVisibility.style.display = 'none';
+    }
 }
 
-function changeIcon(iconPath) {
-    inputPassword.style.background = `url(${iconPath}) no-repeat`;
-    inputPassword.style.backgroundPosition = 'right 21px top 50%';
+function changeIcon(index, iconPath) {
+    inputsPassword[index].style.background = `url(${iconPath}) no-repeat`;
+    inputsPassword[index].style.backgroundPosition = 'right 21px top 50%';
 }
 
-function checkInputPassword() {
-    if (inputPassword.value) {
-        if (inputPassword.type == 'password') {
-            changeIcon('/img/visibility_off.png');
+function checkInputPassword(index) {
+
+    if (inputsPassword[index].value) {
+        if (inputsPassword[index].type == 'password') {
+            changeIcon(index, '/img/visibility_off.png');
         } else if (inputPassword.type == 'text') {
-            changeIcon('/img/visibility.png');
+            changeIcon(index, '/img/visibility.png');
         }
         showButtonPasswordVisible();
     } else {
-        changeIcon('/img/lock.png');
+        changeIcon(index, '/img/lock.png');
         hideButtonPasswordVisible();
     }
 }
 
-function hidePassword() {
-    if (inputPassword.type == 'password') {
-        inputPassword.type = 'text';
-        changeIcon('/img/visibility.png');
-    } else if (inputPassword.type == 'text') {
-        inputPassword.type = 'password';
-        changeIcon('/img/visibility_off.png');
+function hidePassword(index) {
+    if (inputsPassword[index].type == 'password') {
+        inputsPassword[index].type = 'text';
+        changeIcon(index, '/img/visibility.png');
+    } else if (inputsPassword[index].type == 'text') {
+        inputsPassword[index].type = 'password';
+        changeIcon(index, '/img/visibility_off.png');
     }
-    inputPassword.focus();
+    inputsPassword[index].focus();
 }
