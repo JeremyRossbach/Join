@@ -106,6 +106,15 @@ let tasks = [
         'section': 'In progress'
     },
     {
+        'title': 'Contact Design',
+        'description': 'Work on contact design...',
+        'assignedTo': ['Anja Schulz', 'David Eisenberg'],
+        'dueDate': '01/01/2024',
+        'prio': 'Low',
+        'category': 'User Story',
+        'section': 'In progress'
+    },
+    {
         'title': 'HTML Base Tamplate Creation',
         'description': 'Create reusable HTML base tamplates...',
         'assignedTo': ['David Eisenberg', 'Benedikt Ziegler', 'Anja Schulz'],
@@ -130,15 +139,12 @@ let tasks = [
         'section': 'Await Feedback'
     },
     {
-        'title': 'Daily Kochwelt Recipe',
-        'description': 'Implement daily recipe and portion caltulator...',
-        'assignedTo': ['Eva Fischer', 'Anja Schulz', 'Tatjana Wolf'],
+        'title': 'Daily Kochwelt Header',
+        'description': 'Edit header design...',
+        'assignedTo': ['Anja Schulz', 'Tatjana Wolf'],
         'dueDate': '01/01/2024',
-        'prio': 'Medium',
+        'prio': 'Urgent',
         'category': 'User Story',
-        'subtask': ['Daily recipe and portion caltulator'],
-        'doneSubtask': [true],
-        'numberOfDoneSubtasks': 0,
         'section': 'Await Feedback'
     },
     {
@@ -155,7 +161,7 @@ let tasks = [
     },
     {
         'title': 'Responsivity of all Site',
-        'description': 'Define CSS naming conventions nad structure.',
+        'description': 'Define CSS naming conventions and structure.',
         'assignedTo': ['Eva Fischer', 'David Eisenberg'],
         'dueDate': '05/15/2024',
         'prio': 'Urgent',

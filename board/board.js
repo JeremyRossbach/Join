@@ -105,7 +105,7 @@ function renderSubtasks(i) {
 }
 
 
-function renderProgress(i) { /* not finished */
+function renderProgress(i) {
     let progress = document.getElementById(`progress${i}`);
 
     let width = 128 / `${tasks[i]['subtask'].length}` * tasks[i]['numberOfDoneSubtasks'];
@@ -175,7 +175,7 @@ function showCardPopup(i) {
         <div class="popupBottom">
             <button onclick="deleteTask(${i})" class="deleteButtonImage"></button>
             <div class="buttonSpacer"></div>
-            <button class="editButtonImage"></button>
+            <button onclick="editTask(${i})" class="editButtonImage"></button>
         </div>
     `;
     renderPopupCategoryColor(i);
@@ -238,7 +238,7 @@ function showPopupSubtasks(i, l) {
 
     subtasks.innerHTML += /* html */`
         <div class="imageAndText">
-            <img onclick="checkbox(${i}, ${l})" id="checkBoxButton${l}" class="checkboxImage" src="./img/checkbox.png"> <!-- Variable missing -->
+            <img onclick="checkbox(${i}, ${l})" id="checkBoxButton${l}" class="checkboxImage" src="./img/checkbox.png">
             <div class="popupSubtaskText">${tasks[i]['subtask'][l]}</div>
         </div>
     `;
@@ -300,6 +300,11 @@ function deleteTask(i) {
     saveTasks();
     emptyContentSections();
     init();
+}
+
+
+function editTask(i) {
+    /* missing */
 }
 
 
