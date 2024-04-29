@@ -142,6 +142,7 @@ function showAssignedTo(initials, i, j) { /* solution for random colors missing 
 
 
 function showCardPopup(i) {
+    document.body.style.overflow = 'hidden';
     document.getElementById('background').style.display = 'flex';
     let cardPopup = document.getElementById('cardPopup');
     cardPopup.style.display = 'flex';
@@ -259,6 +260,8 @@ function renderCheckboxImage(i, l) {
 
 
 function closePopup() {
+    document.body.style.overflow = '';
+    cardPopup.style.height = '';
     document.getElementById('cardPopup').style.display = 'none';
     document.getElementById('background').style.display = 'none';
     event.stopPropagation();
@@ -304,9 +307,46 @@ function deleteTask(i) {
 
 
 function editTask(i) {
-    /* missing */
-}
+    cardPopup.style.height = '750px';
 
+    cardPopup.innerHTML = /* html */`
+        <div class="editTaskCloseImage">
+            <img onclick="closePopup()" class="closeImage" src="./img/close.png">
+        </div>
+        <div class="editTextAndInput">
+            <p class="titleText">Title</p>
+            <input id="editTitle${i}" class="editTitleInput editInputs" placeholder="Enter a title" type="text">
+        </div>
+        <div class="editDescriptionAndTextarea">
+            <p class="descriptionText">Description</p>
+            <textarea id="editDescription${i}" class="editDescriptionTextarea editInputs" placeholder="Enter a description" name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div class="editDueDateAndInput">
+            <p class="dueDateText">Due Date</p>
+            <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" onfocus="(this.type='date')" onblur="(this.type='text')">
+        </div>
+        <div class="editPriorityAndButtons">
+            <p class="priorityText">Priority</p>
+            <div class="priorityButtons">
+                <button onclick="" id="urgentButton${i}" class="priorityButtonUrgent priorityButton"></button>
+                <button onclick="" id="mediumButton${i}" class="priorityButtonMedium priorityButton"></button>
+                <button onclick="" id="lowButton${i}" class="priorityButtonLow priorityButton"></button> 
+            </div>
+        </div>
+        <div class="editAssignedToAndInput">
+            <p class="editAssignedToText">Assigned To</p>
+            <input onkeydown="findContact()" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text"> <!-- arrow-button at end of input missing -->
+            <!-- initails of contacts missing -->
+        </div>
+        <div class="editSubtasksAndInput">
+            <p class="editSubtasksText">Subtasks</p>
+            <input id="editSubtasks" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text"> <!-- +-button at end of input missing -->
+        </div>
+        <div class="editTaskOkButton">
+            <button onclick="ok()" id="okButton">Ok <img class="checkImage" src="./img/check.png"></button>
+        </div>
+    `;
+}
 
 function emptyContentSections() {
     document.getElementById('toDoContent').innerHTML = '';
@@ -344,6 +384,24 @@ function findTask() {
             renderTask(i);
         }
     }
+}
+
+
+function findContact() {
+    let search = document.getElementById('editAssignedTo').value;
+    search = search.toLowerCase();
+
+    for (let m = 0; m < contactData.length; m++) {
+        let contact = contactData[i];
+        if (contact['name'].toLowerCase().includes(search)) {
+            renderContact();
+        }
+    }
+}
+
+
+function renderContact() {
+
 }
 
 
