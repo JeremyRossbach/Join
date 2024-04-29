@@ -1,12 +1,14 @@
 
-let categorys = [
-    'Technical Task', 'User Story'
-]
-let taskcontacts = []
- let currentContact;
- let prio;
+let categorys;
+let taskcontacts = [];
+let currentContact;
+let prio;
+let subtasks = [];
+loadSubtasks()
 
-
+function addTaskInit(){
+    
+}
 
 function dropDownContacts() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -14,7 +16,7 @@ function dropDownContacts() {
 }
 function dropDownCategory() {
     document.getElementById("drop_down_category").classList.toggle("show");
-    arrowChangeCategory()
+    arrowChangeCategory();
 }
 
 function arrowChange() {
@@ -68,27 +70,16 @@ function chosenContacts(i, currentContact) {
     if( selectionBox.getAttribute('src') == selection_box_unclicked){
         selectionBox.setAttribute('src',selection_box_clicked)
         ContactBTN.setAttribute('style',clicked_background)
-        //taskcontacts.push(chosenContact['name'])
+       
     }else{
         selectionBox.src = selection_box_unclicked;
         ContactBTN.style = unclicked_background;
-        //taskcontacts.splice(i,1);
+       
     }
     chosenContactsPush(i, selection_box_clicked )
     
 }
-//function chosenContactsPush(i, selection_box_clicked){
-    //let index = taskcontacts.indexOf(chosenContact);
-  //  let selectionBox = document.getElementById(`selectionBox${i}`)
-   // let chosenContact = contactData[i];
-   // if (selectionBox.getAttribute('src') == selection_box_clicked){
-    //    taskcontacts.push(chosenContact['name'])
-    //}else{
-    //    taskcontacts.splice(i, 1);
-    //}
 
-    //console.log(taskcontacts)
-//}
 function chosenContactsPush(i, selection_box_clicked) {
     let selectionBox = document.getElementById(`selectionBox${i}`);
     let chosenContact = contactData[i];
@@ -208,4 +199,87 @@ function prioUrgentSetBack(){
     highicon.src = unclickedhighicon
     urgentbtn.style.background = '#FFFFFF';
     urgentbtn.style.color = 'black';
+}
+
+
+
+
+function technicalTask(){
+    let categorySpan = document.getElementById('categorySpan');
+    categorySpan.innerHTML = "Technikal Task";
+    categorys = "Technikal Task";
+}
+ 
+
+function userStory(){
+    let categorySpan = document.getElementById('categorySpan');
+    categorySpan.innerHTML = "User Story";
+    categorys = "User Story";
+}
+
+function pushSubtask(){
+    let input = document.getElementById('subtaskInput');
+    subtasks.push(input.value)
+    input.value = '';
+    renderSubtask()
+    saveSubtusks()
+   
+} 
+
+function renderSubtask(){
+    let pushedSubtasks = document.getElementById('pushedSubtasks');
+    pushedSubtasks.innerHTML = '';
+    for (let j = 0; j < subtasks.length; j++) {
+        let subtask = subtasks[j];
+
+        pushedSubtasks.innerHTML+=/*html*/`
+            <div id='editableSubtask${j}' onclick="subtasksEditAndDelete(${j},'${subtask}')">· ${subtask}</div>
+        `
+    }
+}
+
+function subtasksEditAndDelete(j, subtask) {
+    let editableSubtask = document.getElementById(`editableSubtask${j}`);
+
+    editableSubtask.innerHTML = /*html*/`
+        <div class='subtaskEdit'>
+            <input id='subtaskEdit' value='${subtask}'>
+            <img onclick='deleteSubtask(${j})' src="img/subtaskDelete.svg">
+            <div class='divider'></div>
+                   <img onclick='saveEditedSubtask(${j})' src="img/subtaskCheck.svg">
+        </div>
+        </div>
+    `;
+    subtaskEdit.focus();
+    
+}
+
+function saveEditedSubtask(j) {
+    let editedSubtaskInput = document.getElementById(`subtaskEdit`);
+    subtasks[j] = editedSubtaskInput.value;
+    renderSubtask()
+}
+
+function deleteSubtask(j) {
+    subtasks.splice(j, 1);
+    renderSubtask();
+    saveSubtusks()
+}
+function pushEditToArray(){
+    let subtaskEdit = document.getElementById('subtaskEdit')
+    
+    subtasks.push(subtaskEdit.value)
+    subtaskEdit.value = '';
+    saveSubtusks()
+    renderSubtask()
+console.log(subtasks)
+} 
+function saveSubtusks(){
+    let subtaskasText = JSON.stringify(subtasks);
+    localStorage.setItem('subtasks',subtaskasText);
+    renderSubtask()
+}
+function loadSubtasks(){
+    let subtaskasText = localStorage.getItem(subtasks)
+    subtasks = JSON.parse(subtaskasText);
 }

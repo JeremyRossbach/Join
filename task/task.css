@@ -1,6 +1,16 @@
-.content{
+.H1{
+padding-top: 200px;
+padding-bottom: 0px;
+ padding-left: 50px
+}
+
+
+#content{
+    padding-top: 0px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    top:80px
+    
 
 }
 .leftside{
@@ -13,7 +23,8 @@
 .rightside{
     display: flex;
         flex-direction: column;
-        justify-content: space-evenly
+        justify-content: space-around;
+        width: 400px;
        
 }
 .redStar{
@@ -40,6 +51,10 @@ input{
     border-radius: 4px;
     border-color:rgb(209, 209, 209);
     height: 24px;
+}
+input:focus{
+    outline: 1px solid #29ABE2;
+       
 }
 
 .dropbtn:hover
@@ -78,6 +93,9 @@ input{
     z-index: 1;
     border: 4px;
 }
+.availableContacts{
+    height: 180px;
+}
 
 .dropdown-content a{
     color: black;
@@ -108,7 +126,7 @@ input{
     height: 40px;
     border-radius: 10px;
         gap: 8px;
-        border:solid 2px rgb(238, 239, 240);
+        border: solid 1px rgb(209, 209, 209);
         margin-right: 4px;
         
 }
@@ -121,15 +139,17 @@ input{
         height: 48px;
         border-radius: 10px;
         gap: 8px;
-        border: solid 2px rgb(238, 239, 240)
+        border: solid 1px rgb(209, 209, 209);
 }
 .priobtn:hover{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .priobtns{
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     cursor: pointer;
+    width: 400px;
 }
 
 .priobtns img:hover{
@@ -178,4 +198,66 @@ input{
 .chosenInitals{
     display: flex;
     flex-direction: row;
+}
+.choseCategory{
+    background-color: white;
+ border-radius: 8px;
+ cursor: pointer;
+}
+.availableCategory{
+    border-radius: 8px;
+    background-color: white;
+}
+.subtaskParent{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 5px;
+}
+.subtaskParent img{
+    padding-right: 4px;
+}
+.subtaskInput{
+    width: 375px;
+    border: 0; 
+   
+}
+#subtaskInput:focus {
+    outline: 0px solid #29ABE2;
+    
+}
+
+.subtaskParent:focus-within {
+    outline: 1px solid #29ABE2;
+   
+}
+#date{
+    width: 400px;
+}
+#date::placeholder{
+    color: rgb(139, 139, 139);
+}
+.subtaskEdit{
+    display: flex;
+    background-color: white;
+    border: 1px solid rgb(209, 209, 209);
+        border-radius: 5px;
+
+}
+.subtaskEdit:focus-within {
+    outline: 1px solid #29ABE2;
+}
+#subtaskEdit{
+    border: none;
+    width: 350px;
+}
+#subtaskEdit:focus-within {
+    outline: 0;
+}
+.divider{
+    width: 1px;
+   background-color: rgb(209, 209, 209);
+   margin-left: 3px;
+   margin-right: 3px;
 }

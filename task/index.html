@@ -86,8 +86,9 @@
                 <a href="../index.html" class="jura_undercontainer">Log out</a>
             </div>
             <!-- Hier kommt der HTML Code von Euch rein -->
-            <H1>Add Task</H1>
+            <H1 class="H1">Add Task</H1>
             <div class="content" id="content">
+                
                 <div class="leftside">
                     <div class="spanandvalue">
                         <span>Title <span class="redStar">*</span></span>
@@ -103,7 +104,7 @@
                             <button onclick="dropDownContacts(),showaAvailableContacts()" class="dropbtn">Select contacts to assign <img id="arrow"
                                     src="img/arrow down.svg" alt=""></button>
                             <div id="myDropdown" class="dropdown-content">
-                                <div id="availableContacts">asi</div>
+                                <div id="availableContacts"></div>
                                
                             </div>
                             <div class="chosenInitals" id="chosenInitals"></div>
@@ -117,8 +118,8 @@
                         <span>Due date<span class="redStar">*</span></span>
                         <form action="/action_page.php">
                             <label placeholder="dd/mm/yyyy" for=""></label>
-                            <input type="date" id="birthday" name="birthday">
-                            <input type="submit">
+                            <input type="date" id="date" name="date">
+                            
                         </form>
 
                     </div>
@@ -133,10 +134,12 @@
                     <div class="spanandvalue">
                         <span>Category<span class="redStar">*</span></span>
                         <div class="dropdown">
-                            <button onclick="dropDownCategory()" class="dropbtn">Select tasks category <img id="arrow_category" src="img/arrow down.svg" alt=""></button>
+                            <button onclick="dropDownCategory()" class="dropbtn"><span id="categorySpan">Select tasks category</span><img id="arrow_category" src="img/arrow down.svg" alt=""></button>
                             <div id="drop_down_category" class="dropdown-content">
-                                
-                                <div id="availableCategory">asi</div>
+                                <div class="availableCategory" id="availableCategory">
+                                    <div onclick="technicalTask()" class="choseCategory">Technical Task</div>
+                                    <div onclick="userStory()" class="choseCategory">User Story</div>
+                                </div>
                                 
                                 
                             </div>
@@ -144,7 +147,11 @@
                     </div>
                     <div class="spanandvalue">
                         <span>Subtasks</span>
-                        <input placeholder="Add new subtask" type="text">
+                        <div class="subtaskParent">
+                        <input id="subtaskInput" class="subtaskInput" placeholder="Add new subtask" type="text">
+                        <img onclick="pushSubtask()" src="img/subtaskPlus.svg" alt="">
+                        </div>
+                        <div id="pushedSubtasks" class="pushedSubtasks">jo</div>
                     </div>
                     
                     <!--  -->
