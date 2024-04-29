@@ -101,7 +101,17 @@ let tasks = [
         'prio': 'Urgent',
         'category': 'User Story',
         'subtask': ['Contact form', 'Imprint page'],
+        'doneSubtask': [true, true],
         'numberOfDoneSubtasks': 0,
+        'section': 'In progress'
+    },
+    {
+        'title': 'Contact Design',
+        'description': 'Work on contact design...',
+        'assignedTo': ['Anja Schulz', 'David Eisenberg'],
+        'dueDate': '01/01/2024',
+        'prio': 'Low',
+        'category': 'User Story',
         'section': 'In progress'
     },
     {
@@ -112,6 +122,7 @@ let tasks = [
         'prio': 'Low',
         'category': 'Technical Task',
         'subtask': ['Reusable HTML base tamplates'],
+        'doneSubtask': [true],
         'numberOfDoneSubtasks': 0,
         'section': 'Await Feedback'
     },
@@ -123,18 +134,17 @@ let tasks = [
         'prio': 'Medium',
         'category': 'User Story',
         'subtask': ['Daily recipe and portion caltulator'],
+        'doneSubtask': [true],
         'numberOfDoneSubtasks': 0,
         'section': 'Await Feedback'
     },
     {
-        'title': 'Daily Kochwelt Recipe',
-        'description': 'Implement daily recipe and portion caltulator...',
-        'assignedTo': ['Eva Fischer', 'Anja Schulz', 'Tatjana Wolf'],
+        'title': 'Daily Kochwelt Header',
+        'description': 'Edit header design...',
+        'assignedTo': ['Anja Schulz', 'Tatjana Wolf'],
         'dueDate': '01/01/2024',
-        'prio': 'Medium',
+        'prio': 'Urgent',
         'category': 'User Story',
-        'subtask': ['Daily recipe and portion caltulator'],
-        'numberOfDoneSubtasks': 0,
         'section': 'Await Feedback'
     },
     {
@@ -145,17 +155,19 @@ let tasks = [
         'prio': 'Urgent',
         'category': 'Technical Task',
         'subtask': ['Establish CSS Methodology', 'Setup Base Styles'],
+        'doneSubtask': [true, true],
         'numberOfDoneSubtasks': 0,
         'section': 'Done'
     },
     {
         'title': 'Responsivity of all Site',
-        'description': 'Define CSS naming conventions nad structure.',
+        'description': 'Define CSS naming conventions and structure.',
         'assignedTo': ['Eva Fischer', 'David Eisenberg'],
         'dueDate': '05/15/2024',
         'prio': 'Urgent',
         'category': 'Technical Task',
         'subtask': ['Establish CSS Methodology', 'Setup Base Styles'],
+        'doneSubtask': [true, true],
         'numberOfDoneSubtasks': 0,
         'section': 'To do'
     }

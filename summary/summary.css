@@ -86,19 +86,10 @@
     transform: scale(1.05);
 }
 
-#todo_text {
+.summary_text_position {
     display: flex;
     flex-direction: column;
-}
-
-#done_text {
-    display: flex;
-    flex-direction: column;
-}
-
-#urgent_text {
-    display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
 #todo {
@@ -179,11 +170,6 @@
     background-color: grey;
 }
 
-#date_text {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
 
 #date {
     font-size: 21px;

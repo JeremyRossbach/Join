@@ -25,7 +25,11 @@
     margin-left: -156px;
     z-index: 999;
 
-    animation: dialog-message 800ms forwards;
+    animation: dialog-message 200ms forwards;
+}
+
+.container {
+    flex-direction: column;
 }
 
 @keyframes dialog-message {
@@ -57,8 +61,8 @@
     width: 32px;
     height: 32px;
     position: absolute;
-    top: 32px;
-    left: 32px;
+    top: 64px;
+    left: 48px;
     cursor: pointer;
 }
 
@@ -81,6 +85,11 @@
     align-items: center;
     justify-content: center;
     gap: 32px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
 }
 
 .sign-up-inputs {

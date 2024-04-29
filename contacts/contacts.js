@@ -65,7 +65,7 @@ function generateContactList() {
             </div>
         </div>            
         `;
-    }
+    }    
 }
 
 
@@ -135,10 +135,10 @@ function hideCreateContactMessage(messageID) {
     var messageDiv = document.getElementById(messageID);
     messageDiv.style.display = "flex";
     messageDiv.classList.add("animate");
-    setTimeout(function () {
-        messageDiv.style.display = "none";
-        messageDiv.classList.remove("animate");
-    }, 4000);
+
+    setTimeout(function() {
+        removeClassAnimate(messageDiv);
+    }, 5000);
 }
 
 function closeEditContactWindow() {
@@ -159,13 +159,14 @@ function clearInputs() {
 
 
 function deleteContact() {
-    let index = contactData.findIndex(contact => contact.name == currentContact.name);
+    let index = contactData.findIndex(contact => contact.email == currentContact.email);
     let second_contact_infos = document.getElementById(`second_contact_infos`);
     contactData.splice(index, 1);
 
     second_contact_infos.style.display = "none";
     closeEditContactWindow();
 
+    hideCreateContactMessage("delete_contact_successfully_div");
     hideMenuEditDeleteContainer();
     closeContactInfo();
     generateContactList();
@@ -200,7 +201,7 @@ function updateContact() {
 
     let name = document.getElementById(`edit_name`).value;
     let email = document.getElementById(`edit_mail`).value;
-    let phone = document.getElementById(`edit_phone`).value; let second_contact_infos = document.getElementById(`second_contact_infos`);
+    let phone = document.getElementById(`edit_phone`).value;
     let contactReady = document.getElementById(`edit_contact_ready`);
     let index = contactData.findIndex(contact => contact.email == email);
 
@@ -241,6 +242,10 @@ function menu_window() {
         menuContainer.style.display = "flex";
     } else {
         menuContainer.style.display = "none";
-    }
+    }    
+}
 
+function removeClassAnimate(messageDiv){
+    messageDiv.style.display = "none";
+    messageDiv.classList.remove("animate");
 }

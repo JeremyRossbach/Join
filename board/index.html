@@ -13,7 +13,7 @@
     <title>Join</title>
 </head>
 
-<body onload="init();sharedInit()">
+<body onload="/* loadData(); */init();sharedInit()">
     <!-- Das ist ein Template für alle andere Seiten -->
     <div id="div_body">
         <div id="side">
@@ -86,6 +86,7 @@
                 </div>
             </div>
             <div id="jura_container">
+                <a href="../help/index.html" class="jura_undercontainer" id="help_link">Help</a>
                 <a href="../jura/privacy.html" class="jura_undercontainer">Privacy Policy</a>
                 <a href="../jura/legal.html" class="jura_undercontainer">Legal notice</a>
                 <a href="../jura/dataprotect.html" class="jura_undercontainer">Data Protection</a>
@@ -96,7 +97,7 @@
                 <header>
                     <h1>Board</h1>
                     <form action="">
-                        <input id="input" type="text" placeholder="Find Task">
+                        <input onkeydown="findTask()" id="input" type="text" placeholder="Find Task">
                         <div onclick="" id="searchButton"></div>
                         <button onclick="" id="addButton">Add task <img id="addImage" src="./img/add.png"></button>
                     </form>
@@ -105,19 +106,23 @@
                 <section id="sections">
                     <div id="toDoSection">
                         <div id="toDoHeader"><p>To do</p><button onclick="" id="addToDo"></button></div>
-                        <div onclick="" id="toDoContent" class="content"><p id="emptytoDoContentSection" class="emptySection">No tasks to do</p></div>
+                        <p id="emptytoDoContentSection" class="emptySection">No tasks to do</p>
+                        <div onclick="" id="toDoContent" class="content"></div>
                     </div>
                     <div id="inProgressSection">
                         <div id="inProgressHeader"><p>In progress</p><button onclick="" id="addInProgress"></button></div>
-                        <div onclick="" id="inProgressContent" class="content"><p id="emptyinProgressContentSection" class="emptySection">No tasks in progress</p></div>
+                        <p id="emptyinProgressContentSection" class="emptySection">No tasks in progress</p>
+                        <div onclick="" id="inProgressContent" class="content"></div>
                     </div>
                     <div id="awaitFeedbackSection">
                         <div id="awaitFeedbackHeader"><p>Await Feedback</p><button onclick="" id="addAwaitFeedback"></button></div>
-                        <div onclick="" id="awaitFeedbackContent" class="content"><p id="emptyawaitFeedbackContentSection" class="emptySection">No task awaits feedback</p></div>
+                        <p id="emptyawaitFeedbackContentSection" class="emptySection">No task awaits feedback</p>
+                        <div onclick="" id="awaitFeedbackContent" class="content"></div>
                     </div>
                     <div id="doneSection">
                         <div id="doneHeader"><p>Done</p></div>
-                        <div onclick="" id="doneContent" class="content"><p id="emptydoneContentSection" class="emptySection">No tasks done</p></div>
+                        <p id="emptydoneContentSection" class="emptySection">No tasks done</p>
+                        <div onclick="" id="doneContent" class="content"></div>
                     </div>
                 </section>
             </div>

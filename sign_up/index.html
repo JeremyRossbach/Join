@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="sign_up.css">
     <link rel="stylesheet" href="../login.css">
+    <link rel="stylesheet" href="sign_up.css">
+    <link rel="stylesheet" href="sign_up_responsiv.css">
     <link rel="icon" href="../img/join_logo_black.png">
     <title>Sign up</title>
 </head>
@@ -17,41 +18,48 @@
         <div>You Signed Up successfully</div>
     </div>
 
-    <div class="nav">
-        <div class="img-logo">
-            <img src="../img/join_logo_black.png">
+    <div class="container">
+
+        <div class="nav">
+            <div class="img-logo">
+                <img src="../img/join_logo_black.png">
+            </div>
         </div>
+
+        <main>
+            <form class="sign-up" action="../index.html" onsubmit="return checkPasswordMatch(this)" name="sign-up">
+                <a class="button-back" href="../index.html">
+                    <img src="../img/arrow-left-line-default.png" alt="">
+                </a>
+                <h1>Sign up</h1>
+                <div class="sign-up-inputs">
+                    <input class="input-field" type="text" placeholder="Name" required>
+                    <input class="input-field" type="email" placeholder="Email" required>
+                    <div style="position: relative;">
+                        <input class="input-field" type="password" placeholder="Password" name="password"
+                            onkeyup="checkInputPassword(0)" required>
+                        <div class="password-visibility" style="display: none;" onclick="hidePassword(0)"></div>
+                    </div>
+                    <div style="position: relative;">
+                        <input class="input-field" type="password" placeholder="Confirm Password"
+                            name="confirm-password" onkeyup="checkInputPassword(1)" required>
+                        <div class="password-visibility" style="display: none;" onclick="hidePassword(1)"></div>
+                        <div class="validation-password" style="display: none;">Ups! your password don’t match</div>
+                    </div>
+
+                    <div class="accept-policy">
+                        <input type="checkbox" id="accept" required>
+                        <label for="accept">I accept the <a class="link-policy" href="../jura/privacy.html">Privacy
+                                policy</a></label>
+                    </div>
+                </div>
+
+                <button class="button-primary" type="submit">Sign up</button>
+
+            </form>
+        </main>
+
     </div>
-
-    <form class="sign-up" action="../index.html" onsubmit="return checkPasswordMatch(this)" name="sign-up">
-        <a class="button-back" href="../index.html">
-            <img src="../img/arrow-left-line-default.png" alt="">
-        </a>
-        <h1>Sign up</h1>
-        <div class="sign-up-inputs">
-            <input class="input-field" type="text" placeholder="Name" required>
-            <input class="input-field" type="email" placeholder="Email" required>
-            <div style="position: relative;">
-                <input class="input-field" type="password" placeholder="Password" name="password" onkeyup="" required>
-                <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
-            </div>
-            <div style="position: relative;">
-                <input class="input-field" type="password" placeholder="Confirm Password" name="confirm-password"
-                    onkeyup="" required>
-                <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
-                <div class="validation-password" style="display: none;">Ups! your password don’t match</div>
-            </div>
-
-            <div class="accept-policy">
-                <input type="checkbox" id="accept" required>
-                <label for="accept">I accept the <a class="link-policy" href="../jura/privacy.html">Privacy
-                        policy</a></label>
-            </div>
-        </div>
-
-        <button class="button-primary" type="submit">Sign up</button>
-
-    </form>
 
     <div class="footer">
         <a class="link" href="jura/privacy.html">Privacy Policy</a>
@@ -60,6 +68,7 @@
 
     <script src="sign_up.js"></script>
     <script src="../data.js"></script>
+    <script src="../login.js"></script>
 </body>
 
 </html>

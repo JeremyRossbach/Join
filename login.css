@@ -154,7 +154,7 @@ input[type=text] {
     position: absolute;
     width: 42px;
     height: 48px;
-    right: -32px;
+    right: 14px;
     top: 1px;
     cursor: pointer;
 }
@@ -197,7 +197,7 @@ input[type=text] {
     margin-left: -137px;
     z-index: 1000;
 
-    animation: logo-animation 1s forwards 500ms;
+    animation: logo-animation 500ms forwards 200ms;
 }
 
 .img-logo-animation-bg {
@@ -350,5 +350,6 @@ input[type=text] {
     height: 35px;
 
     display: flex;
+    align-items: center;
     gap: 35px;
 }
