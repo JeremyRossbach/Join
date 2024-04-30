@@ -1,6 +1,7 @@
 let currentContact;
 
-function init() {
+async function init() {    
+    await loadContacts();
     generateContactList();
 }
 
@@ -14,8 +15,8 @@ function createContact() {
     let index = contactData.findIndex(contact => contact.email == inputmail.value);
 
     if (index != -1) {
-        contactReady.style.display = "flex";    
-        
+        contactReady.style.display = "flex";
+
         return;
     }
 
@@ -25,10 +26,11 @@ function createContact() {
         phoneNumber: inputphone.value,
     };
 
-    contactData.push(contact);        
+    contactData.push(contact);
 
     hideCreateContactMessage("new_contact_successfully_div");
     generateContactList();
+    saveContact();
     closeAddNewContactWindow();
 }
 
@@ -65,7 +67,7 @@ function generateContactList() {
             </div>
         </div>            
         `;
-    }    
+    }
 }
 
 
@@ -136,7 +138,7 @@ function hideCreateContactMessage(messageID) {
     messageDiv.style.display = "flex";
     messageDiv.classList.add("animate");
 
-    setTimeout(function() {
+    setTimeout(function () {
         removeClassAnimate(messageDiv);
     }, 5000);
 }
@@ -169,6 +171,7 @@ function deleteContact() {
     hideCreateContactMessage("delete_contact_successfully_div");
     hideMenuEditDeleteContainer();
     closeContactInfo();
+    saveContact();
     generateContactList();
 }
 
@@ -206,11 +209,11 @@ function updateContact() {
     let index = contactData.findIndex(contact => contact.email == email);
 
     if (index != -1 && currentContact.email != email) {
-        contactReady.style.display = "flex";    
-        
+        contactReady.style.display = "flex";
+
         return;
     }
-    
+
     currentContact.name = name;
     currentContact.email = email;
     currentContact.phoneNumber = phone;
@@ -219,6 +222,7 @@ function updateContact() {
 
     hideCreateContactMessage("edit_contact_successfully_div");
     closeEditContactWindow();
+    saveContact();
     generateContactList();
 }
 
@@ -242,10 +246,19 @@ function menu_window() {
         menuContainer.style.display = "flex";
     } else {
         menuContainer.style.display = "none";
-    }    
+    }
 }
 
-function removeClassAnimate(messageDiv){
+function removeClassAnimate(messageDiv) {
     messageDiv.style.display = "none";
     messageDiv.classList.remove("animate");
+}
+
+function saveContact() {
+    setItem('allContacts', contactData);
+}
+
+async function loadContacts() {
+    var response = await getItem('allContacts');
+    contactData = JSON.parse(response.data.value);
 }
