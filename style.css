@@ -34,6 +34,7 @@ body {
     position: fixed;
     left: 232px;
     right: 0;
+    z-index: 999;
 }
 
 #nav_left {
@@ -169,6 +170,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-bottom: 60px;
 }
 
 .side_menu_bg {
@@ -314,8 +316,8 @@ body {
 
 .back_container{
     display: block;
-    width: 55px;
-    height: 55px;
+    width: 37px;
+    height: 37px;
     position: fixed;
     top: 188px;
     right: 40px;
@@ -324,14 +326,14 @@ body {
 }
 .back_container:hover{
     background-color: rgba(0, 0, 0, 0.1);
-    width: 55px;
-    height: 55px;
+    width: 37px;
+    height: 37px;
     border-radius: 50%;
 }
 .back{
     display: block;
-    width: 55px;
-    height: 55px;
+    width: 37px;
+    height: 37px;
     border-radius: 50%;
 }
 

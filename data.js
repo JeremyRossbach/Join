@@ -230,3 +230,7 @@ function jura_window() {
 function goBack() {
     window.location.href = document.referrer;
 }
+
+function goBackLogin() {
+    window.location.href = '/';
+}
