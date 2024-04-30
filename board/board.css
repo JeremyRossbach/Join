@@ -461,6 +461,7 @@ p {
     border-radius: 10px;
     border: 1px solid rgba(209, 209, 209, 1);
     font-weight: 400;
+    cursor: pointer;
 }
 
 .editTitleInput {
@@ -550,6 +551,14 @@ p {
     font-size: 20px;
 }
 
+.editAssignedToInput {
+    position: relative;
+}
+
+.editAssignedToInput:hover {
+    border: 1px solid black;
+}
+
 #okButton {
     display: flex;
     justify-content: center;
@@ -570,4 +579,45 @@ p {
     background-color: #28ABE2;
     box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+}
+
+.dropdownArrow {
+    position: absolute;
+    top: 688px;
+    right: 51px;
+    background-image: url(./img/dropdownArrow.png);
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 45px;
+    border: 0;
+}
+
+.dropdownArrow:hover {
+    background-color: #EFEFEF;
+    cursor: pointer;
+}
+
+#dropdownMenu {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    height: 150px;
+}
+
+.dropdownContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 16px;
+}
+
+.dropdownInitialsAndName {
+    display: flex;
+}
+
+.dropdownContact {
+    height: 56px;
 }

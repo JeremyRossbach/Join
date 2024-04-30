@@ -335,7 +335,9 @@ function editTask(i) {
         </div>
         <div class="editAssignedToAndInput">
             <p class="editAssignedToText">Assigned To</p>
-            <input onkeydown="findContact()" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text"> <!-- arrow-button at end of input missing -->
+            <input onkeydown="findContact()" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
+            <button onclick="dropdownMenu()" class="dropdownArrow"></button>
+            <div id="dropdownMenu"></div>
             <!-- initails of contacts missing -->
         </div>
         <div class="editSubtasksAndInput">
@@ -402,6 +404,33 @@ function findContact() {
 
 function renderContact() {
 
+}
+
+
+function dropdownMenu() {
+    renderDropdownMenu();
+}
+
+
+function renderDropdownMenu() {
+    for (let n = 0; n < contactData.length; n++) {
+        showDropdownMenu(n);
+    }
+}
+
+
+function showDropdownMenu(n) {
+    let dropdownContainer = document.getElementById('dropdownMenu');
+
+    dropdownContainer.innerHTML += /* html */`
+        <div class="dropdownContent">
+            <div class="dropdownInitialsAndName">
+                <div><!-- initials --></div>
+                <div class="dropdownContact">${contactData[n]['name']}</div>
+            </div>
+            <button onclick="dropdownCheckbox()" id="dropdownCheckbox${n}" class></button>
+        </div>
+    `;
 }
 
 
