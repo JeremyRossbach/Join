@@ -1,6 +1,6 @@
 @media (max-width: 1120px) {
     body {
-        min-height: calc(926px - 37px);
+        min-height: calc(926px - 16px);
     }
 
     .container {
@@ -162,12 +162,7 @@
     }
 
     .footer {
-        margin-bottom: 16px;
-    }
-}
-
-@media(min-height: 820px) {
-    body {
-        height: 100vh;
+        position: unset;
+        bottom: unset;
     }
 }

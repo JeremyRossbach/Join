@@ -3,7 +3,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 820px;
 }
 
 label {
@@ -255,7 +254,7 @@ input[type=text] {
     align-items: center;
     gap: 35px;
 
-    margin-top: 67px;
+    margin-top: 40px;
     margin-right: 77px;
 }
 
@@ -352,4 +351,7 @@ input[type=text] {
     display: flex;
     align-items: center;
     gap: 35px;
+
+    position: absolute;
+    bottom: 16px;
 }
