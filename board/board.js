@@ -310,45 +310,74 @@ function editTask(i) {
     cardPopup.style.height = '750px';
 
     cardPopup.innerHTML = /* html */`
-        <div class="editTaskCloseImage">
-            <img onclick="closePopup()" class="closeImage" src="./img/close.png">
-        </div>
-        <div class="editTextAndInput">
-            <p class="titleText">Title</p>
-            <input id="editTitle${i}" class="editTitleInput editInputs" placeholder="Enter a title" type="text">
-        </div>
-        <div class="editDescriptionAndTextarea">
-            <p class="descriptionText">Description</p>
-            <textarea id="editDescription${i}" class="editDescriptionTextarea editInputs" placeholder="Enter a description" name="" id="" cols="30" rows="10"></textarea>
-        </div>
-        <div class="editDueDateAndInput">
-            <p class="dueDateText">Due Date</p>
-            <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" onfocus="(this.type='date')" onblur="(this.type='text')">
-        </div>
-        <div class="editPriorityAndButtons">
-            <p class="priorityText">Priority</p>
-            <div class="priorityButtons">
-                <button onclick="" id="urgentButton${i}" class="priorityButtonUrgent priorityButton"></button>
-                <button onclick="" id="mediumButton${i}" class="priorityButtonMedium priorityButton"></button>
-                <button onclick="" id="lowButton${i}" class="priorityButtonLow priorityButton"></button> 
+        <div class="overflow-y">
+            <div class="editTaskCloseImage">
+                <img onclick="closePopup()" class="closeImage" src="./img/close.png">
             </div>
-        </div>
-        <div class="editAssignedToAndInput">
-            <p class="editAssignedToText">Assigned To</p>
-            <input onkeydown="findContact()" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
-            <button onclick="dropdownMenu()" class="dropdownArrow"></button>
-            <div id="dropdownMenu"></div>
-            <!-- initails of contacts missing -->
-        </div>
-        <div class="editSubtasksAndInput">
-            <p class="editSubtasksText">Subtasks</p>
-            <input id="editSubtasks" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text"> <!-- +-button at end of input missing -->
+            <div class="editTextAndInput">
+                <p class="titleText">Title</p>
+                <input id="editTitle${i}" class="editTitleInput editInputs" placeholder="Enter a title" type="text">
+            </div>
+            <div class="editDescriptionAndTextarea">
+                <p class="descriptionText">Description</p>
+                <textarea id="editDescription${i}" class="editDescriptionTextarea editInputs" placeholder="Enter a description" name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="editDueDateAndInput">
+                <p class="dueDateText">Due Date</p>
+                <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" onfocus="(this.type='date')" onblur="(this.type='text')">
+            </div>
+            <div class="editPriorityAndButtons">
+                <p class="priorityText">Priority</p>
+                <div class="priorityButtons">
+                    <button onclick="" id="urgentButton${i}" class="priorityButtonUrgent priorityButton"></button>
+                    <button onclick="" id="mediumButton${i}" class="priorityButtonMedium priorityButton"></button>
+                    <button onclick="" id="lowButton${i}" class="priorityButtonLow priorityButton"></button> 
+                </div>
+            </div>
+            <div class="editAssignedToAndInput">
+                <p class="editAssignedToText">Assigned To</p>
+                <div class="editAssignedToInputAndArrow">
+                    <input onkeydown="findContact()" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
+                    <button onclick="dropdownMenu()" class="dropdownArrow"></button>
+                </div>
+                <div id="dropdownMenu"></div>
+                <div id="editInitials${i}"></div>
+            </div>
+            <div class="editSubtasksAndInput">
+                <p class="editSubtasksText">Subtasks</p>
+                <input id="editSubtasks" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text"> <!-- +-button at end of input missing -->
+            </div>
         </div>
         <div class="editTaskOkButton">
             <button onclick="ok()" id="okButton">Ok <img class="checkImage" src="./img/check.png"></button>
         </div>
     `;
+    renderEditAssignedTo(i);
 }
+
+
+function renderEditAssignedTo(i) {
+    for (let o = 0; o < tasks[i]['assignedTo'].length; o++) {
+        let name = tasks[i]['assignedTo'];
+        let initials = name[o].split(' ')[0].charAt(0) + name[o].split(' ')[1].charAt(0);
+        showEditAssignedTo(initials, i, o);
+    }
+}
+
+
+function showEditAssignedTo(initials, i, o) {
+    let assignedTo = document.getElementById(`editInitials${i}`);
+    assignedTo.style.display = 'flex';
+    assignedTo.style.gap = '8px';
+    let backgroundColor = colorPool[o % colorPool.length];
+
+    assignedTo.innerHTML += /* html */`
+        <div class="editInitials">
+            <div id="initals${o}" class="popupInitials" style="background-color: ${backgroundColor};">${initials}</div>
+        </div>
+    `;
+}
+
 
 function emptyContentSections() {
     document.getElementById('toDoContent').innerHTML = '';
@@ -421,17 +450,59 @@ function renderDropdownMenu() {
 
 function showDropdownMenu(n) {
     let dropdownContainer = document.getElementById('dropdownMenu');
+    dropdownContainer.style.display = 'flex';
 
     dropdownContainer.innerHTML += /* html */`
         <div class="dropdownContent">
             <div class="dropdownInitialsAndName">
-                <div><!-- initials --></div>
+                <div id="dropdownInitials${n}"></div>
                 <div class="dropdownContact">${contactData[n]['name']}</div>
             </div>
-            <button onclick="dropdownCheckbox()" id="dropdownCheckbox${n}" class></button>
+            <button onclick="dropdownCheckbox(n)" id="dropdownCheckbox${n}" class="dropdownCheckbox"></button>
+        </div>
+    `;
+    renderDropdownInitials(n);
+}
+
+
+function renderDropdownInitials(n) {
+        let name = contactData[n]['name'];
+        let initials = name.split(' ')[0].charAt(0) + name.split(' ')[1].charAt(0);
+        showDropDownInitials(initials, n);
+}
+
+
+function showDropDownInitials(initials, n) {
+    let assignedTo = document.getElementById(`dropdownInitials${n}`);
+    let backgroundColor = colorPool[n % colorPool.length];
+
+    assignedTo.innerHTML += /* html */`
+        <div class="editInitials">
+            <div id="initals${n}" class="popupInitials" style="background-color: ${backgroundColor};">${initials}</div>
         </div>
     `;
 }
+
+
+/* function dropdownCheckbox(n) {
+    let checkbox = document.getElementById(`dropdownCheckbox${n}`);
+
+    if (tasks[i]['doneSubtask'][l] == true) {
+        tasks[i]['doneSubtask'][l] = false;
+        clickeddropdownCheckbox(l);
+    } else {
+        tasks[i]['doneSubtask'][l] = true
+        checkbox.src = "./img/checkbox.png"
+    }
+    saveTasks();
+}
+
+
+
+function clickeddropdownCheckbox(l) {
+    let checkbox = document.getElementById(`checkBoxButton${l}`);
+    checkbox.src = "./img/checkbox_clicked.png";
+} */
 
 
 function renderTask(i) {

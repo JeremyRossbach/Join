@@ -284,6 +284,12 @@ p {
     background-color: white;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
     z-index: 999;
+    overflow-y: scroll;
+    scrollbar-width: 20px;
+}
+
+#cardPopup::-webkit-scrollbar {
+    
 }
 
 .popupCategoryAndClose {
@@ -552,11 +558,16 @@ p {
 }
 
 .editAssignedToInput {
-    position: relative;
+    width: 491px;
 }
 
 .editAssignedToInput:hover {
     border: 1px solid black;
+}
+
+.editAssignedToInputAndArrow {
+    display: flex;
+    align-items: center;
 }
 
 #okButton {
@@ -582,17 +593,16 @@ p {
 }
 
 .dropdownArrow {
-    position: absolute;
-    top: 688px;
-    right: 51px;
     background-image: url(./img/dropdownArrow.png);
     background-repeat: no-repeat;
     background-color: white;
     background-position: center;
     width: 24px;
     height: 24px;
+    margin-left: -34px;
     border-radius: 45px;
     border: 0;
+    z-index: 1;
 }
 
 .dropdownArrow:hover {
@@ -601,23 +611,58 @@ p {
 }
 
 #dropdownMenu {
-    display: flex;
+    display: none;
     flex-direction: column;
-    background-color: aqua;
-    height: 150px;
+    background-color: rgb(255, 255, 255);
+    height: 189px;
+    overflow-y: scroll;
 }
 
 .dropdownContent {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 10px;
     padding-inline: 16px;
+    padding-top: 3.5px;
+    padding-bottom: 3.5px;
+    cursor: pointer;
+}
+
+.dropdownContent:hover {
+    background-color: #00000010;
 }
 
 .dropdownInitialsAndName {
     display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .dropdownContact {
+    display: flex;
+    align-items: center;
     height: 56px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.dropdownCheckbox {
+    background-image: url(./img/checkbox.png);
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position: center;
+    width: 19px;
+    height: 19px;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+}
+
+.overflow-y {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
