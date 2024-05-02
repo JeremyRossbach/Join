@@ -1,3 +1,7 @@
+const STORAGE_TOKEN = 'L36LJE4QYVS3F3IFAYY2A67B3Y4OV7AEIMVM6A8K';
+const STORAGE_URL = 'https://remote-storage.developerakademie.org/item';
+
+
 let contactData = [
     {
         'name': 'Anton Mayer',
@@ -181,14 +185,16 @@ const colorPool = [
 ];
 
 // speichert alles
-function save() {
-
+async function setItem(key, value) {
+    const payload = { key, value, token: STORAGE_TOKEN };
+    return fetch(STORAGE_URL, { method: 'POST', body: JSON.stringify(payload) })
+        .then(res => res.json());
 }
 
-
 // lädt alles
-function load() {
-
+async function getItem(key) {
+    const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;
+    return fetch(url).then(res => res.json());
 }
 
 // gemeinsames Init
@@ -228,5 +234,10 @@ function jura_window() {
 
 // Zurück auf die vorherige Seite wechseln / einfach die Funktion per onclick Event nutzen. 
 function goBack() {
-    window.location.href = document.referrer;
+    // window.location.href = document.referrer;
+    window.location.href = '/summary';
+}
+
+function goBackLogin() {
+    window.location.href = '/';
 }
