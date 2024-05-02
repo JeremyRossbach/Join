@@ -288,10 +288,6 @@ p {
     scrollbar-width: 20px;
 }
 
-#cardPopup::-webkit-scrollbar {
-    
-}
-
 .popupCategoryAndClose {
     display: flex;
     justify-content: space-between;
