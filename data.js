@@ -234,7 +234,8 @@ function jura_window() {
 
 // Zurück auf die vorherige Seite wechseln / einfach die Funktion per onclick Event nutzen. 
 function goBack() {
-    window.location.href = document.referrer;
+    // window.location.href = document.referrer;
+    window.location.href = '/summary';
 }
 
 function goBackLogin() {
