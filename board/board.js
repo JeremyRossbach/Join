@@ -338,14 +338,18 @@ function editTask(i) {
                 <p class="editAssignedToText">Assigned To</p>
                 <div class="editAssignedToInputAndArrow">
                     <input onkeydown="findContact()" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
-                    <button onclick="dropdownMenu()" class="dropdownArrow"></button>
+                    <img onclick="openDropdownMenu()" id="arrow" class="dropdownArrow" src="./img/dropdownArrow.png">
                 </div>
                 <div id="dropdownMenu"></div>
                 <div id="editInitials${i}"></div>
             </div>
             <div class="editSubtasksAndInput">
                 <p class="editSubtasksText">Subtasks</p>
-                <input id="editSubtasks" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text"> <!-- +-button at end of input missing -->
+                <div class="editSubtasksInputAndPlus">
+                    <input id="editSubtasks" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text">
+                    <img onclick="     " id="plus" class="plus" src="./img/plus.png">
+                </div>
+                <div id="editSubtasksList${i}"></div>
             </div>
         </div>
         <div class="editTaskOkButton">
@@ -353,6 +357,8 @@ function editTask(i) {
         </div>
     `;
     renderEditAssignedTo(i);
+    renderEditSubtasksList(i);
+    dropdownMenu(i);
 }
 
 
@@ -375,6 +381,22 @@ function showEditAssignedTo(initials, i, o) {
         <div class="editInitials">
             <div id="initals${o}" class="popupInitials" style="background-color: ${backgroundColor};">${initials}</div>
         </div>
+    `;
+}
+
+
+function renderEditSubtasksList(i) {
+    for (let p = 0; p < tasks[i]['subtask'].length; p++) {
+        showEditSubtasksList(i, p);
+    }
+}
+
+
+function showEditSubtasksList(i, p) {
+    let subtasks = document.getElementById(`editSubtasksList${i}`);
+
+    subtasks.innerHTML += /* html */`
+        <li>${tasks[i]['subtask'][p]}</li>
     `;
 }
 
@@ -422,8 +444,8 @@ function findContact() {
     let search = document.getElementById('editAssignedTo').value;
     search = search.toLowerCase();
 
-    for (let m = 0; m < contactData.length; m++) {
-        let contact = contactData[i];
+    for (let m = 0; m < contactData[m].length; m++) {
+        let contact = contactData[m];
         if (contact['name'].toLowerCase().includes(search)) {
             renderContact();
         }
@@ -431,44 +453,54 @@ function findContact() {
 }
 
 
-function renderContact() {
+function renderContact(m) {
+    let dropdownContainer = document.getElementById('dropdownMenu');
 
+    dropdownContainer.innerHTML += /* html */`
+        <div onclick="renderSelectedContact(${m})" id="contact${m}" class="dropdownContent">
+            <div class="dropdownInitialsAndName">
+                <div id="dropdownInitials${m}"></div>
+                <div class="dropdownContact">${contactData[m]['name']}</div>
+            </div>
+            <img id="dropdownCheckbox${m}" class="dropdownCheckbox" src="./img/checkbox.png">
+        </div>
+    `;
 }
 
 
-function dropdownMenu() {
-    renderDropdownMenu();
+function dropdownMenu(i) {
+    renderDropdownMenu(i);
 }
 
 
-function renderDropdownMenu() {
+function renderDropdownMenu(i) {
     for (let n = 0; n < contactData.length; n++) {
-        showDropdownMenu(n);
+        showDropdownMenu(n, i);
     }
 }
 
 
-function showDropdownMenu(n) {
+function showDropdownMenu(n, i) {
     let dropdownContainer = document.getElementById('dropdownMenu');
-    dropdownContainer.style.display = 'flex';
 
     dropdownContainer.innerHTML += /* html */`
-        <div class="dropdownContent">
+        <div onclick="renderSelectedContact(${i}, ${n})" id="contact${n}" class="dropdownContent">
             <div class="dropdownInitialsAndName">
                 <div id="dropdownInitials${n}"></div>
                 <div class="dropdownContact">${contactData[n]['name']}</div>
             </div>
-            <button onclick="dropdownCheckbox(n)" id="dropdownCheckbox${n}" class="dropdownCheckbox"></button>
+            <img id="dropdownCheckbox${n}" class="dropdownCheckbox" src="./img/checkbox.png">
         </div>
     `;
     renderDropdownInitials(n);
+    renderAlreadySelectedContacts(n, i);
 }
 
 
 function renderDropdownInitials(n) {
-        let name = contactData[n]['name'];
-        let initials = name.split(' ')[0].charAt(0) + name.split(' ')[1].charAt(0);
-        showDropDownInitials(initials, n);
+    let name = contactData[n]['name'];
+    let initials = name.split(' ')[0].charAt(0) + name.split(' ')[1].charAt(0);
+    showDropDownInitials(initials, n);
 }
 
 
@@ -484,25 +516,92 @@ function showDropDownInitials(initials, n) {
 }
 
 
-/* function dropdownCheckbox(n) {
-    let checkbox = document.getElementById(`dropdownCheckbox${n}`);
-
-    if (tasks[i]['doneSubtask'][l] == true) {
-        tasks[i]['doneSubtask'][l] = false;
-        clickeddropdownCheckbox(l);
-    } else {
-        tasks[i]['doneSubtask'][l] = true
-        checkbox.src = "./img/checkbox.png"
+function renderAlreadySelectedContacts(n, i) {
+    for (let o = 0; o < tasks[i]['assignedTo'].length; o++) {
+        const contact = tasks[i]['assignedTo'][o];
+        showAleardySelectedContact(contact, n);
     }
-    saveTasks();
 }
 
+
+function showAleardySelectedContact(contact, n) {
+    if (contact == contactData[n]['name']) {
+        alreadySelectedContact(n);
+    }
+}
+
+
+function alreadySelectedContact(n) {
+    let contact = document.getElementById(`contact${n}`);
+    let checkImage = document.getElementById(`dropdownCheckbox${n}`);
+
+    contact.style.backgroundColor = '#2B3647';
+    contact.style.color = 'white'
+    checkImage.src = './img/checkboxClickedWhite.png';
+}
+
+
+
+function openDropdownMenu() {
+    document.getElementById('dropdownMenu').style.display = 'flex';
+    let arrow = document.getElementById('arrow');
+    
+    if (arrow.src.includes("/img/dropdownArrow.png")) {
+        arrow.src = "./img/liftupArrow.png";
+    } else {
+        arrow.src = "./img/dropdownArrow.png";
+        document.getElementById('dropdownMenu').style.display = 'none';
+    }
+}
+
+
+function renderSelectedContact(i, n) {
+    if (!tasks[i]['assignedTo'].includes(contactData[n]['name'])) {
+        selectedContact(i, n);
+    } else {
+        unselectedContact(i, n);
+    }
+    document.getElementById(`editInitials${i}`).innerHTML = '';
+    renderEditAssignedTo(i);
+}
+
+
+function selectedContact(i, n) {
+    tasks[i]['assignedTo'].push(contactData[n]['name']);
+
+    let contact = document.getElementById(`contact${n}`);
+    let checkImage = document.getElementById(`dropdownCheckbox${n}`);
+
+    contact.style.backgroundColor = '#2B3647';
+    contact.style.color = 'white'
+    checkImage.src = './img/checkboxClickedWhite.png';
+
+    saveTasks();
+    emptyContentSections();
+    init();
+}
+
+
+function unselectedContact(i, n) {
+    tasks[i]['assignedTo'].splice(n, 1); /* splice selected name not n */
+
+    let contact = document.getElementById(`contact${n}`);
+    let checkImage = document.getElementById(`dropdownCheckbox${n}`);
+
+    contact.style.backgroundColor = 'white';
+    contact.style.color = 'black'
+    checkImage.src = './img/checkbox.png';
+
+    saveTasks();
+    emptyContentSections();
+    init();
+}
 
 
 function clickeddropdownCheckbox(l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
     checkbox.src = "./img/checkbox_clicked.png";
-} */
+}
 
 
 function renderTask(i) {

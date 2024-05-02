@@ -553,7 +553,8 @@ p {
     font-size: 20px;
 }
 
-.editAssignedToInput {
+.editAssignedToInput,
+.editSubtasksInput {
     width: 491px;
 }
 
@@ -561,7 +562,8 @@ p {
     border: 1px solid black;
 }
 
-.editAssignedToInputAndArrow {
+.editAssignedToInputAndArrow,
+.editSubtasksInputAndPlus {
     display: flex;
     align-items: center;
 }
@@ -588,20 +590,16 @@ p {
     cursor: pointer;
 }
 
-.dropdownArrow {
-    background-image: url(./img/dropdownArrow.png);
-    background-repeat: no-repeat;
-    background-color: white;
-    background-position: center;
+.dropdownArrow,
+.plus {
     width: 24px;
     height: 24px;
     margin-left: -34px;
     border-radius: 45px;
-    border: 0;
-    z-index: 1;
 }
 
-.dropdownArrow:hover {
+.dropdownArrow:hover,
+.plus:hover {
     background-color: #EFEFEF;
     cursor: pointer;
 }
@@ -622,6 +620,10 @@ p {
     padding-inline: 16px;
     padding-top: 3.5px;
     padding-bottom: 3.5px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    background-color: white;
+    color: black;
     cursor: pointer;
 }
 
@@ -644,14 +646,8 @@ p {
 }
 
 .dropdownCheckbox {
-    background-image: url(./img/checkbox.png);
-    background-repeat: no-repeat;
-    background-color: white;
-    background-position: center;
-    width: 19px;
-    height: 19px;
-    border-radius: 3px;
-    border: 0;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
 }
 
@@ -661,4 +657,20 @@ p {
     gap: 24px;
     overflow-y: scroll;
     scrollbar-width: none;
+}
+
+li {
+    padding-inline: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+    transition: 0.25s;
+}
+
+li:hover {
+    background-color: #00000010;
+    cursor: pointer;
 }
