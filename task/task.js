@@ -3,12 +3,16 @@ let categorys;
 let taskcontacts = [];
 let currentContact;
 let prio;
-let subtasks = [];
-loadSubtasks()
+let subtasks = ['test',];
 
-function addTaskInit(){
-    
+
+
+function initAddTasks(){
+    loadSubtasks();
+   
 }
+
+
 
 function dropDownContacts() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -217,26 +221,19 @@ function userStory(){
     categorys = "User Story";
 }
 
-function pushSubtask(){
-    let input = document.getElementById('subtaskInput');
-    subtasks.push(input.value)
-    input.value = '';
-    renderSubtask()
-    saveSubtusks()
-   
-} 
+function renderSubtask() {
 
-function renderSubtask(){
-    let pushedSubtasks = document.getElementById('pushedSubtasks');
+    let pushedSubtasks = document.getElementById("pushedSubtasks");
     pushedSubtasks.innerHTML = '';
     for (let j = 0; j < subtasks.length; j++) {
         let subtask = subtasks[j];
 
-        pushedSubtasks.innerHTML+=/*html*/`
+        pushedSubtasks.innerHTML +=/*html*/`
             <div id='editableSubtask${j}' onclick="subtasksEditAndDelete(${j},'${subtask}')">· ${subtask}</div>
         `
     }
 }
+
 
 function subtasksEditAndDelete(j, subtask) {
     let editableSubtask = document.getElementById(`editableSubtask${j}`);
@@ -246,40 +243,53 @@ function subtasksEditAndDelete(j, subtask) {
             <input id='subtaskEdit' value='${subtask}'>
             <img onclick='deleteSubtask(${j})' src="img/subtaskDelete.svg">
             <div class='divider'></div>
-                   <img onclick='saveEditedSubtask(${j})' src="img/subtaskCheck.svg">
+                   <img onclick='pushEditToArray(${j})' src="img/subtaskCheck.svg">
         </div>
         </div>
     `;
-    subtaskEdit.focus();
+    subtaskEdit.focus()
     
 }
 
-function saveEditedSubtask(j) {
-    let editedSubtaskInput = document.getElementById(`subtaskEdit`);
-    subtasks[j] = editedSubtaskInput.value;
-    renderSubtask()
-}
+//function saveEditedSubtask(j) {
+  //  let editedSubtaskInput = document.getElementById(`subtaskEdit`);
+   // sub_tasks[j] = editedSubtaskInput.value;
+   
+//}
 
 function deleteSubtask(j) {
     subtasks.splice(j, 1);
+    saveSubtusks();
+    
     renderSubtask();
-    saveSubtusks()
 }
-function pushEditToArray(){
+function pushEditToArray(j){
     let subtaskEdit = document.getElementById('subtaskEdit')
     
     subtasks.push(subtaskEdit.value)
     subtaskEdit.value = '';
-    saveSubtusks()
-    renderSubtask()
-console.log(subtasks)
+   deleteSubtask(j)
+    console.log(subtasks)
+    
+    saveSubtusks();
+    loadSubtasks();
+    renderSubtask();
 } 
 function saveSubtusks(){
     let subtaskasText = JSON.stringify(subtasks);
     localStorage.setItem('subtasks',subtaskasText);
-    renderSubtask()
 }
 function loadSubtasks(){
     let subtaskasText = localStorage.getItem(subtasks)
-    subtasks = JSON.parse(subtaskasText);
+    sub_tasks = JSON.parse(subtaskasText);
+    
+}
+function pushSubtask() {
+    let subtaskinput = document.getElementById("subtask_input");
+    
+    subtasks.push(subtaskinput.value);
+  
+    subtaskinput.value = '';
+   
+    renderSubtask()
 }

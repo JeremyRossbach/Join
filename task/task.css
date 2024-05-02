@@ -223,7 +223,7 @@ input:focus{
     border: 0; 
    
 }
-#subtaskInput:focus {
+#subtask_input:focus {
     outline: 0px solid #29ABE2;
     
 }

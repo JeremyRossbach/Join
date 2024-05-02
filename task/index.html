@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="task.css">
-    <script src="task.js"></script>
+    
     <script src="../data.js"></script>
     <link rel="icon" href="../img/join_logo_black.png">
     <title>Join</title>
 </head>
 
-<body onload="sharedInit();">
+<body onload="sharedInit(),initAddTasks()">
     <!-- Das ist ein Template für alle andere Seiten -->
     <div id="div_body">
         <div id="side">
@@ -142,23 +142,22 @@
                                     <div onclick="userStory()" class="choseCategory">User Story</div>
                                 </div>
                                 
-                                
                             </div>
                         </div>
                     </div>
                     <div class="spanandvalue">
                         <span>Subtasks</span>
                         <div class="subtaskParent">
-                        <input id="subtaskInput" class="subtaskInput" placeholder="Add new subtask" type="text">
+                        <input id="subtask_input" class="subtaskInput" placeholder="Add new subtask">
                         <img onclick="pushSubtask()" src="img/subtaskPlus.svg" alt="">
                         </div>
-                        <div id="pushedSubtasks" class="pushedSubtasks">jo</div>
+                        <div id="pushedSubtasks" class="pushedSubtasks"></div>
                     </div>
                     
                     <!--  -->
                 </div>
 
             </div>
-
+<script src="task.js"></script>
 </body>
 
