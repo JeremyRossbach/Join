@@ -488,6 +488,10 @@ p {
     gap: 8px;
 }
 
+.editSubtasksAndInput {
+    margin-bottom: 16px;
+}
+
 .editDescriptionTextarea {
     max-width: 491px;
     min-width: 491px;
@@ -519,26 +523,18 @@ p {
 }
 
 .priorityButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
     width: 136.67px;
     height: 56px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: white;
     border-radius: 10px;
     border: 0;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: white;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
-}
-
-.priorityButtonUrgent {
-    background-image: url(./img/urgentButton.png);
-}
-
-.priorityButtonMedium {
-    background-image: url(./img/mediumButton.png);
-}
-
-.priorityButtonLow {
-    background-image: url(./img/lowButton.png);
 }
 
 .priorityButton:hover {
@@ -660,17 +656,71 @@ p {
 }
 
 li {
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+}
+
+.subtasksContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px;
+    margin-top: 4px;
     padding-inline: 16px;
     padding-top: 6px;
     padding-bottom: 6px;
     border-radius: 10px;
-    font-weight: 400;
-    font-size: 16px;
-    color: black;
     transition: 0.25s;
 }
 
-li:hover {
+.subtasksContent:hover {
     background-color: #00000010;
     cursor: pointer;
+}
+
+.deleteAndEdit {
+    display: none;
+    align-items: center;
+    gap: 8px;
+}
+
+.subtasksContent:hover .deleteAndEdit {
+    display: flex;
+}
+
+.subtasksImageSpacer {
+    height: 24px;
+    width: 1px;
+    background-color: rgba(168, 168, 168, 1);
+}
+
+.editImage {
+    width: 18.25px;
+    height: 18.25px;
+}
+
+.subtasksEditInput {
+    width: 380px;
+    height: 24px;
+    padding-inline: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 6px;
+    border: 0;
+    border-bottom: 1px solid black;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+}
+
+.subtasksEditInput:focus {
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+.deleteAndDone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }

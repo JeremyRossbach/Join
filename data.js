@@ -116,6 +116,7 @@ let tasks = [
         'dueDate': '01/01/2024',
         'prio': 'Low',
         'category': 'User Story',
+        'subtask': [],
         'section': 'In progress'
     },
     {
@@ -149,6 +150,7 @@ let tasks = [
         'dueDate': '01/01/2024',
         'prio': 'Urgent',
         'category': 'User Story',
+        'subtask': [],
         'section': 'Await Feedback'
     },
     {

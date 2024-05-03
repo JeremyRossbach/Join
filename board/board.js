@@ -83,7 +83,7 @@ function renderProgressbar(i) {
     let progressbar = document.getElementById(`progressbar${i}`);
     let progressbarAndSubtask = document.getElementById(`progressbarAndSubtask${i}`);
 
-    if (tasks[i]['subtask'] == null) {
+    if (tasks[i]['subtask'] == null || tasks[i]['subtask'][0] == undefined) {
         progressbar.style.display = 'none';
     } else {
         progressbarAndSubtask.style.marginBottom = '24px';
@@ -94,7 +94,7 @@ function renderProgressbar(i) {
 function renderSubtasks(i) {
     let subtasks = document.getElementById(`subtask${i}`);
 
-    if (tasks[i]['subtask'] == null) {
+    if (tasks[i]['subtask'] == null || tasks[i]['subtask'][0] == undefined) {
         subtasks.style.display = 'none';
     } else {
         subtasks.innerHTML = /* html */`
@@ -169,8 +169,8 @@ function showCardPopup(i) {
             <p class="assignedToText">Assigned To:</p>
             <div id="popupAssignedTo${i}" class="popupAssignedToContent"></div>
         </div>
-        <div class="popupSubtasks">
-            <p class="popupSubtasksText">Subtasks</p>
+        <div id="popupSubtasks${i}" class="popupSubtasks">
+            <p id="popupSubtasksText${i}" class="popupSubtasksText">Subtasks</p>
             <div  id="popupSubtasks${i}" class="popupSubtasksContent"></div>
         </div>
         <div class="popupBottom">
@@ -228,8 +228,13 @@ function showPopupAssignedTo(initials, i, k) {
 
 
 function renderPopupSubtasks(i) {
-    for (let l = 0; l < tasks[i]['subtask'].length; l++) {
-        showPopupSubtasks(i, l)
+    if (tasks[i]['subtask'][0]) {
+        for (let l = 0; l < tasks[i]['subtask'].length; l++) {
+            showPopupSubtasks(i, l)
+        }
+    } else {
+        document.getElementById(`popupSubtasks${i}`).style.display = 'none';
+        document.getElementById(`popupSubtasksText${i}`).style.display = 'none';
     }
 }
 
@@ -324,20 +329,20 @@ function editTask(i) {
             </div>
             <div class="editDueDateAndInput">
                 <p class="dueDateText">Due Date</p>
-                <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" onfocus="(this.type='date')" onblur="(this.type='text')">
+                <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" dateFormat onfocus="(this.type='date')" onblur="(this.type='text')">
             </div>
             <div class="editPriorityAndButtons">
                 <p class="priorityText">Priority</p>
                 <div class="priorityButtons">
-                    <button onclick="" id="urgentButton${i}" class="priorityButtonUrgent priorityButton"></button>
-                    <button onclick="" id="mediumButton${i}" class="priorityButtonMedium priorityButton"></button>
-                    <button onclick="" id="lowButton${i}" class="priorityButtonLow priorityButton"></button> 
+                    <button onclick="editPrioButtonUrgent(${i})" id="urgentButton${i}" class="priorityButtonUrgent priorityButton">Urgent <img id="urgentImage${i}" src="./img/urgent.png"></button>
+                    <button onclick="editPrioButtonMedium(${i})" id="mediumButton${i}" class="priorityButtonMedium priorityButton">Medium <img id="mediumImage${i}" src="./img/medium.png"></button>
+                    <button onclick="editPrioButtonLow(${i})" id="lowButton${i}" class="priorityButtonLow priorityButton">Low <img id="lowImage${i}" src="./img/low.png"></button> 
                 </div>
             </div>
             <div class="editAssignedToAndInput">
                 <p class="editAssignedToText">Assigned To</p>
                 <div class="editAssignedToInputAndArrow">
-                    <input onkeydown="findContact()" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
+                    <input onkeydown="findContact(${i})" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
                     <img onclick="openDropdownMenu()" id="arrow" class="dropdownArrow" src="./img/dropdownArrow.png">
                 </div>
                 <div id="dropdownMenu"></div>
@@ -356,9 +361,44 @@ function editTask(i) {
             <button onclick="ok()" id="okButton">Ok <img class="checkImage" src="./img/check.png"></button>
         </div>
     `;
+    renderInputValues(i);
+    renderValues(i);
     renderEditAssignedTo(i);
     renderEditSubtasksList(i);
     dropdownMenu(i);
+}
+
+
+function renderInputValues(i) {
+    document.getElementById(`editTitle${i}`).value = `${tasks[i]['title']}`;
+    document.getElementById(`editDescription${i}`).value = `${tasks[i]['description']}`;
+    document.getElementById(`editDueDate${i}`).value = `${tasks[i]['dueDate']}`;
+}
+
+
+function renderValues(i) {
+    let urgentButton = document.getElementById(`urgentButton${i}`);
+    let urgentImage = document.getElementById(`urgentImage${i}`);
+    let mediumButton = document.getElementById(`mediumButton${i}`);
+    let mediumImage = document.getElementById(`mediumImage${i}`);
+    let lowButton = document.getElementById(`lowButton${i}`);
+    let lowImage = document.getElementById(`lowImage${i}`);
+
+    if (tasks[i]['prio'] === 'Urgent') {
+        urgentButton.style.backgroundColor = '#FF3D00';
+        urgentButton.style.color = 'white';
+        urgentImage.src = './img/urgentWhite.png';
+    }
+    if (tasks[i]['prio'] === 'Medium') {
+        mediumButton.style.backgroundColor = '#FFA800';
+        mediumButton.style.color = 'white';
+        mediumImage.src = './img/mediumWhite.png';
+    }
+    if (tasks[i]['prio'] === 'Low') {
+        lowButton.style.backgroundColor = '#7AE228';
+        lowButton.style.color = 'white';
+        lowImage.src = './img/lowWhite.png';
+    }
 }
 
 
@@ -396,8 +436,55 @@ function showEditSubtasksList(i, p) {
     let subtasks = document.getElementById(`editSubtasksList${i}`);
 
     subtasks.innerHTML += /* html */`
-        <li>${tasks[i]['subtask'][p]}</li>
+        <div id="subtasksContent${p}" class="subtasksContent">
+            <li>${tasks[i]['subtask'][p]}</li>
+            <div class="deleteAndEdit">
+                <img onclick="editSubtask(${p}, ${i})" class="editImage" src="./img/edit.png">
+                <div class="subtasksImageSpacer"></div>
+                <img onclick="deleteSubtask(${p}, ${i})" src="./img/delete.png">
+            </div>
+        </div>
     `;
+}
+
+
+function editSubtask(p, i) {
+    let subtasks = document.getElementById(`subtasksContent${p}`);
+    subtasks.style.backgroundColor = 'white';
+
+    subtasks.innerHTML = /* html */`
+        <input required id="subtasksInputContent${p}" class="subtasksEditInput">
+            <div class="deleteAndDone">
+                <img onclick="doneEditSubtask(${p}, ${i})" src="./img/done.png">
+                <div class="subtasksImageSpacer"></div>
+                <img onclick="deleteSubtask(${p}, ${i})" src="./img/delete.png">
+            </div>
+        </div>
+    `;
+    document.getElementById(`subtasksInputContent${p}`).value = `${tasks[i]['subtask'][p]}`;
+}
+
+
+function doneEditSubtask(p, i) {
+    let subtask = document.getElementById(`subtasksInputContent${p}`).value;
+
+    tasks[i]['subtask'][p] = subtask;
+
+    saveTasks();
+    document.getElementById(`editSubtasksList${i}`).innerHTML = '';
+    renderEditSubtasksList(i);
+}
+
+
+function deleteSubtask(p, i) {
+    tasks[i]['subtask'].splice(p, 1);
+
+    document.getElementById(`editSubtasksList${i}`).innerHTML = '';
+    renderEditSubtasksList(i);
+
+    saveTasks();
+    emptyContentSections();
+    init();
 }
 
 
@@ -425,6 +512,118 @@ function loadData() {
 }
 
 
+function editPrioButtonUrgent(i) {
+    let prio = 'Urgent';
+    let urgentButton = document.getElementById(`urgentButton${i}`);
+    let urgentImage = document.getElementById(`urgentImage${i}`);
+
+    urgentButton.style.backgroundColor = '#FF3D00';
+    urgentButton.style.color = 'white';
+    urgentImage.src = './img/urgentWhite.png';
+
+    disableMediumButton(i);
+    disableLowButton(i);
+    deleteAndPushPrio(i, prio);
+}
+
+
+function editPrioButtonMedium(i) {
+    let prio = 'Medium';
+    let mediumButton = document.getElementById(`mediumButton${i}`);
+    let mediumImage = document.getElementById(`mediumImage${i}`);
+
+    mediumButton.style.backgroundColor = '#FFA800';
+    mediumButton.style.color = 'white';
+    mediumImage.src = './img/mediumWhite.png';
+
+    disableUrgentButton(i);
+    disableLowButton(i);
+    deleteAndPushPrio(i, prio);
+}
+
+
+function editPrioButtonLow(i) {
+    let prio = 'Low';
+    let lowButton = document.getElementById(`lowButton${i}`);
+    let lowImage = document.getElementById(`lowImage${i}`);
+
+    lowButton.style.backgroundColor = '#7AE228';
+    lowButton.style.color = 'white';
+    lowImage.src = './img/lowWhite.png';
+
+    disableUrgentButton(i);
+    disableMediumButton(i);
+    deleteAndPushPrio(i, prio);
+}
+
+
+function disableUrgentButton(i) {
+    let urgentButton = document.getElementById(`urgentButton${i}`);
+    let urgentImage = document.getElementById(`urgentImage${i}`);
+    let mediumImage = document.getElementById(`mediumImage${i}`);
+    let lowImage = document.getElementById(`lowImage${i}`);
+
+    if (mediumImage.src.includes('/img/mediumWhite.png') || lowImage.src.includes('/img/lowWhite.png')) {
+        setUrgentButtonStyle(urgentButton, urgentImage);
+    }
+}
+
+
+function setUrgentButtonStyle(button, image) {
+    button.style.backgroundColor = 'white';
+    button.style.color = 'black';
+    image.src = './img/urgent.png';
+}
+
+
+function disableMediumButton(i) {
+    let mediumButton = document.getElementById(`mediumButton${i}`);
+    let mediumImage = document.getElementById(`mediumImage${i}`);
+    let urgentImage = document.getElementById(`urgentImage${i}`);
+    let lowImage = document.getElementById(`lowImage${i}`);
+
+    if (urgentImage.src.includes('/img/urgentWhite.png') || lowImage.src.includes('/img/lowWhite.png')) {
+        setMediumButtonStyle(mediumButton, mediumImage);
+    }
+}
+
+
+function setMediumButtonStyle(button, image) {
+    button.style.backgroundColor = 'white';
+    button.style.color = 'black';
+    image.src = './img/medium.png';
+}
+
+
+function disableLowButton(i) {
+    let lowButton = document.getElementById(`lowButton${i}`);
+    let lowImage = document.getElementById(`lowImage${i}`);
+    let urgentImage = document.getElementById(`urgentImage${i}`);
+    let mediumImage = document.getElementById(`mediumImage${i}`);
+
+    if (urgentImage.src.includes('/img/urgentWhite.png') || mediumImage.src.includes('/img/mediumWhite.png')) {
+        setLowButtonStyle(lowButton, lowImage);
+    }
+}
+
+
+function deleteAndPushPrio(i, prio) {
+    tasks[i]['prio'] = null;
+    tasks[i]['prio'] = prio;
+
+    saveTasks();
+    emptyContentSections();
+    init();
+}
+
+
+function setLowButtonStyle(button, image) {
+    button.style.backgroundColor = 'white';
+    button.style.color = 'black';
+    image.src = './img/low.png';
+}
+
+
 function findTask() {
     let search = document.getElementById('input').value;
     search = search.toLowerCase();
@@ -440,31 +639,35 @@ function findTask() {
 }
 
 
-function findContact() {
+function findContact(i) {
+    document.getElementById('dropdownMenu').innerHTML = '';
+
     let search = document.getElementById('editAssignedTo').value;
     search = search.toLowerCase();
 
-    for (let m = 0; m < contactData[m].length; m++) {
-        let contact = contactData[m];
-        if (contact['name'].toLowerCase().includes(search)) {
-            renderContact();
-        }
+    for (let n = 0; n < contactData.length; n++) {
+        renderContact(search, n, i);
     }
 }
 
 
-function renderContact(m) {
-    let dropdownContainer = document.getElementById('dropdownMenu');
+function renderContact(search, n, i) {
+    if (contactData[n]['name'].toLowerCase().includes(search)) {
+        showContact(n, i);
+    }
+}
 
-    dropdownContainer.innerHTML += /* html */`
-        <div onclick="renderSelectedContact(${m})" id="contact${m}" class="dropdownContent">
-            <div class="dropdownInitialsAndName">
-                <div id="dropdownInitials${m}"></div>
-                <div class="dropdownContact">${contactData[m]['name']}</div>
-            </div>
-            <img id="dropdownCheckbox${m}" class="dropdownCheckbox" src="./img/checkbox.png">
-        </div>
-    `;
+
+function showContact(n, i) {
+    let arrow = document.getElementById('arrow');
+    let dropdownContainer = document.getElementById('dropdownMenu');
+    dropdownContainer.style.display = 'flex';
+
+    if (arrow.src.includes("/img/dropdownArrow.png")) {
+        arrow.src = "./img/liftupArrow.png";
+    }
+
+    showDropdownMenu(n, i);
 }
 
 
@@ -545,12 +748,13 @@ function alreadySelectedContact(n) {
 function openDropdownMenu() {
     document.getElementById('dropdownMenu').style.display = 'flex';
     let arrow = document.getElementById('arrow');
-    
+
     if (arrow.src.includes("/img/dropdownArrow.png")) {
         arrow.src = "./img/liftupArrow.png";
     } else {
         arrow.src = "./img/dropdownArrow.png";
         document.getElementById('dropdownMenu').style.display = 'none';
+        document.getElementById('editAssignedTo').value = '';
     }
 }
 
