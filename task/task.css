@@ -1,5 +1,5 @@
 .H1{
-padding-top: 200px;
+padding-top: 180px;
 padding-bottom: 0px;
  padding-left: 50px
 }
@@ -9,7 +9,7 @@ padding-bottom: 0px;
     padding-top: 0px;
     display: flex;
     justify-content: space-evenly;
-    top:80px
+    top:20px
     
 
 }
@@ -77,12 +77,20 @@ input:focus{
     outline: 3px solid rgb(209, 209, 209);
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
+.availableCategory{
+    display: none;
+        position: absolute;
+        background-color: #f6f6f6;
+        width: 400px;
+        overflow: auto;
+    
+        z-index: 1;
+        border: 4px;
+    
 }
 
-.dropdown-content {
+.contactsDropdown {
+    height: 180px;
     width: 400px;
     display: none;
     position: absolute;
@@ -208,7 +216,7 @@ input:focus{
     border-radius: 8px;
     background-color: white;
 }
-.subtaskParent{
+.subtaskInputParent{
     display: flex;
     justify-content: space-between;
     background-color: white;
@@ -223,12 +231,12 @@ input:focus{
     border: 0; 
    
 }
-#subtask_input:focus {
+.subtaskInput:focus {
     outline: 0px solid #29ABE2;
-    
+    border: 0;
 }
 
-.subtaskParent:focus-within {
+.subtaskInputParent:focus-within {
     outline: 1px solid #29ABE2;
    
 }
@@ -260,4 +268,54 @@ input:focus{
    background-color: rgb(209, 209, 209);
    margin-left: 3px;
    margin-right: 3px;
+}
+.subtaskHoverIcon{
+    display: flex;
+    flex-direction: row;
+
+}
+.editableSubtask{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    align-content: center;
+
+}
+.subtask{
+    display: flex;
+    flex-direction: row;
+}
+.editableSubtask img{
+cursor: pointer;
+margin-right: 3px;
+opacity: 0;
+}
+.subtaskHover{
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+       
+        border-radius: 4px;
+}
+
+.subtaskHover:hover img{
+     opacity:1;
+}
+.subtask:hover{
+    background-color:rgb(209, 209, 209) ;
+    
+}
+.subtask{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 4px;
+}
+.noDisplay{
+    display: none;
 }
