@@ -724,3 +724,21 @@ li {
     align-items: center;
     gap: 8px;
 }
+
+.closeAndDone {
+    display: none;
+    align-items: center;
+    gap: 4px;
+    margin-left: -74px;
+    cursor: pointer;
+}
+
+.close {
+    width: 28px;
+}
+
+.close:hover,
+.done:hover {
+    border-radius: 45px;
+    background-color: #00000010;
+}
