@@ -330,19 +330,19 @@ function editTask(i) {
             <div class="editSubtasksAndInput">
                 <p class="editSubtasksText">Subtasks</p>
                 <div class="editSubtasksInputAndPlus">
-                    <input onclick="createNewSubtask(${i}); focusOnNewSubtask(${i})" id="editSubtasks${i} subtaskInput" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text">
+                    <input onclick="focusOnNewSubtask(${i})" id="editSubtasks${i}" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text">
                     <img onclick="focusOnNewSubtask(${i})" id="plus" class="plus" src="./img/plus.png">
                     <div id="closeAndDone${i}" class="closeAndDone">
-                        <img onclick="emptyInput()" class="close" src="./img/close.png">
+                        <img onclick="emptyInput(${i})" class="close" src="./img/close.png">
                         <div class="subtasksImageSpacer"></div>
-                        <img onclick="deleteSubtask()" class="done" src="./img/done.png">
+                        <img onclick="createNewSubtask(${i})" class="done" src="./img/done.png">
                     </div>
                 </div>
                 <div id="editSubtasksList${i}"></div>
             </div>
         </div>
         <div class="editTaskOkButton">
-            <button onclick="ok()" id="okButton">Ok <img class="checkImage" src="./img/check.png"></button>
+            <button onclick="ok(${i})" id="okButton">Ok <img class="checkImage" src="./img/check.png"></button>
         </div>
     `;
     renderInputValues(i);
@@ -539,8 +539,6 @@ function deleteAndPushPrio(i, prio) {
     tasks[i]['prio'] = prio;
 
     saveTasks();
-    emptyContentSections();
-    init();
 }
 
 
@@ -653,7 +651,7 @@ function renderSelectedContact(i, n) {
     if (!tasks[i]['assignedTo'].includes(contactData[n]['name'])) {
         selectedContact(i, n);
     } else {
-        unselectedContact(i, n);
+        unselectContact(i, n);
     }
     document.getElementById(`editInitials${i}`).innerHTML = '';
     renderEditAssignedTo(i);
@@ -671,12 +669,10 @@ function selectedContact(i, n) {
     checkImage.src = './img/checkboxClickedWhite.png';
 
     saveTasks();
-    emptyContentSections();
-    init();
 }
 
 
-function unselectedContact(i, n) {
+function unselectContact(i, n) {
     tasks[i]['assignedTo'].splice(n, 1); /* splice selected name not n */
 
     let contact = document.getElementById(`contact${n}`);
@@ -687,8 +683,6 @@ function unselectedContact(i, n) {
     checkImage.src = './img/checkbox.png';
 
     saveTasks();
-    emptyContentSections();
-    init();
 }
 
 
@@ -750,30 +744,71 @@ function createNewSubtask(i) {
     let inputValue = document.getElementById(`editSubtasks${i}`).value;
 
     tasks[i]['subtask'].push(inputValue);
-}
+    document.getElementById(`editSubtasks${i}`).value = '';
 
+    document.getElementById(`editSubtasksList${i}`).innerHTML = '';
+    renderEditSubtasksList(i);
 
-function checkFocus() {
-    let input = document.getElementById(`subtaskInput`);
-
-    if (document.activeElement === input) {
-        document.getElementById('plus').style.display = 'none';
-        document.getElementById(`closeAndDone${i}`).style.display = 'flex';
-    } else {
-        document.getElementById('plus').style.display = 'flex';
-        document.getElementById(`closeAndDone${i}`).style.display = 'none';
-    }  
+    noFocusOnNewSubtask(i);
 }
 
 
 function focusOnNewSubtask(i) {
     let input = document.getElementById(`editSubtasks${i}`);
     input.focus();
+
+    document.getElementById(`closeAndDone${i}`).style.display = 'flex';
+    document.getElementById('plus').style.display = 'none';
 }
 
 
-function ok() {
+function noFocusOnNewSubtask(i) {
+    let input = document.getElementById(`editSubtasks${i}`);
+    input.blur();
+    document.getElementById(`closeAndDone${i}`).style.display = 'none';
+    document.getElementById('plus').style.display = 'flex';
 
+}
+
+
+function emptyInput(i) {
+    let input = document.getElementById(`editSubtasks${i}`);
+    input.focus();
+    document.getElementById(`editSubtasks${i}`).value = '';
+    noFocusOnNewSubtask(i);
+}
+
+
+function ok(i) {
+    updateTitle(i);
+    updateDescription(i);
+    updateDueDate(i);
+    saveTasks();
+    emptyContentSections();
+    init();
+    document.getElementById('cardPopup').innerHTML = '';
+    showCardPopup(i);
+}
+
+
+function updateTitle(i) {
+    let title = document.getElementById(`editTitle${i}`).value;
+    tasks[i]['title'] = null;
+    tasks[i]['title'] = title;
+}
+
+
+function updateDescription(i) {
+    let description = document.getElementById(`editDescription${i}`).value;
+    tasks[i]['description'] = null;
+    tasks[i]['description'] = description;
+}
+
+
+function updateDueDate(i) {
+    let dueDate = document.getElementById(`editDueDate${i}`).value;
+    tasks[i]['dueDate'] = null;
+    tasks[i]['dueDate'] = dueDate;
 }
 
 
@@ -798,7 +833,6 @@ function checkbox(i, l) {
     saveTasks();
     renderSubtasks(i);
 }
-
 
 
 function clickedCheckbox(l) {
