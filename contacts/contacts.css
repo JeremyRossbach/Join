@@ -165,8 +165,18 @@
     cursor: pointer;
     color: #29ABE2;
 }
+#email_optionen a {
+    cursor: pointer;
+    color: #29ABE2;
+    text-decoration: none;
+}
 #phone_optionen {
     cursor: pointer;
+}
+#phone_optionen a {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
 }
 #email_div span {
     margin-bottom: 10px;

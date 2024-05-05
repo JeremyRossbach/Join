@@ -99,7 +99,7 @@ function clearSelect() {
 }
 
 
-function setContactInfo(contact) {
+/* function setContactInfo(contact) {
     let nameDiv = document.getElementById(`name_div_big`);
     let emailDiv = document.getElementById(`email_optionen`);
     let phoneDiv = document.getElementById(`phone_optionen`);
@@ -109,7 +109,49 @@ function setContactInfo(contact) {
     emailDiv.innerHTML = contact.email;
     phoneDiv.innerHTML = contact.phoneNumber;
     initialDiv.innerHTML = getInitials(contact.name);
+} */
+/* function setContactInfo(contact) {
+    let nameDiv = document.getElementById(`name_div_big`);
+    let emailDiv = document.getElementById(`email_optionen`);
+    let phoneDiv = document.getElementById(`phone_optionen`);
+    let initialDiv = document.getElementById(`name_div_small`);
+
+    nameDiv.innerHTML = contact.name;
+    let emailLink = document.createElement('a');
+    emailLink.href = `mailto:${contact.email}`;
+    emailLink.textContent = contact.email;
+    emailDiv.innerHTML = '';
+    emailDiv.appendChild(emailLink);
+
+    phoneDiv.innerHTML = contact.phoneNumber;
+    initialDiv.innerHTML = getInitials(contact.name);
+} */
+function setContactInfo(contact) {
+    let nameDiv = document.getElementById(`name_div_big`);
+    let emailDiv = document.getElementById(`email_optionen`);
+    let phoneDiv = document.getElementById(`phone_optionen`);
+    let initialDiv = document.getElementById(`name_div_small`);
+
+    nameDiv.innerHTML = contact.name;
+
+    // Erstelle einen <a>-Tag mit der E-Mail-Adresse als href-Attribut (mailto:)
+    let emailLink = document.createElement('a');
+    emailLink.href = `mailto:${contact.email}`;
+    emailLink.textContent = contact.email; // Setze den Text des Links auf die E-Mail-Adresse
+    emailDiv.innerHTML = ''; // Lösche den vorherigen Inhalt, falls vorhanden
+    emailDiv.appendChild(emailLink);
+
+    // Erstelle einen <a>-Tag mit der Telefonnummer als href-Attribut (tel:)
+    let phoneLink = document.createElement('a');
+    phoneLink.href = `tel:${contact.phoneNumber}`;
+    phoneLink.textContent = contact.phoneNumber; // Setze den Text des Links auf die Telefonnummer
+    phoneDiv.innerHTML = ''; // Lösche den vorherigen Inhalt, falls vorhanden
+    phoneDiv.appendChild(phoneLink);
+
+    initialDiv.innerHTML = getInitials(contact.name);
 }
+
+
 
 
 function openAddNewContactWindow() {
