@@ -287,6 +287,9 @@
     #button_container {
         width: 50px;
         height: 50px;
+        position: fixed;
+        bottom: 138px;
+        right: 40px;
     }
     #button_new_contact_text {
         display: none;
@@ -300,7 +303,13 @@
         font-size: 40px;
     }
     #name_div_big {
-        font-size: 25px;
+        font-size: 20px;
+    }
+    #email_optionen {
+        font-size: 20px;
+    }
+    #phone_optionen {
+        font-size: 20px;
     }
 }
 
@@ -330,8 +339,8 @@
         font-size: 30px;
     }
     .button_back {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
     }
     #better_team {
         font-size: 20px;
