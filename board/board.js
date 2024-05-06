@@ -111,7 +111,7 @@ function renderPrio(i) {
     let prio = document.getElementById(`prio${i}`);
 
     if (prioImages.hasOwnProperty(tasks[i]['prio'])) {
-        prio.innerHTML += `<img src="${prioImages[tasks[i]['prio']]}">`;
+        prio.innerHTML += `<img class="prioImage" src="${prioImages[tasks[i]['prio']]}">`;
     }
 }
 
@@ -321,7 +321,7 @@ function editTask(i) {
             <div class="editAssignedToAndInput">
                 <p class="editAssignedToText">Assigned To</p>
                 <div class="editAssignedToInputAndArrow">
-                    <input onkeydown="findContact(${i})" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
+                    <input oninput="findContact(${i})" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
                     <img onclick="openDropdownMenu()" id="arrow" class="dropdownArrow" src="./img/dropdownArrow.png">
                 </div>
                 <div id="dropdownMenu"></div>
@@ -332,7 +332,7 @@ function editTask(i) {
                 <div class="editSubtasksInputAndPlus">
                     <input onclick="focusOnNewSubtask(${i})" id="editSubtasks${i}" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text">
                     <img onclick="focusOnNewSubtask(${i})" id="plus" class="plus" src="./img/plus.png">
-                    <div id="closeAndDone${i}" class="closeAndDone">
+                    <div id="closeAndDone${i} closeAndDone" class="closeAndDone">
                         <img onclick="emptyInput(${i})" class="close" src="./img/close.png">
                         <div class="subtasksImageSpacer"></div>
                         <img onclick="createNewSubtask(${i})" class="done" src="./img/done.png">
@@ -743,13 +743,15 @@ function doneEditSubtask(p, i) {
 function createNewSubtask(i) {
     let inputValue = document.getElementById(`editSubtasks${i}`).value;
 
-    tasks[i]['subtask'].push(inputValue);
-    document.getElementById(`editSubtasks${i}`).value = '';
+    if (!inputValue == '') {
+        tasks[i]['subtask'].push(inputValue);
+        document.getElementById(`editSubtasks${i}`).value = '';
 
-    document.getElementById(`editSubtasksList${i}`).innerHTML = '';
-    renderEditSubtasksList(i);
+        document.getElementById(`editSubtasksList${i}`).innerHTML = '';
+        renderEditSubtasksList(i);
 
-    noFocusOnNewSubtask(i);
+        noFocusOnNewSubtask(i);
+    }
 }
 
 
