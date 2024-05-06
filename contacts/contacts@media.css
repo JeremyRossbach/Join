@@ -314,6 +314,17 @@
 }
 
 @media only screen and (max-width: 400px) {
+    #contact_information{
+        font-size: 20px;
+    }
+    #name_div_big{
+        display: none;
+    }
+    #second_contact_container.selected{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .side_menu_text_position {
         display: none;
     }
@@ -334,6 +345,7 @@
     }
     #first_info_container {
         gap: 10px;
+        justify-content:center;
     }
     #contact_title {
         font-size: 30px;
