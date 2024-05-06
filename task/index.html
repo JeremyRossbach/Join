@@ -89,11 +89,11 @@
                 <div class="leftside">
                     <div class="spanandvalue">
                         <span>Title <span class="redStar">*</span></span>
-                        <input class="input" placeholder="Enter a title" type="text">
+                        <input id="titleInput" class="input" placeholder="Enter a title" type="text">
                     </div>
                     <div class="spanandvalue">
                         <span>Description</span>
-                        <input class="descriptionInput" placeholder="Enter a Description" type="text">
+                        <input id="descriptionInput" class="descriptionInput" placeholder="Enter a Description" type="text">
                     </div>
                     <div class="spanandvalue contactPosition">
                         <span>Assigned to</span>
@@ -155,7 +155,7 @@
                     </div>
                 </div>
                 </div>
-                <div class="createBTN">
+                <div class="createBTN" onclick="createTask()">
                     <span>Create Task</span>
                     <img src="img/createCheck.svg" alt="">
                 </div>

@@ -105,7 +105,7 @@ function chosenContactsPush(i, selection_box_clicked) {
         }
     }
     showchosenInitials(i)
-    console.log(taskcontacts);
+    
 }
 
 
@@ -133,6 +133,7 @@ function prioUrgent() {
         highicon.setAttribute('src', clickedhighicon)
         urgentbtn.style.background = 'rgb(255, 61, 0)';
         urgentbtn.style.color = '#FFFFFF';
+        prio ='Urgent';
         prioMedSetBack()
         prioLowSetBack()
     } else {
@@ -152,6 +153,7 @@ function prioMed() {
         medicon.setAttribute('src', clickedmidicon)
         medbtn.style.background = 'rgb(255,168,0)';
         medbtn.style.color = '#FFFFFF';
+        prio = 'Medium';
         prioLowSetBack()
         prioUrgentSetBack()
     } else {
@@ -176,6 +178,7 @@ function prioLow() {
         lowicon.setAttribute('src', clickedlowicon);
         lowbtn.style.background = 'rgb(122,226,41)';
         lowbtn.style.color = '#FFFFFF';
+        prio = 'Low';
         prioMedSetBack()
         prioUrgentSetBack()
     } else {
@@ -289,7 +292,7 @@ function pushEditToArray(j) {
     subtasks.push(subtaskEdit.value)
     subtaskEdit.value = '';
     deleteSubtask(j)
-    console.log(subtasks)
+    
 
     saveSubtusks();
     loadSubtasks();
@@ -314,4 +317,48 @@ function pushSubtask() {
     subtaskinput.value = '';
 
     renderSubtask()
+} 
+
+let testtask = [];
+
+function createTask() {
+    let titleInput = document.getElementById('titleInput').value;
+    let descriptionInput = document.getElementById('descriptionInput').value;
+    let date = document.getElementById('date').value;
+
+    // Erstelle ein Objekt für die neue Aufgabe
+    let newTask = {
+        'title': titleInput,
+        'description': descriptionInput,
+        'assignedTo': taskcontacts, // Annahme: selectedContackts enthält die ausgewählten Kontakte
+        'dueDate': date,
+        'prio': prio,
+        'category': categorys,
+        'subtask': subtasks,
+        'doneSubtask': subtasks.map(() => false), // Annahme: keine der Teilaufgaben ist erledigt
+        'numberOfDoneSubtasks': 0,
+        'section': 'To do' // Annahme: neue Aufgaben werden der Sektion "To do" hinzugefügt
+    };
+
+    // Füge die neue Aufgabe dem tasks-Array hinzu
+    testtask.push(newTask);
+
+    // Leere die Eingabefelder
+    document.getElementById('titleInput').value = '';
+    document.getElementById('descriptionInput').value = '';
+    document.getElementById('date').value = '';
+
+    // Leere die Arrays subtasks und taskcontacts
+    subtasks = [];
+    taskcontacts = [];
+
+    // Setze prio und category zurück
+    prio = null; // oder den ursprünglichen Standardwert
+    categorys = null; // oder den ursprünglichen Standardwert
+    renderSubtask();
+    showaAvailableContacts();
+    showchosenInitials();
+    prioUrgentSetBack();
+    prioMedSetBack();
+    prioLowSetBack();
 }
