@@ -85,7 +85,7 @@
             <!-- Hier kommt der HTML Code von Euch rein -->
             <H1 class="H1">Add Task</H1>
             <div class="content" id="content">
-
+            <div class="innerContent">
                 <div class="leftside">
                     <div class="spanandvalue">
                         <span>Title <span class="redStar">*</span></span>
@@ -95,7 +95,7 @@
                         <span>Description</span>
                         <input class="descriptionInput" placeholder="Enter a Description" type="text">
                     </div>
-                    <div class="spanandvalue">
+                    <div class="spanandvalue contactPosition">
                         <span>Assigned to</span>
                         <div class="dropdown">
                             <button onclick="dropDownContacts()" class="dropbtn">Select
@@ -153,15 +153,15 @@
                         </div>
                         <div id="pushedSubtasks" class="pushedSubtasks"></div>
                     </div>
-
-                  <div class="createBTN">
+                </div>
+                </div>
+                <div class="createBTN">
                     <span>Create Task</span>
                     <img src="img/createCheck.svg" alt="">
-                  </div>
-                    <!--  -->
                 </div>
+                <!--  -->
+
 
             </div>
             <script src="task.js"></script>
 </body>
-
