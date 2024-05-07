@@ -1,70 +1,70 @@
-.H1{
-padding-top: 200px;
-padding-bottom: 0px;
- padding-left: 50px
+.H1 {
+    padding-top: 200px;
+    padding-bottom: 0px;
+    padding-left: 50px
 }
 
 
-#content{
+#content {
     padding-top: 0px;
     display: flex;
     justify-content: space-evenly;
-    top:80px
-    
-
+    top: 80px
 }
-.leftside{
+
+.leftside {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 400px;
-    height: 400px;
+    width: 440px;
+    height: 376px;
+    gap: 8px;
 }
-.rightside{
+
+.rightside {
     display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 400px;
-       
+    flex-direction: column;
+    justify-content: space-around;
+    width: 440px;
+    height: 376px;
+    gap: 8px;
+
 }
-.redStar{
+
+.redStar {
     color: red;
 }
-.spanandvalue{
+
+.spanandvalue {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    gap: 8px;
+    padding-bottom: 12px;
 }
+
 .dropbtn {
     display: flex;
     justify-content: space-between;
-    height: 24px;
-    width: 400px;
-    background-color:white;
+    padding: 12px 16px 12px 16px;
+    align-items: center;
+    height: 48px;
+    font-size: 20px;
+    width: 100%;
+    background-color: white;
     color: black;
     cursor: pointer;
     border: solid 1px rgb(209, 209, 209);
     border-radius: 4px;
 }
-input{
-    border: solid 1px;
-    border-radius: 4px;
-    border-color:rgb(209, 209, 209);
-    height: 24px;
-}
-input:focus{
-    outline: 1px solid #29ABE2;
-       
-}
 
-.dropbtn:hover
-.dropbtn:focus {
-    background-color:rgb(209,209,209);
+.dropbtn:hover .dropbtn:focus {
+    background-color: rgb(209, 209, 209);
 }
 
 #myInput {
     box-sizing: border-box;
-   
+
     background-position: 14px 12px;
     background-repeat: no-repeat;
     font-size: 16px;
@@ -89,15 +89,16 @@ input:focus{
     background-color: #f6f6f6;
     min-width: 230px;
     overflow: auto;
-    
+
     z-index: 1;
     border: 4px;
 }
-.availableContacts{
+
+.availableContacts {
     height: 180px;
 }
 
-.dropdown-content a{
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -112,12 +113,14 @@ input:focus{
 .show {
     display: block;
 }
-.roomdivider{
+
+.roomdivider {
     width: 1px;
     height: 400px;
     background-color: rgb(209, 209, 209);
 }
-.priobtn{
+
+.priobtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,26 +128,29 @@ input:focus{
     width: 112px;
     height: 40px;
     border-radius: 10px;
-        gap: 8px;
-        border: solid 1px rgb(209, 209, 209);
-        margin-right: 4px;
-        
+    gap: 8px;
+    border: solid 1px rgb(209, 209, 209);
+    margin-right: 4px;
+    box-shadow: 0px 0px 4px 0px #0000001A;
 }
-.priobtnClicked{
+
+.priobtnClicked {
     display: flex;
-        justify-content: center;
-        align-items: center;
-        color: rgb(255, 255, 255);
-        width: 120px;
-        height: 48px;
-        border-radius: 10px;
-        gap: 8px;
-        border: solid 1px rgb(209, 209, 209);
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    height: 48px;
+    border-radius: 10px;
+    gap: 8px;
+    border: solid 1px rgb(209, 209, 209);
 }
-.priobtn:hover{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+.priobtn:hover {
+    box-shadow: 0px 4px 4px 0px #00000040;
 }
-.priobtns{
+
+.priobtns {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -152,25 +158,23 @@ input:focus{
     width: 400px;
 }
 
-.priobtns img:hover{
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 20px 8px 1px rgba(0, 0, 0, 0.08);
-        box-shadow: 0px 10px 13px -7px #000000, 0px 20px 8px 1px rgba(0, 0, 0, 0.08);
+.priobtns img:hover {
+    box-shadow: 0px 0px 4px 0px #0000001A;
 }
-.urgentClicked{
-    background-color:rgb(255,61,0);
+
+.urgentClicked {
+    background-color: rgb(255, 61, 0);
 }
-.mediumClicked{
-    background-color: rgb(255,168,0);
+
+.mediumClicked {
+    background-color: rgb(255, 168, 0);
 }
-.lowClicked{
-    background-color:rgb(122,226,41) ;
+
+.lowClicked {
+    background-color: rgb(122, 226, 41);
 }
-.descriptionInput{
-    height: 72px;
-    display: flex;
-    text-align: start !important;
-}
-.contactBTN{
+
+.contactBTN {
     height: 36px;
     display: flex;
     align-items: center;
@@ -179,7 +183,8 @@ input:focus{
     cursor: pointer;
 
 }
-.contact_initials{
+
+.contact_initials {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -190,74 +195,114 @@ input:focus{
     height: 28px;
     border: solid 1px white;
 }
-.initialsAndContacts{
+
+.initialsAndContacts {
     display: flex;
     align-items: center;
-    
+
 }
-.chosenInitals{
+
+.chosenInitals {
     display: flex;
     flex-direction: row;
 }
-.choseCategory{
+
+.choseCategory {
     background-color: white;
- border-radius: 8px;
- cursor: pointer;
+    border-radius: 8px;
+    cursor: pointer;
 }
-.availableCategory{
+
+.availableCategory {
     border-radius: 8px;
     background-color: white;
 }
-.subtaskParent{
+
+.subtaskParent {
+    position: relative;
     display: flex;
     justify-content: space-between;
     background-color: white;
-    border: 1px solid rgb(209, 209, 209);
     border-radius: 5px;
 }
-.subtaskParent img{
+
+.subtaskParent img {
     padding-right: 4px;
 }
-.subtaskInput{
+
+.subtaskInput {
     width: 375px;
-    border: 0; 
-   
-}
-#subtask_input:focus {
-    outline: 0px solid #29ABE2;
-    
+    border: 0;
+
 }
 
-.subtaskParent:focus-within {
-    outline: 1px solid #29ABE2;
-   
-}
-#date{
-    width: 400px;
-}
-#date::placeholder{
-    color: rgb(139, 139, 139);
-}
-.subtaskEdit{
+
+.subtaskEdit {
     display: flex;
     background-color: white;
     border: 1px solid rgb(209, 209, 209);
-        border-radius: 5px;
+    border-radius: 5px;
 
 }
-.subtaskEdit:focus-within {
-    outline: 1px solid #29ABE2;
-}
-#subtaskEdit{
+
+#subtaskEdit {
     border: none;
     width: 350px;
 }
+
 #subtaskEdit:focus-within {
     outline: 0;
 }
-.divider{
+
+.divider {
     width: 1px;
-   background-color: rgb(209, 209, 209);
-   margin-left: 3px;
-   margin-right: 3px;
+    background-color: rgb(209, 209, 209);
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+
+
+
+label {
+    font-size: 20px;
+}
+
+.input-field {
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #D1D1D1;
+    transition: all 200ms ease-in-out;
+    height: 48px;
+    text-indent: 21px;
+}
+
+.input-field::placeholder {
+    color: #D1D1D1;
+}
+
+.input-field:focus {
+    outline: 1px solid #29ABE2;
+    border: 1px solid #29ABE2;
+}
+
+.input-field-description {
+    height: 136px !important;
+    padding-top: 16px;
+    resize: horizontal;
+}
+
+.input-field-date {
+    color: #D1D1D1;
+    padding-right: 12px;
+    text-indent: 12px;
+}
+
+.img-subtask {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translate(0, -50%);
 }

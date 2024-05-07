@@ -22,7 +22,8 @@ h1::before {
     margin-left: -75px;
     bottom: 0;
     width: 150px;
-    border-bottom: 3px solid #29ABE2;;
+    border-bottom: 3px solid #29ABE2;
+    ;
     border-radius: 8px;
 }
 
@@ -352,6 +353,7 @@ input[type=text] {
     align-items: center;
     gap: 35px;
 
-    position: absolute;
+
     bottom: 16px;
+    position: absolute;
 }
