@@ -97,12 +97,15 @@
             <!-- Hier kommt der HTML Code von Euch rein -->
             <div id="content">
                 <header>
-                    <h1>Board</h1>
-                    <form action="">
+                    <div class="h1AndButton">
+                        <h1>Board</h1>
+                        <button onclick="   " class="mobileAddButton"><img class="mobileAddImage" src="./img/mobileAdd.png"></button>
+                    </div>
+                    <div class="inputAndButton">
                         <input oninput="findTask()" id="input" type="text" placeholder="Find Task">
                         <div onclick="focusOnFindTask()" id="searchButton"></div>
-                        <button onclick="" id="addButton">Add task <img id="addImage" src="./img/add.png"></button>
-                    </form>
+                        <button onclick="   " id="addButton">Add task <img id="addImage" src="./img/add.png"></button>
+                    </div>
                 </header>
 
                 <section id="sections">
@@ -131,7 +134,7 @@
         </div>
     </div>
 
-    <background onclick="closePopup()" id="background">
+    <background onclick="slideOut()" id="background">
         <card onclick="dontClosePopup(event)" id="cardPopup"></card>
     </background>
     

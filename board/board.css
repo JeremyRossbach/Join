@@ -42,7 +42,25 @@ h1 {
     color: #000000;
 }
 
-form {
+.mobileAddButton {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    padding: 3px;
+    background-color: rgba(42, 54, 71, 1);
+    cursor: pointer;
+}
+
+.mobileAddImage {
+    width: 20px;
+    height: 20px;
+}
+
+.inputAndButton {
     display: flex;
     gap: 32px;
 }
@@ -745,4 +763,30 @@ li {
 .done:hover {
     border-radius: 45px;
     background-color: #00000010;
+}
+
+.slideIn {
+    animation: slideInRight 0.1s forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(200%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.slideOut {
+    animation: slideOutRight 0.1s forwards;
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(200%);
+    }
 }

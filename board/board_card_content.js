@@ -147,13 +147,11 @@ function renderCategoryColor(i) {
 function showCardPopup(i) {
     document.body.style.overflow = 'hidden';
     document.getElementById('background').style.display = 'flex';
-    let cardPopup = document.getElementById('cardPopup');
-    cardPopup.style.display = 'flex';
 
     cardPopup.innerHTML = /* html */`
         <div class="popupCategoryAndClose">
             <div id="popupCategory${i}" class="popupCategory">${tasks[i]['category']}</div>
-            <img onclick="closePopup()" class="closeImage" src="./img/close.png">
+            <img onclick="slideOut()" class="closeImage" src="./img/close.png">
         </div>
         <div class="popupTitle">${tasks[i]['title']}</div>
         <div class="popupDescription">${tasks[i]['description']}</div>
@@ -186,6 +184,7 @@ function showCardPopup(i) {
     renderPopupPrio(i);
     renderPopupAssignedTo(i);
     renderPopupSubtasks(i);
+    slideIn();
 }
 
 
@@ -287,4 +286,25 @@ function deleteTask(i) {
     saveTasks();
     emptyContentSections();
     init();
+}
+
+
+function slideIn() {
+    let cardPopup = document.getElementById('cardPopup');
+    cardPopup.classList.add('slideIn');
+    setTimeout(() => {
+        cardPopup.classList.remove('slideIn');
+    }, 500);
+    
+    cardPopup.style.display = 'flex';
+}
+
+
+function slideOut() {
+    let cardPopup = document.getElementById('cardPopup');
+    cardPopup.classList.add('slideOut');
+    setTimeout(() => {
+        cardPopup.classList.remove('slideOut');
+    }, 500);
+    closePopup();
 }
