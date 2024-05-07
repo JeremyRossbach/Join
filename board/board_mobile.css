@@ -1,0 +1,134 @@
+@media only screen and (max-width: 922px) {
+    header {
+        height: 154px;
+        padding-top: 34px;
+        padding-inline: 40px;
+    }
+
+    .h1AndButton {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: -webkit-fill-available;
+    }
+
+    h1 {
+        font-size: 61px;
+        }
+
+    .inputAndButton {
+        display: flex;
+        justify-content: center;
+        width: -webkit-fill-available;
+    }
+
+    #input {
+        height: 26px;
+        font-size: 20px;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: 20px;
+    }
+
+    #addButton {
+        display: none;
+    }
+
+    .responsiveAddButton {
+        display: flex;
+    }
+
+    #searchButton {
+        margin-left: 221px;
+    }
+
+    #sections {
+        flex-direction: column;
+        padding-inline: 40px;
+        margin-top: 24px;
+    }
+
+    .emptySection {
+        width: 244px;
+        margin-top: 0;
+        font-size: 16px;
+    }
+
+    #toDoSection,
+    #inProgressSection,
+    #awaitFeedbackSection,
+    #doneSection {
+        width: 842px;
+        margin-top: -100px;
+    }
+
+    #toDoSection {
+        margin-top: 80px;
+    }
+
+    .content {
+        flex-direction: row;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    #toDoHeader,
+    #inProgressHeader,
+    #awaitFeedbackHeader,
+    #doneHeader {
+        position: static;
+        width: 244px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .card {
+        width: 212px;
+        height: fit-content;
+    }
+
+    .category {
+        height: 27px;
+        padding-inline: 16px;
+        margin-bottom: 24px;
+        font-size: 16px;
+    }
+
+    .titleAndDescription {
+        margin-bottom: 24px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .progressbar {
+        width: 128px;
+        height: 8px;
+    }
+
+    .subtask {
+        font-size: 12px;
+    }
+
+    .cardBottom {
+        margin-top: 0;
+    }
+
+    .initials {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .prioImage {
+        width: 18px;
+    }
+}

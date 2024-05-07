@@ -1,0 +1,174 @@
+.dropdownArrow,
+.plus {
+    width: 24px;
+    height: 24px;
+    margin-left: -34px;
+    border-radius: 45px;
+}
+
+.dropdownArrow:hover,
+.plus:hover {
+    background-color: #EFEFEF;
+    cursor: pointer;
+}
+
+#dropdownMenu {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    height: 189px;
+    overflow-y: scroll;
+}
+
+.dropdownContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding-inline: 16px;
+    padding-top: 3.5px;
+    padding-bottom: 3.5px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.dropdownContent:hover {
+    background-color: #00000010;
+}
+
+.dropdownInitialsAndName {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.dropdownContact {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.dropdownCheckbox {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+li {
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+}
+
+.subtasksContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px;
+    margin-top: 4px;
+    padding-inline: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+.subtasksContent:hover {
+    background-color: #00000010;
+    cursor: pointer;
+}
+
+.deleteAndEdit {
+    display: none;
+    align-items: center;
+    gap: 8px;
+}
+
+.subtasksContent:hover .deleteAndEdit {
+    display: flex;
+}
+
+.subtasksImageSpacer {
+    height: 24px;
+    width: 1px;
+    background-color: rgba(168, 168, 168, 1);
+}
+
+.editImage {
+    width: 18.25px;
+    height: 18.25px;
+}
+
+.subtasksEditInput {
+    width: 380px;
+    height: 24px;
+    padding-inline: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 6px;
+    border: 0;
+    border-bottom: 1px solid black;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+}
+
+.subtasksEditInput:focus {
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+.deleteAndDone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.closeAndDone {
+    display: none;
+    align-items: center;
+    gap: 4px;
+    margin-left: -74px;
+    cursor: pointer;
+}
+
+.close {
+    width: 28px;
+}
+
+.close:hover,
+.done:hover {
+    border-radius: 45px;
+    background-color: #00000010;
+}
+
+.slideIn {
+    animation: slideInRight 0.1s forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(200%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.slideOut {
+    animation: slideOutRight 0.1s forwards;
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(200%);
+    }
+}

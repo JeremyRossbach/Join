@@ -5,92 +5,92 @@ const STORAGE_URL = 'https://remote-storage.developerakademie.org/item';
 let contactData = [
     {
         'name': 'Anton Mayer',
-        'email': 'antom@gmail.com',
+        'email': 'a.mayer@gmail.com',
         'phoneNumber': '+49 1111 111 11 1'
     },
     {
         'name': 'Anja Schulz',
-        'email': 'schulz@hotmail.com',
+        'email': 'a.schulz@hotmail.com',
         'phoneNumber': '+49 2222 222 22 2'
     },
     {
         'name': 'Benedikt Ziegler',
-        'email': 'benedikt@gmail.com',
+        'email': 'b.ziegler@gmail.com',
         'phoneNumber': '+49 3333 333 33 3'
     },
     {
         'name': 'David Eisenberg',
-        'email': 'davidberg@gmail.com',
+        'email': 'd.eisenberg@gmail.com',
         'phoneNumber': '+49 4444 444 44 4'
     },
     {
         'name': 'Eva Fischer',
-        'email': 'eva@gmail.com',
+        'email': 'e.fischer@gmail.com',
         'phoneNumber': '+49 5555 555 55 5'
     },
     {
         'name': 'Emmanuel Mauer',
-        'email': 'emmanuelma@gmail.com',
+        'email': 'e.mauer@gmail.com',
         'phoneNumber': '+49 6666 666 66 6'
     },
     {
         'name': 'Marcel Bauer',
-        'email': 'bauer@gmail.com',
+        'email': 'm.bauer@gmail.com',
         'phoneNumber': '+49 7777 777 77 7'
     },
     {
         'name': 'Tatjana Wolf',
-        'email': 'wolf@gmail.com',
+        'email': 't.wolf@gmail.com',
         'phoneNumber': '+49 8888 888 88 8'
     },
     {
         'name': 'Felix Schneider',
-        'email': 'felix.schneider@example.com',
+        'email': 'f.schneider@gmail.com',
         'phoneNumber': '+49 9999 999 99 9'
     },
     {
         'name': 'Hannah Werner',
-        'email': 'hannah.werner@example.com',
+        'email': 'h.werner@gmail.com',
         'phoneNumber': '+49 1010 101 10 1'
     },
     {
         'name': 'Lena Hofmann',
-        'email': 'lena.hofmann@example.com',
+        'email': 'l.hofmann@gmail.com',
         'phoneNumber': '+49 1212 121 12 1'
     },
     {
         'name': 'Simon Koch',
-        'email': 'simon.koch@example.com',
+        'email': 's.koch@gmail.com',
         'phoneNumber': '+49 1313 131 13 1'
     },
     {
         'name': 'Sophie Schmitt',
-        'email': 'sophie.schmitt@example.com',
+        'email': 's.schmitt@gmail.com',
         'phoneNumber': '+49 1414 141 14 1'
     },
     {
         'name': 'Julian Becker',
-        'email': 'julian.becker@example.com',
+        'email': 'j.becker@gmail.com',
         'phoneNumber': '+49 1515 151 15 1'
     },
     {
         'name': 'Laura Mayer',
-        'email': 'laura.mayer@example.com',
+        'email': 'l.mayer@gmail.com',
         'phoneNumber': '+49 1616 161 16 1'
     },
     {
         'name': 'Maximilian Wagner',
-        'email': 'maximilian.wagner@example.com',
+        'email': 'm.wagner@gmail.com',
         'phoneNumber': '+49 1717 171 17 1'
     },
     {
         'name': 'Paula Huber',
-        'email': 'paula.huber@example.com',
+        'email': 'p.huber@gmail.com',
         'phoneNumber': '+49 1818 181 18 1'
     },
     {
         'name': 'Tim Müller',
-        'email': 'tim.muller@example.com',
+        'email': 't.muller@gmail.com',
         'phoneNumber': '+49 1919 191 19 1'
     }
 ];
@@ -116,6 +116,7 @@ let tasks = [
         'dueDate': '01/01/2024',
         'prio': 'Low',
         'category': 'User Story',
+        'subtask': [],
         'section': 'In progress'
     },
     {
@@ -149,6 +150,7 @@ let tasks = [
         'dueDate': '01/01/2024',
         'prio': 'Urgent',
         'category': 'User Story',
+        'subtask': [],
         'section': 'Await Feedback'
     },
     {

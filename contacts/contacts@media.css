@@ -287,6 +287,9 @@
     #button_container {
         width: 50px;
         height: 50px;
+        position: fixed;
+        bottom: 138px;
+        right: 40px;
     }
     #button_new_contact_text {
         display: none;
@@ -300,11 +303,28 @@
         font-size: 40px;
     }
     #name_div_big {
-        font-size: 25px;
+        font-size: 20px;
+    }
+    #email_optionen {
+        font-size: 20px;
+    }
+    #phone_optionen {
+        font-size: 20px;
     }
 }
 
 @media only screen and (max-width: 400px) {
+    #contact_information{
+        font-size: 20px;
+    }
+    #name_div_big{
+        display: none;
+    }
+    #second_contact_container.selected{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .side_menu_text_position {
         display: none;
     }
@@ -325,13 +345,14 @@
     }
     #first_info_container {
         gap: 10px;
+        justify-content:center;
     }
     #contact_title {
         font-size: 30px;
     }
     .button_back {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
     }
     #better_team {
         font-size: 20px;
