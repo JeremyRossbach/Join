@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 .H1 {
     padding-top: 200px;
     padding-bottom: 0px;
     padding-left: 50px
-=======
-.H1{
-padding-top: 180px;
-padding-bottom: 0px;
- padding-left: 50px
->>>>>>> c577f89ce75cb87c4b96474bb24cd0a1e78c5729
 }
 #content {
     position: relative;
@@ -16,54 +9,31 @@ padding-bottom: 0px;
     scrollbar-width: none;
 }
 
-<<<<<<< HEAD
 
 #content {
     padding-top: 0px;
     display: flex;
     justify-content: space-evenly;
     top: 80px
-=======
-.innerContent{
-    padding-top: 0px;
-    display: flex;
-    justify-content: space-evenly;
-    top:0px
-    
-
->>>>>>> c577f89ce75cb87c4b96474bb24cd0a1e78c5729
 }
 
 .leftside {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
     justify-content: space-around;
     width: 440px;
     height: 376px;
     gap: 8px;
-=======
-    justify-content: space-between;
-    width: 400px;
-    height: 400px;
->>>>>>> c577f89ce75cb87c4b96474bb24cd0a1e78c5729
 }
 
 .rightside {
     display: flex;
-<<<<<<< HEAD
     flex-direction: column;
     justify-content: space-around;
     width: 440px;
     height: 376px;
     gap: 8px;
 
-=======
-        flex-direction: column;
-        justify-content: space-between;
-        width: 400px;
-       
->>>>>>> c577f89ce75cb87c4b96474bb24cd0a1e78c5729
 }
 
 .redStar {
@@ -77,13 +47,6 @@ padding-bottom: 0px;
     gap: 8px;
     padding-bottom: 12px;
 }
-<<<<<<< HEAD
-
-=======
-.contactPosition{
-    display: block;
-}
->>>>>>> c577f89ce75cb87c4b96474bb24cd0a1e78c5729
 .dropbtn {
     display: flex;
     justify-content: space-between;
@@ -268,13 +231,9 @@ padding-bottom: 0px;
     border-radius: 8px;
     background-color: white;
 }
-<<<<<<< HEAD
 
 .subtaskParent {
     position: relative;
-=======
-.subtaskInputParent{
->>>>>>> c577f89ce75cb87c4b96474bb24cd0a1e78c5729
     display: flex;
     justify-content: space-between;
     background-color: white;
@@ -287,34 +246,12 @@ padding-bottom: 0px;
 
 .subtaskInput {
     width: 375px;
-<<<<<<< HEAD
     border: 0;
 
 }
 
 
 .subtaskEdit {
-=======
-    border: 0; 
-   
-}
-.subtaskInput:focus {
-    outline: 0px solid #29ABE2;
-    border: 0;
-}
-
-.subtaskInputParent:focus-within {
-    outline: 1px solid #29ABE2;
-   
-}
-#date{
-    width: 400px;
-}
-#date::placeholder{
-    color: rgb(139, 139, 139);
-}
-.subtaskEdit{
->>>>>>> c577f89ce75cb87c4b96474bb24cd0a1e78c5729
     display: flex;
     background-color: white;
     border: 1px solid rgb(209, 209, 209);
@@ -337,7 +274,6 @@ padding-bottom: 0px;
     margin-left: 3px;
     margin-right: 3px;
 }
-<<<<<<< HEAD
 
 
 
@@ -383,72 +319,4 @@ label {
     right: 16px;
     top: 50%;
     transform: translate(0, -50%);
-=======
-.subtaskHoverIcon{
-    display: flex;
-    flex-direction: row;
-
-}
-.editableSubtask{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 400px;
-    align-content: center;
-
-}
-.subtask{
-    display: flex;
-    flex-direction: row;
-}
-.editableSubtask img{
-cursor: pointer;
-margin-right: 3px;
-opacity: 0;
-}
-.subtaskHover{
-    display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        
-       
-        border-radius: 4px;
-}
-
-.subtaskHover:hover img{
-     opacity:1;
-}
-.subtask:hover{
-    background-color:rgb(209, 209, 209) ;
-    
-}
-.subtask{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top:6px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border-radius: 4px;
-}
-.noDisplay{
-    display: none;
-}
-.createBTN{
-    position: fixed;
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
-    color: white;
-    background-color:rgb(42,54,71);
-    width: 150px;
-    height: 50px;
-    border-radius: 8px;
-    margin-top: 50px;
-    right: 100px;
-}
-.createBTN:hover{
-    background-color:rgb(41,171,226);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
->>>>>>> c577f89ce75cb87c4b96474bb24cd0a1e78c5729
 }
