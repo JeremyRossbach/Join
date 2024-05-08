@@ -134,3 +134,9 @@ main {
 .accept-policy input[type='checkbox']:checked:hover {
     background-image: url(../img/checkbox_hover_check.png);
 }
+
+.footer {
+    position: unset;
+    bottom: unset;
+    margin-top: 20px;
+}

@@ -354,6 +354,7 @@ input[type=text] {
     gap: 35px;
 
 
-    bottom: 16px;
-    position: absolute;
+    position: relative;
+    bottom: -665px;
+    padding-bottom: 20px;
 }
