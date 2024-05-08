@@ -3,20 +3,20 @@ let categorys;
 let taskcontacts = [];
 let currentContact;
 let prio;
-let subtasks = ['test',];
+let subtasks = [];
 let selectedContackts = [];
 
 
 function initAddTasks() {
     loadSubtasks();
     renderSubtask();
-    showaAvailableContacts();
-
+    //showaAvailableContacts();
 }
 
 
 function dropDownContacts() {
-    document.getElementById("contacts_dropdown").classList.toggle("show");
+    let dropDown = document.getElementById("myDropdown");
+    dropDown.classList.toggle("show");
     arrowChange();
 }
 
@@ -52,7 +52,7 @@ function arrowChangeCategory() {
 
 function showaAvailableContacts() {
     let availableContacts = document.getElementById("availableContacts");
-    let contacts = contactData
+    let contacts = contactData;
     availableContacts.innerHTML = '';
     for (let i = 0; i < contacts.length; i++) {
         let currentContact = contacts[i];
@@ -361,4 +361,13 @@ function createTask() {
     prioUrgentSetBack();
     prioMedSetBack();
     prioLowSetBack();
+}
+
+var el = document.getElementById('date-picker');
+el.onchange = function() {
+    if (el.value === '') {
+        el.classList.add("date-empty");
+    } else {
+        el.classList.remove("date-empty");
+    }
 }

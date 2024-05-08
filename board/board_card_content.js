@@ -266,12 +266,14 @@ function renderCheckboxImage(i, l) {
 }
 
 
-function closePopup() {
+function closePopup(event) {
     document.body.style.overflow = '';
     cardPopup.style.height = '';
     document.getElementById('cardPopup').style.display = 'none';
     document.getElementById('background').style.display = 'none';
-    event.stopPropagation();
+    if (event) {
+        event.stopPropagation();
+    }
 }
 
 
@@ -280,9 +282,9 @@ function dontClosePopup(event) {
 }
 
 
-function deleteTask(i) {
+function deleteTask(i, event) {
     tasks.splice(i, 1);
-    closePopup();
+    closePopup(event);
     saveTasks();
     emptyContentSections();
     init();
@@ -305,6 +307,6 @@ function slideOut() {
     cardPopup.classList.add('slideOut');
     setTimeout(() => {
         cardPopup.classList.remove('slideOut');
-    }, 500);
-    closePopup();
+        closePopup();
+    }, 100);
 }

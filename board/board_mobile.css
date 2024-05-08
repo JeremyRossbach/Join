@@ -14,7 +14,7 @@
 
     h1 {
         font-size: 61px;
-        }
+    }
 
     .inputAndButton {
         display: flex;
@@ -45,13 +45,14 @@
 
     #sections {
         flex-direction: column;
+        width: 91vw;
         padding-inline: 40px;
         margin-top: 24px;
     }
 
     .emptySection {
-        width: 244px;
-        margin-top: 0;
+        margin-top: 26px;
+        margin-left: 10px;
         font-size: 16px;
     }
 
@@ -59,7 +60,7 @@
     #inProgressSection,
     #awaitFeedbackSection,
     #doneSection {
-        width: 842px;
+        width: 91vw;
         margin-top: -100px;
     }
 
@@ -68,9 +69,13 @@
     }
 
     .content {
+        display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 802px;
+        padding-top: 26px;
         margin-top: 0;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     #toDoHeader,
@@ -79,6 +84,16 @@
     #doneHeader {
         position: static;
         width: 244px;
+        margin-bottom: -30px;
+        margin-left: 12px;
+    }
+
+    .overflow-y {
+        display: flex;
+        justify-content: start;
+        width: 842px;
+        height: 300px;
+        overflow-y: scroll;
     }
 
     p {
@@ -130,5 +145,125 @@
 
     .prioImage {
         width: 18px;
+    }
+}
+
+@media only screen and (max-width: 892px) {
+    .overflow-y {
+        width: 842px;
+    }
+}
+
+@media only screen and (max-width: 862px) {
+    .overflow-y {
+        width: 782px;
+    }
+}
+
+@media only screen and (max-width: 832px) {
+    .overflow-y {
+        width: 752px;
+    }
+}
+
+@media only screen and (max-width: 802px) {
+    .overflow-y {
+        width: 722px;
+    }
+}
+
+@media only screen and (max-width: 772px) {
+    .overflow-y {
+        width: 692px;
+    }
+}
+
+@media only screen and (max-width: 742px) {
+    .overflow-y {
+        width: 662px;
+    }
+}
+
+@media only screen and (max-width: 712px) {
+    .overflow-y {
+        width: 632px;
+    }
+}
+
+@media only screen and (max-width: 682px) {
+    .overflow-y {
+        width: 602px;
+    }
+}
+
+@media only screen and (max-width: 652px) {
+    .overflow-y {
+        width: 572px;
+    }
+}
+
+@media only screen and (max-width: 622px) {
+    .overflow-y {
+        width: 542px;
+    }
+}
+
+@media only screen and (max-width: 592px) {
+    .overflow-y {
+        width: 512px;
+    }
+}
+
+@media only screen and (max-width: 562px) {
+    .overflow-y {
+        width: 482px;
+    }
+}
+
+@media only screen and (max-width: 532px) {
+    .overflow-y {
+        width: 452px;
+    }
+}
+
+@media only screen and (max-width: 502px) {
+    .overflow-y {
+        width: 422px;
+    }
+}
+
+@media only screen and (max-width: 472px) {
+    .overflow-y {
+        width: 392px;
+    }
+}
+
+@media only screen and (max-width: 442px) {
+    .overflow-y {
+        width: 362px;
+    }
+}
+
+@media only screen and (max-width: 412px) {
+    .overflow-y {
+        width: 332px;
+    }
+}
+
+@media only screen and (max-width: 382px) {
+    .overflow-y {
+        width: 302px;
+    }
+}
+
+@media only screen and (max-width: 352px) {
+    .overflow-y {
+        width: 272px;
+    }
+}
+
+@media only screen and (max-width: 332px) {
+    .overflow-y {
+        width: 242px;
     }
 }

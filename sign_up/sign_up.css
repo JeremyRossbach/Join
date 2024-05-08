@@ -1,6 +1,6 @@
 #dialog-message {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.15);
     z-index: 999;
@@ -133,4 +133,10 @@ main {
 
 .accept-policy input[type='checkbox']:checked:hover {
     background-image: url(../img/checkbox_hover_check.png);
+}
+
+.footer {
+    position: unset;
+    bottom: unset;
+    margin-top: 20px;
 }
