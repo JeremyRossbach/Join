@@ -155,7 +155,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 244px;
+    width: inherit;
     margin-top: 110px;
 }
 
@@ -189,7 +189,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: 244px;
+    width: inherit;
     margin-top: 150px;
 }
 
@@ -244,7 +244,6 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 244px;
     height: 48px;
     margin-top: 150px;
     border-radius: 10px;
