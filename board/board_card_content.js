@@ -308,5 +308,5 @@ function slideOut() {
     setTimeout(() => {
         cardPopup.classList.remove('slideOut');
         closePopup();
-    }, 500);
+    }, 100);
 }
