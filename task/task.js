@@ -10,13 +10,13 @@ let selectedContackts = [];
 function initAddTasks() {
     loadSubtasks();
     renderSubtask();
-    showaAvailableContacts();
-
+    //showaAvailableContacts();
 }
 
 
 function dropDownContacts() {
-    document.getElementById("contacts_dropdown").classList.toggle("show");
+    let dropDown = document.getElementById("myDropdown");
+    dropDown.classList.toggle("show");
     arrowChange();
 }
 
@@ -52,7 +52,7 @@ function arrowChangeCategory() {
 
 function showaAvailableContacts() {
     let availableContacts = document.getElementById("availableContacts");
-    let contacts = contactData
+    let contacts = contactData;
     availableContacts.innerHTML = '';
     for (let i = 0; i < contacts.length; i++) {
         let currentContact = contacts[i];

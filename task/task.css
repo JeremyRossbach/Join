@@ -110,7 +110,12 @@
     height: 180px;
 }
 
+.dropdown-content {
+    display: none;
+}
+
 .dropdown-content a {
+    display: none;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -290,7 +295,7 @@ label {
     border: 1px solid #D1D1D1;
     transition: all 200ms ease-in-out;
     height: 48px;
-    text-indent: 21px;
+    padding-left: 21px;
 }
 
 .input-field::placeholder {
@@ -304,7 +309,8 @@ label {
 
 .input-field-description {
     height: 136px !important;
-    padding-top: 16px;
+    padding-top: 18px !important;
+    padding-left: 16px !important;
     resize: horizontal;
 }
 
