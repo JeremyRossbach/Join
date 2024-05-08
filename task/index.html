@@ -85,23 +85,22 @@
             <!-- Hier kommt der HTML Code von Euch rein -->
             <H1 class="H1">Add Task</H1>
             <div class="content" id="content">
-
+            <div class="innerContent">
                 <div class="leftside">
                     <div class="spanandvalue">
-                        <label for="title">Title<span class="redStar">*</span></label>
-                        <input id="title" class="input-field" placeholder="Enter a title" type="text">
+                        <span>Title <span class="redStar">*</span></span>
+                        <input id="titleInput" class="input" placeholder="Enter a title" type="text">
                     </div>
                     <div class="spanandvalue">
-                        <label for="description">Description</label>
-                        <textarea class="input-field input-field-description" id="description"
-                            placeholder="Enter a Description"></textarea>
+                        <span>Description</span>
+                        <input id="descriptionInput" class="descriptionInput" placeholder="Enter a Description" type="text">
                     </div>
-                    <div class="spanandvalue">
-                        <label>Assigned to</label>
+                    <div class="spanandvalue contactPosition">
+                        <span>Assigned to</span>
                         <div class="dropdown">
-                            <button onclick="dropDownContacts(),showaAvailableContacts()" class="dropbtn">Select
+                            <button onclick="dropDownContacts()" class="dropbtn">Select
                                 contacts to assign <img id="arrow" src="img/arrow down.svg" alt=""></button>
-                            <div id="myDropdown" class="dropdown-content">
+                            <div id="contacts_dropdown" class="contactsDropdown">
                                 <div id="availableContacts"></div>
 
                             </div>
@@ -113,17 +112,16 @@
 
                 <div class="rightside">
                     <div class="spanandvalue" class="datepicker">
-                        <label>Due date<span class="redStar">*</span></label>
+                        <span>Due date<span class="redStar">*</span></span>
                         <form action="/action_page.php">
                             <label placeholder="dd/mm/yyyy" for=""></label>
-                            <input id="date-picker" class="input-field input-field-date date-empty" type="date" id="date"
-                                name="date">
+                            <input type="date" id="date" name="date">
 
                         </form>
 
                     </div>
                     <div class="spanandvalue" class="prio">
-                        <label>Prio</label>
+                        <span>Prio</span>
                         <div class="priobtns">
                             <div id="urgentbtn" onclick="prioUrgent()" class="priobtn">Urgent <img id="highicon"
                                     src="img/Prio high icon.svg" alt=""></div>
@@ -134,11 +132,11 @@
                         </div>
                     </div>
                     <div class="spanandvalue">
-                        <label>Category<span class="redStar">*</span></label>
+                        <span>Category<span class="redStar">*</span></span>
                         <div class="dropdown">
                             <button onclick="dropDownCategory()" class="dropbtn"><span id="categorySpan">Select tasks
                                     category</span><img id="arrow_category" src="img/arrow down.svg" alt=""></button>
-                            <div id="drop_down_category" class="dropdown-content">
+                            <div id="dropdown-content" class="dropdown">
                                 <div class="availableCategory" id="availableCategory">
                                     <div onclick="technicalTask()" class="choseCategory">Technical Task</div>
                                     <div onclick="userStory()" class="choseCategory">User Story</div>
@@ -148,22 +146,22 @@
                         </div>
                     </div>
                     <div class="spanandvalue">
-                        <label>Subtasks</label>
+                        <span>Subtasks</span>
                         <div class="subtaskParent">
-                            <input id="subtask_input" class="input-field" placeholder="Add new subtask">
-                            <img class="img-subtask" onclick="pushSubtask()" src="img/subtaskPlus.svg" alt="">
+                            <input id="subtask_input" class="subtaskInput" placeholder="Add new subtask">
+                            <img onclick="pushSubtask()" src="img/subtaskPlus.svg" alt="">
                         </div>
                         <div id="pushedSubtasks" class="pushedSubtasks"></div>
                     </div>
                 </div>
-            </div>
-            <div class="createBTN" onclick="createTask()">
-                <span>create Task</span>
-                <img src="img/createCheck.svg" alt="">
-            </div>
-            <!--  -->
+                </div>
+                <div class="createBTN" onclick="createTask()">
+                    <span>Create Task</span>
+                    <img src="img/createCheck.svg" alt="">
+                </div>
+                <!--  -->
 
 
-        </div>
-        <script src="task.js"></script>
+            </div>
+            <script src="task.js"></script>
 </body>

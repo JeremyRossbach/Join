@@ -1,76 +1,77 @@
-.H1 {
-    padding-top: 200px;
-    padding-bottom: 0px;
-    padding-left: 50px
+.H1{
+padding-top: 180px;
+padding-bottom: 0px;
+ padding-left: 50px
 }
-
 #content {
     position: relative;
     top: 0px;
     scrollbar-width: none;
 }
 
-
-#content {
+.innerContent{
     padding-top: 0px;
     display: flex;
     justify-content: space-evenly;
-    top: 80px
-}
+    top:0px
+    
 
-.leftside {
+}
+.leftside{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width: 440px;
-    height: 376px;
-    gap: 8px;
+    justify-content: space-between;
+    width: 400px;
+    height: 400px;
 }
-
-.rightside {
+.rightside{
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 440px;
-    height: 376px;
-    gap: 8px;
-
+        flex-direction: column;
+        justify-content: space-between;
+        width: 400px;
+       
 }
-
-.redStar {
+.redStar{
     color: red;
 }
-
-.spanandvalue {
+.spanandvalue{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 8px;
-    padding-bottom: 12px;
 }
-
+.contactPosition{
+    display: block;
+}
 .dropbtn {
     display: flex;
     justify-content: space-between;
-    padding: 12px 16px 12px 16px;
-    align-items: center;
-    height: 48px;
-    font-size: 20px;
-    width: 100%;
-    background-color: white;
+    height: 24px;
+    width: 400px;
+    background-color:white;
     color: black;
     cursor: pointer;
     border: solid 1px rgb(209, 209, 209);
     border-radius: 4px;
 }
+input{
+    border: solid 1px;
+    border-radius: 4px;
+    border-color:rgb(209, 209, 209);
+    height: 24px;
+}
+input:focus{
+    outline: 1px solid #29ABE2;
+       
+}
 
-.dropbtn:hover .dropbtn:focus {
-    background-color: rgb(209, 209, 209);
+.dropbtn:hover
+.dropbtn:focus {
+    background-color:rgb(209,209,209);
 }
 
 #myInput {
     box-sizing: border-box;
-
+   
     background-position: 14px 12px;
     background-repeat: no-repeat;
     font-size: 16px;
@@ -83,17 +84,16 @@
     outline: 3px solid rgb(209, 209, 209);
 }
 
-.availableCategory {
+.availableCategory{
     display: none;
-    position: absolute;
-    background-color: #f6f6f6;
-    width: 440px;
-    overflow: auto;
-    z-index: 1;
-    border: 4px;
-    border-radius: 8px;
-    font-size: 20px;
-    box-shadow: 0px 0px 14px 3px #0000000A;
+        position: absolute;
+        background-color: #f6f6f6;
+        width: 400px;
+        overflow: auto;
+    
+        z-index: 1;
+        border: 4px;
+    
 }
 
 .contactsDropdown {
@@ -104,17 +104,15 @@
     background-color: #f6f6f6;
     min-width: 230px;
     overflow: auto;
-
+    
     z-index: 1;
     border: 4px;
 }
-
-.availableContacts {
+.availableContacts{
     height: 180px;
 }
 
-.dropdown-content a {
-    display: none;
+.dropdown-content a{
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -129,14 +127,12 @@
 .show {
     display: block;
 }
-
-.roomdivider {
+.roomdivider{
     width: 1px;
     height: 400px;
     background-color: rgb(209, 209, 209);
 }
-
-.priobtn {
+.priobtn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,29 +140,26 @@
     width: 112px;
     height: 40px;
     border-radius: 10px;
-    gap: 8px;
-    border: solid 1px rgb(209, 209, 209);
-    margin-right: 4px;
-    box-shadow: 0px 0px 4px 0px #0000001A;
+        gap: 8px;
+        border: solid 1px rgb(209, 209, 209);
+        margin-right: 4px;
+        
 }
-
-.priobtnClicked {
+.priobtnClicked{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(255, 255, 255);
-    width: 120px;
-    height: 48px;
-    border-radius: 10px;
-    gap: 8px;
-    border: solid 1px rgb(209, 209, 209);
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        width: 120px;
+        height: 48px;
+        border-radius: 10px;
+        gap: 8px;
+        border: solid 1px rgb(209, 209, 209);
 }
-
-.priobtn:hover {
-    box-shadow: 0px 4px 4px 0px #00000040;
+.priobtn:hover{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
-.priobtns {
+.priobtns{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -174,23 +167,25 @@
     width: 400px;
 }
 
-.priobtns img:hover {
-    box-shadow: 0px 0px 4px 0px #0000001A;
+.priobtns img:hover{
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 20px 8px 1px rgba(0, 0, 0, 0.08);
+        box-shadow: 0px 10px 13px -7px #000000, 0px 20px 8px 1px rgba(0, 0, 0, 0.08);
 }
-
-.urgentClicked {
-    background-color: rgb(255, 61, 0);
+.urgentClicked{
+    background-color:rgb(255,61,0);
 }
-
-.mediumClicked {
-    background-color: rgb(255, 168, 0);
+.mediumClicked{
+    background-color: rgb(255,168,0);
 }
-
-.lowClicked {
-    background-color: rgb(122, 226, 41);
+.lowClicked{
+    background-color:rgb(122,226,41) ;
 }
-
-.contactBTN {
+.descriptionInput{
+    height: 72px;
+    display: flex;
+    text-align: start !important;
+}
+.contactBTN{
     height: 36px;
     display: flex;
     align-items: center;
@@ -199,135 +194,154 @@
     cursor: pointer;
 
 }
-
-.contact_initials {
+.contact_initials{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 2px;
-
+    
     border-radius: 17px;
     width: 30px;
     height: 30px;
     border: solid 2px white;
 }
-
-.initialsAndContacts {
+.initialsAndContacts{
     display: flex;
     align-items: center;
-
+    
 }
-
-.chosenInitals {
+.chosenInitals{
     display: flex;
     flex-direction: row;
     height: 30px;
     max-width: 400px;
 }
-
-.choseCategory {
+.choseCategory{
     background-color: white;
+ border-radius: 8px;
+ cursor: pointer;
+}
+.availableCategory{
     border-radius: 8px;
-    cursor: pointer;
-    width: 440px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: white;
 }
-
-.choseCategory:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.subtaskParent {
-    position: relative;
+.subtaskInputParent{
     display: flex;
     justify-content: space-between;
     background-color: white;
+    border: 1px solid rgb(209, 209, 209);
     border-radius: 5px;
 }
-
-.subtaskParent img {
+.subtaskParent img{
     padding-right: 4px;
 }
-
-.subtaskInput {
+.subtaskInput{
     width: 375px;
+    border: 0; 
+   
+}
+.subtaskInput:focus {
+    outline: 0px solid #29ABE2;
     border: 0;
-
 }
 
-
-.subtaskEdit {
+.subtaskInputParent:focus-within {
+    outline: 1px solid #29ABE2;
+   
+}
+#date{
+    width: 400px;
+}
+#date::placeholder{
+    color: rgb(139, 139, 139);
+}
+.subtaskEdit{
     display: flex;
     background-color: white;
     border: 1px solid rgb(209, 209, 209);
-    border-radius: 5px;
+        border-radius: 5px;
 
 }
-
-#subtaskEdit {
+.subtaskEdit:focus-within {
+    outline: 1px solid #29ABE2;
+}
+#subtaskEdit{
     border: none;
     width: 350px;
 }
-
 #subtaskEdit:focus-within {
     outline: 0;
 }
-
-.divider {
+.divider{
     width: 1px;
-    background-color: rgb(209, 209, 209);
-    margin-left: 3px;
-    margin-right: 3px;
+   background-color: rgb(209, 209, 209);
+   margin-left: 3px;
+   margin-right: 3px;
+}
+.subtaskHoverIcon{
+    display: flex;
+    flex-direction: row;
+
+}
+.editableSubtask{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    align-content: center;
+
+}
+.subtask{
+    display: flex;
+    flex-direction: row;
+}
+.editableSubtask img{
+cursor: pointer;
+margin-right: 3px;
+opacity: 0;
+}
+.subtaskHover{
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+       
+        border-radius: 4px;
 }
 
-
-
-
-label {
-    font-size: 20px;
+.subtaskHover:hover img{
+     opacity:1;
 }
-
-input[type=date] {
-    padding-left: 0;
+.subtask:hover{
+    background-color:rgb(209, 209, 209) ;
+    
 }
-
-.date-empty {
-    color: #999 !important;
+.subtask{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 4px;
 }
-
-.input-field {
-    width: 440px;
-    border: none;
-    font-size: 20px;
-    border-radius: 10px;
-    transition: all 200ms ease-in-out;
-    height: 48px;
-    padding-left: 21px;
+.noDisplay{
+    display: none;
 }
-
-.input-field:focus {
-    outline: 1px solid #29ABE2;
-    border: 1px solid #29ABE2;
+.createBTN{
+    position: fixed;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    color: white;
+    background-color:rgb(42,54,71);
+    width: 150px;
+    height: 50px;
+    border-radius: 8px;
+    margin-top: 50px;
+    right: 100px;
 }
-
-.input-field-description {
-    height: 136px !important;
-    padding-top: 18px !important;
-    padding-left: 16px !important;
-    resize: horizontal;
-}
-
-.input-field-date {
-    padding-right: 12px;
-    text-indent: 12px;
-}
-
-.img-subtask {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translate(0, -50%);
+.createBTN:hover{
+    background-color:rgb(41,171,226);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
