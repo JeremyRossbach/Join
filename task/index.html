@@ -116,7 +116,8 @@
                         <label>Due date<span class="redStar">*</span></label>
                         <form action="/action_page.php">
                             <label placeholder="dd/mm/yyyy" for=""></label>
-                            <input class="input-field input-field-date" type="date" id="date" name="date">
+                            <input id="date-picker" class="input-field input-field-date date-empty" type="date" id="date"
+                                name="date">
 
                         </form>
 
@@ -155,14 +156,14 @@
                         <div id="pushedSubtasks" class="pushedSubtasks"></div>
                     </div>
                 </div>
-                </div>
-                <div class="createBTN" onclick="createTask()">
-                    <span>Create Task</span>
-                    <img src="img/createCheck.svg" alt="">
-                </div>
-                <!--  -->
-
-
             </div>
-            <script src="task.js"></script>
+            <div class="createBTN" onclick="createTask()">
+                <span>Create Task</span>
+                <img src="img/createCheck.svg" alt="">
+            </div>
+            <!--  -->
+
+
+        </div>
+        <script src="task.js"></script>
 </body>

@@ -3,7 +3,7 @@ let categorys;
 let taskcontacts = [];
 let currentContact;
 let prio;
-let subtasks = ['test',];
+let subtasks = [];
 let selectedContackts = [];
 
 
@@ -361,4 +361,13 @@ function createTask() {
     prioUrgentSetBack();
     prioMedSetBack();
     prioLowSetBack();
+}
+
+var el = document.getElementById('date-picker');
+el.onchange = function() {
+    if (el.value === '') {
+        el.classList.add("date-empty");
+    } else {
+        el.classList.remove("date-empty");
+    }
 }
