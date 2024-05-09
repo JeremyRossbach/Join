@@ -342,23 +342,22 @@ function createTask() {
 
     // Füge die neue Aufgabe dem tasks-Array hinzu
     testtask.push(newTask);
-
-    // Leere die Eingabefelder
+    clearForm();
+    console.log(testtask)
+  
+}
+function clearForm(){
     document.getElementById('titleInput').value = '';
     document.getElementById('descriptionInput').value = '';
     document.getElementById('date').value = '';
-
-    // Leere die Arrays subtasks und taskcontacts
+    document.getElementById('categorySpan').innerHTML = 'Select tasks category';
     subtasks = [];
     taskcontacts = [];
-
-    // Setze prio und category zurück
-    prio = null; // oder den ursprünglichen Standardwert
-    categorys = null; // oder den ursprünglichen Standardwert
+    prio = '';
     renderSubtask();
     showaAvailableContacts();
     showchosenInitials();
     prioUrgentSetBack();
     prioMedSetBack();
     prioLowSetBack();
-}
+} 
