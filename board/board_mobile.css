@@ -51,6 +51,7 @@
     }
 
     .emptySection {
+        width: 345px;
         margin-top: 26px;
         margin-left: 10px;
         font-size: 16px;
@@ -158,11 +159,19 @@
     .overflow-y {
         width: 782px;
     }
+
+    .emptySection {
+        width: 386px;
+    }
 }
 
 @media only screen and (max-width: 832px) {
     .overflow-y {
         width: 752px;
+    }
+
+    .emptySection {
+        width: 410px;
     }
 }
 
@@ -170,11 +179,31 @@
     .overflow-y {
         width: 722px;
     }
+
+    .emptySection {
+        width: 438px;
+    }
 }
 
 @media only screen and (max-width: 772px) {
+    header {
+        flex-direction: column;
+    }
+
     .overflow-y {
         width: 692px;
+    }
+
+    .mobileAddButton {
+        display: flex;
+    }
+
+    .responsiveAddButton {
+        display: none;
+    }
+
+    .emptySection {
+        width: 469px;
     }
 }
 
@@ -182,17 +211,31 @@
     .overflow-y {
         width: 662px;
     }
+
+    .emptySection {
+        width: 506px;
+    }
 }
 
 @media only screen and (max-width: 712px) {
     .overflow-y {
         width: 632px;
     }
+
+    .emptySection {
+        width: 548px;
+    }
+
+    /* cardPopup verkleinern */
 }
 
 @media only screen and (max-width: 682px) {
     .overflow-y {
         width: 602px;
+    }
+
+    .emptySection {
+        width: 600px;
     }
 }
 
@@ -200,11 +243,19 @@
     .overflow-y {
         width: 572px;
     }
+
+    .emptySection {
+        width: 659px;
+    }
 }
 
 @media only screen and (max-width: 622px) {
     .overflow-y {
         width: 542px;
+    }
+
+    .emptySection {
+        width: 733px;
     }
 }
 
@@ -212,11 +263,19 @@
     .overflow-y {
         width: 512px;
     }
+
+    .emptySection {
+        width: 826px;
+    }
 }
 
 @media only screen and (max-width: 562px) {
     .overflow-y {
         width: 482px;
+    }
+
+    .emptySection {
+        width: 947px;
     }
 }
 
@@ -224,11 +283,19 @@
     .overflow-y {
         width: 452px;
     }
+
+    .emptySection {
+        width: 1096px;
+    }
 }
 
 @media only screen and (max-width: 502px) {
     .overflow-y {
         width: 422px;
+    }
+
+    .emptySection {
+        width: 1333px;
     }
 }
 
@@ -236,11 +303,21 @@
     .overflow-y {
         width: 392px;
     }
+
+    .emptySection {
+        width: 469px;
+    }
+
+    /* card verkleinern */
 }
 
 @media only screen and (max-width: 442px) {
     .overflow-y {
         width: 362px;
+    }
+
+    .emptySection {
+        width: 469px;
     }
 }
 
@@ -248,11 +325,19 @@
     .overflow-y {
         width: 332px;
     }
+
+    .emptySection {
+        width: 469px;
+    }
 }
 
 @media only screen and (max-width: 382px) {
     .overflow-y {
         width: 302px;
+    }
+
+    .emptySection {
+        width: 469px;
     }
 }
 
@@ -260,10 +345,18 @@
     .overflow-y {
         width: 272px;
     }
+
+    .emptySection {
+        width: 469px;
+    }
 }
 
 @media only screen and (max-width: 332px) {
     .overflow-y {
         width: 242px;
+    }
+
+    .emptySection {
+        width: 469px;
     }
 }

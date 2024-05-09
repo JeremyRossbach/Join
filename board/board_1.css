@@ -293,3 +293,17 @@ p {
     font-size: 12px;
     margin: 0 0 0 -10px;
 }
+
+.scrollableCardPopup {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 750px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollableCardPopup::-webkit-scrollbar {
+    display: none;
+}
