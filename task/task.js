@@ -234,7 +234,7 @@ function userStory() {
     categorySpan.innerHTML = "User Story";
     categorys = "User Story";
 }
-
+/*
 function renderSubtask() {
     let pushedSubtasks = document.getElementById("pushedSubtasks");
     pushedSubtasks.innerHTML = '';
@@ -245,7 +245,7 @@ function renderSubtask() {
 }
 
 function generateSubtaskHTML(index, subtask) {
-    return /*html*/`
+    return /*html*//*`
         <div class="subtask">
             <div class='subtaskHover'>
                 <div class='editableSubtask' id='editableSubtask${index}'>
@@ -326,21 +326,18 @@ function createTask() {
     let descriptionInput = document.getElementById('descriptionInput').value;
     let date = document.getElementById('date').value;
 
-    // Erstelle ein Objekt für die neue Aufgabe
     let newTask = {
         'title': titleInput,
         'description': descriptionInput,
-        'assignedTo': taskcontacts, // Annahme: selectedContackts enthält die ausgewählten Kontakte
+        'assignedTo': taskcontacts, 
         'dueDate': date,
         'prio': prio,
         'category': categorys,
         'subtask': subtasks,
-        'doneSubtask': subtasks.map(() => false), // Annahme: keine der Teilaufgaben ist erledigt
+        'doneSubtask': subtasks.map(() => false),
         'numberOfDoneSubtasks': 0,
-        'section': 'To do' // Annahme: neue Aufgaben werden der Sektion "To do" hinzugefügt
-    };
-
-    // Füge die neue Aufgabe dem tasks-Array hinzu
+        'section': 'To do' 
+    }
     testtask.push(newTask);
     clearForm();
     console.log(testtask)
@@ -360,4 +357,4 @@ function clearForm(){
     prioUrgentSetBack();
     prioMedSetBack();
     prioLowSetBack();
-} 
+} */
