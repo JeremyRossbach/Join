@@ -124,6 +124,7 @@ function showchosenInitials(i) {
 }
 
 
+/*
 function prioUrgent() {
     let highicon = document.getElementById("highicon");
     let urgentbtn = document.getElementById('urgentbtn');
