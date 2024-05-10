@@ -20,7 +20,7 @@ function dropDownContacts() {
     let selectSpan = document.getElementById('selectSpan');
     arrowChange();
     if (selectSpan.classList.contains('noDisplay')){
-        closeFindInput()
+       // closeFindInput()
     } else {
         openFindInput()
 
@@ -123,7 +123,7 @@ function showaAvailableContacts() {
         /*html*/`<div id='contactBTN${i}'class="contactBTN" onclick='chosenContacts(${i},currentContact)'>
             <div class="initialsAndContacts">
              <div class="contact_initials" style="background-color: ${backgroundColor};">${getInitials(currentContact.name)}</div>
-            <div id="contacts${i}">${currentContact['name']} </div></div>
+            <div id="contacts">${currentContact['name']} </div></div>
             <img id="selectionBox${i}" src="img/selectionbox unclicked.svg" alt="">
         </div>
         `
@@ -202,3 +202,20 @@ function findContact() {
     }
 }
 
+function findContact(i) {
+    document.getElementById('availableContacts').innerHTML = '';
+
+    let search = document.getElementById('filterContatcsInput').value;
+    search = search.toLowerCase();
+
+    for (let n = 0; n < contactData.length; n++) {
+        renderContact(search, n, i);
+    }
+}
+
+
+function renderContact(search, n, i) {
+    if (contactData[n]['name'].toLowerCase().includes(search)) {
+        showContact(n, i);
+    }
+}
