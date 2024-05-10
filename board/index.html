@@ -113,28 +113,28 @@
                 </header>
                 
                 <section id="sections">
-                    <div id="toDoSection">
+                    <div id="toDoSection" ondrop="moveTo('To do')" ondragover="allowDrop(event)">
                         <div id="toDoHeader"><p>To do</p><button onclick="" id="addToDo"></button></div>
                         <div class="overflow-y">
                             <p id="emptytoDoContentSection" class="emptySection">No tasks to do</p>
                             <div onclick="" id="toDoContent" class="content"></div>
                         </div>
                     </div>
-                    <div id="inProgressSection">
+                    <div id="inProgressSection" ondrop="moveTo('In progress')" ondragover="allowDrop(event)">
                         <div id="inProgressHeader"><p>In progress</p><button onclick="" id="addInProgress"></button></div>
                         <div class="overflow-y">
                             <p id="emptyinProgressContentSection" class="emptySection">No tasks in progress</p>
                             <div onclick="" id="inProgressContent" class="content"></div>
                         </div>
                     </div>
-                    <div id="awaitFeedbackSection">
+                    <div id="awaitFeedbackSection" ondrop="moveTo('Await Feedback')" ondragover="allowDrop(event)">
                         <div id="awaitFeedbackHeader"><p>Await Feedback</p><button onclick="" id="addAwaitFeedback"></button></div>
                         <div class="overflow-y">
                             <p id="emptyawaitFeedbackContentSection" class="emptySection">No task awaits feedback</p>
                             <div onclick="" id="awaitFeedbackContent" class="content"></div>
                         </div>
                     </div>
-                    <div id="doneSection">
+                    <div id="doneSection" ondrop="moveTo('Done')" ondragover="allowDrop(event)">
                         <div id="doneHeader"><p>Done</p></div>
                         <div class="overflow-y">
                             <p id="emptydoneContentSection" class="emptySection">No tasks done</p>

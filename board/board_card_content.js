@@ -5,6 +5,9 @@ const prioImages = {
 };
 
 
+let currentDraggedElement;
+
+
 function focusOnFindTask() {
     document.getElementById('input').focus();
 }
@@ -48,7 +51,7 @@ function content(containerId, i) {
     let container = document.getElementById(containerId);
 
     container.innerHTML += /* html */`
-        <div onclick="showCardPopup(${i})" id="card${i}" class="card">
+        <div onclick="showCardPopup(${i})" draggable="true" ondragstart="startDragging(${i})" id="card${i}" class="card">
             <div id="category${i}" class="category">${tasks[i]['category']}</div>
             <div class="titleAndDescription">
                 <div class="title">${tasks[i]['title']}</div>
@@ -309,4 +312,23 @@ function slideOut() {
         cardPopup.classList.remove('slideOut');
         closePopup();
     }, 100);
+}
+
+
+function startDragging(i) {
+    currentDraggedElement = i;
+}
+
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+
+function moveTo(section) {
+    tasks[currentDraggedElement]['section'] = section;
+
+    saveTasks();
+    emptyContentSections();
+    init();
 }
