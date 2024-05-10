@@ -1,4 +1,8 @@
 @media only screen and (max-width: 922px) {
+    #header {
+        height: 80px;
+    }
+
     header {
         height: 154px;
         padding-top: 34px;
@@ -40,7 +44,7 @@
     }
 
     #searchButton {
-        margin-left: 221px;
+        margin-left: 230px;
     }
 
     #sections {
@@ -84,9 +88,26 @@
     #awaitFeedbackHeader,
     #doneHeader {
         position: static;
-        width: 244px;
+        width: -webkit-fill-available;
         margin-bottom: -30px;
         margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    #addToDo,
+    #addInProgress,
+    #addAwaitFeedback {
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+    }
+
+    #addToDo:hover,
+    #addInProgress:hover,
+    #addAwaitFeedback:hover {
+        width: 30px;
+        height: 30px;
+        background-size: contain;
     }
 
     .overflow-y {
@@ -188,6 +209,10 @@
 @media only screen and (max-width: 772px) {
     header {
         flex-direction: column;
+    }
+
+    #searchButton {
+        margin-left: 304px;
     }
 
     .overflow-y {
@@ -302,6 +327,7 @@
 @media only screen and (max-width: 472px) {
     .overflow-y {
         width: 392px;
+        height: 270px;
     }
 
     .emptySection {
@@ -309,6 +335,114 @@
     }
 
     /* card verkleinern */
+
+    header {
+        height: 134px;
+        top: 120px;
+        padding-bottom: 18px;
+        padding-inline: 40px;
+    }
+
+    h1 {
+        font-size: 56px;
+    }
+
+    #input {
+        height: 26px;
+        font-size: 18px;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: 18px;
+    }
+
+    #addButton {
+        width: 156px;
+        height: 44px;
+        font-size: 19px;
+    }
+
+    #addImage {
+        width: 26px;
+    }
+
+    #sections {
+        width: 83vw;
+        padding-inline: 40px;
+        margin-top: 24px;
+    }
+
+    #toDoSection,
+    #inProgressSection,
+    #awaitFeedbackSection,
+    #doneSection {
+        width: 83vw;
+    }
+
+    .emptySection {
+        font-size: 14px;
+    }
+
+    #toDoHeader,
+    #inProgressHeader,
+    #awaitFeedbackHeader,
+    #doneHeader {
+        width: -webkit-fill-available;
+        margin-top: 70px;
+    }
+
+    #toDoHeader {
+        margin-top: 88px;
+    }
+
+    .card {
+        width: 186px;
+    }
+
+    p {
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    .category {
+        margin-bottom: 18px;
+        font-size: 14px;
+    }
+
+    .titleAndDescription {
+        margin-bottom: 18px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .progressbar {
+        width: 112px;
+        height: 6px;
+    }
+
+    .subtask {
+        font-size: 10px;
+    }
+
+    .cardBottom {
+        margin-top: -6px;
+    }
+
+    .initials {
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+    .prioImage {
+        width: 16px;
+    }
 }
 
 @media only screen and (max-width: 442px) {
@@ -318,6 +452,10 @@
 
     .emptySection {
         width: 469px;
+    }
+
+    #searchButton {
+        display: none;
     }
 }
 
