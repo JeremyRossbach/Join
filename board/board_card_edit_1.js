@@ -16,7 +16,7 @@ function editTask(i) {
         </div>
         <div class="editDueDateAndInput">
             <p class="dueDateText">Due Date</p>
-            <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" dateFormat onfocus="(this.type='date')" onblur="(this.type='text')">
+            <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" onfocus="(this.type='date')" onblur="(this.type='text')">
         </div>
         <div class="editPriorityAndButtons">
             <p class="priorityText">Priority</p>

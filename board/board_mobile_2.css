@@ -1,0 +1,368 @@
+@media only screen and (max-width: 592px) {
+    .overflow-y {
+        width: 512px;
+    }
+
+    .emptySection {
+        width: 826px;
+    }
+
+    .popupTitle {
+        font-size: 53px;
+    }
+
+    .popupDescription,
+    .date,
+    .priorityAndImage,
+    .name {
+        font-size: 18px;
+    }
+
+    .dueDate,
+    .priority,
+    .assignedToText {
+        font-size: 18px;
+    }
+
+    .popupSubtaskText {
+        font-size: 14px;
+    }
+
+    .popupInitials {
+        font-size: 16px;
+        width: 38px;
+        height: 38px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 562px) {
+    .overflow-y {
+        width: 482px;
+    }
+
+    .emptySection {
+        width: 947px;
+    }
+}
+
+@media only screen and (max-width: 532px) {
+    .overflow-y {
+        width: 452px;
+    }
+
+    .emptySection {
+        width: 1096px;
+    }
+}
+
+@media only screen and (max-width: 502px) {
+    .overflow-y {
+        width: 422px;
+    }
+
+    .emptySection {
+        width: 1333px;
+    }
+
+    #cardPopup {
+        gap: 18px;
+    }
+
+    .popupAssignedTo,
+    .popupSubtasks {
+        gap: 0;
+    }
+    
+    .popupCategory {
+        font-size: 15px;
+        height: 36px;
+        padding-inline: 24px;
+    }
+
+    .popupTitle {
+        font-size: 45px;
+    }
+
+    .popupDescription,
+    .date,
+    .priorityAndImage,
+    .name {
+        font-size: 16px;
+    }
+
+    .dueDate,
+    .priority,
+    .assignedToText {
+        font-size: 16px;
+    }
+
+    .checkboxImage {
+        width: 22px;
+        height: 22px;
+    }
+
+    .popupSubtaskText {
+        font-size: 12px;
+    }
+
+    .popupInitials {
+        font-size: 14px;
+        width: 36px;
+        height: 36px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 472px) {
+    .overflow-y {
+        width: 392px;
+        height: 270px;
+    }
+
+    .emptySection {
+        width: 1650px;
+    }
+
+    header {
+        height: 134px;
+        top: 120px;
+        padding-bottom: 18px;
+        padding-inline: 40px;
+    }
+
+    h1 {
+        font-size: 56px;
+    }
+
+    #input {
+        height: 26px;
+        font-size: 18px;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: 18px;
+    }
+
+    #addButton {
+        width: 156px;
+        height: 44px;
+        font-size: 19px;
+    }
+
+    #addImage {
+        width: 26px;
+    }
+
+    #sections {
+        width: 83vw;
+        padding-inline: 40px;
+        margin-top: 24px;
+    }
+
+    #toDoSection,
+    #inProgressSection,
+    #awaitFeedbackSection,
+    #doneSection {
+        width: 83vw;
+    }
+
+    .emptySection {
+        font-size: 14px;
+    }
+
+    #toDoHeader,
+    #inProgressHeader,
+    #awaitFeedbackHeader,
+    #doneHeader {
+        width: -webkit-fill-available;
+        margin-top: 70px;
+    }
+
+    #toDoHeader {
+        margin-top: 100px;
+    }
+
+    .card {
+        width: 186px;
+    }
+
+    p {
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    .category {
+        margin-bottom: 18px;
+        font-size: 14px;
+    }
+
+    .titleAndDescription {
+        margin-bottom: 18px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .progressbar {
+        width: 112px;
+        height: 6px;
+    }
+
+    .subtask {
+        font-size: 10px;
+    }
+
+    .cardBottom {
+        margin-top: -6px;
+    }
+
+    .initials {
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+    }
+
+    .prioImage {
+        width: 16px;
+    }
+}
+
+@media only screen and (max-width: 442px) {
+    .overflow-y {
+        width: 362px;
+    }
+
+    .emptySection {
+        width: 1650px;
+    }
+
+    .popupCategory {
+        font-size: 13px;
+        height: 32px;
+        padding-inline: 20px;
+    }
+
+    #searchButton {
+        display: none;
+    }
+
+    .popupTitle {
+        font-size: 37px;
+    }
+
+    .popupDescription,
+    .date,
+    .priorityAndImage,
+    .name {
+        font-size: 14px;
+    }
+
+    .dueDate,
+    .priority,
+    .assignedToText {
+        font-size: 14px;
+    }
+
+    .popupInitials {
+        font-size: 12px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .initialsAndName {
+        padding-bottom: 0;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 412px) {
+    .overflow-y {
+        width: 332px;
+    }
+
+    .emptySection {
+        width: 1650px;
+    }
+}
+
+@media only screen and (max-width: 382px) {
+    .overflow-y {
+        width: 302px;
+    }
+
+    .emptySection {
+        width: 1650px;
+    }
+}
+
+@media only screen and (max-width: 352px) {
+    .overflow-y {
+        width: 272px;
+    }
+
+    .emptySection {
+        width: 1650px;
+    }
+
+    #cardPopup {
+        gap: 14px;
+    }
+
+    .popupCategory {
+        font-size: 11px;
+        height: 28px;
+        padding-inline: 16px;
+    }
+
+    .popupTitle {
+        font-size: 29px;
+    }
+
+    .popupDescription,
+    .date,
+    .priorityAndImage,
+    .name {
+        font-size: 12px;
+    }
+
+    .dueDate,
+    .priority,
+    .assignedToText {
+        font-size: 12px;
+    }
+
+    .popupInitials {
+        font-size: 10px;
+        width: 32px;
+        height: 32px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 332px) {
+    .overflow-y {
+        width: 242px;
+    }
+
+    .emptySection {
+        width: 1650px;
+    }
+}
