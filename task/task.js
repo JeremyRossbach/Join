@@ -20,12 +20,46 @@ function dropDownContacts() {
     arrowChange();
 }
 
-
 function dropDownCategory() {
     document.getElementById('availableCategory').classList.toggle("show");
     arrowChangeCategory();
 }
 
+function closeCategoryDropdowns() {
+    var dropdowns = document.getElementsByClassName("availableCategory");
+    for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            arrowChangeCategory();
+        }
+    }
+}
+
+// Funktion zum Schließen des Dropdown-Menüs und Ändern des Pfeils für Kontakte
+function closeContactsDropdowns() {
+    var dropdowns = document.getElementsByClassName("contactsDropdown");
+    for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            arrowChange();
+        }
+    }
+}
+
+// Event-Handler für das Klicken auf das Fenster
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        closeCategoryDropdowns();
+        // Überprüfen, ob der Klick innerhalb von #availableContacts war
+        var availableContacts = document.getElementById("availableContacts");
+        if (availableContacts.contains(event.target)) {
+            return; // Keine weiteren Aktionen ausführen
+        }
+        closeContactsDropdowns();
+    }
+}
 
 function arrowChange() {
     let arrow = document.getElementById("arrow");
