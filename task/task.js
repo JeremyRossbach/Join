@@ -71,23 +71,24 @@ function showaAvailableContacts() {
 
 function chosenContacts(i, currentContact) {
     let chosenContact = contactData[i];
-    let selectionBox = document.getElementById(`selectionBox${i}`)
+    let selectionBox = document.getElementById(`selectionBox${i}`);
     let ContactBTN = document.getElementById(`contactBTN${i}`);
-    let unclicked_background = "background-color: rgb(255, 255, 255);";
-    let clicked_background = "background-color:rgb(42,54,71);";
+    let unclicked_background = "white";
+    let clicked_background = "#2A3647";
     let selection_box_unclicked = "img/selectionbox unclicked.svg";
     let selection_box_clicked = "img/selectionbox clicked.svg";
     if (selectionBox.getAttribute('src') == selection_box_unclicked) {
-        selectionBox.setAttribute('src', selection_box_clicked)
-        ContactBTN.setAttribute('style', clicked_background)
-
+        selectionBox.setAttribute('src', selection_box_clicked);
+        ContactBTN.style.backgroundColor = clicked_background;
+        ContactBTN.classList.add('contact-btn-color');
+        ContactBTN.classList.remove('contact-btn-color-hover');
     } else {
+        ContactBTN.classList.remove('contact-btn-color');
         selectionBox.src = selection_box_unclicked;
-        ContactBTN.style = unclicked_background;
-
+        ContactBTN.style.backgroundColor = unclicked_background;
+        ContactBTN.classList.add('contact-btn-color-hover');
     }
-    chosenContactsPush(i, selection_box_clicked)
-    console.log(taskcontacts);
+    chosenContactsPush(i, selection_box_clicked);
 }
 
 function chosenContactsPush(i, selection_box_clicked) {
@@ -322,16 +323,17 @@ function pushSubtask() {
 let testtask = [];
 
 function createTask() {
-    let titleInput = document.getElementById('titleInput').value;
-    let descriptionInput = document.getElementById('descriptionInput').value;
-    let date = document.getElementById('date').value;
+    let titleInput = document.getElementById('titleInput');
+    let descriptionInput = document.getElementById('descriptionInput');
+    let date = document.getElementById('date')
+    let dangerTexts = document.getElementsByClassName('danger-text');
 
     // Erstelle ein Objekt für die neue Aufgabe
     let newTask = {
-        'title': titleInput,
-        'description': descriptionInput,
+        'title': titleInput.value,
+        'description': descriptionInput.value,
         'assignedTo': taskcontacts, // Annahme: selectedContackts enthält die ausgewählten Kontakte
-        'dueDate': date,
+        'dueDate': date.value,
         'prio': prio,
         'category': categorys,
         'subtask': subtasks,
@@ -343,10 +345,26 @@ function createTask() {
     // Füge die neue Aufgabe dem tasks-Array hinzu
     testtask.push(newTask);
 
+    if (!titleInput.value) {
+        titleInput.classList.add('input-field-danger');
+        dangerTexts[0].style.display = '';
+    } else {
+        titleInput.classList.remove('input-field-danger');
+        dangerTexts[0].style.display = 'none';
+    }
+
+    if (!date.value) {
+        date.classList.add('input-field-danger');
+        dangerTexts[1].style.display = '';
+    } else {
+        date.classList.remove('input-field-danger');
+        dangerTexts[1].style.display = 'none';
+    }
+
     // Leere die Eingabefelder
-    document.getElementById('titleInput').value = '';
-    document.getElementById('descriptionInput').value = '';
-    document.getElementById('date').value = '';
+    titleInput.value = '';
+    descriptionInput.value = '';
+    date.value = '';
 
     // Leere die Arrays subtasks und taskcontacts
     subtasks = [];
