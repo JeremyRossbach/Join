@@ -100,8 +100,11 @@
                         <div class="container-assigned contactPosition">
                             <span class="input-title-text">Assigned to</span>
                             <div class="dropdown">
-                                <button onclick="dropDownContacts()" class="input-field input-field-button">Select
-                                    contacts to assign <img id="arrow" src="img/arrow down.svg" alt=""></button>
+                                <button onclick="dropDownContacts()" class="input-field input-field-button dropbtn"><input
+                                        id="filterContatcsInput" type="text" class="noDisplay"><span
+                                        id="selectSpan">Select
+                                        contacts to assign </span><img id="arrow" src="img/arrow down.svg"
+                                        alt=""></button>
                                 <div id="contacts_dropdown" class="contactsDropdown">
                                     <div id="availableContacts"></div>
 
@@ -117,7 +120,8 @@
                             <span>Due date<span class="redStar">*</span></span>
                             <label placeholder="dd/mm/yyyy" for=""></label>
                             <input type="date" id="date" class="input-field" name="date">
-                            <div class="danger-text" style="display: none; margin-top: 8px;">This field is required</div>
+                            <div class="danger-text" style="display: none; margin-top: 8px;">This field is required
+                            </div>
                         </div>
                         <div class="spanandvalue" class="prio">
                             <span>Prio</span>
@@ -160,9 +164,11 @@
                     <span>Create Task</span>
                     <img src="img/createCheck.svg" alt="">
                 </div>
+                <div onclick="clearForm()" class="clearBTN" id="clearBTN">Clear X</div>
                 <!--  -->
 
 
             </div>
             <script src="task.js"></script>
+            <script src="taskright2.js"></script>
 </body>

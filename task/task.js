@@ -17,7 +17,33 @@ function initAddTasks() {
 
 function dropDownContacts() {
     document.getElementById("contacts_dropdown").classList.toggle("show");
+    let selectSpan = document.getElementById('selectSpan');
     arrowChange();
+    if (selectSpan.classList.contains('noDisplay')){
+        closeFindInput()
+    } else {
+        openFindInput()
+
+    }
+   
+}
+
+
+function openFindInput() {
+    document.getElementById('filterContatcsInput').classList.remove('noDisplay');
+    document.getElementById('selectSpan').classList.add('noDisplay');
+
+}
+
+function closeFindInput() {
+    let filterContatcsInput = document.getElementById("filterContatcsInput");
+    let selectSpan = document.getElementById('selectSpan');
+
+
+   
+        filterContatcsInput.classList.add('noDisplay');
+        selectSpan.classList.remove('noDisplay');
+  
 }
 
 
@@ -26,6 +52,42 @@ function dropDownCategory() {
     arrowChangeCategory();
 }
 
+function closeCategoryDropdowns() {
+    var dropdowns = document.getElementsByClassName("availableCategory");
+    for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            arrowChangeCategory();
+        }
+    }
+}
+
+// Funktion zum Schließen des Dropdown-Menüs und Ändern des Pfeils für Kontakte
+function closeContactsDropdowns() {
+    var dropdowns = document.getElementsByClassName("contactsDropdown");
+    for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            arrowChange();
+            closeFindInput();
+        }
+    }
+}
+
+// Event-Handler für das Klicken auf das Fenster
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        closeCategoryDropdowns();
+        // Überprüfen, ob der Klick innerhalb von #availableContacts war
+        var availableContacts = document.getElementById("availableContacts");
+        if (availableContacts.contains(event.target)) {
+            return; // Keine weiteren Aktionen ausführen
+        }
+        closeContactsDropdowns();
+    }
+}
 
 function arrowChange() {
     let arrow = document.getElementById("arrow");
@@ -125,22 +187,18 @@ function showchosenInitials(i) {
 }
 
 
-function prioUrgent() {
-    let highicon = document.getElementById("highicon");
-    let urgentbtn = document.getElementById('urgentbtn');
-    let clickedhighicon = "img/Prio high icon clicked.svg"
-    let unclickedhighicon = "img/Prio high icon.svg"
-    if (highicon.getAttribute('src') == unclickedhighicon) {
-        highicon.setAttribute('src', clickedhighicon)
-        urgentbtn.style.background = 'rgb(255, 61, 0)';
-        urgentbtn.style.color = '#FFFFFF';
-        prio ='Urgent';
-        prioMedSetBack()
-        prioLowSetBack()
-    } else {
-        highicon.src = unclickedhighicon
-        urgentbtn.style.background = '#FFFFFF';
-        urgentbtn.style.color = 'black';
+
+function findContact() {
+    let search = document.getElementById('input').value;
+    search = search.toLowerCase();
+
+    emptyContentSections();
+
+    for (let i = 0; i < tasks.length; i++) {
+        let task = tasks[i];
+        if (task['title'].toLowerCase().includes(search)) {
+            renderTask(i);
+        }
     }
 }
 
@@ -318,65 +376,4 @@ function pushSubtask() {
     subtaskinput.value = '';
 
     renderSubtask()
-} 
-
-let testtask = [];
-
-function createTask() {
-    let titleInput = document.getElementById('titleInput');
-    let descriptionInput = document.getElementById('descriptionInput');
-    let date = document.getElementById('date')
-    let dangerTexts = document.getElementsByClassName('danger-text');
-
-    // Erstelle ein Objekt für die neue Aufgabe
-    let newTask = {
-        'title': titleInput.value,
-        'description': descriptionInput.value,
-        'assignedTo': taskcontacts, // Annahme: selectedContackts enthält die ausgewählten Kontakte
-        'dueDate': date.value,
-        'prio': prio,
-        'category': categorys,
-        'subtask': subtasks,
-        'doneSubtask': subtasks.map(() => false), // Annahme: keine der Teilaufgaben ist erledigt
-        'numberOfDoneSubtasks': 0,
-        'section': 'To do' // Annahme: neue Aufgaben werden der Sektion "To do" hinzugefügt
-    };
-
-    // Füge die neue Aufgabe dem tasks-Array hinzu
-    testtask.push(newTask);
-
-    if (!titleInput.value) {
-        titleInput.classList.add('input-field-danger');
-        dangerTexts[0].style.display = '';
-    } else {
-        titleInput.classList.remove('input-field-danger');
-        dangerTexts[0].style.display = 'none';
-    }
-
-    if (!date.value) {
-        date.classList.add('input-field-danger');
-        dangerTexts[1].style.display = '';
-    } else {
-        date.classList.remove('input-field-danger');
-        dangerTexts[1].style.display = 'none';
-    }
-
-    // Leere die Eingabefelder
-    titleInput.value = '';
-    descriptionInput.value = '';
-    date.value = '';
-
-    // Leere die Arrays subtasks und taskcontacts
-    subtasks = [];
-    taskcontacts = [];
-
-    // Setze prio und category zurück
-    prio = null; // oder den ursprünglichen Standardwert
-    categorys = null; // oder den ursprünglichen Standardwert
-    renderSubtask();
-    showaAvailableContacts();
-    showchosenInitials();
-    prioUrgentSetBack();
-    prioMedSetBack();
-    prioLowSetBack();
 }
