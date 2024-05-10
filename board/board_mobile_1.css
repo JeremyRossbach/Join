@@ -241,8 +241,8 @@
 
     #cardPopup {
         width: 67%;
-        height: 75%;
-    }
+        max-height: 75%;
+        }
 }
 
 @media only screen and (max-width: 742px) {

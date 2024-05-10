@@ -7,6 +7,15 @@ body {
     padding: 0;
 }
 
+#div_body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#div_body::-webkit-scrollbar {
+    display: none;
+}
+
 #background {
     position: fixed;
     display: none;
