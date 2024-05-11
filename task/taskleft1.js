@@ -5,9 +5,10 @@ let currentContact;
 let prio;
 let subtasks = ['test',];
 let selectedContackts = [];
-
+let currentNames = [];
 
 function initAddTasks() {
+    currentNames = contactData;
     loadSubtasks();
     renderSubtask();
     showaAvailableContacts();
@@ -20,7 +21,7 @@ function dropDownContacts() {
     let selectSpan = document.getElementById('selectSpan');
     arrowChange();
     if (selectSpan.classList.contains('noDisplay')){
-       // closeFindInput()
+       //closeFindInput()
     } else {
         openFindInput()
 
@@ -71,7 +72,7 @@ function closeContactsDropdowns() {
         if (openDropdown.classList.contains('show')) {
             openDropdown.classList.remove('show');
             arrowChange();
-            closeFindInput();
+            //closeFindInput();
         }
     }
 }
@@ -114,7 +115,7 @@ function arrowChangeCategory() {
 
 function showaAvailableContacts() {
     let availableContacts = document.getElementById("availableContacts");
-    let contacts = contactData
+    let contacts = currentNames
     availableContacts.innerHTML = '';
     for (let i = 0; i < contacts.length; i++) {
         let currentContact = contacts[i];
@@ -132,7 +133,7 @@ function showaAvailableContacts() {
 
 
 function chosenContacts(i, currentContact) {
-    let chosenContact = contactData[i];
+    let chosenContact = currentNames[i];
     let selectionBox = document.getElementById(`selectionBox${i}`);
     let ContactBTN = document.getElementById(`contactBTN${i}`);
     let unclicked_background = "white";
@@ -155,7 +156,7 @@ function chosenContacts(i, currentContact) {
 
 function chosenContactsPush(i, selection_box_clicked) {
     let selectionBox = document.getElementById(`selectionBox${i}`);
-    let chosenContact = contactData[i];
+    let chosenContact = currentNames[i];
 
     if (selectionBox.getAttribute('src') == selection_box_clicked) {
         if (!taskcontacts.includes(chosenContact['name'])) {
@@ -202,20 +203,20 @@ function findContact() {
     }
 }
 
-function findContact(i) {
-    document.getElementById('availableContacts').innerHTML = '';
+function findContact() {
+    document.getElementsByClassName('contactBTN').innerHTML = '';
 
     let search = document.getElementById('filterContatcsInput').value;
     search = search.toLowerCase();
 
-    for (let n = 0; n < contactData.length; n++) {
-        renderContact(search, n, i);
+    for (let n = 0; n < currentNames.length; n++) {
+        renderContact(search, n);
     }
 }
 
 
-function renderContact(search, n, i) {
-    if (contactData[n]['name'].toLowerCase().includes(search)) {
-        showContact(n, i);
+function renderContact(search, n) {
+    if (currentNames['name'].toLowerCase().includes(search)) {
+        showaAvailableContacts(n);
     }
 }
