@@ -1,13 +1,12 @@
 let currentContact;
 
-async function init() {    
-    await loadContacts();
+async function init() {
+    await loadData("/contacts");
     generateContactList();
 }
 
 
 function createContact() {
-
     let inputname = document.getElementById(`create_name`);
     let inputmail = document.getElementById(`create_mail`);
     let inputphone = document.getElementById(`create_phone`);
@@ -30,7 +29,11 @@ function createContact() {
 
     hideCreateContactMessage("new_contact_successfully_div");
     generateContactList();
-    saveContact();
+    /* saveContact(); */
+    putData("contacts", contactData)
+        .then(response => console.log(response))
+        .catch(error => console.error(error));
+
     closeAddNewContactWindow();
 }
 
@@ -99,33 +102,6 @@ function clearSelect() {
 }
 
 
-/* function setContactInfo(contact) {
-    let nameDiv = document.getElementById(`name_div_big`);
-    let emailDiv = document.getElementById(`email_optionen`);
-    let phoneDiv = document.getElementById(`phone_optionen`);
-    let initialDiv = document.getElementById(`name_div_small`);
-
-    nameDiv.innerHTML = contact.name;
-    emailDiv.innerHTML = contact.email;
-    phoneDiv.innerHTML = contact.phoneNumber;
-    initialDiv.innerHTML = getInitials(contact.name);
-} */
-/* function setContactInfo(contact) {
-    let nameDiv = document.getElementById(`name_div_big`);
-    let emailDiv = document.getElementById(`email_optionen`);
-    let phoneDiv = document.getElementById(`phone_optionen`);
-    let initialDiv = document.getElementById(`name_div_small`);
-
-    nameDiv.innerHTML = contact.name;
-    let emailLink = document.createElement('a');
-    emailLink.href = `mailto:${contact.email}`;
-    emailLink.textContent = contact.email;
-    emailDiv.innerHTML = '';
-    emailDiv.appendChild(emailLink);
-
-    phoneDiv.innerHTML = contact.phoneNumber;
-    initialDiv.innerHTML = getInitials(contact.name);
-} */
 function setContactInfo(contact) {
     let nameDiv = document.getElementById(`name_div_big`);
     let emailDiv = document.getElementById(`email_optionen`);
@@ -134,24 +110,22 @@ function setContactInfo(contact) {
 
     nameDiv.innerHTML = contact.name;
 
-    // Erstelle einen <a>-Tag mit der E-Mail-Adresse als href-Attribut (mailto:)
     let emailLink = document.createElement('a');
+
     emailLink.href = `mailto:${contact.email}`;
-    emailLink.textContent = contact.email; // Setze den Text des Links auf die E-Mail-Adresse
-    emailDiv.innerHTML = ''; // Lösche den vorherigen Inhalt, falls vorhanden
+    emailLink.textContent = contact.email;
+    emailDiv.innerHTML = '';
     emailDiv.appendChild(emailLink);
 
-    // Erstelle einen <a>-Tag mit der Telefonnummer als href-Attribut (tel:)
     let phoneLink = document.createElement('a');
+
     phoneLink.href = `tel:${contact.phoneNumber}`;
-    phoneLink.textContent = contact.phoneNumber; // Setze den Text des Links auf die Telefonnummer
-    phoneDiv.innerHTML = ''; // Lösche den vorherigen Inhalt, falls vorhanden
+    phoneLink.textContent = contact.phoneNumber; 
+    phoneDiv.innerHTML = '';
     phoneDiv.appendChild(phoneLink);
 
     initialDiv.innerHTML = getInitials(contact.name);
 }
-
-
 
 
 function openAddNewContactWindow() {
@@ -213,7 +187,10 @@ function deleteContact() {
     hideCreateContactMessage("delete_contact_successfully_div");
     hideMenuEditDeleteContainer();
     closeContactInfo();
-    saveContact();
+    /* saveContact(); */
+    putData("contacts", contactData)
+        .then(response => console.log(response))
+        .catch(error => console.error(error));
     generateContactList();
 }
 
@@ -243,7 +220,6 @@ function editContact() {
 
 
 function updateContact() {
-
     let name = document.getElementById(`edit_name`).value;
     let email = document.getElementById(`edit_mail`).value;
     let phone = document.getElementById(`edit_phone`).value;
@@ -264,7 +240,10 @@ function updateContact() {
 
     hideCreateContactMessage("edit_contact_successfully_div");
     closeEditContactWindow();
-    saveContact();
+    /* saveContact(); */
+    putData("contacts", contactData)
+        .then(response => console.log(response))
+        .catch(error => console.error(error));
     generateContactList();
 }
 
@@ -291,16 +270,8 @@ function menu_window() {
     }
 }
 
+
 function removeClassAnimate(messageDiv) {
     messageDiv.style.display = "none";
     messageDiv.classList.remove("animate");
-}
-
-function saveContact() {
-    setItem('allContacts', contactData);
-}
-
-async function loadContacts() {
-    var response = await getItem('allContacts');
-    contactData = JSON.parse(response.data.value);
 }

@@ -1,5 +1,6 @@
-const STORAGE_TOKEN = 'L36LJE4QYVS3F3IFAYY2A67B3Y4OV7AEIMVM6A8K';
-const STORAGE_URL = 'https://remote-storage.developerakademie.org/item';
+/* const STORAGE_TOKEN = 'L36LJE4QYVS3F3IFAYY2A67B3Y4OV7AEIMVM6A8K'; */
+/* const STORAGE_URL = 'https://remote-storage.developerakademie.org/item'; */
+const STORAGE_URL = "https://join-8aa83-default-rtdb.europe-west1.firebasedatabase.app/";
 
 
 let contactData = [
@@ -185,18 +186,39 @@ const colorPool = [
     '#1FD7C1', '#FF745E', '#FFA35E', '#FC71FF', '#FFC701',
     '#0038FF', '#C3FF2B', '#FFE62B', '#FF4646', '#FFBB2B'
 ];
+ // speichert alles
+ async function putData(path = "", data = {}) {
+    try {
+        let response = await fetch(STORAGE_URL + path + ".json", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
 
-// speichert alles
-async function setItem(key, value) {
-    const payload = { key, value, token: STORAGE_TOKEN };
-    return fetch(STORAGE_URL, { method: 'POST', body: JSON.stringify(payload) })
-        .then(res => res.json());
+        if (!response.ok) {
+            throw new Error(`Fehler beim Senden der Daten: ${response.statusText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        throw new Error(`Fehler beim Senden der Daten: ${error.message}`);
+    }
 }
 
 // lädt alles
-async function getItem(key) {
-    const url = `${STORAGE_URL}?key=${key}&token=${STORAGE_TOKEN}`;
-    return fetch(url).then(res => res.json());
+async function loadData(path="") {
+    let response = await fetch(STORAGE_URL + path + ".json");
+    let responseAsJson = await response.json();
+    
+    // Kontakten werden geladen
+    contactData = responseAsJson;
+    /* weiteres Code, der geladen werden soll */
+
+    
+    /* *******************++++ */
+    console.log(responseAsJson);
 }
 
 // gemeinsames Init
