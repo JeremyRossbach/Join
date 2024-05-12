@@ -186,7 +186,7 @@ const colorPool = [
     '#1FD7C1', '#FF745E', '#FFA35E', '#FC71FF', '#FFC701',
     '#0038FF', '#C3FF2B', '#FFE62B', '#FF4646', '#FFBB2B'
 ];
- // speichert alles
+ // Speicherung der Daten
  async function putData(path = "", data = {}) {
     try {
         let response = await fetch(STORAGE_URL + path + ".json", {
@@ -207,7 +207,7 @@ const colorPool = [
     }
 }
 
-// lädt alles
+// Laden der Daten
 async function loadData(path="") {
     let response = await fetch(STORAGE_URL + path + ".json");
     let responseAsJson = await response.json();
@@ -217,7 +217,7 @@ async function loadData(path="") {
     /* weiteres Code, der geladen werden soll */
 
     
-    /* *******************++++ */
+    /* *********************** */
     console.log(responseAsJson);
 }
 
