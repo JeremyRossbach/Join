@@ -215,7 +215,7 @@ async function loadData(path="") {
     // Kontakten werden geladen
     contactData = responseAsJson;
     /* weiteres Code, der geladen werden soll */
-
+    tasks = responseAsJson;
     
     /* *********************** */
     console.log(responseAsJson);

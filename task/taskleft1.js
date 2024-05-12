@@ -12,7 +12,6 @@ function initAddTasks() {
     loadSubtasks();
     renderSubtask();
     showaAvailableContacts();
-
 }
 
 
