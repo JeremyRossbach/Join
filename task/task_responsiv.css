@@ -1,0 +1,19 @@
+@media(max-width: 1048px) {
+    .innerContent {
+        flex-direction: column;
+    }
+
+    .roomdivider {
+        display: none;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .H1 {
+        text-align: center;
+    }
+}

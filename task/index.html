@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="task_responsiv.css">
     <link rel="stylesheet" href="task.css">
 
     <script src="../data.js"></script>
@@ -116,15 +117,14 @@
                     <div class="roomdivider"></div>
 
                     <div class="rightside">
-                        <div class="spanandvalue" class="datepicker">
-                            <span>Due date<span class="redStar">*</span></span>
-                            <label placeholder="dd/mm/yyyy" for=""></label>
-                            <input type="date" id="date" class="input-field" name="date">
+                        <div class="container-input-date" class="datepicker">
+                            <span class="input-title-text">Due date<span class="redStar">*</span></span>
+                            <input type="date" id="date" class="input-field input-field-date" name="date" onchange="inputDateColorChange()">
                             <div class="danger-text" style="display: none; margin-top: 8px;">This field is required
                             </div>
                         </div>
-                        <div class="spanandvalue" class="prio">
-                            <span>Prio</span>
+                        <div class="container-input-prio" class="prio">
+                            <span class="input-title-text">Prio</span>
                             <div class="priobtns">
                                 <div id="urgentbtn" onclick="prioUrgent()" class="priobtn">Urgent <img id="highicon"
                                         src="img/Prio high icon.svg" alt=""></div>
@@ -134,10 +134,10 @@
                                         src="img/Prio low icon.svg" alt=""></div>
                             </div>
                         </div>
-                        <div class="spanandvalue">
-                            <span>Category<span class="redStar">*</span></span>
-                            <div class="dropdown">
-                                <button onclick="dropDownCategory()" class="dropbtn"><span id="categorySpan">Select
+                        <div class="container-input-category">
+                            <span class="input-title-text">Category<span class="redStar">*</span></span>
+                            <div class="dropdown" onclick="dropDownCategory()">
+                                <button class="dropbtn input-field input-field-category"><span id="categorySpan">Select
                                         tasks
                                         category</span><img id="arrow_category" src="img/arrow down.svg"
                                         alt=""></button>
@@ -150,9 +150,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="spanandvalue">
-                            <span>Subtasks</span>
-                            <div class="subtaskParent">
+                        <div class="container-input-subtask">
+                            <span class="input-title-text">Subtasks</span>
+                            <div class="input-field input-field-subtask">
                                 <input id="subtask_input" class="subtaskInput" placeholder="Add new subtask">
                                 <img onclick="pushSubtask()" src="img/subtaskPlus.svg" alt="">
                             </div>

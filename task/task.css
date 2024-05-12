@@ -39,7 +39,8 @@
 .H1 {
     padding-top: 180px;
     padding-bottom: 0px;
-    padding-left: 50px
+    padding-left: 50px;
+    font-size: 61px;
 }
 
 #content {
@@ -59,7 +60,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 400px;
+    width: 440px;
     height: 376px;
 }
 
@@ -67,7 +68,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 400px;
+    width: 440px;
     height: 416px;
 }
 
@@ -100,15 +101,18 @@
 }
 
 .availableCategory {
+    height: fit-content;
+    width: 440px;
     display: none;
     position: absolute;
-    background-color: #f6f6f6;
-    width: 400px;
+    background-color: white;
+    min-width: 230px;
     overflow: auto;
-
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     z-index: 1;
     border: 4px;
-
+    box-shadow: 0px 0px 14px 3px #0000000A;
 }
 
 .contactsDropdown {
@@ -157,13 +161,17 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    width: 112px;
-    height: 40px;
+    width: 136px;
+    height: 56px;
     border-radius: 10px;
     gap: 8px;
-    border: solid 1px rgb(209, 209, 209);
     margin-right: 4px;
+    font-size: 20px;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+}
 
+.priobtn:hover {
+    box-shadow: 0px 4px 4px 0px #00000040;
 }
 
 .priobtnClicked {
@@ -178,16 +186,13 @@
     border: solid 1px rgb(209, 209, 209);
 }
 
-.priobtn:hover {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
 .priobtns {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     cursor: pointer;
-    width: 400px;
+    width: 440px;
+    gap: 16px;
 }
 
 .priobtns img:hover {
@@ -267,11 +272,15 @@
     background-color: white;
     border-radius: 8px;
     cursor: pointer;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    font-size: 20px;
 }
 
-.availableCategory {
-    border-radius: 8px;
-    background-color: white;
+.choseCategory:hover {
+    background-color: #EEEEEE;
 }
 
 .subtaskInputParent {
@@ -280,10 +289,6 @@
     background-color: white;
     border: 1px solid rgb(209, 209, 209);
     border-radius: 5px;
-}
-
-.subtaskParent img {
-    padding-right: 4px;
 }
 
 .subtaskInput {
@@ -303,7 +308,7 @@
 }
 
 #date {
-    width: 400px;
+    width: calc(440px - 12px - 16px);
 }
 
 #date::placeholder {
@@ -450,6 +455,12 @@
     border: 1px solid #29ABE2;
 }
 
+.input-field-date {
+    text-indent: 0 !important;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
 .input-field-danger {
     outline: 1px solid #FF8190;
 }
@@ -480,6 +491,20 @@
 }
 
 .input-title-text {
+    font-size: 20px;
+}
+
+.input-field-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-indent: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.input-field-subtask input {
+    height: 48px;
     font-size: 20px;
 }
 
@@ -527,4 +552,36 @@
     border: 2px solid rgb(41, 171, 226);
     color: rgb(41, 171, 226);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container-input-date {
+    width: 440px;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.container-input-prio {
+    width: 440px;
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.container-input-category {
+    width: 440px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.container-input-subtask {
+    width: 440px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }

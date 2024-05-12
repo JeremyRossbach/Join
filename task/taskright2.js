@@ -8,6 +8,7 @@ function prioUrgent() {
         highicon.setAttribute('src', clickedhighicon)
         urgentbtn.style.background = 'rgb(255, 61, 0)';
         urgentbtn.style.color = '#FFFFFF';
+        urgentbtn.style.boxShadow = 'unset';
         prio = 'Urgent';
         prioMedSetBack()
         prioLowSetBack()
@@ -15,6 +16,7 @@ function prioUrgent() {
         highicon.src = unclickedhighicon
         urgentbtn.style.background = '#FFFFFF';
         urgentbtn.style.color = 'black';
+        urgentbtn.style += 'box-shadow: 0px 4px 4px 0px #00000040;';
     }
 }
 
@@ -28,6 +30,7 @@ function prioMed() {
         medicon.setAttribute('src', clickedmidicon)
         medbtn.style.background = 'rgb(255,168,0)';
         medbtn.style.color = '#FFFFFF';
+        medbtn.style.boxShadow = 'unset';
         prio = 'Medium';
         prioLowSetBack()
         prioUrgentSetBack()
@@ -35,6 +38,7 @@ function prioMed() {
         medicon.src = unclickedmidicon
         medbtn.style.background = '#FFFFFF';
         medbtn.style.color = 'black';
+        medbtn.style += 'box-shadow: 0px 4px 4px 0px #00000040;';
     }
 }
 
@@ -53,6 +57,7 @@ function prioLow() {
         lowicon.setAttribute('src', clickedlowicon);
         lowbtn.style.background = 'rgb(122,226,41)';
         lowbtn.style.color = '#FFFFFF';
+        lowbtn.style.boxShadow = 'unset';
         prio = 'Low';
         prioMedSetBack()
         prioUrgentSetBack()
@@ -60,6 +65,7 @@ function prioLow() {
         lowicon.src = unclickedlowcon;
         lowbtn.style.background = '#FFFFFF';
         lowbtn.style.color = 'black';
+        lowbtn.style += 'box-shadow: 0px 4px 4px 0px #00000040;';
     }
 }
 
@@ -72,6 +78,7 @@ function prioLowSetBack() {
     lowicon.src = unclickedlowcon;
     lowbtn.style.background = '#FFFFFF';
     lowbtn.style.color = 'black';
+    lowbtn.style += 'box-shadow: 0px 4px 4px 0px #00000040;';
 }
 
 
@@ -83,6 +90,7 @@ function prioMedSetBack() {
     medicon.src = unclickedmidicon
     medbtn.style.background = '#FFFFFF';
     medbtn.style.color = 'black';
+    medbtn.style += 'box-shadow: 0px 4px 4px 0px #00000040;'
 }
 
 
@@ -94,6 +102,7 @@ function prioUrgentSetBack() {
     highicon.src = unclickedhighicon
     urgentbtn.style.background = '#FFFFFF';
     urgentbtn.style.color = 'black';
+    urgentbtn.style += 'box-shadow: 0px 4px 4px 0px #00000040;'
 }
 
 
@@ -252,4 +261,14 @@ function clearForm() {
     prioUrgentSetBack();
     prioMedSetBack();
     prioLowSetBack();
+}
+
+inputDateColorChange();
+function inputDateColorChange() {
+    let inputDate = document.getElementById('date');
+    if (inputDate.value) {
+        inputDate.style.color = 'black';
+    } else {
+        inputDate.style.color = 'grey';
+    }
 }
