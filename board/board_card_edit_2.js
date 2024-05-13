@@ -268,6 +268,8 @@ function checkbox(i, l) {
     }
     saveTasks();
     renderSubtasks(i);
+    emptyContentSections();
+    init();
 }
 
 

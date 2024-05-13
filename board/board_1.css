@@ -320,3 +320,19 @@ p {
 .scrollableCardPopup::-webkit-scrollbar {
     display: none;
 }
+
+.progressComment {
+    display: none;
+    justify-content: center;
+    font-size: 13px;
+    padding: 4px;
+    margin-top: -23.5px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #00000052;
+    color: white;
+}
+
+.progressbarAndSubtask:hover+.progressComment {
+    display: flex;
+}
