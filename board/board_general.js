@@ -30,7 +30,7 @@ function findTask() {
 
     for (let i = 0; i < tasks.length; i++) {
         let task = tasks[i];
-        if (task['title'].toLowerCase().includes(search)) {
+        if (task['title'].toLowerCase().includes(search) || task['description'].toLowerCase().includes(search)) {
             renderTask(i);
         }
     }

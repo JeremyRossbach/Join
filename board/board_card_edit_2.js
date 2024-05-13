@@ -147,6 +147,7 @@ function editSubtask(p, i) {
         </div>
     `;
     document.getElementById(`subtasksInputContent${p}`).value = `${tasks[i]['subtask'][p]}`;
+    document.getElementById(`subtasksInputContent${p}`).focus();
 }
 
 
