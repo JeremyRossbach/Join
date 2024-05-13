@@ -292,3 +292,25 @@ function createBtnEnable() {
         createBTN.disabled = true;
     }
 }
+ 
+function alarmInput(){
+    let titleInput = document.getElementById('titleInput');
+    let descriptionInput = document.getElementById('descriptionInput');
+    let date = document.getElementById('date');
+    let dangerTexts = document.getElementsByClassName('danger-text');
+    if (!titleInput.value) {
+        titleInput.classList.add('input-field-danger');
+        dangerTexts[0].style.display = '';
+    } else {
+        titleInput.classList.remove('input-field-danger');
+        dangerTexts[0].style.display = 'none';
+    }
+
+    if (!date.value) {
+        date.classList.add('input-field-danger');
+        dangerTexts[1].style.display = '';
+    } else {
+        date.classList.remove('input-field-danger');
+        dangerTexts[1].style.display = 'none';
+    }
+}
