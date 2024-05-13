@@ -64,7 +64,7 @@ function closeCategoryDropdowns() {
 }
 
 // Funktion zum Schließen des Dropdown-Menüs und Ändern des Pfeils für Kontakte
-function closeContactsDropdowns() {
+/*function closeContactsDropdowns() {
     var dropdowns = document.getElementsByClassName("contactsDropdown");
     for (var i = 0; i < dropdowns.length; i++) {
         var openDropdown = dropdowns[i];
@@ -74,18 +74,18 @@ function closeContactsDropdowns() {
             //closeFindInput();
         }
     }
-}
+}*/
 
 // Event-Handler für das Klicken auf das Fenster
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
-        closeCategoryDropdowns();
+       // closeCategoryDropdowns();
         // Überprüfen, ob der Klick innerhalb von #availableContacts war
         var availableContacts = document.getElementById("availableContacts");
         if (availableContacts.contains(event.target)) {
             return; // Keine weiteren Aktionen ausführen
         }
-        closeContactsDropdowns();
+       // closeContactsDropdowns();
     }
 }
 
@@ -202,20 +202,43 @@ function findContact() {
     }
 }
 
-function findContact() {
+/*function findContact() {
     document.getElementsByClassName('contactBTN').innerHTML = '';
 
     let search = document.getElementById('filterContatcsInput').value;
     search = search.toLowerCase();
 
     for (let n = 0; n < currentNames.length; n++) {
-        renderContact(search, n);
+        renderContact();
     }
 }
 
 
-function renderContact(search, n) {
+function renderContact() {
     if (currentNames['name'].toLowerCase().includes(search)) {
         showaAvailableContacts(n);
     }
+}
+
+function findContact() {
+    let search = document.getElementById('filterContatcsInput').value.toLowerCase();
+    let filteredContacts = currentNames.filter(contact => contact.name.toLowerCase().includes(search));
+    showFilteredContacts(filteredContacts);
+}*/
+
+function showFilteredContacts(filteredContacts) {
+    let availableContacts = document.getElementById("availableContacts");
+    availableContacts.innerHTML = '';
+
+    filteredContacts.forEach((contact, index) => {
+        let backgroundColor = colorPool[index % colorPool.length];
+        availableContacts.innerHTML +=
+        /*html*/`<div id='contactBTN${index}' class="contactBTN" onclick='chosenContacts(${index},${JSON.stringify(contact)})'>
+            <div class="initialsAndContacts">
+                <div class="contact_initials" style="background-color: ${backgroundColor};">${getInitials(contact.name)}</div>
+                <div class="contacts">${contact.name}</div>
+            </div>
+            <img id="selectionBox${index}" src="img/selectionbox unclicked.svg" alt="">
+        </div>`;
+    });
 }

@@ -273,4 +273,13 @@ function inputDateColorChange() {
     } else {
         inputDate.style.color = 'grey';
     }
+} 
+
+function createBtnEnable(){
+   let createBTN = document.getElementById("createBTN");
+
+    let titleInput = document.getElementById('titleInput');
+    if (!titleInput.value){
+        createBTN.disabled = true;
+    }
 }
