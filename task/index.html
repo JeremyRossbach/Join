@@ -90,7 +90,7 @@
                     <div class="leftside">
                         <div class="container-title">
                             <span class="input-title-text">Title<span class="redStar">*</span></span>
-                            <input id="titleInput" class="input-field" placeholder="Enter a title" type="text">
+                            <input id="titleInput" class="input-field" placeholder="Enter a title" type="text" oninput="createBtnEnable()">
                             <div class="danger-text" style="display: none;">This field is required</div>
                         </div>
                         <div class="container-description">
@@ -119,7 +119,7 @@
                     <div class="rightside">
                         <div class="container-input-date" class="datepicker">
                             <span class="input-title-text">Due date<span class="redStar">*</span></span>
-                            <input type="date" id="date" class="input-field input-field-date" name="date" onchange="inputDateColorChange()">
+                            <input type="date" id="date" class="input-field input-field-date" name="date" onchange="inputDateColorChange()" oninput="createBtnEnable()">
                             <div class="danger-text" style="display: none; margin-top: 8px;">This field is required
                             </div>
                         </div>
@@ -160,10 +160,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="createBTN" onclick="createTask()">
+                <button id="createBTN" class="createBTN" disabled onclick="createTask()" >
                     <span>Create Task</span>
                     <img src="img/createCheck.svg" alt="">
-                </div>
+                </button>
                 <div onclick="clearForm()" class="clearBTN" id="clearBTN">Clear X</div>
                 <!--  -->
 

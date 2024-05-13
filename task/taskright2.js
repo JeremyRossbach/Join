@@ -110,6 +110,7 @@ function technicalTask() {
     let categorySpan = document.getElementById('categorySpan');
     categorySpan.innerHTML = "Technikal Task";
     categorys = "Technikal Task";
+    createBtnEnable();
 }
 
 
@@ -117,6 +118,8 @@ function userStory() {
     let categorySpan = document.getElementById('categorySpan');
     categorySpan.innerHTML = "User Story";
     categorys = "User Story";
+    createBtnEnable();
+
 }
 
 
@@ -211,7 +214,7 @@ function createTask() {
     let descriptionInput = document.getElementById('descriptionInput');
     let date = document.getElementById('date');
     let dangerTexts = document.getElementsByClassName('danger-text');
-
+   
     let newTask = {
         'title': titleInput.value,
         'description': descriptionInput.value,
@@ -263,6 +266,8 @@ function clearForm() {
     prioUrgentSetBack();
     prioMedSetBack();
     prioLowSetBack();
+    createBtnEnable();
+    console.log(prio);
 }
 
 inputDateColorChange();
@@ -275,11 +280,15 @@ function inputDateColorChange() {
     }
 } 
 
-function createBtnEnable(){
-   let createBTN = document.getElementById("createBTN");
-
+function createBtnEnable() {
+    
+    let createBTN = document.getElementById("createBTN");
+    let date = document.getElementById('date');
     let titleInput = document.getElementById('titleInput');
-    if (!titleInput.value){
+
+    if (titleInput.value && date.value && categorys !== null && categorys !== undefined) {
+        createBTN.disabled = false;
+    } else {
         createBTN.disabled = true;
     }
 }
