@@ -1,5 +1,5 @@
 function editTask(i) {
-    cardPopup.style.height = '750px';
+    
 
     cardPopup.innerHTML = /* html */`
         <div class="scrollableCardPopup">
@@ -21,9 +21,9 @@ function editTask(i) {
         <div class="editPriorityAndButtons">
             <p class="priorityText">Priority</p>
             <div class="priorityButtons">
-                <button onclick="editPrioButtonUrgent(${i})" id="urgentButton${i}" class="priorityButtonUrgent priorityButton">Urgent <img id="urgentImage${i}" src="./img/urgent.png"></button>
-                <button onclick="editPrioButtonMedium(${i})" id="mediumButton${i}" class="priorityButtonMedium priorityButton">Medium <img id="mediumImage${i}" src="./img/medium.png"></button>
-                <button onclick="editPrioButtonLow(${i})" id="lowButton${i}" class="priorityButtonLow priorityButton">Low <img id="lowImage${i}" src="./img/low.png"></button> 
+                <button onclick="editPrioButtonUrgent(${i})" id="urgentButton${i}" class="priorityButtonUrgent priorityButton">Urgent <img id="urgentImage${i}" class="prioImages" src="./img/urgent.png"></button>
+                <button onclick="editPrioButtonMedium(${i})" id="mediumButton${i}" class="priorityButtonMedium priorityButton">Medium <img id="mediumImage${i}" class="prioImages" src="./img/medium.png"></button>
+                <button onclick="editPrioButtonLow(${i})" id="lowButton${i}" class="priorityButtonLow priorityButton">Low <img id="lowImage${i}" class="prioImages" src="./img/low.png"></button> 
             </div>
         </div>
         <div class="editAssignedToAndInput">
@@ -60,6 +60,12 @@ function editTask(i) {
     renderEditAssignedTo(i);
     renderEditSubtasksList(i);
     dropdownMenu(i);
+
+    document.getElementById(`editSubtasks${i}`).addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            createNewSubtask(i);
+        }
+    });
 }
 
 

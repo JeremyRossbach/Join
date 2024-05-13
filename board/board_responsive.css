@@ -312,6 +312,6 @@
 
 @media only screen and (max-height: 950px) {
     #cardPopup {
-        height: 75%;
+        max-height: 75%;
     }
 }

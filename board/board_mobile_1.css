@@ -123,6 +123,12 @@
         width: 842px;
         height: 300px;
         overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .overflow-y::-webkit-scrollbar {
+        display: none;
     }
 
     p {
@@ -242,7 +248,7 @@
     #cardPopup {
         width: 67%;
         max-height: 75%;
-        }
+    }
 }
 
 @media only screen and (max-width: 742px) {
@@ -285,6 +291,15 @@
     .emptySection {
         width: 659px;
     }
+
+    .priorityButton {
+        width: 131.67px;
+        height: 51px;
+    }
+
+    .priorityButtons {
+        gap: 8px;
+    }
 }
 
 @media only screen and (max-width: 622px) {
@@ -294,5 +309,10 @@
 
     .emptySection {
         width: 733px;
+    }
+
+    .priorityButton {
+        width: 126.67px;
+        height: 46px;
     }
 }
