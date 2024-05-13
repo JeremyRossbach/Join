@@ -277,6 +277,7 @@ function closePopup(event) {
     if (event) {
         event.stopPropagation();
     }
+    location.reload();
 }
 
 

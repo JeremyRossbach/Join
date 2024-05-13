@@ -37,7 +37,7 @@ function renderDropdownInitials(n) {
 }
 
 
-function showDropDownInitials(initials, n) {
+function showDropDownInitials(initials, n) { /* Kontakt hat keine fest zugewiesene Farbe */
     let assignedTo = document.getElementById(`dropdownInitials${n}`);
     let backgroundColor = colorPool[n % colorPool.length];
 
@@ -100,7 +100,15 @@ function selectedContact(i, n) {
 
 
 function unselectContact(i, n) {
-    tasks[i]['assignedTo'].splice(n, 1); /* splice selected name not n */
+    let selectedContactName = contactData[n]['name'];
+    let taskAssignedTo = tasks[i]['assignedTo'];
+    let selectedContactIndex = taskAssignedTo.indexOf(selectedContactName);
+    
+    if (selectedContactIndex !== -1) {
+        taskAssignedTo.splice(selectedContactIndex, 1);
+    } else {
+        taskAssignedTo.push(selectedContactName);
+    }
 
     let contact = document.getElementById(`contact${n}`);
     let checkImage = document.getElementById(`dropdownCheckbox${n}`);
@@ -108,8 +116,6 @@ function unselectContact(i, n) {
     contact.style.backgroundColor = 'white';
     contact.style.color = 'black'
     checkImage.src = './img/checkbox.png';
-
-    saveTasks();
 }
 
 
