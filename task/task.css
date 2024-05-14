@@ -526,6 +526,7 @@
     margin-top: 50px;
     right: 100px;
     cursor: pointer;
+    border: 0;
 }
 
 .createBTN:hover {
@@ -536,7 +537,9 @@
     background-color: rgb(134, 134, 134);
 }
 #alarmBTN{
-    background-color: rgb(134, 134, 134);
+    background-color: rgb(42, 54, 71);
+    opacity: 0.8;
+
 }
 
 .clearBTN {

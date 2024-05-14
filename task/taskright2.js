@@ -111,6 +111,7 @@ function technicalTask() {
     categorySpan.innerHTML = "Technikal Task";
     categorys = "Technikal Task";
     createBtnEnable();
+    alarmInput();
 }
 
 
@@ -119,7 +120,7 @@ function userStory() {
     categorySpan.innerHTML = "User Story";
     categorys = "User Story";
     createBtnEnable();
-
+    alarmInput();
 }
 
 
@@ -267,7 +268,8 @@ function clearForm() {
     prioMedSetBack();
     prioLowSetBack();
     createBtnEnable();
-    console.log(prio);
+   
+  
 }
 
 inputDateColorChange();
@@ -281,21 +283,25 @@ function inputDateColorChange() {
 } 
 
 function createBtnEnable() {
-    
+    let alarmBTN = document.getElementById("alarmBTN");
     let createBTN = document.getElementById("createBTN");
     let date = document.getElementById('date');
     let titleInput = document.getElementById('titleInput');
 
     if (titleInput.value && date.value && categorys !== null && categorys !== undefined) {
-        createBTN.disabled = false;
-    } else {
-        createBTN.disabled = true;
+        createBTN.classList.remove('noDisplay');
+        alarmBTN.classList.add('noDisplay');
+        
+    } else{
+        createBTN.classList.add('noDisplay');
+        alarmBTN.classList.remove('noDisplay');
     }
 }
  
 function alarmInput(){
+    let dropBtnCategory = document.getElementById("dropBtnCategory")
     let titleInput = document.getElementById('titleInput');
-    let descriptionInput = document.getElementById('descriptionInput');
+    let categoryDangerText = document.getElementById("categoryDangerText");
     let date = document.getElementById('date');
     let dangerTexts = document.getElementsByClassName('danger-text');
     if (!titleInput.value) {
@@ -312,5 +318,13 @@ function alarmInput(){
     } else {
         date.classList.remove('input-field-danger');
         dangerTexts[1].style.display = 'none';
+    }
+    if (categorys !== null && categorys !== undefined) {
+        dropBtnCategory.classList.remove('input-field-danger');
+        categoryDangerText.style.display = 'none';
+        
+    } else{
+        dropBtnCategory.classList.add('input-field-danger');
+        categoryDangerText.style.display = '';
     }
 }

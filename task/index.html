@@ -90,7 +90,7 @@
                     <div class="leftside">
                         <div class="container-title">
                             <span class="input-title-text">Title<span class="redStar">*</span></span>
-                            <input id="titleInput" class="input-field" placeholder="Enter a title" type="text" oninput="createBtnEnable()">
+                            <input id="titleInput" class="input-field" placeholder="Enter a title" type="text" oninput="createBtnEnable(),alarmInput()">
                             <div class="danger-text" style="display: none;">This field is required</div>
                         </div>
                         <div class="container-description">
@@ -119,7 +119,7 @@
                     <div class="rightside">
                         <div class="container-input-date" class="datepicker">
                             <span class="input-title-text">Due date<span class="redStar">*</span></span>
-                            <input type="date" id="date" class="input-field input-field-date" name="date" onchange="inputDateColorChange()" oninput="createBtnEnable()">
+                            <input type="date" id="date" class="input-field input-field-date" name="date" onchange="inputDateColorChange()" oninput="createBtnEnable(),alarmInput()">
                             <div class="danger-text" style="display: none; margin-top: 8px;">This field is required
                             </div>
                         </div>
@@ -137,7 +137,7 @@
                         <div class="container-input-category">
                             <span class="input-title-text">Category<span class="redStar">*</span></span>
                             <div class="dropdown" onclick="dropDownCategory()">
-                                <button class="dropbtn input-field input-field-category"><span id="categorySpan">Select
+                                <button id="dropBtnCategory" class="dropbtn input-field input-field-category"><span id="categorySpan">Select
                                         tasks
                                         category</span><img id="arrow_category" src="img/arrow down.svg"
                                         alt=""></button>
@@ -150,6 +150,8 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="categoryDangerText" class="danger-text" style="display: none; margin-top: 8px;">This field is required
+                        </div>
                         <div class="container-input-subtask">
                             <span class="input-title-text">Subtasks</span>
                             <div class="input-field input-field-subtask">
@@ -161,9 +163,9 @@
                     </div>
                 </div>
                 <button id="alarmBTN" class="createBTN"  onclick="alarmInput()">
-                    <span>Create Task110</span>
+                    <span>Create Task</span>
                     <img src="img/createCheck.svg" alt="">
-               <button id="createBTN" class="noDisplay createBTN " disabled onclick="createTask()" >
+               <button id="createBTN" class="noDisplay createBTN " onclick="createTask()" >
                     <span>Create Task</span>
                     <img src="img/createCheck.svg" alt="">
                 </button>
