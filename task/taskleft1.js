@@ -112,21 +112,23 @@ function arrowChangeCategory() {
 
 }
 
-function showaAvailableContacts() {
+function showaAvailableContacts(filteredContacts = null) {
     let availableContacts = document.getElementById("availableContacts");
-    let contacts = currentNames
     availableContacts.innerHTML = '';
+
+    let contacts = filteredContacts || currentNames;
+
     for (let i = 0; i < contacts.length; i++) {
         let currentContact = contacts[i];
         let backgroundColor = colorPool[i % colorPool.length];
         availableContacts.innerHTML +=
-        /*html*/`<div id='contactBTN${i}'class="contactBTN" onclick='chosenContacts(${i},currentContact)'>
-            <div class="initialsAndContacts">
-             <div class="contact_initials" style="background-color: ${backgroundColor};">${getInitials(currentContact.name)}</div>
-            <div id="contacts">${currentContact['name']} </div></div>
-            <img id="selectionBox${i}" src="img/selectionbox unclicked.svg" alt="">
-        </div>
-        `
+            `<div id='contactBTN${i}' class="contactBTN" onclick='chosenContacts(${i}, currentContact)'>
+                <div class="initialsAndContacts">
+                    <div class="contact_initials" style="background-color: ${backgroundColor};">${getInitials(currentContact.name)}</div>
+                    <div id="contacts">${currentContact['name']}</div>
+                </div>
+                <img id="selectionBox${i}" src="img/selectionbox unclicked.svg" alt="">
+            </div>`;
     }
 }
 
@@ -186,59 +188,9 @@ function showchosenInitials(i) {
     }
 }
 
-
-
-function findContact() {
-    let search = document.getElementById('input').value;
-    search = search.toLowerCase();
-
-    emptyContentSections();
-
-    for (let i = 0; i < tasks.length; i++) {
-        let task = tasks[i];
-        if (task['title'].toLowerCase().includes(search)) {
-            renderTask(i);
-        }
-    }
-}
-
-/*function findContact() {
-    document.getElementsByClassName('contactBTN').innerHTML = '';
-
-    let search = document.getElementById('filterContatcsInput').value;
-    search = search.toLowerCase();
-
-    for (let n = 0; n < currentNames.length; n++) {
-        renderContact();
-    }
-}
-
-
-function renderContact() {
-    if (currentNames['name'].toLowerCase().includes(search)) {
-        showaAvailableContacts(n);
-    }
-}
-
-function findContact() {
-    let search = document.getElementById('filterContatcsInput').value.toLowerCase();
+function searchContacts() {
+    let search = document.getElementById("filterContatcsInput").value.toLowerCase();
     let filteredContacts = currentNames.filter(contact => contact.name.toLowerCase().includes(search));
-    showFilteredContacts(filteredContacts);
-}*/
-
-function showFilteredContacts(filteredContacts) {
-    let availableContacts = document.getElementById("availableContacts");
-    availableContacts.innerHTML = '';
-
-    filteredContacts.forEach((contact, index) => {
-        let backgroundColor = colorPool[index % colorPool.length];
-        availableContacts.innerHTML +=
-        /*html*/`<div id='contactBTN${index}' class="contactBTN" onclick='chosenContacts(${index},${JSON.stringify(contact)})'>
-            <div class="initialsAndContacts">
-                <div class="contact_initials" style="background-color: ${backgroundColor};">${getInitials(contact.name)}</div>
-                <div class="contacts">${contact.name}</div>
-            </div>
-            <img id="selectionBox${index}" src="img/selectionbox unclicked.svg" alt="">
-        </div>`;
-    });
+    showaAvailableContacts(filteredContacts);
 }
+
