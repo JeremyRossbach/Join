@@ -3,7 +3,7 @@ let categorys;
 let taskcontacts = [];
 let currentContact;
 let prio;
-let subtasks = ['test',];
+let subtasks = [];
 let selectedContackts = [];
 let currentNames = [];
 

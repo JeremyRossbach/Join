@@ -83,7 +83,7 @@
                 <a href="../jura/legal.html" class="jura_undercontainer">Legal Notice</a>
                 <a href="../index.html" class="jura_undercontainer">Log out</a>
             </div>
-            <!-- Hier kommt der HTML Code von Euch rein -->
+            
             <H1 class="H1">Add Task</H1>
             <div class="content" id="content">
                 <div class="innerContent">
@@ -101,9 +101,9 @@
                         <div class="container-assigned contactPosition">
                             <span class="input-title-text">Assigned to</span>
                             <div class="dropdown">
-                                <button onclick="dropDownContacts()" class="input-field input-field-button dropbtn"><input
-                                        id="filterContatcsInput" type="text" class="noDisplay"><span
-                                        id="selectSpan">Select
+                                <button onclick="dropDownContacts()"
+                                    class="input-field input-field-button dropbtn"><input id="filterContatcsInput"
+                                        type="text" class="noDisplay"><span id="selectSpan">Select
                                         contacts to assign </span><img id="arrow" src="img/arrow down.svg"
                                         alt=""></button>
                                 <div id="contacts_dropdown" class="contactsDropdown">
@@ -119,7 +119,8 @@
                     <div class="rightside">
                         <div class="container-input-date" class="datepicker">
                             <span class="input-title-text">Due date<span class="redStar">*</span></span>
-                            <input type="date" id="date" class="input-field input-field-date" name="date" onchange="inputDateColorChange()">
+                            <input type="date" id="date" class="input-field input-field-date" name="date"
+                                onchange="inputDateColorChange()">
                             <div class="danger-text" style="display: none; margin-top: 8px;">This field is required
                             </div>
                         </div>
@@ -160,15 +161,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="createBTN" onclick="createTask()">
-                    <span>Create Task</span>
-                    <img src="img/createCheck.svg" alt="">
-                </div>
-                <div onclick="clearForm()" class="clearBTN" id="clearBTN">Clear X</div>
-                <!--  -->
-
-
             </div>
-            <script src="taskleft1.js"></script>
-            <script src="taskright2.js"></script>
+            <div class="bottom">
+                <div><span class="redStar">*</span>This field is required</div>
+                <div class="contianer-clear-create">
+                    <div onclick="clearForm()" class="clearBTN" id="clearBTN">Clear X</div>
+                    <div class="createBTN" onclick="createTask()">
+                        <span>Create Task</span>
+                        <img src="img/createCheck.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="taskleft1.js"></script>
+    <script src="taskright2.js"></script>
 </body>

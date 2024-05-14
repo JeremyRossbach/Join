@@ -1,6 +1,21 @@
-@media(max-width: 1048px) {
+@media(max-width: 1368px) {
+    
+}
+
+
+@media(max-width: 1132px) {
+    body {
+        overflow: hidden;
+    }
+    
+    #header_content_position {
+        min-width: 428px;
+        max-height: 926px;
+    }
+
     .innerContent {
         flex-direction: column;
+        gap: 32px;
     }
 
     .roomdivider {
@@ -11,9 +26,27 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0 16px !important;
+    }
+
+    .innerContent,
+    .leftside,
+    .container-title,
+    .input-title-text,
+    .input-field,
+    .container-description,
+    .input-title-text,
+    .container-assigned,
+    .contactPosition,
+    .dropdown {
+        width: 100% !important;
+    }
+
+    .input-field-description {
+        width: calc(100% - 21px) !important;
     }
 
     .H1 {
-        text-align: center;
+        margin-left: 16px !important;
     }
 }
