@@ -94,6 +94,7 @@
         margin-bottom: -30px;
         margin-left: 12px;
         margin-right: 12px;
+        z-index: 0;
     }
 
     #toDoHeader {
@@ -180,6 +181,12 @@
 
     .prioImage {
         width: 18px;
+    }
+
+    .progressComment {
+        font-size: 13px;
+        padding: 4px;
+        margin-top: -23.5px;
     }
 }
 

@@ -207,6 +207,12 @@
     .prioImage {
         width: 16px;
     }
+
+    .progressComment {
+        font-size: 11px;
+        padding: 3px;
+        margin-top: -19px;
+    }
 }
 
 @media only screen and (max-width: 1034px) {
@@ -307,6 +313,12 @@
 
     .prioImage {
         width: 14px;
+    }
+
+    .progressComment {
+        font-size: 10px;
+        padding: 2px;
+        margin-top: -16px;
     }
 }
 

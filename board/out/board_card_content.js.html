@@ -62,6 +62,13 @@ function renderContent(section, containerId) {
 }
 
 
+/**
+ * This function is responsible for putting the tasks in the right section
+ * 
+ * @param {string} section - This is the section of each task
+ * @param {string} containerId - This is one part of the name (containerId + 'Section') of the container where the taskcards are in 
+ * @param {number} i - This is the number of each task
+ */
 function showContent(section, containerId, i) {
     if (tasks[i]['section'] === section) {
         checkContent(containerId, i);
@@ -70,17 +77,33 @@ function showContent(section, containerId, i) {
 }
 
 
+/**
+ * 
+ * @param {string} containerId - This is one part of the name (containerId + 'Section') of the container where the taskcards are in  
+ * @param {number} i - This is the number of each task 
+ */
 function checkContent(containerId, i) {
     checkEmptySection(containerId);
     content(containerId, i);
 }
 
 
+/**
+ * This function removes the empty section containers
+ * 
+ * @param {string} containerId - This is one part of the name (containerId + 'Section') of the container where the taskcards are in   
+ */
 function checkEmptySection(containerId) {
     document.getElementById('empty' + containerId + 'Section').style.display = 'none';
 }
 
 
+/**
+ * This function shows the content of the JSON tasks
+ * 
+ * @param {string} containerId - This is one part of the name (containerId + 'Section') of the container where the taskcards are in   
+ * @param {number} i - This is the number of each task
+ */
 function content(containerId, i) {
     let container = document.getElementById(containerId);
 
@@ -110,6 +133,11 @@ function content(containerId, i) {
 }
 
 
+/**
+ * This function checks whether the task has subtasks or not
+ * 
+ * @param {number} i - This is the number of each task
+ */
 function renderProgressbar(i) {
     let progressbar = document.getElementById(`progressbar${i}`);
     let progressbarAndSubtask = document.getElementById(`progressbarAndSubtask${i}`);
@@ -122,6 +150,11 @@ function renderProgressbar(i) {
 }
 
 
+/**
+ * This function checks whether the task has subtasks or not, and if it has, it shows the number of subtasks and how many are done
+ * 
+ * @param {number} i - This is the number of each task 
+ */
 function renderSubtasks(i) {
     let subtasks = document.getElementById(`subtask${i}`);
 
@@ -136,6 +169,11 @@ function renderSubtasks(i) {
 }
 
 
+/**
+ * This function shows the progress of the progressbar
+ * 
+ * @param {number} i - This is the number of each task  
+ */
 function renderProgress(i) {
     let progress = document.getElementById(`progress${i}`);
 
@@ -145,6 +183,11 @@ function renderProgress(i) {
 }
 
 
+/**
+ * This function renders and shows the priority of each task
+ * 
+ * @param {number} i - This is the number of each task
+ */
 function renderPrio(i) {
     let prio = document.getElementById(`prio${i}`);
 
@@ -154,6 +197,11 @@ function renderPrio(i) {
 }
 
 
+/**
+ * This function renders the initials of each person who is assigned to each task
+ * 
+ * @param {number} i - This is the number of each task
+ */
 function renderAssignedTo(i) {
     for (let j = 0; j &lt; tasks[i]['assignedTo'].length; j++) {
         let name = tasks[i]['assignedTo'];
@@ -163,6 +211,13 @@ function renderAssignedTo(i) {
 }
 
 
+/**
+ * This function shows the initials of each person how is assigned to each task
+ * 
+ * @param {string} initials - These are the initials of each person who is assigned to a task
+ * @param {number} i - This is the number of each task 
+ * @param {number} j - This is the number of each person who is assigned to a task
+ */
 function showAssignedTo(initials, i, j) { /* solution for random colors missing ! */
     let assignedTo = document.getElementById(`assignedTo${i}`);
     let backgroundColor = colorPool[j % colorPool.length];
@@ -172,6 +227,11 @@ function showAssignedTo(initials, i, j) { /* solution for random colors missing 
 }
 
 
+/**
+ * This function renders the color of the category of each task
+ * 
+ * @param {number} i - This is the number of each task  
+ */
 function renderCategoryColor(i) {
     let content = document.getElementById(`category${i}`);
     if (tasks[i]['category'] === 'Technical Task') {
@@ -182,6 +242,11 @@ function renderCategoryColor(i) {
 }
 
 
+/**
+ * This function shows the card popup of each card
+ * 
+ * @param {number} i - This is the number of each task   
+ */
 function showCardPopup(i) {
     document.body.style.overflow = 'hidden';
     document.getElementById('background').style.display = 'flex';
@@ -226,6 +291,11 @@ function showCardPopup(i) {
 }
 
 
+/**
+ * This function renders and shows the color of the category of a specific task
+ * 
+ * @param {number} i - This is the number of each task  
+ */
 function renderPopupCategoryColor(i) {
     let content = document.getElementById(`popupCategory${i}`);
     if (tasks[i]['category'] === 'Technical Task') {
@@ -236,6 +306,11 @@ function renderPopupCategoryColor(i) {
 }
 
 
+/**
+ * This function renders and shows the priority of a specific task
+ * 
+ * @param {number} i - This is the number of each task 
+ */
 function renderPopupPrio(i) {
     let prio = document.getElementById(`popupPrio${i}`);
 
@@ -245,6 +320,11 @@ function renderPopupPrio(i) {
 }
 
 
+/**
+ * This function renders the initials of each person for a spacific task 
+ * 
+ * @param {number} i - This is the number of each task 
+ */
 function renderPopupAssignedTo(i) {
     for (let k = 0; k &lt; tasks[i]['assignedTo'].length; k++) {
         let name = tasks[i]['assignedTo'];
@@ -254,6 +334,13 @@ function renderPopupAssignedTo(i) {
 }
 
 
+/**
+ * 
+ * 
+ * @param {string} initials - These are the initials of each person who is assigned to a task
+ * @param {number} i - This is the number of each task 
+ * @param {number} k - This is the number of each person who is assigned to a task
+ */
 function showPopupAssignedTo(initials, i, k) {
     let assignedTo = document.getElementById(`popupAssignedTo${i}`);
     let backgroundColor = colorPool[k % colorPool.length];
@@ -267,6 +354,11 @@ function showPopupAssignedTo(initials, i, k) {
 }
 
 
+/**
+ * This function renders the subtasks of a specific task
+ * 
+ * @param {number} i - This is the number of each task 
+ */
 function renderPopupSubtasks(i) {
     if (tasks[i]['subtask'][0]) {
         for (let l = 0; l &lt; tasks[i]['subtask'].length; l++) {
@@ -279,6 +371,12 @@ function renderPopupSubtasks(i) {
 }
 
 
+/**
+ * 
+ * 
+ * @param {number} i - This is the number of each task 
+ * @param {number} l - This is the number of each subtask of a specific task
+ */
 function showPopupSubtasks(i, l) {
     let subtasks = document.getElementById(`popupSubtasks${i}`);
 
@@ -292,6 +390,12 @@ function showPopupSubtasks(i, l) {
 }
 
 
+/**
+ * This function renders and shows whether the checkbox is clicked or not
+ * 
+ * @param {number} i - This is the number of each task 
+ * @param {number} l - This is the number of each subtask of a specific task
+ */
 function renderCheckboxImage(i, l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
 
@@ -304,6 +408,11 @@ function renderCheckboxImage(i, l) {
 }
 
 
+/**
+ * This function closes the card popup
+ * 
+ * @param {*} event - ???
+ */
 function closePopup(event) {
     document.body.style.overflow = '';
     cardPopup.style.height = '';
@@ -312,7 +421,7 @@ function closePopup(event) {
     if (event) {
         event.stopPropagation();
     }
-    /* location.reload(); */ /* not finished */
+    location.reload();
 }
 
 
@@ -321,6 +430,12 @@ function dontClosePopup(event) {
 }
 
 
+/**
+ * This function deletes a task
+ * 
+ * @param {number} i - This is the number of each task 
+ * @param {*} event - ???
+ */
 function deleteTask(i, event) {
     tasks.splice(i, 1);
     closePopup(event);
@@ -361,12 +476,27 @@ function allowDrop(ev) {
 }
 
 
+/**
+ * This function changes the section when a task is dragged into another section
+ * 
+ * @param {string} section - This is the section of each task 
+ */
 function moveTo(section) {
     tasks[currentDraggedElement]['section'] = section;
 
     saveTasks();
     emptyContentSections();
     init();
+}
+
+
+function highlight(id) {
+    document.getElementById(id + 'Section').classList.add('drag-area-highlight');
+}
+
+
+function removeHighlight(id) {
+    document.getElementById(id + 'Section').classList.remove('drag-area-highlight');
 }</code></pre>
         </article>
     </section>
@@ -377,13 +507,13 @@ function moveTo(section) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#renderContent">renderContent</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#alreadySelectedContact">alreadySelectedContact</a></li><li><a href="global.html#checkContent">checkContent</a></li><li><a href="global.html#checkEmptySection">checkEmptySection</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#content">content</a></li><li><a href="global.html#convertDateFormat">convertDateFormat</a></li><li><a href="global.html#createNewSubtask">createNewSubtask</a></li><li><a href="global.html#deleteAndPushPrio">deleteAndPushPrio</a></li><li><a href="global.html#deleteSubtask">deleteSubtask</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#disableLowButton">disableLowButton</a></li><li><a href="global.html#disableMediumButton">disableMediumButton</a></li><li><a href="global.html#disableUrgentButton">disableUrgentButton</a></li><li><a href="global.html#doneEditSubtask">doneEditSubtask</a></li><li><a href="global.html#editPrioButtonLow">editPrioButtonLow</a></li><li><a href="global.html#editPrioButtonMedium">editPrioButtonMedium</a></li><li><a href="global.html#editPrioButtonUrgent">editPrioButtonUrgent</a></li><li><a href="global.html#editSubtask">editSubtask</a></li><li><a href="global.html#editTask">editTask</a></li><li><a href="global.html#findContact">findContact</a></li><li><a href="global.html#moveTo">moveTo</a></li><li><a href="global.html#ok">ok</a></li><li><a href="global.html#renderAlreadySelectedContacts">renderAlreadySelectedContacts</a></li><li><a href="global.html#renderAssignedTo">renderAssignedTo</a></li><li><a href="global.html#renderCategoryColor">renderCategoryColor</a></li><li><a href="global.html#renderCheckboxImage">renderCheckboxImage</a></li><li><a href="global.html#renderContact">renderContact</a></li><li><a href="global.html#renderContent">renderContent</a></li><li><a href="global.html#renderDropdownInitials">renderDropdownInitials</a></li><li><a href="global.html#renderDropdownMenu">renderDropdownMenu</a></li><li><a href="global.html#renderEditAssignedTo">renderEditAssignedTo</a></li><li><a href="global.html#renderEditSubtasksList">renderEditSubtasksList</a></li><li><a href="global.html#renderInputValues">renderInputValues</a></li><li><a href="global.html#renderPopupAssignedTo">renderPopupAssignedTo</a></li><li><a href="global.html#renderPopupCategoryColor">renderPopupCategoryColor</a></li><li><a href="global.html#renderPopupPrio">renderPopupPrio</a></li><li><a href="global.html#renderPopupSubtasks">renderPopupSubtasks</a></li><li><a href="global.html#renderPrio">renderPrio</a></li><li><a href="global.html#renderProgress">renderProgress</a></li><li><a href="global.html#renderProgressbar">renderProgressbar</a></li><li><a href="global.html#renderSelectedContact">renderSelectedContact</a></li><li><a href="global.html#renderSubtasks">renderSubtasks</a></li><li><a href="global.html#renderTask">renderTask</a></li><li><a href="global.html#renderValues">renderValues</a></li><li><a href="global.html#selectedContact">selectedContact</a></li><li><a href="global.html#setLowButtonStyle">setLowButtonStyle</a></li><li><a href="global.html#setMediumButtonStyle">setMediumButtonStyle</a></li><li><a href="global.html#setUrgentButtonStyle">setUrgentButtonStyle</a></li><li><a href="global.html#showAleardySelectedContact">showAleardySelectedContact</a></li><li><a href="global.html#showAssignedTo">showAssignedTo</a></li><li><a href="global.html#showCardPopup">showCardPopup</a></li><li><a href="global.html#showContact">showContact</a></li><li><a href="global.html#showContent">showContent</a></li><li><a href="global.html#showDropDownInitials">showDropDownInitials</a></li><li><a href="global.html#showDropdownMenu">showDropdownMenu</a></li><li><a href="global.html#showEditAssignedTo">showEditAssignedTo</a></li><li><a href="global.html#showEditSubtasksList">showEditSubtasksList</a></li><li><a href="global.html#showPopupAssignedTo">showPopupAssignedTo</a></li><li><a href="global.html#showPopupSubtasks">showPopupSubtasks</a></li><li><a href="global.html#showTask">showTask</a></li><li><a href="global.html#unselectContact">unselectContact</a></li><li><a href="global.html#updateDescription">updateDescription</a></li><li><a href="global.html#updateDueDate">updateDueDate</a></li><li><a href="global.html#updateTitle">updateTitle</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Tue May 14 2024 00:44:32 GMT+0200 (Mitteleuropäische Sommerzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Tue May 14 2024 12:33:12 GMT+0200 (Mitteleuropäische Sommerzeit)
 </footer>
 
 <script> prettyPrint(); </script>

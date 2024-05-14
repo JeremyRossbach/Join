@@ -34,6 +34,13 @@ function renderContent(section, containerId) {
 }
 
 
+/**
+ * This function is responsible for putting the tasks in the right section
+ * 
+ * @param {string} section - This is the section of each task
+ * @param {string} containerId - This is one part of the name (containerId + 'Section') of the container where the taskcards are in 
+ * @param {number} i - This is the number of each task
+ */
 function showContent(section, containerId, i) {
     if (tasks[i]['section'] === section) {
         checkContent(containerId, i);
@@ -42,17 +49,33 @@ function showContent(section, containerId, i) {
 }
 
 
+/**
+ * 
+ * @param {string} containerId - This is one part of the name (containerId + 'Section') of the container where the taskcards are in  
+ * @param {number} i - This is the number of each task 
+ */
 function checkContent(containerId, i) {
     checkEmptySection(containerId);
     content(containerId, i);
 }
 
 
+/**
+ * This function removes the empty section containers
+ * 
+ * @param {string} containerId - This is one part of the name (containerId + 'Section') of the container where the taskcards are in   
+ */
 function checkEmptySection(containerId) {
     document.getElementById('empty' + containerId + 'Section').style.display = 'none';
 }
 
 
+/**
+ * This function shows the content of the JSON tasks
+ * 
+ * @param {string} containerId - This is one part of the name (containerId + 'Section') of the container where the taskcards are in   
+ * @param {number} i - This is the number of each task
+ */
 function content(containerId, i) {
     let container = document.getElementById(containerId);
 
@@ -82,6 +105,11 @@ function content(containerId, i) {
 }
 
 
+/**
+ * This function checks whether the task has subtasks or not
+ * 
+ * @param {number} i - This is the number of each task
+ */
 function renderProgressbar(i) {
     let progressbar = document.getElementById(`progressbar${i}`);
     let progressbarAndSubtask = document.getElementById(`progressbarAndSubtask${i}`);
@@ -94,6 +122,11 @@ function renderProgressbar(i) {
 }
 
 
+/**
+ * This function checks whether the task has subtasks or not, and if it has, it shows the number of subtasks and how many are done
+ * 
+ * @param {number} i - This is the number of each task 
+ */
 function renderSubtasks(i) {
     let subtasks = document.getElementById(`subtask${i}`);
 
@@ -108,6 +141,11 @@ function renderSubtasks(i) {
 }
 
 
+/**
+ * This function shows the progress of the progressbar
+ * 
+ * @param {number} i - This is the number of each task  
+ */
 function renderProgress(i) {
     let progress = document.getElementById(`progress${i}`);
 
@@ -117,6 +155,11 @@ function renderProgress(i) {
 }
 
 
+/**
+ * This function renders and shows the priority of each task
+ * 
+ * @param {number} i - This is the number of each task
+ */
 function renderPrio(i) {
     let prio = document.getElementById(`prio${i}`);
 
@@ -126,6 +169,11 @@ function renderPrio(i) {
 }
 
 
+/**
+ * This function renders the initials of each person who is assigned to each task
+ * 
+ * @param {number} i - This is the number of each task
+ */
 function renderAssignedTo(i) {
     for (let j = 0; j < tasks[i]['assignedTo'].length; j++) {
         let name = tasks[i]['assignedTo'];
@@ -135,6 +183,13 @@ function renderAssignedTo(i) {
 }
 
 
+/**
+ * This function shows the initials of each person how is assigned to each task
+ * 
+ * @param {string} initials - These are the initials of each person who is assigned to a task
+ * @param {number} i - This is the number of each task 
+ * @param {number} j - This is the number of each person who is assigned to a task
+ */
 function showAssignedTo(initials, i, j) { /* solution for random colors missing ! */
     let assignedTo = document.getElementById(`assignedTo${i}`);
     let backgroundColor = colorPool[j % colorPool.length];
@@ -144,6 +199,11 @@ function showAssignedTo(initials, i, j) { /* solution for random colors missing 
 }
 
 
+/**
+ * This function renders the color of the category of each task
+ * 
+ * @param {number} i - This is the number of each task  
+ */
 function renderCategoryColor(i) {
     let content = document.getElementById(`category${i}`);
     if (tasks[i]['category'] === 'Technical Task') {
@@ -154,6 +214,11 @@ function renderCategoryColor(i) {
 }
 
 
+/**
+ * This function shows the card popup of each card
+ * 
+ * @param {number} i - This is the number of each task   
+ */
 function showCardPopup(i) {
     document.body.style.overflow = 'hidden';
     document.getElementById('background').style.display = 'flex';
@@ -198,6 +263,11 @@ function showCardPopup(i) {
 }
 
 
+/**
+ * This function renders and shows the color of the category of a specific task
+ * 
+ * @param {number} i - This is the number of each task  
+ */
 function renderPopupCategoryColor(i) {
     let content = document.getElementById(`popupCategory${i}`);
     if (tasks[i]['category'] === 'Technical Task') {
@@ -208,6 +278,11 @@ function renderPopupCategoryColor(i) {
 }
 
 
+/**
+ * This function renders and shows the priority of a specific task
+ * 
+ * @param {number} i - This is the number of each task 
+ */
 function renderPopupPrio(i) {
     let prio = document.getElementById(`popupPrio${i}`);
 
@@ -217,6 +292,11 @@ function renderPopupPrio(i) {
 }
 
 
+/**
+ * This function renders the initials of each person for a spacific task 
+ * 
+ * @param {number} i - This is the number of each task 
+ */
 function renderPopupAssignedTo(i) {
     for (let k = 0; k < tasks[i]['assignedTo'].length; k++) {
         let name = tasks[i]['assignedTo'];
@@ -226,6 +306,13 @@ function renderPopupAssignedTo(i) {
 }
 
 
+/**
+ * 
+ * 
+ * @param {string} initials - These are the initials of each person who is assigned to a task
+ * @param {number} i - This is the number of each task 
+ * @param {number} k - This is the number of each person who is assigned to a task
+ */
 function showPopupAssignedTo(initials, i, k) {
     let assignedTo = document.getElementById(`popupAssignedTo${i}`);
     let backgroundColor = colorPool[k % colorPool.length];
@@ -239,6 +326,11 @@ function showPopupAssignedTo(initials, i, k) {
 }
 
 
+/**
+ * This function renders the subtasks of a specific task
+ * 
+ * @param {number} i - This is the number of each task 
+ */
 function renderPopupSubtasks(i) {
     if (tasks[i]['subtask'][0]) {
         for (let l = 0; l < tasks[i]['subtask'].length; l++) {
@@ -251,6 +343,12 @@ function renderPopupSubtasks(i) {
 }
 
 
+/**
+ * 
+ * 
+ * @param {number} i - This is the number of each task 
+ * @param {number} l - This is the number of each subtask of a specific task
+ */
 function showPopupSubtasks(i, l) {
     let subtasks = document.getElementById(`popupSubtasks${i}`);
 
@@ -264,6 +362,12 @@ function showPopupSubtasks(i, l) {
 }
 
 
+/**
+ * This function renders and shows whether the checkbox is clicked or not
+ * 
+ * @param {number} i - This is the number of each task 
+ * @param {number} l - This is the number of each subtask of a specific task
+ */
 function renderCheckboxImage(i, l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
 
@@ -276,6 +380,11 @@ function renderCheckboxImage(i, l) {
 }
 
 
+/**
+ * This function closes the card popup
+ * 
+ * @param {*} event - ???
+ */
 function closePopup(event) {
     document.body.style.overflow = '';
     cardPopup.style.height = '';
@@ -284,7 +393,7 @@ function closePopup(event) {
     if (event) {
         event.stopPropagation();
     }
-    /* location.reload(); */ /* not finished */
+    location.reload();
 }
 
 
@@ -293,6 +402,12 @@ function dontClosePopup(event) {
 }
 
 
+/**
+ * This function deletes a task
+ * 
+ * @param {number} i - This is the number of each task 
+ * @param {*} event - ???
+ */
 function deleteTask(i, event) {
     tasks.splice(i, 1);
     closePopup(event);
@@ -333,10 +448,25 @@ function allowDrop(ev) {
 }
 
 
+/**
+ * This function changes the section when a task is dragged into another section
+ * 
+ * @param {string} section - This is the section of each task 
+ */
 function moveTo(section) {
     tasks[currentDraggedElement]['section'] = section;
 
     saveTasks();
     emptyContentSections();
     init();
+}
+
+
+function highlight(id) {
+    document.getElementById(id + 'Section').classList.add('drag-area-highlight');
+}
+
+
+function removeHighlight(id) {
+    document.getElementById(id + 'Section').classList.remove('drag-area-highlight');
 }
