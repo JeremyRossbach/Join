@@ -295,7 +295,7 @@ function ok(i) {
     updateTitle(i);
     updateDescription(i);
     updateDueDate(i);
-    putData();
+    saveTasks();
     emptyContentSections();
     init();
     document.getElementById('cardPopup').innerHTML = '';
@@ -357,7 +357,7 @@ function checkbox(i, l) {
         tasks[i]['numberOfDoneSubtasks']--;
         checkbox.src = "./img/checkbox.png"
     }
-    putData();
+    saveTasks();
     renderSubtasks(i);
     emptyContentSections();
     init();

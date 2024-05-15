@@ -101,7 +101,7 @@ function content(containerId, i) {
     renderSubtasks(i);
     renderPrio(i);
     renderAssignedTo(i);
-    putData();
+    saveTasks();
 }
 
 
@@ -411,7 +411,7 @@ function dontClosePopup(event) {
 function deleteTask(i, event) {
     tasks.splice(i, 1);
     closePopup(event);
-    putData();
+    saveTasks();
     emptyContentSections();
     init();
 }
@@ -456,7 +456,7 @@ function allowDrop(ev) {
 function moveTo(section) {
     tasks[currentDraggedElement]['section'] = section;
 
-    putData();
+    saveTasks();
     emptyContentSections();
     init();
 }
