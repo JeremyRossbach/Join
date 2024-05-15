@@ -42,6 +42,7 @@ header {
     height: 260px;
     padding-inline: 64px;
     background-color: #F6F7F8;
+    z-index: 999;
 }
 
 h1 {
@@ -170,6 +171,7 @@ h1 {
     align-items: center;
     width: inherit;
     margin-top: 110px;
+    z-index: 999;
 }
 
 #doneHeader {
@@ -214,6 +216,11 @@ p {
     background-color: white;
     cursor: pointer;
     box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: rotate(3deg);
 }
 
 .category {
@@ -319,4 +326,27 @@ p {
 
 .scrollableCardPopup::-webkit-scrollbar {
     display: none;
+}
+
+.progressComment {
+    display: none;
+    justify-content: center;
+    font-size: 13px;
+    padding: 4px;
+    margin-top: -23.5px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #00000052;
+    color: white;
+    z-index: 1;
+}
+
+.progressbarAndSubtask:hover+.progressComment {
+    display: flex;
+}
+
+.drag-area-highlight {
+    border: 1px dashed #A8A8A8;
+    border-radius: 24px;
+    background-color: #0000000f;
 }

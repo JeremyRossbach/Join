@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: board_card_edit_1.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: board_card_edit_1.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * This function shows the editable version of a card popup
  * 
  * @param {number} i - This is the number of each task 
@@ -7,58 +35,58 @@ function editTask(i) {
 
 
     cardPopup.innerHTML = /* html */`
-        <div class="scrollableCardPopup">
-        <div class="editTaskCloseImage">
-            <img onclick="closePopup()" class="closeImage" src="./img/close.png">
-        </div>
-        <div class="editTextAndInput">
-            <p class="titleText">Title</p>
-            <input id="editTitle${i}" class="editTitleInput editInputs" placeholder="Enter a title" type="text">
-        </div>
-        <div class="editDescriptionAndTextarea">
-            <p class="descriptionText">Description</p>
-            <textarea id="editDescription${i}" class="editDescriptionTextarea editInputs" placeholder="Enter a description" name="" id="" cols="30" rows="10"></textarea>
-        </div>
-        <div class="editDueDateAndInput">
-            <p class="dueDateText">Due Date</p>
-            <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" onfocus="(this.type='date')" onblur="(this.type='text'); convertDateFormat(this)">
-        </div>
-        <div class="editPriorityAndButtons">
-            <p class="priorityText">Priority</p>
-            <div class="priorityButtons">
-                <button onclick="editPrioButtonUrgent(${i})" id="urgentButton${i}" class="priorityButtonUrgent priorityButton">Urgent <img id="urgentImage${i}" class="prioImages" src="./img/urgent.png"></button>
-                <button onclick="editPrioButtonMedium(${i})" id="mediumButton${i}" class="priorityButtonMedium priorityButton">Medium <img id="mediumImage${i}" class="prioImages" src="./img/medium.png"></button>
-                <button onclick="editPrioButtonLow(${i})" id="lowButton${i}" class="priorityButtonLow priorityButton">Low <img id="lowImage${i}" class="prioImages" src="./img/low.png"></button> 
-            </div>
-        </div>
-        <div class="editAssignedToAndInput">
-            <p class="editAssignedToText">Assigned To</p>
-            <div class="editAssignedToInputAndArrow">
-                <input oninput="findContact(${i})" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
-                <img onclick="openDropdownMenu()" id="arrow" class="dropdownArrow" src="./img/dropdownArrow.png">
-            </div>
-            <div id="dropdownMenu"></div>
-            <div id="editInitials${i}"></div>
-        </div>
-        <div class="editSubtasksAndInput">
-            <p class="editSubtasksText">Subtasks</p>
-            <div class="editSubtasksInputAndPlus">
-                <input onclick="focusOnNewSubtask(${i})" id="editSubtasks${i}" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text">
-                <img onclick="focusOnNewSubtask(${i})" id="plus" class="plus" src="./img/plus.png">
-                <div id="closeAndDone${i}" class="closeAndDone">
-                    <img onclick="emptyInput(${i})" class="close" src="./img/close.png">
-                    <div class="subtasksImageSpacer"></div>
-                    <img onclick="createNewSubtask(${i})" class="done" src="./img/done.png">
-                </div>
-            </div>
-            <div id="editSubtasksList${i}"></div>
-        </div>
-        </div>
+        &lt;div class="scrollableCardPopup">
+        &lt;div class="editTaskCloseImage">
+            &lt;img onclick="closePopup()" class="closeImage" src="./img/close.png">
+        &lt;/div>
+        &lt;div class="editTextAndInput">
+            &lt;p class="titleText">Title&lt;/p>
+            &lt;input id="editTitle${i}" class="editTitleInput editInputs" placeholder="Enter a title" type="text">
+        &lt;/div>
+        &lt;div class="editDescriptionAndTextarea">
+            &lt;p class="descriptionText">Description&lt;/p>
+            &lt;textarea id="editDescription${i}" class="editDescriptionTextarea editInputs" placeholder="Enter a description" name="" id="" cols="30" rows="10">&lt;/textarea>
+        &lt;/div>
+        &lt;div class="editDueDateAndInput">
+            &lt;p class="dueDateText">Due Date&lt;/p>
+            &lt;input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" onfocus="(this.type='date')" onblur="(this.type='text'); convertDateFormat(this)">
+        &lt;/div>
+        &lt;div class="editPriorityAndButtons">
+            &lt;p class="priorityText">Priority&lt;/p>
+            &lt;div class="priorityButtons">
+                &lt;button onclick="editPrioButtonUrgent(${i})" id="urgentButton${i}" class="priorityButtonUrgent priorityButton">Urgent &lt;img id="urgentImage${i}" class="prioImages" src="./img/urgent.png">&lt;/button>
+                &lt;button onclick="editPrioButtonMedium(${i})" id="mediumButton${i}" class="priorityButtonMedium priorityButton">Medium &lt;img id="mediumImage${i}" class="prioImages" src="./img/medium.png">&lt;/button>
+                &lt;button onclick="editPrioButtonLow(${i})" id="lowButton${i}" class="priorityButtonLow priorityButton">Low &lt;img id="lowImage${i}" class="prioImages" src="./img/low.png">&lt;/button> 
+            &lt;/div>
+        &lt;/div>
+        &lt;div class="editAssignedToAndInput">
+            &lt;p class="editAssignedToText">Assigned To&lt;/p>
+            &lt;div class="editAssignedToInputAndArrow">
+                &lt;input oninput="findContact(${i})" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
+                &lt;img onclick="openDropdownMenu()" id="arrow" class="dropdownArrow" src="./img/dropdownArrow.png">
+            &lt;/div>
+            &lt;div id="dropdownMenu">&lt;/div>
+            &lt;div id="editInitials${i}">&lt;/div>
+        &lt;/div>
+        &lt;div class="editSubtasksAndInput">
+            &lt;p class="editSubtasksText">Subtasks&lt;/p>
+            &lt;div class="editSubtasksInputAndPlus">
+                &lt;input onclick="focusOnNewSubtask(${i})" id="editSubtasks${i}" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text">
+                &lt;img onclick="focusOnNewSubtask(${i})" id="plus" class="plus" src="./img/plus.png">
+                &lt;div id="closeAndDone${i}" class="closeAndDone">
+                    &lt;img onclick="emptyInput(${i})" class="close" src="./img/close.png">
+                    &lt;div class="subtasksImageSpacer">&lt;/div>
+                    &lt;img onclick="createNewSubtask(${i})" class="done" src="./img/done.png">
+                &lt;/div>
+            &lt;/div>
+            &lt;div id="editSubtasksList${i}">&lt;/div>
+        &lt;/div>
+        &lt;/div>
         
         
-        <div class="editTaskOkButton">
-            <button onclick="ok(${i})" id="okButton">Ok <img class="checkImage" src="./img/check.png"></button>
-        </div>
+        &lt;div class="editTaskOkButton">
+            &lt;button onclick="ok(${i})" id="okButton">Ok &lt;img class="checkImage" src="./img/check.png">&lt;/button>
+        &lt;/div>
     `;
     renderInputValues(i);
     renderValues(i);
@@ -138,7 +166,7 @@ function renderValues(i) {
  * @param {number} i - This is the number of each task 
  */
 function renderEditAssignedTo(i) {
-    for (let o = 0; o < tasks[i]['assignedTo'].length; o++) {
+    for (let o = 0; o &lt; tasks[i]['assignedTo'].length; o++) {
         let name = tasks[i]['assignedTo'];
         let initials = name[o].split(' ')[0].charAt(0) + name[o].split(' ')[1].charAt(0);
         showEditAssignedTo(initials, i, o);
@@ -159,9 +187,9 @@ function showEditAssignedTo(initials, i, o) {
     let backgroundColor = colorPool[o % colorPool.length];
 
     assignedTo.innerHTML += /* html */`
-        <div class="editInitials">
-            <div id="initals${o}" class="popupInitials" style="background-color: ${backgroundColor};">${initials}</div>
-        </div>
+        &lt;div class="editInitials">
+            &lt;div id="initals${o}" class="popupInitials" style="background-color: ${backgroundColor};">${initials}&lt;/div>
+        &lt;/div>
     `;
 }
 
@@ -172,7 +200,7 @@ function showEditAssignedTo(initials, i, o) {
  * @param {number} i - This is the number of each task  
  */
 function renderEditSubtasksList(i) {
-    for (let p = 0; p < tasks[i]['subtask'].length; p++) {
+    for (let p = 0; p &lt; tasks[i]['subtask'].length; p++) {
         showEditSubtasksList(i, p);
     }
 }
@@ -188,14 +216,14 @@ function showEditSubtasksList(i, p) {
     let subtasks = document.getElementById(`editSubtasksList${i}`);
 
     subtasks.innerHTML += /* html */`
-        <div id="subtasksContent${p}" class="subtasksContent">
-            <li>${tasks[i]['subtask'][p]}</li>
-            <div class="deleteAndEdit">
-                <img onclick="editSubtask(${p}, ${i})" class="editImage" src="./img/edit.png">
-                <div class="subtasksImageSpacer"></div>
-                <img onclick="deleteSubtask(${p}, ${i})" src="./img/delete.png">
-            </div>
-        </div>
+        &lt;div id="subtasksContent${p}" class="subtasksContent">
+            &lt;li>${tasks[i]['subtask'][p]}&lt;/li>
+            &lt;div class="deleteAndEdit">
+                &lt;img onclick="editSubtask(${p}, ${i})" class="editImage" src="./img/edit.png">
+                &lt;div class="subtasksImageSpacer">&lt;/div>
+                &lt;img onclick="deleteSubtask(${p}, ${i})" src="./img/delete.png">
+            &lt;/div>
+        &lt;/div>
     `;
 }
 
@@ -373,7 +401,7 @@ function findContact(i) {
     let search = document.getElementById('editAssignedTo').value;
     search = search.toLowerCase();
 
-    for (let n = 0; n < contactData.length; n++) {
+    for (let n = 0; n &lt; contactData.length; n++) {
         renderContact(search, n, i);
     }
 }
@@ -409,4 +437,26 @@ function showContact(n, i) {
     }
 
     showDropdownMenu(n, i);
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#alreadySelectedContact">alreadySelectedContact</a></li><li><a href="global.html#checkContent">checkContent</a></li><li><a href="global.html#checkEmptySection">checkEmptySection</a></li><li><a href="global.html#closePopup">closePopup</a></li><li><a href="global.html#content">content</a></li><li><a href="global.html#convertDateFormat">convertDateFormat</a></li><li><a href="global.html#createNewSubtask">createNewSubtask</a></li><li><a href="global.html#deleteAndPushPrio">deleteAndPushPrio</a></li><li><a href="global.html#deleteSubtask">deleteSubtask</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#disableLowButton">disableLowButton</a></li><li><a href="global.html#disableMediumButton">disableMediumButton</a></li><li><a href="global.html#disableUrgentButton">disableUrgentButton</a></li><li><a href="global.html#doneEditSubtask">doneEditSubtask</a></li><li><a href="global.html#editPrioButtonLow">editPrioButtonLow</a></li><li><a href="global.html#editPrioButtonMedium">editPrioButtonMedium</a></li><li><a href="global.html#editPrioButtonUrgent">editPrioButtonUrgent</a></li><li><a href="global.html#editSubtask">editSubtask</a></li><li><a href="global.html#editTask">editTask</a></li><li><a href="global.html#findContact">findContact</a></li><li><a href="global.html#moveTo">moveTo</a></li><li><a href="global.html#ok">ok</a></li><li><a href="global.html#renderAlreadySelectedContacts">renderAlreadySelectedContacts</a></li><li><a href="global.html#renderAssignedTo">renderAssignedTo</a></li><li><a href="global.html#renderCategoryColor">renderCategoryColor</a></li><li><a href="global.html#renderCheckboxImage">renderCheckboxImage</a></li><li><a href="global.html#renderContact">renderContact</a></li><li><a href="global.html#renderContent">renderContent</a></li><li><a href="global.html#renderDropdownInitials">renderDropdownInitials</a></li><li><a href="global.html#renderDropdownMenu">renderDropdownMenu</a></li><li><a href="global.html#renderEditAssignedTo">renderEditAssignedTo</a></li><li><a href="global.html#renderEditSubtasksList">renderEditSubtasksList</a></li><li><a href="global.html#renderInputValues">renderInputValues</a></li><li><a href="global.html#renderPopupAssignedTo">renderPopupAssignedTo</a></li><li><a href="global.html#renderPopupCategoryColor">renderPopupCategoryColor</a></li><li><a href="global.html#renderPopupPrio">renderPopupPrio</a></li><li><a href="global.html#renderPopupSubtasks">renderPopupSubtasks</a></li><li><a href="global.html#renderPrio">renderPrio</a></li><li><a href="global.html#renderProgress">renderProgress</a></li><li><a href="global.html#renderProgressbar">renderProgressbar</a></li><li><a href="global.html#renderSelectedContact">renderSelectedContact</a></li><li><a href="global.html#renderSubtasks">renderSubtasks</a></li><li><a href="global.html#renderTask">renderTask</a></li><li><a href="global.html#renderValues">renderValues</a></li><li><a href="global.html#selectedContact">selectedContact</a></li><li><a href="global.html#setLowButtonStyle">setLowButtonStyle</a></li><li><a href="global.html#setMediumButtonStyle">setMediumButtonStyle</a></li><li><a href="global.html#setUrgentButtonStyle">setUrgentButtonStyle</a></li><li><a href="global.html#showAleardySelectedContact">showAleardySelectedContact</a></li><li><a href="global.html#showAssignedTo">showAssignedTo</a></li><li><a href="global.html#showCardPopup">showCardPopup</a></li><li><a href="global.html#showContact">showContact</a></li><li><a href="global.html#showContent">showContent</a></li><li><a href="global.html#showDropDownInitials">showDropDownInitials</a></li><li><a href="global.html#showDropdownMenu">showDropdownMenu</a></li><li><a href="global.html#showEditAssignedTo">showEditAssignedTo</a></li><li><a href="global.html#showEditSubtasksList">showEditSubtasksList</a></li><li><a href="global.html#showPopupAssignedTo">showPopupAssignedTo</a></li><li><a href="global.html#showPopupSubtasks">showPopupSubtasks</a></li><li><a href="global.html#showTask">showTask</a></li><li><a href="global.html#unselectContact">unselectContact</a></li><li><a href="global.html#updateDescription">updateDescription</a></li><li><a href="global.html#updateDueDate">updateDueDate</a></li><li><a href="global.html#updateTitle">updateTitle</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Tue May 14 2024 12:33:12 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

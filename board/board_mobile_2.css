@@ -14,8 +14,38 @@
     .popupDescription,
     .date,
     .priorityAndImage,
-    .name {
+    .name,
+    ::-webkit-input-placeholder,
+    .titleText,
+    .descriptionText,
+    .dueDateText,
+    .editAssignedToText,
+    .editSubtasksText,
+    .editTitleInput,
+    .editDescriptionTextarea,
+    .editDueDateInput,
+    .editAssignedToInput,
+    .editSubtasksInput,
+    .dropdownContact,
+    .priorityText,
+    .priorityButton {
         font-size: 18px;
+    }
+
+    #input::placeholder {
+        font-size: 18px;
+    }
+
+    .prioImages {
+        width: 19px;
+    }
+
+    .editTitleInput,
+    .editDescriptionTextarea,
+    .editDueDateInput,
+    .editAssignedToInput,
+    .editSubtasksInput {
+        height: 44px;
     }
 
     .dueDate,
@@ -24,7 +54,8 @@
         font-size: 18px;
     }
 
-    .popupSubtaskText {
+    .popupSubtaskText,
+    li {
         font-size: 14px;
     }
 
@@ -35,7 +66,12 @@
     }
 
     p {
-        font-size: 18px;
+        font-size: 20px;
+    }
+
+    .priorityButton {
+        width: 121.67px;
+        height: 41px;
     }
 }
 
@@ -46,6 +82,11 @@
 
     .emptySection {
         width: 947px;
+    }
+
+    .priorityButton {
+        width: 116.67px;
+        height: 36px;
     }
 }
 
@@ -76,11 +117,11 @@
     .popupSubtasks {
         gap: 0;
     }
-    
+
     .popupCategory {
         font-size: 15px;
-        height: 36px;
-        padding-inline: 24px;
+        height: 32px;
+        padding-inline: 20px;
     }
 
     .popupTitle {
@@ -90,8 +131,34 @@
     .popupDescription,
     .date,
     .priorityAndImage,
-    .name {
+    .name,
+    ::-webkit-input-placeholder,
+    .titleText,
+    .descriptionText,
+    .dueDateText,
+    .editAssignedToText,
+    .editSubtasksText,
+    .editTitleInput,
+    .editDescriptionTextarea,
+    .editDueDateInput,
+    .editAssignedToInput,
+    .editSubtasksInput,
+    .dropdownContact,
+    .priorityText,
+    .priorityButton {
         font-size: 16px;
+    }
+
+    .prioImages {
+        width: 17px;
+    }
+
+    .editTitleInput,
+    .editDescriptionTextarea,
+    .editDueDateInput,
+    .editAssignedToInput,
+    .editSubtasksInput {
+        height: 40px;
     }
 
     .dueDate,
@@ -105,7 +172,8 @@
         height: 22px;
     }
 
-    .popupSubtaskText {
+    .popupSubtaskText,
+    li {
         font-size: 12px;
     }
 
@@ -113,10 +181,6 @@
         font-size: 14px;
         width: 36px;
         height: 36px;
-    }
-
-    p {
-        font-size: 16px;
     }
 }
 
@@ -193,11 +257,6 @@
         width: 186px;
     }
 
-    p {
-        font-weight: 700;
-        font-size: 18px;
-    }
-
     .category {
         margin-bottom: 18px;
         font-size: 14px;
@@ -237,6 +296,12 @@
     .prioImage {
         width: 16px;
     }
+
+    .progressComment {
+        font-size: 11px;
+        padding: 2px;
+        margin-top: -17px;
+    }
 }
 
 @media only screen and (max-width: 442px) {
@@ -265,8 +330,34 @@
     .popupDescription,
     .date,
     .priorityAndImage,
-    .name {
+    .name,
+    ::-webkit-input-placeholder,
+    .titleText,
+    .descriptionText,
+    .dueDateText,
+    .editAssignedToText,
+    .editSubtasksText,
+    .editTitleInput,
+    .editDescriptionTextarea,
+    .editDueDateInput,
+    .editAssignedToInput,
+    .editSubtasksInput,
+    .dropdownContact,
+    .priorityText,
+    .priorityButton {
         font-size: 14px;
+    }
+
+    .prioImages {
+        width: 15px;
+    }
+
+    .editTitleInput,
+    .editDescriptionTextarea,
+    .editDueDateInput,
+    .editAssignedToInput,
+    .editSubtasksInput {
+        height: 36px;
     }
 
     .dueDate,
@@ -283,10 +374,6 @@
 
     .initialsAndName {
         padding-bottom: 0;
-    }
-
-    p {
-        font-size: 14px;
     }
 }
 
@@ -336,8 +423,34 @@
     .popupDescription,
     .date,
     .priorityAndImage,
-    .name {
+    .name,
+    ::-webkit-input-placeholder,
+    .titleText,
+    .descriptionText,
+    .dueDateText,
+    .editAssignedToText,
+    .editSubtasksText,
+    .editTitleInput,
+    .editDescriptionTextarea,
+    .editDueDateInput,
+    .editAssignedToInput,
+    .editSubtasksInput,
+    .dropdownContact,
+    .priorityText,
+    .priorityButton {
         font-size: 12px;
+    }
+
+    .prioImages {
+        width: 13px;
+    }
+
+    .editTitleInput,
+    .editDescriptionTextarea,
+    .editDueDateInput,
+    .editAssignedToInput,
+    .editSubtasksInput {
+        height: 32px;
     }
 
     .dueDate,
@@ -350,10 +463,6 @@
         font-size: 10px;
         width: 32px;
         height: 32px;
-    }
-
-    p {
-        font-size: 12px;
     }
 }
 

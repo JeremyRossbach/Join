@@ -110,6 +110,8 @@ function technicalTask() {
     let categorySpan = document.getElementById('categorySpan');
     categorySpan.innerHTML = "Technikal Task";
     categorys = "Technikal Task";
+    createBtnEnable();
+    alarmInput();
 }
 
 
@@ -117,6 +119,8 @@ function userStory() {
     let categorySpan = document.getElementById('categorySpan');
     categorySpan.innerHTML = "User Story";
     categorys = "User Story";
+    createBtnEnable();
+    alarmInput();
 }
 
 
@@ -202,75 +206,4 @@ function pushSubtask() {
     subtaskinput.value = '';
 
     renderSubtask()
-}
-
-let testtask = [];
-
-function createTask() {
-    let titleInput = document.getElementById('titleInput');
-    let descriptionInput = document.getElementById('descriptionInput');
-    let date = document.getElementById('date');
-    let dangerTexts = document.getElementsByClassName('danger-text');
-
-    let newTask = {
-        'title': titleInput.value,
-        'description': descriptionInput.value,
-        'assignedTo': taskcontacts,
-        'dueDate': date.value,
-        'prio': prio,
-        'category': categorys,
-        'subtask': subtasks,
-        'doneSubtask': subtasks.map(() => false),
-        'numberOfDoneSubtasks': 0,
-        'section': 'To do'
-    }
-
-    if (!titleInput.value) {
-        titleInput.classList.add('input-field-danger');
-        dangerTexts[0].style.display = '';
-    } else {
-        titleInput.classList.remove('input-field-danger');
-        dangerTexts[0].style.display = 'none';
-    }
-
-    if (!date.value) {
-        date.classList.add('input-field-danger');
-        dangerTexts[1].style.display = '';
-    } else {
-        date.classList.remove('input-field-danger');
-        dangerTexts[1].style.display = 'none';
-    }
-
-    testtask.push(newTask);
-    clearForm();
-    console.log(testtask)
-    putData("tasks", tasks)
-        .then(response => console.log(response))
-        .catch(error => console.error(error));
-}
-
-function clearForm() {
-    document.getElementById('titleInput').value = '';
-    document.getElementById('descriptionInput').value = '';
-    document.getElementById('date').value = '';
-    document.getElementById('categorySpan').innerHTML = 'Select tasks category';
-    subtasks = [];
-    taskcontacts = [];
-    prio = '';
-    renderSubtask();
-    showaAvailableContacts();
-    showchosenInitials();
-    prioUrgentSetBack();
-    prioMedSetBack();
-    prioLowSetBack();
-}
-
-inputDateColorChange();
-function inputDateColorChange() {
-    let inputDate = document.getElementById('date');
-    if (inputDate.value) {
-        inputDate.style.color = 'black';
-    } else {
-        inputDate.style.color = 'grey';
-    }
 }
