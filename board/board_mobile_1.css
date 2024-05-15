@@ -77,9 +77,9 @@
     .content {
         display: flex;
         flex-direction: row;
-        width: 802px;
-        padding-top: 26px;
-        margin-top: 0;
+        width: auto;
+        margin-top: 26px;
+        margin-bottom: auto;
         margin-left: 10px;
         margin-right: 10px;
     }

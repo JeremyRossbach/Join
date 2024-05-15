@@ -13,7 +13,7 @@ function focusOnFindTask() {
 }
 
 
-function init() {
+async function init() {
     renderContent('To do', 'toDoContent');
     renderContent('In progress', 'inProgressContent');
     renderContent('Await Feedback', 'awaitFeedbackContent');
@@ -101,7 +101,7 @@ function content(containerId, i) {
     renderSubtasks(i);
     renderPrio(i);
     renderAssignedTo(i);
-    saveTasks();
+    putData();
 }
 
 
@@ -411,7 +411,7 @@ function dontClosePopup(event) {
 function deleteTask(i, event) {
     tasks.splice(i, 1);
     closePopup(event);
-    saveTasks();
+    putData();
     emptyContentSections();
     init();
 }
@@ -456,17 +456,17 @@ function allowDrop(ev) {
 function moveTo(section) {
     tasks[currentDraggedElement]['section'] = section;
 
-    saveTasks();
+    putData();
     emptyContentSections();
     init();
 }
 
 
 function highlight(id) {
-    document.getElementById(id + 'Section').classList.add('drag-area-highlight');
+    document.getElementById(id + 'Content').classList.add('drag-area-highlight');
 }
 
 
 function removeHighlight(id) {
-    document.getElementById(id + 'Section').classList.remove('drag-area-highlight');
+    document.getElementById(id + 'Content').classList.remove('drag-area-highlight');
 }
