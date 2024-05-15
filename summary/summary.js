@@ -2,7 +2,8 @@
  * Initializes the board by displaying board information and greeting.
  * Initialisiert das Board, indem die Board-Informationen und die Begrüßung angezeigt werden.
  */
-function init() {
+async function init() {
+    await loadTasks();
     showBoardInfos();
     displayGreeting();
 }

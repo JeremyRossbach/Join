@@ -11,7 +11,7 @@ let currentContact;
  * @returns {Promise<void>}
  */
 async function init() {
-    await loadData("/contacts");
+    await loadContacts();
     generateContactList();
 }
 
@@ -53,10 +53,7 @@ function createContact() {
 
     hideCreateContactMessage("new_contact_successfully_div");
     generateContactList();
-    putData("contacts", contactData)
-        .then(response => console.log(response))
-        .catch(error => console.error(error));
-
+    saveContacts();
     closeAddNewContactWindow();
 }
 
@@ -272,9 +269,7 @@ function deleteContact() {
     hideCreateContactMessage("delete_contact_successfully_div");
     hideMenuEditDeleteContainer();
     closeContactInfo();
-    putData("contacts", contactData)
-        .then(response => console.log(response))
-        .catch(error => console.error(error));
+    saveContacts();
     generateContactList();
 }
 
@@ -354,9 +349,7 @@ function updateContact() {
 
     hideCreateContactMessage("edit_contact_successfully_div");
     closeEditContactWindow();
-    putData("contacts", contactData)
-        .then(response => console.log(response))
-        .catch(error => console.error(error));
+    saveContacts();
     generateContactList();
 }
 

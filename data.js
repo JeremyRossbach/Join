@@ -249,17 +249,45 @@ async function putData(path = "", data = {}) {
 async function loadData(path = "") {
     let response = await fetch(STORAGE_URL + path + ".json");
     let responseAsJson = await response.json();
-    // Load contacts
-    // Kontakten werden geladen
-    contactData = responseAsJson;
-    /* additional code that needs to be loaded */
-    /* weiteres Code, der geladen werden soll */
-    tasks = responseAsJson;
 
-    /* *********************** */
-    console.log(responseAsJson);
+    return responseAsJson;
 }
 
+function saveData(name, data) {
+    putData(name, data)
+        .then(response => console.log(response))
+        .catch(error => console.error(error));
+}
+
+async function loadContacts() {
+    // Load contacts
+    // Kontakten werden geladen
+    contactData = await loadData("/contacts");
+
+    console.log(contactData);
+}
+function saveContacts() {
+    // Load contacts
+    // Kontakten werden gespeichert
+    saveData("contacts", contactData);
+
+    console.log(contactData);
+}
+
+async function loadTasks() {
+    // Load tasks
+    // Tasks werden geladen
+    tasks = await loadData("/tasks");
+
+    console.log(tasks);
+}
+function saveTasks() {
+    // Save tasks
+    // Tasks werden gespeichert
+    saveData("tasks", tasks);
+
+    console.log(tasks);
+}
 
 /**
  * Initializes shared components.
