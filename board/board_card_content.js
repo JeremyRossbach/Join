@@ -101,7 +101,7 @@ function content(containerId, i) {
     renderSubtasks(i);
     renderPrio(i);
     renderAssignedTo(i);
-    saveTasks();
+    saveTasks(); 
 }
 
 
@@ -469,4 +469,5 @@ function highlight(id) {
 
 function removeHighlight(id) {
     document.getElementById(id + 'Content').classList.remove('drag-area-highlight');
+    
 }
