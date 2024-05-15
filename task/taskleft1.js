@@ -20,7 +20,7 @@ function dropDownContacts() {
     let selectSpan = document.getElementById('selectSpan');
     arrowChange();
     if (selectSpan.classList.contains('noDisplay')){
-       //closeFindInput()
+       closeFindInput()
     } else {
         openFindInput()
 
@@ -64,28 +64,28 @@ function closeCategoryDropdowns() {
 }
 
 // Funktion zum Schließen des Dropdown-Menüs und Ändern des Pfeils für Kontakte
-/*function closeContactsDropdowns() {
+function closeContactsDropdowns() {
     var dropdowns = document.getElementsByClassName("contactsDropdown");
     for (var i = 0; i < dropdowns.length; i++) {
         var openDropdown = dropdowns[i];
         if (openDropdown.classList.contains('show')) {
             openDropdown.classList.remove('show');
             arrowChange();
-            //closeFindInput();
+            closeFindInput();
         }
     }
-}*/
+}
 
 // Event-Handler für das Klicken auf das Fenster
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
-       // closeCategoryDropdowns();
+        closeCategoryDropdowns();
         // Überprüfen, ob der Klick innerhalb von #availableContacts war
         var availableContacts = document.getElementById("availableContacts");
         if (availableContacts.contains(event.target)) {
             return; // Keine weiteren Aktionen ausführen
         }
-       // closeContactsDropdowns();
+        //closeContactsDropdowns();
     }
 }
 
