@@ -1,16 +1,60 @@
 @media(max-width: 1368px) {
-    
+    body {
+        min-height: calc(1024px + 110px) !important;
+    }
 }
 
 
 @media(max-width: 1132px) {
     body {
+        min-height: calc(1024px + 300px) !important;
+    }
+
+    #jura_container {
+        top: 64px !important;
+        right: 8px !important;
+        height: 204px !important;
+        z-index: 999;
+        position: absolute;
+    }
+
+    .jura_undercontainer {
+        height: 33px !important;
+    }
+
+    #header {
+        position: unset;
+        box-shadow: 0px 4px 4px 0px #0000001A;
+    }
+
+    #div_body {
         overflow: hidden;
     }
     
     #header_content_position {
         min-width: 428px;
         max-height: 926px;
+    }
+
+    .clearBTN {
+        display: none !important;
+    }
+
+    .createBTN {
+        width: 183px !important;
+        height: 56px !important;
+        font-size: 21px;
+    }
+
+    .field-required {
+        font-size: 20px;
+    }
+
+    .bottom {
+        align-items: center !important;
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+        margin-top: 100px !important;
     }
 
     .innerContent {
@@ -35,11 +79,22 @@
     .input-title-text,
     .input-field,
     .container-description,
-    .input-title-text,
     .container-assigned,
     .contactPosition,
-    .dropdown {
+    .dropdown,
+    .rightside,
+    .container-input-date,
+    .input-field-date,
+    .container-input-prio,
+    .priobtns,
+    .container-input-category,
+    .container-input-subtask,
+    .input-field-subtask {
         width: 100% !important;
+    }
+
+    .input-field-date {
+        width: calc(100% - 28px) !important;
     }
 
     .input-field-description {
@@ -48,5 +103,8 @@
 
     .H1 {
         margin-left: 16px !important;
+        margin-top: 48px !important;
+        height: 112px !important;
+        margin-bottom: 12px !important;
     }
 }
