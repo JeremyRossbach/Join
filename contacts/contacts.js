@@ -197,7 +197,6 @@ function setContactInfo(contact) {
  */
 function openAddNewContactWindow() {
     document.getElementById(`new_contact_container`).style.display = "flex";
-    clearInputs();
     document.body.style.overflow = "hidden";
     /**
      * @type {HTMLElement}

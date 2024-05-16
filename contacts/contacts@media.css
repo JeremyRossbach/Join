@@ -347,15 +347,15 @@
         gap: 10px;
         justify-content:center;
     }
-    #contact_title {
+    /* #contact_title {
         font-size: 30px;
-    }
+    } */
     .button_back {
         width: 40px;
         height: 40px;
     }
     #better_team {
-        font-size: 20px;
+        font-size: 16px;
     }
     .create_button {
         width: 300px;

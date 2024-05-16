@@ -19,7 +19,7 @@ let contactData = [
     },
     {
         'name': 'Anja Schulz',
-        'email': 'a.schulz@hotmail.com',
+        'email': 'a.schulz@gmail.com',
         'phoneNumber': '+49 2222 222 22 2'
     },
     {
