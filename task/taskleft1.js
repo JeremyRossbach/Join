@@ -81,11 +81,11 @@ window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
         closeCategoryDropdowns();
         // Überprüfen, ob der Klick innerhalb von #availableContacts war
-        var availableContacts = document.getElementById("availableContacts");
+        let availableContacts = document.getElementById("dropdownContent");
         if (availableContacts.contains(event.target)) {
             return; // Keine weiteren Aktionen ausführen
         }
-        //closeContactsDropdowns();
+        closeContactsDropdowns();
     }
 }
 

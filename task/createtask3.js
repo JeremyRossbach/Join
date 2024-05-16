@@ -4,8 +4,7 @@ function createTask() {
     let titleInput = document.getElementById('titleInput');
     let descriptionInput = document.getElementById('descriptionInput');
     let date = document.getElementById('date');
-    let dangerTexts = document.getElementsByClassName('danger-text');
-
+    
     let newTask = {
         'title': titleInput.value,
         'description': descriptionInput.value,
@@ -42,8 +41,6 @@ function clearForm() {
     prioMedSetBack();
     prioLowSetBack();
     createBtnEnable();
-
-
 }
 
 inputDateColorChange();
@@ -61,44 +58,45 @@ function createBtnEnable() {
     let createBTN = document.getElementById("createBTN");
     let date = document.getElementById('date');
     let titleInput = document.getElementById('titleInput');
-
     if (titleInput.value && date.value && categorys !== null && categorys !== undefined) {
         createBTN.classList.remove('noDisplay');
         alarmBTN.classList.add('noDisplay');
-
     } else {
         createBTN.classList.add('noDisplay');
         alarmBTN.classList.remove('noDisplay');
     }
 }
 
-function alarmInput() {
-    let dropBtnCategory = document.getElementById("dropBtnCategory")
+function toggleInputFieldDanger(inputElement, dangerTextElement, showError) {
+    if (showError) {
+        inputElement.classList.add('input-field-danger');
+        dangerTextElement.style.display = '';
+    } else {
+        inputElement.classList.remove('input-field-danger');
+        dangerTextElement.style.display = 'none';
+    }
+}
+
+function validateTitleInput() {
     let titleInput = document.getElementById('titleInput');
-    let categoryDangerText = document.getElementById("categoryDangerText");
-    let date = document.getElementById('date');
     let dangerTexts = document.getElementsByClassName('danger-text');
-    if (!titleInput.value) {
-        titleInput.classList.add('input-field-danger');
-        dangerTexts[0].style.display = '';
-    } else {
-        titleInput.classList.remove('input-field-danger');
-        dangerTexts[0].style.display = 'none';
-    }
+    toggleInputFieldDanger(titleInput, dangerTexts[0], !titleInput.value);
+}
 
-    if (!date.value) {
-        date.classList.add('input-field-danger');
-        dangerTexts[1].style.display = '';
-    } else {
-        date.classList.remove('input-field-danger');
-        dangerTexts[1].style.display = 'none';
-    }
-    if (categorys !== null && categorys !== undefined) {
-        dropBtnCategory.classList.remove('input-field-danger');
-        categoryDangerText.style.display = 'none';
+function validateDateInput() {
+    let dateInput = document.getElementById('date');
+    let dangerTexts = document.getElementsByClassName('danger-text');
+    toggleInputFieldDanger(dateInput, dangerTexts[1], !dateInput.value);
+}
 
-    } else {
-        dropBtnCategory.classList.add('input-field-danger');
-        categoryDangerText.style.display = '';
-    }
+function validateCategoryInput() {
+    let dropBtnCategory = document.getElementById("dropBtnCategory");
+    let categoryDangerText = document.getElementById("categoryDangerText");
+    toggleInputFieldDanger(categorys === null || categorys === undefined, categoryDangerText, true);
+}
+
+function alarmInput() {
+    validateTitleInput();
+    validateDateInput();
+    validateCategoryInput();
 }

@@ -1,44 +1,69 @@
 
+function toggleHighIcon(highicon) {
+    const clickedhighicon = "img/Prio high icon clicked.svg";
+    const unclickedhighicon = "img/Prio high icon.svg";
+
+    if (highicon.getAttribute('src') === unclickedhighicon) {
+        highicon.setAttribute('src', clickedhighicon);
+    } else {
+        highicon.src = unclickedhighicon;
+    }
+}
+
+function setButtonStyle(urgentbtn, backgroundColor, textColor, boxShadow) {
+    urgentbtn.style.background = backgroundColor;
+    urgentbtn.style.color = textColor;
+    urgentbtn.style.boxShadow = boxShadow;
+}
+
+
 function prioUrgent() {
     let highicon = document.getElementById("highicon");
     let urgentbtn = document.getElementById('urgentbtn');
-    let clickedhighicon = "img/Prio high icon clicked.svg"
-    let unclickedhighicon = "img/Prio high icon.svg"
-    if (highicon.getAttribute('src') == unclickedhighicon) {
-        highicon.setAttribute('src', clickedhighicon)
-        urgentbtn.style.background = 'rgb(255, 61, 0)';
-        urgentbtn.style.color = '#FFFFFF';
-        urgentbtn.style.boxShadow = 'unset';
+    const clickedhighicon = "img/Prio high icon clicked.svg";
+    const unclickedhighicon = "img/Prio high icon.svg";
+    toggleHighIcon(highicon);
+    if (highicon.getAttribute('src') === clickedhighicon) {
+        setButtonStyle(urgentbtn, 'rgb(255, 61, 0)', '#FFFFFF', 'unset');
         prio = 'Urgent';
-        prioMedSetBack()
-        prioLowSetBack()
+        prioMedSetBack();
+        prioLowSetBack();
     } else {
-        highicon.src = unclickedhighicon
-        urgentbtn.style.background = '#FFFFFF';
-        urgentbtn.style.color = 'black';
-        urgentbtn.style += 'box-shadow: 0px 4px 4px 0px #00000040;';
+        setButtonStyle(urgentbtn, '#FFFFFF', 'black', '0px 4px 4px 0px #00000040');
     }
+}
+
+
+function toggleMedIcon(medicon) {
+    const unclickedmidicon = 'img/Prio medi icon.svg';
+    const clickedmidicon = "img/Prio media icon clicked.svg";
+
+    if (medicon.getAttribute('src') === unclickedmidicon) {
+        medicon.setAttribute('src', clickedmidicon);
+    } else {
+        medicon.src = unclickedmidicon;
+    }
+}
+
+
+function setButtonStyle(medbtn, backgroundColor, textColor, boxShadow) {
+    medbtn.style.background = backgroundColor;
+    medbtn.style.color = textColor;
+    medbtn.style.boxShadow = boxShadow;
 }
 
 
 function prioMed() {
     let medbtn = document.getElementById('midbtn');
     let medicon = document.getElementById('midicon');
-    let unclickedmidicon = 'img/Prio medi icon.svg'
-    let clickedmidicon = "img/Prio media icon clicked.svg"
-    if (medicon.getAttribute('src') == unclickedmidicon) {
-        medicon.setAttribute('src', clickedmidicon)
-        medbtn.style.background = 'rgb(255,168,0)';
-        medbtn.style.color = '#FFFFFF';
-        medbtn.style.boxShadow = 'unset';
+    toggleMedIcon(medicon);
+    if (medicon.getAttribute('src') === "img/Prio media icon clicked.svg") {
+        setButtonStyle(medbtn, 'rgb(255,168,0)', '#FFFFFF', 'unset');
         prio = 'Medium';
-        prioLowSetBack()
-        prioUrgentSetBack()
+        prioLowSetBack();
+        prioUrgentSetBack();
     } else {
-        medicon.src = unclickedmidicon
-        medbtn.style.background = '#FFFFFF';
-        medbtn.style.color = 'black';
-        medbtn.style += 'box-shadow: 0px 4px 4px 0px #00000040;';
+        setButtonStyle(medbtn, '#FFFFFF', 'black', '0px 4px 4px 0px #00000040');
     }
 }
 
@@ -49,23 +74,36 @@ let unclickedlowcon = "img/Prio low icon.svg";
 let clickedlowicon = "img/Prio low icon clicked.svg";
 
 
+function toggleLowIcon(lowicon) {
+    const unclickedlowcon = 'img/Prio low icon.svg';
+    const clickedlowicon = "img/Prio low icon clicked.svg";
+
+    if (lowicon.getAttribute('src') === unclickedlowcon) {
+        lowicon.setAttribute('src', clickedlowicon);
+    } else {
+        lowicon.src = unclickedlowcon;
+    }
+}
+
+function setButtonStyle(lowbtn, backgroundColor, textColor, boxShadow) {
+    lowbtn.style.background = backgroundColor;
+    lowbtn.style.color = textColor;
+    lowbtn.style.boxShadow = boxShadow;
+}
+
 function prioLow() {
     let lowicon = document.getElementById("lowicon");
     let lowbtn = document.getElementById('lowbtn');
 
-    if (lowicon.getAttribute('src') == unclickedlowcon) {
-        lowicon.setAttribute('src', clickedlowicon);
-        lowbtn.style.background = 'rgb(122,226,41)';
-        lowbtn.style.color = '#FFFFFF';
-        lowbtn.style.boxShadow = 'unset';
+    toggleLowIcon(lowicon);
+
+    if (lowicon.getAttribute('src') === "img/Prio low icon clicked.svg") {
+        setButtonStyle(lowbtn, 'rgb(122,226,41)', '#FFFFFF', 'unset');
         prio = 'Low';
-        prioMedSetBack()
-        prioUrgentSetBack()
+        prioMedSetBack();
+        prioUrgentSetBack();
     } else {
-        lowicon.src = unclickedlowcon;
-        lowbtn.style.background = '#FFFFFF';
-        lowbtn.style.color = 'black';
-        lowbtn.style += 'box-shadow: 0px 4px 4px 0px #00000040;';
+        setButtonStyle(lowbtn, '#FFFFFF', 'black', '0px 4px 4px 0px #00000040');
     }
 }
 
@@ -167,7 +205,6 @@ function subtasksEditAndDelete(j) {
 }
 
 
-
 function deleteSubtask(j) {
     subtasks.splice(j, 1);
     saveSubtusks();
@@ -181,8 +218,6 @@ function pushEditToArray(j) {
     subtasks.push(subtaskEdit.value)
     subtaskEdit.value = '';
     deleteSubtask(j)
-
-
     saveSubtusks();
     loadSubtasks();
     renderSubtask();
