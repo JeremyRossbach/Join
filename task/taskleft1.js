@@ -18,12 +18,14 @@ function initAddTasks() {
 function dropDownContacts() {
     document.getElementById("contacts_dropdown").classList.toggle("show");
     let selectSpan = document.getElementById('selectSpan');
+    let inputContacts = document.getElementById('filterContatcsInput');
     arrowChange();
     if (selectSpan.classList.contains('noDisplay')){
-       closeFindInput()
+        inputContacts.blur();
+       closeFindInput();
     } else {
-        openFindInput()
-
+        openFindInput();
+        inputContacts.focus();
     }
    
 }
