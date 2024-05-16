@@ -237,8 +237,13 @@ function loadSubtasks() {
 }
 function pushSubtask() {
     let subtaskinput = document.getElementById("subtask_input");
-    subtasks.push(subtaskinput.value);
-    subtaskinput.value = '';
+    let subtaskValue = subtaskinput.value.trim();
 
-    renderSubtask()
+   
+    if (subtaskValue !== '') {
+        subtasks.push(subtaskValue);
+        subtaskinput.value = '';
+
+        renderSubtask();
+    }
 }

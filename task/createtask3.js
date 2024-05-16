@@ -67,36 +67,33 @@ function createBtnEnable() {
     }
 }
 
-function toggleInputFieldDanger(inputElement, dangerTextElement, showError) {
-    if (showError) {
-        inputElement.classList.add('input-field-danger');
-        dangerTextElement.style.display = '';
-    } else {
-        inputElement.classList.remove('input-field-danger');
-        dangerTextElement.style.display = 'none';
-    }
-}
-
-function validateTitleInput() {
-    let titleInput = document.getElementById('titleInput');
-    let dangerTexts = document.getElementsByClassName('danger-text');
-    toggleInputFieldDanger(titleInput, dangerTexts[0], !titleInput.value);
-}
-
-function validateDateInput() {
-    let dateInput = document.getElementById('date');
-    let dangerTexts = document.getElementsByClassName('danger-text');
-    toggleInputFieldDanger(dateInput, dangerTexts[1], !dateInput.value);
-}
-
-function validateCategoryInput() {
-    let dropBtnCategory = document.getElementById("dropBtnCategory");
-    let categoryDangerText = document.getElementById("categoryDangerText");
-    toggleInputFieldDanger(categorys === null || categorys === undefined, categoryDangerText, true);
-}
-
 function alarmInput() {
-    validateTitleInput();
-    validateDateInput();
-    validateCategoryInput();
+    let dropBtnCategory = document.getElementById("dropBtnCategory")
+    let titleInput = document.getElementById('titleInput');
+    let categoryDangerText = document.getElementById("categoryDangerText");
+    let date = document.getElementById('date');
+    let dangerTexts = document.getElementsByClassName('danger-text');
+    if (!titleInput.value) {
+        titleInput.classList.add('input-field-danger');
+        dangerTexts[0].style.display = '';
+    } else {
+        titleInput.classList.remove('input-field-danger');
+        dangerTexts[0].style.display = 'none';
+    }
+
+    if (!date.value) {
+        date.classList.add('input-field-danger');
+        dangerTexts[1].style.display = '';
+    } else {
+        date.classList.remove('input-field-danger');
+        dangerTexts[1].style.display = 'none';
+    }
+    if (categorys !== null && categorys !== undefined) {
+        dropBtnCategory.classList.remove('input-field-danger');
+        categoryDangerText.style.display = 'none';
+
+    } else {
+        dropBtnCategory.classList.add('input-field-danger');
+        categoryDangerText.style.display = '';
+    }
 }
