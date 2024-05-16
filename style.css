@@ -436,12 +436,7 @@ body {
         width: 100px;
         height: 100px;
         border-radius: 20px;
-    }
-    .side_menu_bg:hover{
-        width: 100px;
-        height: 100px;
-        border-radius: 20px;
-    }
+    }   
 
     .side_logo {
         display: none;
@@ -521,4 +516,11 @@ body {
     .headline_title {
         font-size: 16px;
     }
+    .side_menu_bg {        
+        width: 25%;
+    }
+    .side_menu_bg.selected {        
+        width: 25%;
+    }
+
 }
