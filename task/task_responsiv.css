@@ -1,8 +1,4 @@
 @media(max-width: 1368px) {
-    body {
-        min-height: calc(1024px + 110px) !important;
-    }
-
     #header {
         position: unset;
         padding-top: 0;
@@ -101,6 +97,7 @@
         padding-left: 16px;
         padding-right: 16px;
         width: calc(100% - 32px) !important;
+        justify-content: space-between !important;
     }
 
     .input-field-description {

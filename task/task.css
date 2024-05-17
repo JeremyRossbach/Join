@@ -1,7 +1,7 @@
 body {
     position: relative;
     min-height: 1024px;
-    max-width: 1440px;
+    min-width: 320px;
 }
 
 #header {
@@ -536,14 +536,25 @@ body {
     padding-right: 16px;
 }
 
+.input-field-category img {
+    width: 24px;
+    height: 24px;
+}
+
 .input-field-subtask input {
     height: 48px;
     font-size: 20px;
 }
 
+.input-field-subtask img {
+    width: 24px;
+    height: 24px;
+}
+
 .input-field-subtask {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .danger-text {
@@ -621,7 +632,7 @@ body {
     align-items: flex-end;
     margin-left: 96px;
     margin-right: 96px;
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 .field-required {
