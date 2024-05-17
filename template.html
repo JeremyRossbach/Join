@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">    
     <script src="../data.js"></script>
+    <script src="contacts.js"></script>
     <link rel="icon" href="../img/join_logo_black.png">
-    <title>Join</title>
+    <title>Title</title>
 </head>
 
-<body onload="sharedInit();">
-    <!-- Das ist ein Template für alle andere Seiten -->
+<body onload="init(); sharedInit();">
     <div id="div_body">
         <div id="side">
             <div>
@@ -19,44 +19,46 @@
             </div>
             <div id="side_menu">
                 <div class="side_menu_bg">
-                    <a href="../summary" class="side_undermenu selected">
+                    <a href="../summary" class="side_undermenu">
                         <img class="summary_icon_normal menu_iconsWH" src="../img/menu_summary_icon.png" alt="Summary">
-                        <img class="summary_icon_other menu_iconsWH" src="../img/menu_summary_icon_white.png" alt="Summary">
-                        Summary
+                        <img class="summary_icon_other menu_iconsWH" src="../img/menu_summary_icon_white.png"
+                            alt="Summary">
+                        <span class="side_menu_text_position">Summary</span>
                     </a>
+
                 </div>
                 <div class="side_menu_bg">
                     <a href="../task" class="side_undermenu">
                         <img class="addtask_icon_normal menu_iconsWH" src="../img/menu_addtask_icon.png" alt="Add Task">
-                        <img class="addtask_icon_other menu_iconsWH" src="../img/menu_addtask_icon_white.png" alt="Add Task">
-                        Add Task
+                        <img class="addtask_icon_other menu_iconsWH" src="../img/menu_addtask_icon_white.png"
+                            alt="Add Task">
+                        <span class="side_menu_text_position">Add Task</span>
                     </a>
                 </div>
                 <div class="side_menu_bg">
                     <a href="../board" class="side_undermenu">
                         <img class="board_icon_normal menu_iconsWH" src="../img/menu_board_icon.png" alt="Board">
                         <img class="board_icon_other menu_iconsWH" src="../img/menu_board_icon_white.png" alt="Board">
-                        Board
+                        <span class="side_menu_text_position">Board</span>
                     </a>
                 </div>
-                <div class="side_menu_bg">
+                <div class="side_menu_bg selected">
                     <a href="../contacts" class="side_undermenu">
-                        <img class="contacts_icon_normal menu_iconsWH" src="../img/menu_contacts_icon.png" alt="Contacts">
-                        <img class="contacts_icon_other menu_iconsWH" src="../img/menu_contacts_icon_white.png" alt="Contacts">
-                        Contacts
+                        <img class="contacts_icon_normal menu_iconsWH" src="../img/menu_contacts_icon.png"
+                            alt="Contacts">
+                        <img class="contacts_icon_other menu_iconsWH" src="../img/menu_contacts_icon_white.png"
+                            alt="Contacts">
+                        <span class="side_menu_text_position">Contacts</span>
                     </a>
                 </div>
             </div>
             <div id="footer">
                 <div class="side_menu_bg">
-                    <a href="../jura/privacy.html" id="priv_pol" class="side_undermenu">Privacy Policy</a> 
+                    <a href="../jura/privacy.html" id="priv_pol" class="side_undermenu">Privacy Policy</a>
                 </div>
                 <div class="side_menu_bg">
-                    <a href="../jura/legal.html" id="leg_not" class="side_undermenu">Legal notice</a> 
+                    <a href="../jura/legal.html" id="leg_not" class="side_undermenu">Legal Notice</a>
                 </div>
-                <div class="side_menu_bg">
-                    <a href="../jura/dataprotect.html" id="data_protect" class="side_undermenu">Data Protection</a> 
-                </div>                
             </div>
         </div>
         <div id="header_content_position">
@@ -71,16 +73,9 @@
                     <a href="../help/index.html" id="nav_right_img">
                         <img src="../img/help_icon.png" alt="Summary">
                     </a>
-                    <div id="nav_right_menu" onclick="jura_window();">                        
+                    <div id="nav_right_menu" onclick="jura_window();">
                     </div>
                 </div>
-            </div>
-            <div id="jura_container">
-                <a href="../help/index.html" class="jura_undercontainer" id="help_link">Help</a>
-                <a href="../jura/privacy.html" class="jura_undercontainer">Privacy Policy</a>
-                <a href="../jura/legal.html" class="jura_undercontainer">Legal notice</a>
-                <a href="../jura/dataprotect.html" class="jura_undercontainer">Data Protection</a>
-                <a href="../index.html" class="jura_undercontainer">Log out</a>                
             </div>
             <!-- Hier kommt der HTML Code von Euch rein -->
             <div id="content">
