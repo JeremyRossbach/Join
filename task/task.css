@@ -436,7 +436,7 @@ body {
 
 .createBTN:hover {
     background-color: rgb(41, 171, 226);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px #00000040;
 }
 
 
@@ -584,17 +584,18 @@ body {
     align-items: center;
     height: 56px;
     width: 110px;
-    border: 2px solid rgb(42, 54, 71);
-    border-radius: 8px;
+    border: 1px solid rgb(42, 54, 71);
+    border-radius: 10px;
     color: rgb(42, 54, 71);
     font-size: 20px;
     gap: 4px;
+    transition: all 125ms ease-in-out;
 }
 
 .clearBTN:hover {
-    border: 2px solid rgb(41, 171, 226);
+    border: 1px solid rgb(41, 171, 226);
     color: rgb(41, 171, 226);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px #00000040;
 }
 
 .container-input-date {
@@ -632,6 +633,7 @@ body {
 .container-clear-create {
     display: flex;
     gap: 50px;
+    height: 58px;
 }
 
 .bottom {
@@ -641,6 +643,7 @@ body {
     margin-left: 96px;
     margin-right: 96px;
     margin-top: 50px;
+    height: 58px;
 }
 
 .field-required {
