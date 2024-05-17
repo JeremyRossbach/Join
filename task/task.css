@@ -92,7 +92,6 @@ body {
 
 .container-title {
     width: 440px;
-    height: 96px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -600,7 +599,6 @@ body {
 
 .container-input-date {
     width: 440px;
-    height: 96px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -616,7 +614,6 @@ body {
 
 .container-input-category {
     width: 440px;
-    height: 80px;
     display: flex;
     flex-direction: column;
     gap: 8px;
