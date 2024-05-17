@@ -126,4 +126,15 @@
         padding-left: 8px !important;
         padding-right: 8px !important;
     }
+
+    .bottom {
+        margin-top: 50px !important;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .H1 {
+        height: 80px !important;
+        margin-top: 20px !important;
+    }
 }
