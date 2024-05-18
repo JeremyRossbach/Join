@@ -25,9 +25,13 @@
         width: 88px;
     }
 
+    main {
+        width: 100%;
+    }
+
     .sign-up {
         position: relative !important;
-        width: 396px;
+        max-width: calc(100% - 16px);
         height: 595px;
 
         position: unset;
@@ -59,11 +63,11 @@
     }
 
     .input-field {
-        width: 364px;
+        width: 100%;
     }
 
     .sign-up-inputs {
-        width: 364px;
+        max-width: calc(100% - 32px);
         height: 392px;
     }
 
@@ -85,5 +89,11 @@
 @media(min-height: 820px) {
     body {
         height: 100vh;
+    }
+}
+
+@media(max-width: 350px) {
+    .button-back {
+        left: 16px;
     }
 }
