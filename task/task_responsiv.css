@@ -132,6 +132,7 @@
     }
 
     .bottom {
+        height: 126px !important;
         margin-top: 50px !important;
         flex-direction: column;
         gap: 16px;
