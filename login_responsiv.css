@@ -24,7 +24,7 @@
     }
 
     .login {
-        width: 396px;
+        max-width: calc(100% - 16px);
         height: 515px;
 
         position: unset;
@@ -33,15 +33,16 @@
     }
 
     .input-field {
-        width: 364px;
+        width: 100%;
     }
 
     .login-inputs {
+        max-width: calc(100% - 32px);
         height: 192px;
     }
 
     .login-remember-me {
-        width: 364px;
+        width: 100%;
         margin-left: 16px;
     }
 
