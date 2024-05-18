@@ -20,9 +20,7 @@ function createTask() {
 
     testtask.push(newTask);
     clearForm();
-    console.log(testtask)
     putData("tasks", tasks)
-        .then(response => console.log(response))
         .catch(error => console.error(error));
 }
 
