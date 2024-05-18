@@ -33,28 +33,28 @@
                 </a>
                 <h1>Sign up</h1>
                 <div class="sign-up-inputs">
-                    <input class="input-field" type="text" placeholder="Name" required>
-                    <input class="input-field" type="email" placeholder="Email" required>
+                    <input class="input-field" type="text" placeholder="Name" oninput="checkIsInputFilled()" required>
+                    <input class="input-field" type="email" placeholder="Email" oninput="checkIsInputFilled()" required>
                     <div style="position: relative;">
-                        <input class="input-field" type="password" placeholder="Password" name="password"
+                        <input class="input-field" type="password" placeholder="Password" name="password" oninput="checkIsInputFilled()"
                             onkeyup="checkInputPassword(0)" required>
                         <div class="password-visibility" style="display: none;" onclick="hidePassword(0)"></div>
                     </div>
                     <div style="position: relative;">
-                        <input class="input-field" type="password" placeholder="Confirm Password"
+                        <input class="input-field" type="password" placeholder="Confirm Password" oninput="checkIsInputFilled()"
                             name="confirm-password" onkeyup="checkInputPassword(1)" required>
                         <div class="password-visibility" style="display: none;" onclick="hidePassword(1)"></div>
                         <div class="validation-password" style="display: none;">Ups! your password don’t match</div>
                     </div>
 
                     <div class="accept-policy">
-                        <input type="checkbox" id="accept" required>
+                        <input type="checkbox" id="accept" oninput="checkIsInputFilled()" required>
                         <label for="accept">I accept the <a class="link-policy" href="../jura/privacy.html">Privacy
                                 policy</a></label>
                     </div>
                 </div>
 
-                <button class="button-primary" type="submit" onclick="signup()">Sign up</button>
+                <button id="button-sign-up" class="button-primary" type="submit" onclick="signup()" disabled>Sign up</button>
 
             </form>
         </main>

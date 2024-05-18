@@ -140,3 +140,9 @@ main {
     bottom: unset;
     margin-top: 20px;
 }
+
+#button-sign-up:disabled {
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: unset;
+    box-shadow: unset;
+}

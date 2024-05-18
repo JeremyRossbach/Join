@@ -1,13 +1,13 @@
 function checkPasswordMatch(form) {
+    console.log(true)
     if (form['password'].value != form['confirm-password'].value) {
         document.querySelector('div[class="validation-password"]').style.display = '';
         form['confirm-password'].classList.add('input-danger');
         return false;
     }
-    
+    console.log(true)
     document.getElementById('dialog-message').style.display = '';
-
-    setTimeout(function() {
+    setTimeout(function () {
         form.submit();
         users.push(
             {
@@ -17,12 +17,35 @@ function checkPasswordMatch(form) {
             }
         )
     }, 1000);
-
     return false;
 }
 
 function signup() {
-    document.getElementById('button-sign-up').setAttribute('disabled', '');
-    window.scrollTo(0, 0);
-    document.body.style.overflow = 'hidden';
+    let buttonSignup = document.getElementById('button-sign-up');
+    if (buttonSignup.hasAttribute('disabled')) {
+        window.scrollTo(0, 0);
+        document.body.style.overflow = 'hidden';
+        buttonSignup.setAttribute('disabled', '');
+    }
+}
+
+function checkIsInputFilled() {
+    let inputs = document.getElementsByClassName('input-field');
+    let checkboxAccept = document.getElementById('accept');
+    let buttonSignup = document.getElementById('button-sign-up');
+
+    if (checkboxAccept.checked) {
+        buttonSignup.removeAttribute('disabled');
+    } else {
+        buttonSignup.setAttribute('disabled', '');
+
+    }
+
+    for (let i = 0; i < inputs.length; i++) {
+        let input = inputs[i];
+        if (!input.value) {
+            buttonSignup.setAttribute('disabled', '');
+            break
+        }
+    }
 }
