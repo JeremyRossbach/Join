@@ -22,6 +22,7 @@ function checkPasswordMatch(form) {
 }
 
 function signup() {
+    document.getElementById('button-sign-up').setAttribute('disabled', '');
     window.scrollTo(0, 0);
     document.body.style.overflow = 'hidden';
 }
