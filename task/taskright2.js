@@ -238,7 +238,6 @@ function loadSubtasks() {
 function pushSubtask() {
     let subtaskinput = document.getElementById("subtask_input");
     let subtaskValue = subtaskinput.value.trim();
-
    
     if (subtaskValue !== '') {
         subtasks.push(subtaskValue);
