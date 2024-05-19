@@ -179,7 +179,7 @@ function generateSubtaskHTML(index, subtask) {
         <div class="subtask">
             <div class='subtaskHover'>
                 <div class='editableSubtask' id='editableSubtask${index}'>
-                    <span id='valueSpan${index}'>· ${subtask}</span>
+                    <span id='valueSpan${index}'>• ${subtask}</span>
                     <div id='subtaskHoverIcon${index}' class="subtaskHoverIcon">
                         <img onclick='subtasksEditAndDelete(${index})' src="img/subtaskPencil.svg">
                         <img onclick='deleteSubtask(${index})' src="img/subtaskDelete.svg">
