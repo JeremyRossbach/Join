@@ -391,22 +391,3 @@ function renderContact(search, n, i) {
         showContact(n, i);
     }
 }
-
-
-/**
- * This function shows the dropdown menu
- * 
- * @param {number} n - This is the number of each person in the JSON contactData
- * @param {number} i - This is the number of each task 
- */
-function showContact(n, i) {
-    let arrow = document.getElementById('arrow');
-    let dropdownContainer = document.getElementById('dropdownMenu');
-    dropdownContainer.style.display = 'flex';
-
-    if (arrow.src.includes("/img/dropdownArrow.png")) {
-        arrow.src = "./img/liftupArrow.png";
-    }
-
-    showDropdownMenu(n, i);
-}
