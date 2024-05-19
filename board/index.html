@@ -102,14 +102,14 @@
                 <header>
                     <div class="h1AndButton">
                         <h1>Board</h1>
-                        <button onclick="   " class="mobileAddButton"><img class="mobileAddImage" src="./img/mobileAdd.png"></button>
+                        <button onclick="   " class="mobileAddButton"><img class="mobileAddImage" src="./img/mobileAdd.svg"></button>
                     </div>
                     <div class="inputAndButton">
                         <input oninput="findTask()" id="input" type="text" placeholder="Find Task">
-                        <img class="inputSearchImage" src="./img/spacer_search.png">
+                        <img class="inputSearchImage" src="./img/spacer_search.svg">
                         <div onclick="focusOnFindTask()" id="searchButton"></div>
-                        <button onclick="   " id="addButton">Add task <img id="addImage" src="./img/add.png"></button>
-                        <button onclick="   " class="responsiveAddButton"><img class="mobileAddImage" src="./img/mobileAdd.png"></button>
+                        <button onclick="   " id="addButton">Add task <img id="addImage" src="./img/add.svg"></button>
+                        <button onclick="   " class="responsiveAddButton"><img class="mobileAddImage" src="./img/mobileAdd.svg"></button>
                     </div>
                 </header>
                 
@@ -118,28 +118,28 @@
                         <div id="toDoHeader"><p>To do</p><button onclick="" id="addToDo"></button></div>
                         <div class="overflow-y">
                             <p id="emptytoDoContentSection" class="emptySection">No tasks to do</p>
-                            <div onclick="" id="toDoContent" class="content"></div>
+                            <div onclick="" id="toDoContent" class="content"><div id="toDoHighlight"></div></div>
                         </div>
                     </div>
                     <div id="inProgressSection" ondrop="moveTo('In progress'); removeHighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')" ondragleave="removeHighlight('inProgress')">
                         <div id="inProgressHeader"><p>In progress</p><button onclick="" id="addInProgress"></button></div>
                         <div class="overflow-y">
                             <p id="emptyinProgressContentSection" class="emptySection">No tasks in progress</p>
-                            <div onclick="" id="inProgressContent" class="content"></div>
+                            <div onclick="" id="inProgressContent" class="content"><div id="inProgressHighlight"></div></div>
                         </div>
                     </div>
                     <div id="awaitFeedbackSection" ondrop="moveTo('Await Feedback'); removeHighlight('awaitFeedback')" ondragover="allowDrop(event); highlight('awaitFeedback')" ondragleave="removeHighlight('awaitFeedback')">
                         <div id="awaitFeedbackHeader"><p>Await Feedback</p><button onclick="" id="addAwaitFeedback"></button></div>
                         <div class="overflow-y">
                             <p id="emptyawaitFeedbackContentSection" class="emptySection">No task awaits feedback</p>
-                            <div onclick="" id="awaitFeedbackContent" class="content"></div>
+                            <div onclick="" id="awaitFeedbackContent" class="content"><div id="awaitFeedbackHighlight"></div></div>
                         </div>
                     </div>
                     <div id="doneSection" ondrop="moveTo('Done'); removeHighlight('done')" ondragover="allowDrop(event); highlight('done')" ondragleave="removeHighlight('done')">
                         <div id="doneHeader"><p>Done</p></div>
                         <div class="overflow-y">
                             <p id="emptydoneContentSection" class="emptySection">No tasks done</p>
-                            <div onclick="" id="doneContent" class="content"></div>
+                            <div onclick="" id="doneContent" class="content"><div id="doneHighlight"></div></div>
                         </div>
                     </div>
                 </section>

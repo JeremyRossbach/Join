@@ -66,6 +66,12 @@ h1 {
     cursor: pointer;
 }
 
+.mobileAddButton:hover,
+.responsiveAddButton:hover {
+    background-color: #28ABE2;
+    box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.3);
+}
+
 .mobileAddImage {
     width: 20px;
     height: 20px;
@@ -188,7 +194,7 @@ p {
 #addAwaitFeedback {
     width: 25px;
     height: 25px;
-    background: url(./img/plusbutton.png) no-repeat;
+    background: url(./img/plusbutton.svg) no-repeat;
     background-color: #00000000;
     border: 0;
     cursor: pointer;
@@ -197,7 +203,7 @@ p {
 #addToDo:hover,
 #addInProgress:hover,
 #addAwaitFeedback:hover {
-    background: url(./img/plusbuttonblue.png) no-repeat;
+    background: url(./img/plusbuttonblue.svg) no-repeat;
 }
 
 .content {
@@ -348,5 +354,17 @@ p {
 .drag-area-highlight {
     border: 1px dashed #A8A8A8;
     border-radius: 24px;
+    background-color: #0000000f;
+}
+
+#toDoHighlight,
+#inProgressHighlight,
+#awaitFeedbackHighlight,
+#doneHighlight {
+    display: none;
+    width: 200px;
+    height: auto;
+    border-radius: 24px;
+    border: 1px dashed #A8A8A8;
     background-color: #0000000f;
 }

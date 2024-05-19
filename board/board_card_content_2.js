@@ -89,7 +89,7 @@ function showPopupSubtasks(i, l) {
 
     subtasks.innerHTML += /* html */`
         <div class="imageAndText">
-            <img onclick="checkbox(${i}, ${l})" id="checkBoxButton${l}" class="checkboxImage" src="./img/checkbox.png">
+            <img onclick="checkbox(${i}, ${l})" id="checkBoxButton${l}" class="checkboxImage" src="./img/checkbox.svg">
             <div class="popupSubtaskText">${tasks[i]['subtask'][l]}</div>
         </div>
     `;
@@ -107,10 +107,10 @@ function renderCheckboxImage(i, l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
 
     if (tasks[i]['doneSubtask'][l] == false) {
-        checkbox.src = './img/checkbox_clicked.png';
+        checkbox.src = './img/checkbox_clicked.svg';
     } else {
         tasks[i]['doneSubtask'][l] = true;
-        checkbox.src = './img/checkbox.png';
+        checkbox.src = './img/checkbox.svg';
     }
 }
 
@@ -158,7 +158,7 @@ function slideIn() {
     setTimeout(() => {
         cardPopup.classList.remove('slideIn');
     }, 500);
-    
+
     cardPopup.style.display = 'flex';
 }
 
@@ -198,11 +198,10 @@ function moveTo(section) {
 
 
 function highlight(id) {
-    document.getElementById(id + 'Content').classList.add('drag-area-highlight');
+    document.getElementById(id + 'Highlight').style.display = 'flex';
 }
 
 
 function removeHighlight(id) {
-    document.getElementById(id + 'Content').classList.remove('drag-area-highlight');
-    
+    document.getElementById(id + 'Highlight').style.display = 'none';
 }

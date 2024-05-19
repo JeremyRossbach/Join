@@ -112,7 +112,7 @@
     #addToDo:hover,
     #addInProgress:hover,
     #addAwaitFeedback:hover {
-        background: url(./img/plusbuttonblue.png) no-repeat;
+        background: url(./img/plusbuttonblue.svg) no-repeat;
         width: 30px;
         height: 30px;
         background-size: contain;

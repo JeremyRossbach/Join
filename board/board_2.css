@@ -156,12 +156,12 @@
     border: 0;
     cursor: pointer;
     background-color: white;
-    background-image: url('./img/deleteButton.png');
+    background-image: url('./img/deleteButton.svg');
 }
 
 .deleteButtonImage:hover {
     width: 83px;
-    background-image: url('./img/deleteButtonBlue.png');
+    background-image: url('./img/deleteButtonBlue.svg');
 }
 
 .editButtonImage {
@@ -172,11 +172,11 @@
     border: 0;
     cursor: pointer;
     background-color: white;
-    background-image: url('./img/editButton.png');
+    background-image: url('./img/editButton.svg');
 }
 
 .editButtonImage:hover {
-    background-image: url('./img/editButtonBlue.png');
+    background-image: url('./img/editButtonBlue.svg');
 }
 
 .buttonSpacer {

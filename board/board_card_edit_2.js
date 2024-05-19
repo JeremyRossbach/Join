@@ -9,8 +9,8 @@ function showContact(n, i) {
     let dropdownContainer = document.getElementById('dropdownMenu');
     dropdownContainer.style.display = 'flex';
 
-    if (arrow.src.includes("/img/dropdownArrow.png")) {
-        arrow.src = "./img/liftupArrow.png";
+    if (arrow.src.includes("/img/dropdownArrow.svg")) {
+        arrow.src = "./img/liftupArrow.svg";
     }
 
     showDropdownMenu(n, i);
@@ -48,7 +48,7 @@ function showDropdownMenu(n, i) {
                 <div id="dropdownInitials${n}"></div>
                 <div class="dropdownContact">${contactData[n]['name']}</div>
             </div>
-            <img id="dropdownCheckbox${n}" class="dropdownCheckbox" src="./img/checkbox.png">
+            <img id="dropdownCheckbox${n}" class="dropdownCheckbox" src="./img/checkbox.svg">
         </div>
     `;
     renderDropdownInitials(n);
@@ -123,7 +123,7 @@ function alreadySelectedContact(n) {
 
     contact.style.backgroundColor = '#2B3647';
     contact.style.color = 'white'
-    checkImage.src = './img/checkboxClickedWhite.png';
+    checkImage.src = './img/checkboxClickedWhite.svg';
 }
 
 
@@ -158,7 +158,7 @@ function selectedContact(i, n) {
 
     contact.style.backgroundColor = '#2B3647';
     contact.style.color = 'white'
-    checkImage.src = './img/checkboxClickedWhite.png';
+    checkImage.src = './img/checkboxClickedWhite.svg';
 }
 
 
@@ -184,7 +184,7 @@ function unselectContact(i, n) {
 
     contact.style.backgroundColor = 'white';
     contact.style.color = 'black'
-    checkImage.src = './img/checkbox.png';
+    checkImage.src = './img/checkbox.svg';
 }
 
 
@@ -192,10 +192,10 @@ function openDropdownMenu() {
     document.getElementById('dropdownMenu').style.display = 'flex';
     let arrow = document.getElementById('arrow');
 
-    if (arrow.src.includes("/img/dropdownArrow.png")) {
-        arrow.src = "./img/liftupArrow.png";
+    if (arrow.src.includes("/img/dropdownArrow.svg")) {
+        arrow.src = "./img/liftupArrow.svg";
     } else {
-        arrow.src = "./img/dropdownArrow.png";
+        arrow.src = "./img/dropdownArrow.svg";
         document.getElementById('dropdownMenu').style.display = 'none';
         document.getElementById('editAssignedTo').value = '';
     }
@@ -215,9 +215,9 @@ function editSubtask(p, i) {
     subtasks.innerHTML = /* html */`
         <input required id="subtasksInputContent${p}" class="subtasksEditInput">
             <div class="deleteAndDone">
-                <img onclick="doneEditSubtask(${p}, ${i})" src="./img/done.png">
+                <img onclick="doneEditSubtask(${p}, ${i})" src="./img/done.svg">
                 <div class="subtasksImageSpacer"></div>
-                <img onclick="deleteSubtask(${p}, ${i})" src="./img/delete.png">
+                <img onclick="deleteSubtask(${p}, ${i})" src="./img/delete.svg">
             </div>
         </div>
     `;
@@ -360,7 +360,7 @@ function updateDueDate(i) {
 
 function clickeddropdownCheckbox(l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
-    checkbox.src = "./img/checkbox_clicked.png";
+    checkbox.src = "./img/checkbox_clicked.svg";
 }
 
 
@@ -374,7 +374,7 @@ function checkbox(i, l) {
     } else {
         tasks[i]['doneSubtask'][l] = true
         tasks[i]['numberOfDoneSubtasks']--;
-        checkbox.src = "./img/checkbox.png"
+        checkbox.src = "./img/checkbox.svg"
     }
     saveTasks();
     renderSubtasks(i);
@@ -385,5 +385,5 @@ function checkbox(i, l) {
 
 function clickedCheckbox(l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
-    checkbox.src = "./img/checkbox_clicked.png";
+    checkbox.src = "./img/checkbox_clicked.svg";
 }
