@@ -30,6 +30,7 @@ function prioUrgent() {
         prioLowSetBack();
     } else {
         setButtonStyle(urgentbtn, '#FFFFFF', 'black', '0px 4px 4px 0px #00000040');
+        prioUrgentSetBack();
     }
 }
 
@@ -64,6 +65,7 @@ function prioMed() {
         prioUrgentSetBack();
     } else {
         setButtonStyle(medbtn, '#FFFFFF', 'black', '0px 4px 4px 0px #00000040');
+        prioMedSetBack();
     }
 }
 
@@ -104,6 +106,7 @@ function prioLow() {
         prioUrgentSetBack();
     } else {
         setButtonStyle(lowbtn, '#FFFFFF', 'black', '0px 4px 4px 0px #00000040');
+        prioLowSetBack();
     }
 }
 
