@@ -198,6 +198,7 @@ function moveTo(section) {
 
 
 function highlight(id) {
+    console.log("highlight triggered for: " + id);
     document.getElementById(id + 'Highlight').style.display = 'flex';
 }
 

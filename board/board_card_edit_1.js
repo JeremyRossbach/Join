@@ -4,8 +4,6 @@
  * @param {number} i - This is the number of each task 
  */
 function editTask(i) {
-
-
     cardPopup.innerHTML = /* html */`
         <div class="scrollableCardPopup">
         <div class="editTaskCloseImage">

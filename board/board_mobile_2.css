@@ -302,6 +302,13 @@
         padding: 2px;
         margin-top: -17px;
     }
+
+    #toDoHighlight,
+    #inProgressHighlight,
+    #awaitFeedbackHighlight,
+    #doneHighlight {
+        width: 218px;
+    }
 }
 
 @media only screen and (max-width: 442px) {

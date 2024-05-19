@@ -114,28 +114,28 @@
                 </header>
                 
                 <section id="sections">
-                    <div id="toDoSection" ondrop="moveTo('To do'); removeHighlight('toDo')" ondragover="allowDrop(event); highlight('toDo')" ondragleave="removeHighlight('toDo')">
+                    <div id="toDoSection" ondrop="moveTo('To do'); removeHighlight('toDo')" ondragover="allowDrop(event)" ondragenter="highlight('toDo')" ondragleave="removeHighlight('toDo')">
                         <div id="toDoHeader"><p>To do</p><button onclick="" id="addToDo"></button></div>
                         <div class="overflow-y">
                             <p id="emptytoDoContentSection" class="emptySection">No tasks to do</p>
                             <div onclick="" id="toDoContent" class="content"><div id="toDoHighlight"></div></div>
                         </div>
                     </div>
-                    <div id="inProgressSection" ondrop="moveTo('In progress'); removeHighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')" ondragleave="removeHighlight('inProgress')">
+                    <div id="inProgressSection" ondrop="moveTo('In progress'); removeHighlight('inProgress')" ondragover="allowDrop(event)" ondragenter="highlight('inProgress')" ondragleave="removeHighlight('inProgress')">
                         <div id="inProgressHeader"><p>In progress</p><button onclick="" id="addInProgress"></button></div>
                         <div class="overflow-y">
                             <p id="emptyinProgressContentSection" class="emptySection">No tasks in progress</p>
                             <div onclick="" id="inProgressContent" class="content"><div id="inProgressHighlight"></div></div>
                         </div>
                     </div>
-                    <div id="awaitFeedbackSection" ondrop="moveTo('Await Feedback'); removeHighlight('awaitFeedback')" ondragover="allowDrop(event); highlight('awaitFeedback')" ondragleave="removeHighlight('awaitFeedback')">
+                    <div id="awaitFeedbackSection" ondrop="moveTo('Await Feedback'); removeHighlight('awaitFeedback')" ondragover="allowDrop(event)" ondragenter="highlight('awaitFeedback')" ondragleave="removeHighlight('awaitFeedback')">
                         <div id="awaitFeedbackHeader"><p>Await Feedback</p><button onclick="" id="addAwaitFeedback"></button></div>
                         <div class="overflow-y">
                             <p id="emptyawaitFeedbackContentSection" class="emptySection">No task awaits feedback</p>
                             <div onclick="" id="awaitFeedbackContent" class="content"><div id="awaitFeedbackHighlight"></div></div>
                         </div>
                     </div>
-                    <div id="doneSection" ondrop="moveTo('Done'); removeHighlight('done')" ondragover="allowDrop(event); highlight('done')" ondragleave="removeHighlight('done')">
+                    <div id="doneSection" ondrop="moveTo('Done'); removeHighlight('done')" ondragover="allowDrop(event)" ondragenter="highlight('done')" ondragleave="removeHighlight('done')">
                         <div id="doneHeader"><p>Done</p></div>
                         <div class="overflow-y">
                             <p id="emptydoneContentSection" class="emptySection">No tasks done</p>
