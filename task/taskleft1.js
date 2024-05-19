@@ -20,14 +20,16 @@ function dropDownContacts() {
     let selectSpan = document.getElementById('selectSpan');
     let inputContacts = document.getElementById('filterContatcsInput');
     arrowChange();
-    if (selectSpan.classList.contains('noDisplay')){
+    if (selectSpan.classList.contains('noDisplay')) {
         inputContacts.blur();
-       closeFindInput();
+        closeFindInput();
     } else {
+        inputContacts.value = '';
         openFindInput();
         inputContacts.focus();
+        showaAvailableContacts();
     }
-   
+
 }
 
 
@@ -42,10 +44,10 @@ function closeFindInput() {
     let selectSpan = document.getElementById('selectSpan');
 
 
-   
-        filterContatcsInput.classList.add('noDisplay');
-        selectSpan.classList.remove('noDisplay');
-  
+
+    filterContatcsInput.classList.add('noDisplay');
+    selectSpan.classList.remove('noDisplay');
+
 }
 
 
@@ -172,7 +174,7 @@ function chosenContactsPush(i, selection_box_clicked) {
         }
     }
     showchosenInitials(i)
-    
+
 }
 
 

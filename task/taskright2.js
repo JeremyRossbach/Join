@@ -249,3 +249,14 @@ function pushSubtask() {
         renderSubtask();
     }
 }
+
+function subtaskOverflowCheck() {
+    let subtasks = document.getElementsByClassName("subtask");
+    let containerSubtask = document.getElementById('pushedSubtasks');
+    if (subtasks.length > 2) {
+        containerSubtask.classList.add('pushed-subtasks-border')
+        containerSubtask.scrollTo(0, containerSubtask.scrollHeight);
+    } else {
+        containerSubtask.classList.remove('pushed-subtasks-border')
+    }
+}

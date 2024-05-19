@@ -39,6 +39,7 @@ function clearForm() {
     prioMedSetBack();
     prioLowSetBack();
     createBtnEnable();
+    subtaskOverflowCheck();
 }
 
 inputDateColorChange();
