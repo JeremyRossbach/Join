@@ -1,7 +1,7 @@
 const prioImages = {
-    'Urgent': './img/urgent.png',
-    'Medium': './img/medium.png',
-    'Low': './img/low.png'
+    'Urgent': './img/urgent.svg',
+    'Medium': './img/medium.svg',
+    'Low': './img/low.svg'
 };
 
 
@@ -226,7 +226,7 @@ function showCardPopup(i) {
     cardPopup.innerHTML = /* html */`
         <div class="popupCategoryAndClose">
             <div id="popupCategory${i}" class="popupCategory">${tasks[i]['category']}</div>
-            <img onclick="slideOut()" class="closeImage" src="./img/close.png">
+            <img onclick="slideOut()" class="closeImage" src="./img/close.svg">
         </div>
         <div class="popupTitle">${tasks[i]['title']}</div>
         <div class="popupDescription">${tasks[i]['description']}</div>

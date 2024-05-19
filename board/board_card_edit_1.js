@@ -9,7 +9,7 @@ function editTask(i) {
     cardPopup.innerHTML = /* html */`
         <div class="scrollableCardPopup">
         <div class="editTaskCloseImage">
-            <img onclick="closePopup()" class="closeImage" src="./img/close.png">
+            <img onclick="closePopup()" class="closeImage" src="./img/close.svg">
         </div>
         <div class="editTextAndInput">
             <p class="titleText">Title</p>
@@ -26,16 +26,16 @@ function editTask(i) {
         <div class="editPriorityAndButtons">
             <p class="priorityText">Priority</p>
             <div class="priorityButtons">
-                <button onclick="editPrioButtonUrgent(${i})" id="urgentButton${i}" class="priorityButtonUrgent priorityButton">Urgent <img id="urgentImage${i}" class="prioImages" src="./img/urgent.png"></button>
-                <button onclick="editPrioButtonMedium(${i})" id="mediumButton${i}" class="priorityButtonMedium priorityButton">Medium <img id="mediumImage${i}" class="prioImages" src="./img/medium.png"></button>
-                <button onclick="editPrioButtonLow(${i})" id="lowButton${i}" class="priorityButtonLow priorityButton">Low <img id="lowImage${i}" class="prioImages" src="./img/low.png"></button> 
+                <button onclick="editPrioButtonUrgent(${i})" id="urgentButton${i}" class="priorityButtonUrgent priorityButton">Urgent <img id="urgentImage${i}" class="prioImages" src="./img/urgent.svg"></button>
+                <button onclick="editPrioButtonMedium(${i})" id="mediumButton${i}" class="priorityButtonMedium priorityButton">Medium <img id="mediumImage${i}" class="prioImages" src="./img/medium.svg"></button>
+                <button onclick="editPrioButtonLow(${i})" id="lowButton${i}" class="priorityButtonLow priorityButton">Low <img id="lowImage${i}" class="prioImages" src="./img/low.svg"></button> 
             </div>
         </div>
         <div class="editAssignedToAndInput">
             <p class="editAssignedToText">Assigned To</p>
             <div class="editAssignedToInputAndArrow">
                 <input oninput="findContact(${i})" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
-                <img onclick="openDropdownMenu()" id="arrow" class="dropdownArrow" src="./img/dropdownArrow.png">
+                <img onclick="openDropdownMenu()" id="arrow" class="dropdownArrow" src="./img/dropdownArrow.svg">
             </div>
             <div id="dropdownMenu"></div>
             <div id="editInitials${i}"></div>
@@ -44,11 +44,11 @@ function editTask(i) {
             <p class="editSubtasksText">Subtasks</p>
             <div class="editSubtasksInputAndPlus">
                 <input onclick="focusOnNewSubtask(${i})" id="editSubtasks${i}" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text">
-                <img onclick="focusOnNewSubtask(${i})" id="plus" class="plus" src="./img/plus.png">
+                <img onclick="focusOnNewSubtask(${i})" id="plus" class="plus" src="./img/plus.svg">
                 <div id="closeAndDone${i}" class="closeAndDone">
-                    <img onclick="emptyInput(${i})" class="close" src="./img/close.png">
+                    <img onclick="emptyInput(${i})" class="close" src="./img/close.svg">
                     <div class="subtasksImageSpacer"></div>
-                    <img onclick="createNewSubtask(${i})" class="done" src="./img/done.png">
+                    <img onclick="createNewSubtask(${i})" class="done" src="./img/done.svg">
                 </div>
             </div>
             <div id="editSubtasksList${i}"></div>
@@ -57,7 +57,7 @@ function editTask(i) {
         
         
         <div class="editTaskOkButton">
-            <button onclick="ok(${i})" id="okButton">Ok <img class="checkImage" src="./img/check.png"></button>
+            <button onclick="ok(${i})" id="okButton">Ok <img class="checkImage" src="./img/check.svg"></button>
         </div>
     `;
     renderInputValues(i);
@@ -117,17 +117,17 @@ function renderValues(i) {
     if (tasks[i]['prio'] === 'Urgent') {
         urgentButton.style.backgroundColor = '#FF3D00';
         urgentButton.style.color = 'white';
-        urgentImage.src = './img/urgentWhite.png';
+        urgentImage.src = './img/urgentWhite.svg';
     }
     if (tasks[i]['prio'] === 'Medium') {
         mediumButton.style.backgroundColor = '#FFA800';
         mediumButton.style.color = 'white';
-        mediumImage.src = './img/mediumWhite.png';
+        mediumImage.src = './img/mediumWhite.svg';
     }
     if (tasks[i]['prio'] === 'Low') {
         lowButton.style.backgroundColor = '#7AE228';
         lowButton.style.color = 'white';
-        lowImage.src = './img/lowWhite.png';
+        lowImage.src = './img/lowWhite.svg';
     }
 }
 
@@ -191,9 +191,9 @@ function showEditSubtasksList(i, p) {
         <div id="subtasksContent${p}" class="subtasksContent">
             <li>${tasks[i]['subtask'][p]}</li>
             <div class="deleteAndEdit">
-                <img onclick="editSubtask(${p}, ${i})" class="editImage" src="./img/edit.png">
+                <img onclick="editSubtask(${p}, ${i})" class="editImage" src="./img/edit.svg">
                 <div class="subtasksImageSpacer"></div>
-                <img onclick="deleteSubtask(${p}, ${i})" src="./img/delete.png">
+                <img onclick="deleteSubtask(${p}, ${i})" src="./img/delete.svg">
             </div>
         </div>
     `;
@@ -212,7 +212,7 @@ function editPrioButtonUrgent(i) {
 
     urgentButton.style.backgroundColor = '#FF3D00';
     urgentButton.style.color = 'white';
-    urgentImage.src = './img/urgentWhite.png';
+    urgentImage.src = './img/urgentWhite.svg';
 
     disableMediumButton(i);
     disableLowButton(i);
@@ -232,7 +232,7 @@ function editPrioButtonMedium(i) {
 
     mediumButton.style.backgroundColor = '#FFA800';
     mediumButton.style.color = 'white';
-    mediumImage.src = './img/mediumWhite.png';
+    mediumImage.src = './img/mediumWhite.svg';
 
     disableUrgentButton(i);
     disableLowButton(i);
@@ -252,7 +252,7 @@ function editPrioButtonLow(i) {
 
     lowButton.style.backgroundColor = '#7AE228';
     lowButton.style.color = 'white';
-    lowImage.src = './img/lowWhite.png';
+    lowImage.src = './img/lowWhite.svg';
 
     disableUrgentButton(i);
     disableMediumButton(i);
@@ -271,7 +271,7 @@ function disableUrgentButton(i) {
     let mediumImage = document.getElementById(`mediumImage${i}`);
     let lowImage = document.getElementById(`lowImage${i}`);
 
-    if (mediumImage.src.includes('/img/mediumWhite.png') || lowImage.src.includes('/img/lowWhite.png')) {
+    if (mediumImage.src.includes('/img/mediumWhite.svg') || lowImage.src.includes('/img/lowWhite.svg')) {
         setUrgentButtonStyle(urgentButton, urgentImage);
     }
 }
@@ -286,7 +286,7 @@ function disableUrgentButton(i) {
 function setUrgentButtonStyle(button, image) {
     button.style.backgroundColor = 'white';
     button.style.color = 'black';
-    image.src = './img/urgent.png';
+    image.src = './img/urgent.svg';
 }
 
 
@@ -301,7 +301,7 @@ function disableMediumButton(i) {
     let urgentImage = document.getElementById(`urgentImage${i}`);
     let lowImage = document.getElementById(`lowImage${i}`);
 
-    if (urgentImage.src.includes('/img/urgentWhite.png') || lowImage.src.includes('/img/lowWhite.png')) {
+    if (urgentImage.src.includes('/img/urgentWhite.svg') || lowImage.src.includes('/img/lowWhite.svg')) {
         setMediumButtonStyle(mediumButton, mediumImage);
     }
 }
@@ -316,7 +316,7 @@ function disableMediumButton(i) {
 function setMediumButtonStyle(button, image) {
     button.style.backgroundColor = 'white';
     button.style.color = 'black';
-    image.src = './img/medium.png';
+    image.src = './img/medium.svg';
 }
 
 
@@ -331,7 +331,7 @@ function disableLowButton(i) {
     let urgentImage = document.getElementById(`urgentImage${i}`);
     let mediumImage = document.getElementById(`mediumImage${i}`);
 
-    if (urgentImage.src.includes('/img/urgentWhite.png') || mediumImage.src.includes('/img/mediumWhite.png')) {
+    if (urgentImage.src.includes('/img/urgentWhite.svg') || mediumImage.src.includes('/img/mediumWhite.svg')) {
         setLowButtonStyle(lowButton, lowImage);
     }
 }
@@ -346,7 +346,7 @@ function disableLowButton(i) {
 function setLowButtonStyle(button, image) {
     button.style.backgroundColor = 'white';
     button.style.color = 'black';
-    image.src = './img/low.png';
+    image.src = './img/low.svg';
 }
 
 
