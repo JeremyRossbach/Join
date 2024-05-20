@@ -283,8 +283,6 @@
     .emptySection {
         width: 548px;
     }
-
-    /* cardPopup verkleinern */
 }
 
 @media only screen and (max-width: 682px) {
