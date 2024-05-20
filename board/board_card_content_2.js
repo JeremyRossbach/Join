@@ -146,7 +146,7 @@ function dontClosePopup(event) {
 function deleteTask(i, event) {
     tasks.splice(i, 1);
     closePopup(event);
-    saveTasks();
+    saveTasks(); /* muss noch ersetzt werden */
     emptyContentSections();
     init();
 }
@@ -191,7 +191,7 @@ function allowDrop(ev) {
 function moveTo(section) {
     tasks[currentDraggedElement]['section'] = section;
 
-    saveTasks();
+    saveTasks(); /* muss noch ersetzt werden */
     emptyContentSections();
     init();
 }

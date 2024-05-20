@@ -101,7 +101,7 @@ function content(containerId, i) {
     renderSubtasks(i);
     renderPrio(i);
     renderAssignedTo(i);
-    saveTasks(); 
+    saveTasks(); /* muss noch ersetzt werden */
 }
 
 
