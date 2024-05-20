@@ -324,7 +324,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    height: 750px;
+    height: 646px;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;

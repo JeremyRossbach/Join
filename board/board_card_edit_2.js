@@ -310,11 +310,11 @@ function emptyInput(i) {
  * 
  * @param {number} i - This is the number of each task   
  */
-function ok(i) {
+function ok(i) { /* onsubmit does not activate this function ??? */
     updateTitle(i);
     updateDescription(i);
     updateDueDate(i);
-    saveTasks();
+    saveTasks(); /* muss noch ersetzt werden */
     emptyContentSections();
     init();
     document.getElementById('cardPopup').innerHTML = '';
@@ -376,7 +376,7 @@ function checkbox(i, l) {
         tasks[i]['numberOfDoneSubtasks']--;
         checkbox.src = "./img/checkbox.svg"
     }
-    saveTasks();
+    saveTasks(); /* muss noch ersetzt werden */
     renderSubtasks(i);
     emptyContentSections();
     init();

@@ -128,7 +128,7 @@ function closePopup(event) {
     if (event) {
         event.stopPropagation();
     }
-    location.reload();
+    /* location.reload(); */
 }
 
 
@@ -146,7 +146,7 @@ function dontClosePopup(event) {
 function deleteTask(i, event) {
     tasks.splice(i, 1);
     closePopup(event);
-    saveTasks();
+    saveTasks(); /* muss noch ersetzt werden */
     emptyContentSections();
     init();
 }
@@ -191,18 +191,19 @@ function allowDrop(ev) {
 function moveTo(section) {
     tasks[currentDraggedElement]['section'] = section;
 
-    saveTasks();
+    saveTasks(); /* muss noch ersetzt werden */
     emptyContentSections();
     init();
 }
 
 
 function highlight(id) {
-    console.log("highlight triggered for: " + id);
-    document.getElementById(id + 'Highlight').style.display = 'flex';
+    let sectionHighlight = document.getElementById(id + 'Highlight');
+    sectionHighlight.style.display = 'flex';
 }
 
 
 function removeHighlight(id) {
-    document.getElementById(id + 'Highlight').style.display = 'none';
+    let sectionHighlight = document.getElementById(id + 'Highlight');
+    sectionHighlight.style.display = 'none';
 }
