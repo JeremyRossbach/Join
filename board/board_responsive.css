@@ -80,14 +80,6 @@
         display: none;
     }
 
-    #header {
-        /* z-index: 2;
-        left: 0;
-        display: flex;
-        justify-content: space-between;
-        padding: 20px 40px 20px 40px; */
-    }
-
     #footer {
         display: none;
     }

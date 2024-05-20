@@ -27,11 +27,6 @@ body {
     z-index: 9999;
 }
 
-#header,
-#side {
-    /* z-index: 1; */
-}
-
 header {
     position: fixed;
     top: 134px;
