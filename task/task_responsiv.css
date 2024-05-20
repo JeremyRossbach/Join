@@ -9,6 +9,9 @@
     /* .H1 {
         margin-top: 110px !important;
     } */
+    #pushedSubtasks{
+        height: 70px;
+    }
 }
 
 
@@ -48,7 +51,7 @@
         align-items: center !important;
         margin-left: 16px !important;
         margin-right: 16px !important;
-        margin-top: 60px !important;
+        margin-top: 113px !important;
     }
 
     .innerContent {
@@ -120,12 +123,15 @@
         padding-left: 8px !important;
         padding-right: 8px !important;
     }
+    #content{
+        padding: 8px;
+    }
 
     .bottom {
         height: 126px !important;
-        margin-top: 50px !important;
+        margin-top: 113px !important;
         flex-direction: column;
-        gap: 16px;
+        gap: 10px;
     }
 
     /* .H1 {

@@ -195,4 +195,3 @@ function searchContacts() {
     let filteredContacts = currentNames.filter(contact => contact.name.toLowerCase().includes(search));
     showaAvailableContacts(filteredContacts);
 }
-

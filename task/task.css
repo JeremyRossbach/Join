@@ -355,7 +355,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 400px;
+    /* width: 400px; */
     align-content: center;
 }
 
@@ -624,7 +624,7 @@ body {
     align-items: flex-end;
     margin-left: 96px;
     margin-right: 96px;
-    margin-top: 50px;
+    margin-top: 150px;
     height: 58px;
 }
 
@@ -643,6 +643,10 @@ body {
 
 ul {
     list-style-type: circle;
+}
+
+#pushedSubtasks{    
+    overflow: auto;
 }
 
 .task_successfully_div {
