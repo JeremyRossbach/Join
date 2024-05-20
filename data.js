@@ -264,14 +264,14 @@ async function loadContacts() {
     // Kontakten werden geladen
     contactData = await loadData("/contacts");
 
-    console.log(contactData);
+    /* console.log(contactData); */
 }
 function saveContacts() {
     // Load contacts
     // Kontakten werden gespeichert
     saveData("contacts", contactData);
 
-    console.log(contactData);
+    /* console.log(contactData); */
 }
 
 async function loadTasks() {
@@ -279,14 +279,14 @@ async function loadTasks() {
     // Tasks werden geladen
     tasks = await loadData("/tasks");
 
-    console.log(tasks);
+    /* console.log(tasks); */
 }
 function saveTasks() {
     // Save tasks
     // Tasks werden gespeichert
     saveData("tasks", tasks);
 
-    console.log(tasks);
+    /* console.log(tasks); */
 }
 
 /**
