@@ -128,7 +128,7 @@ function closePopup(event) {
     if (event) {
         event.stopPropagation();
     }
-    location.reload();
+    /* location.reload(); */
 }
 
 
@@ -198,11 +198,12 @@ function moveTo(section) {
 
 
 function highlight(id) {
-    console.log("highlight triggered for: " + id);
-    document.getElementById(id + 'Highlight').style.display = 'flex';
+    let sectionHighlight = document.getElementById(id + 'Highlight');
+    sectionHighlight.style.display = 'flex';
 }
 
 
 function removeHighlight(id) {
-    document.getElementById(id + 'Highlight').style.display = 'none';
+    let sectionHighlight = document.getElementById(id + 'Highlight');
+    sectionHighlight.style.display = 'none';
 }

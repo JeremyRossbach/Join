@@ -5,58 +5,59 @@
  */
 function editTask(i) {
     cardPopup.innerHTML = /* html */`
-        <div class="scrollableCardPopup">
-        <div class="editTaskCloseImage">
-            <img onclick="closePopup()" class="closeImage" src="./img/close.svg">
-        </div>
-        <div class="editTextAndInput">
-            <p class="titleText">Title</p>
-            <input id="editTitle${i}" class="editTitleInput editInputs" placeholder="Enter a title" type="text">
-        </div>
-        <div class="editDescriptionAndTextarea">
-            <p class="descriptionText">Description</p>
-            <textarea id="editDescription${i}" class="editDescriptionTextarea editInputs" placeholder="Enter a description" name="" id="" cols="30" rows="10"></textarea>
-        </div>
-        <div class="editDueDateAndInput">
-            <p class="dueDateText">Due Date</p>
-            <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" onfocus="(this.type='date')" onblur="(this.type='text'); convertDateFormat(this)">
-        </div>
-        <div class="editPriorityAndButtons">
-            <p class="priorityText">Priority</p>
-            <div class="priorityButtons">
-                <button onclick="editPrioButtonUrgent(${i})" id="urgentButton${i}" class="priorityButtonUrgent priorityButton">Urgent <img id="urgentImage${i}" class="prioImages" src="./img/urgent.svg"></button>
-                <button onclick="editPrioButtonMedium(${i})" id="mediumButton${i}" class="priorityButtonMedium priorityButton">Medium <img id="mediumImage${i}" class="prioImages" src="./img/medium.svg"></button>
-                <button onclick="editPrioButtonLow(${i})" id="lowButton${i}" class="priorityButtonLow priorityButton">Low <img id="lowImage${i}" class="prioImages" src="./img/low.svg"></button> 
-            </div>
-        </div>
-        <div class="editAssignedToAndInput">
-            <p class="editAssignedToText">Assigned To</p>
-            <div class="editAssignedToInputAndArrow">
-                <input oninput="findContact(${i})" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
-                <img onclick="openDropdownMenu()" id="arrow" class="dropdownArrow" src="./img/dropdownArrow.svg">
-            </div>
-            <div id="dropdownMenu"></div>
-            <div id="editInitials${i}"></div>
-        </div>
-        <div class="editSubtasksAndInput">
-            <p class="editSubtasksText">Subtasks</p>
-            <div class="editSubtasksInputAndPlus">
-                <input onclick="focusOnNewSubtask(${i})" id="editSubtasks${i}" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text">
-                <img onclick="focusOnNewSubtask(${i})" id="plus" class="plus" src="./img/plus.svg">
-                <div id="closeAndDone${i}" class="closeAndDone">
-                    <img onclick="emptyInput(${i})" class="close" src="./img/close.svg">
-                    <div class="subtasksImageSpacer"></div>
-                    <img onclick="createNewSubtask(${i})" class="done" src="./img/done.svg">
+        <form>
+            <div  class="scrollableCardPopup">
+                <div class="editTaskCloseImage">
+                    <img onclick="closePopup()" class="closeImage" src="./img/close.svg">
+                </div>
+                <div class="editTextAndInput">
+                    <p class="titleText">Title</p>
+                    <input id="editTitle${i}" class="editTitleInput editInputs" placeholder="Enter a title" type="text" required>
+                </div>
+                <div class="editDescriptionAndTextarea">
+                    <p class="descriptionText">Description</p>
+                    <textarea id="editDescription${i}" class="editDescriptionTextarea editInputs" placeholder="Enter a description" name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="editDueDateAndInput">
+                    <p class="dueDateText">Due Date</p>
+                    <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" onfocus="(this.type='date')" onblur="convertDateFormat(this)" required>
+                </div>
+                <div class="editPriorityAndButtons">
+                    <p class="priorityText">Priority</p>
+                    <div class="priorityButtons">
+                        <button onclick="editPrioButtonUrgent(${i})" id="urgentButton${i}" class="priorityButtonUrgent priorityButton">Urgent <img id="urgentImage${i}" class="prioImages" src="./img/urgent.svg"></button>
+                        <button onclick="editPrioButtonMedium(${i})" id="mediumButton${i}" class="priorityButtonMedium priorityButton">Medium <img id="mediumImage${i}" class="prioImages" src="./img/medium.svg"></button>
+                        <button onclick="editPrioButtonLow(${i})" id="lowButton${i}" class="priorityButtonLow priorityButton">Low <img id="lowImage${i}" class="prioImages" src="./img/low.svg"></button> 
+                    </div>
+                </div>
+                <div class="editAssignedToAndInput">
+                    <p class="editAssignedToText">Assigned To</p>
+                    <div class="editAssignedToInputAndArrow">
+                        <input oninput="findContact(${i})" id="editAssignedTo" class="editAssignedToInput editInputs" placeholder="Select contacts to assign" type="text">
+                        <img onclick="openDropdownMenu()" id="arrow" class="dropdownArrow" src="./img/dropdownArrow.svg">
+                    </div>
+                    <div id="dropdownMenu"></div>
+                    <div id="editInitials${i}"></div>
+                </div>
+                <div class="editSubtasksAndInput">
+                    <p class="editSubtasksText">Subtasks</p>
+                    <div class="editSubtasksInputAndPlus">
+                        <input onclick="focusOnNewSubtask(${i})" id="editSubtasks${i}" class="editSubtasksInput editInputs" placeholder="Add new subtask" type="text">
+                        <img onclick="focusOnNewSubtask(${i})" id="plus" class="plus" src="./img/plus.svg">
+                        <div id="closeAndDone${i}" class="closeAndDone">
+                            <img onclick="emptyInput(${i})" class="close" src="./img/close.svg">
+                            <div class="subtasksImageSpacer"></div>
+                            <img onclick="createNewSubtask(${i})" class="done" src="./img/done.svg">
+                        </div>
+                    </div>
+                    <div id="editSubtasksList${i}"></div>
                 </div>
             </div>
-            <div id="editSubtasksList${i}"></div>
-        </div>
-        </div>
         
-        
-        <div class="editTaskOkButton">
-            <button onclick="ok(${i})" id="okButton">Ok <img class="checkImage" src="./img/check.svg"></button>
-        </div>
+            <div class="editTaskOkButton"> <!-- onsubmit does not activate ok function ??? -->
+                <button type="submit" onsubmit="ok(${i})" id="okButton">Ok <img class="checkImage" src="./img/check.svg"></button>
+            </div>
+        </form>
     `;
     renderInputValues(i);
     renderValues(i);
@@ -83,7 +84,9 @@ function convertDateFormat(inputElement) {
     var parts = dateStr.split("-");
     var formattedDate = parts[2] + "/" + parts[1] + "/" + parts[0];
     
-    inputElement.value = formattedDate;
+    if (!formattedDate === "undefined/undefined/") {
+        inputElement.value = formattedDate;
+    }
 }
 
 
