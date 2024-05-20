@@ -88,12 +88,12 @@
         width: calc(100% - 28px) !important;
     }
 
-    .input-field-subtask {
+    /* .input-field-subtask {
         padding-left: 16px;
         padding-right: 16px;
-        width: calc(100% - 32px) !important;
+        width: 100% !important;
         justify-content: space-between !important;
-    }
+    } */
 
     .input-field-description {
         width: calc(100% - 21px) !important;

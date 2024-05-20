@@ -29,9 +29,7 @@ function dropDownContacts() {
         inputContacts.focus();
         showaAvailableContacts();
     }
-
 }
-
 
 function openFindInput() {
     document.getElementById('filterContatcsInput').classList.remove('noDisplay');
