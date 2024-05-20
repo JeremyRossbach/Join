@@ -1,14 +1,14 @@
 @media(max-width: 1368px) {
-    #header {
+    /* #header {
         position: unset;
         padding-top: 0;
         padding-bottom: 0;
         height: 80px;
-    }
+    } */
 
-    .H1 {
+    /* .H1 {
         margin-top: 110px !important;
-    }
+    } */
 }
 
 
@@ -59,16 +59,7 @@
     .roomdivider {
         display: none;
     }
-
-    .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 16px !important;
-        overflow-y: scroll;
-        height: 436px;
-    }
-
+   
     .leftside,
     .container-title,
     .input-title-text,
@@ -108,16 +99,15 @@
         width: calc(100% - 21px) !important;
     }
 
-    .H1 {
+    /* .H1 {
         margin-left: 16px !important;
         margin-top: 48px !important;
         height: 112px !important;
         margin-bottom: 12px !important;
-    }
+    } */
 
     #header_content_position {
-        min-width: 320px;
-        /* max-height: 926px; */
+        min-width: 320px;        
     }
 }
 
@@ -138,10 +128,10 @@
         gap: 16px;
     }
 
-    .H1 {
+    /* .H1 {
         height: 80px !important;
         margin-top: 20px !important;
-    }
+    } */
 
     .subtaskInput {
         width: 100% !important;
@@ -153,5 +143,19 @@
     
     .createBTN {
         width: 100% !important;
+    }
+}
+
+@keyframes successfully_message {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(0);
     }
 }

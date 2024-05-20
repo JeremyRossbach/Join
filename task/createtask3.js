@@ -17,12 +17,38 @@ function createTask() {
         'numberOfDoneSubtasks': 0,
         'section': 'To do'
     }
-
+    showCreateTaskMessage('task_successfully_div');
     testtask.push(newTask);
     clearForm();
     putData("tasks", tasks)
         .catch(error => console.error(error));
 }
+
+
+function showCreateTaskMessage(messageID) {
+    /**
+     * @type {HTMLElement}
+     */
+    var messageDiv = document.getElementById(messageID);
+    messageDiv.style.display = "flex";
+    messageDiv.classList.add("animate");
+
+    setTimeout(function () {
+        removeClassAnimate(messageDiv);
+    }, 5000);
+}
+
+
+/**
+ * Removes the "animate" class from a given element.
+ * Entfernt die Klasse "animate" von einem bestimmten Element.
+ * @param {HTMLElement} messageDiv - The message element to remove the class from.
+ */
+function removeClassAnimate(messageDiv) {
+    messageDiv.style.display = "none";
+    messageDiv.classList.remove("animate");
+}
+
 
 function clearForm() {
     document.getElementById('titleInput').value = '';
