@@ -27,16 +27,16 @@
         </div>
 
         <main>
-            <form id="sign-up-form" class="sign-up" action="../index.html" onsubmit="return checkPasswordMatch(this)" name="sign-up">
+            <form id="sign-up-form" class="sign-up" action="../index.html" onsubmit="return checkPasswordMatch()" name="sign-up">
                 <a class="button-back" href="../index.html">
                     <img src="../img/arrow-left-line-default.png" alt="">
                 </a>
                 <h1>Sign up</h1>
                 <div class="sign-up-inputs">
-                    <input class="input-field" type="text" placeholder="Name" oninput="checkIsInputFilled()" required>
-                    <input class="input-field" type="email" placeholder="Email" oninput="checkIsInputFilled()" required>
+                    <input id="name" class="input-field" type="text" placeholder="Name" oninput="checkIsInputFilled()" required>
+                    <input id="email" class="input-field" type="email" placeholder="Email" oninput="checkIsInputFilled()" required>
                     <div style="position: relative;">
-                        <input class="input-field" type="password" placeholder="Password" name="password" oninput="checkIsInputFilled()"
+                        <input id="password" class="input-field" type="password" placeholder="Password" name="password" oninput="checkIsInputFilled()"
                             onkeyup="checkInputPassword(0)" required>
                         <div class="password-visibility" style="display: none;" onclick="hidePassword(0)"></div>
                     </div>

@@ -4,6 +4,10 @@ let buttonSignup = document.getElementById('button-sign-up');
 let allInputs = document.getElementsByClassName('input-field');
 let checkboxAccept = document.getElementById('accept');
 let signUpForm = document.getElementById('sign-up-form');
+let inputPasswords = document.getElementsByClassName('password-visibility');
+let name = document.getElementById('name');
+let email = document.getElementById('email');
+let password = document.getElementById('password');
 
 /**
  * Check if the password and password-repeat input match
@@ -30,13 +34,28 @@ function checkPasswordMatch() {
 }
 
 /**
- * Signup the user and redirect them to the login page
+ * Signup the user, save in local storage and redirect them to the login page
  */
 function signup() {
-    if (buttonSignup.hasAttribute('disabled')) {
+    let users = [];
+    let usersObjectString = localStorage.getItem('users');
+    if (usersObjectString) {
+        users = JSON.parse(usersObjectString);
+    }
+
+    if (!buttonSignup.hasAttribute('disabled')) {
+        const user = {
+            'name': name.value,
+            'email': email.value,
+            'password': password.value,
+            'isLogin': false
+        }
+        users.push(user);
+        localStorage.setItem('users', JSON.stringify(users));
+
         window.scrollTo(0, 0);
         document.body.style.overflow = 'hidden';
-        buttonSignup.setAttribute('disabled', '');
+        // buttonSignup.setAttribute('disabled', '')
     }
 }
 

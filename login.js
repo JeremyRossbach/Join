@@ -1,13 +1,14 @@
 let inputPassword = document.querySelector('input[type="password"]');
 let validationText = document.querySelector('div[class="validation-password"]');
 let buttonsPasswordVisibility = document.querySelectorAll('div[class="password-visibility"]')
-
+const email = document.getElementById('email');
+const password = document.getElementById('password');
 
 /**
  * Check if the user have left the password input empty or not
  * @returns {boolean} Return true if password input have min. 1 value and return false if input are empty
  */
-function checkValidPassword() {
+function isPasswordNotEmtpy() {
     if (inputPassword.value.length < 1) {
         validationText.style.display = '';
         inputPassword.classList.add('input-danger');
@@ -76,4 +77,69 @@ function hidePassword() {
         changePasswordInputIcon('/img/visibility_off.png');
     }
     inputPassword.focus();
+}
+
+/**
+ * Login the user and check the login details if it match
+ * @returns {boolean} If login details match it return true and if not false
+ */
+function login() {
+    let users = [];
+    let foundUser = false;
+
+    if (!isPasswordNotEmtpy()) {
+        return false;
+    }
+
+    const usersObjectString = localStorage.getItem('users');
+    if (usersObjectString) {
+        users = JSON.parse(usersObjectString);
+    }
+
+    for (let i = 0; i < users.length; i++) {
+        let user = users[i];
+        if (email.value == user.email && password.value == user.password) {
+            user.isLogin = true;
+            foundUser = true;
+        }
+    }
+
+    if (foundUser) {
+        localStorage.setItem('users', JSON.stringify(users));
+        return true;
+    }
+
+    return false;
+}
+
+/**
+ * Login the user as guest and skip the login details check
+ */
+function loginGuest() {
+    const usersObjectString = localStorage.getItem('users');
+    if (usersObjectString) {
+        let users = JSON.parse(usersObjectString);
+        for (let i = 0; i < users.length; i++) {
+            let user = users[i];
+            if (user.name == 'Guest') {
+                user.isLogin = true;
+            }
+        }
+        localStorage.setItem('users', JSON.stringify(users))
+        window.location.href = '/summary'
+    }
+}
+
+/**
+ * Logout the user
+ */
+function logout() {
+    const userObjectString = localStorage.getItem('user');
+
+    if (userObjectString) {
+        const user = JSON.parse(userObjectString);
+        user.isLogin = false;
+
+        localStorage.setItem('user', JSON.stringify(user));
+    }
 }

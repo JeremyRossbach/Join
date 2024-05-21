@@ -22,13 +22,13 @@
         </div>
 
 
-        <form class="login" action="summary/" onsubmit="return checkValidPassword()">
+        <form class="login" action="summary/" onsubmit="return login()">
             <h1>Log in</h1>
             <div class="login-inputs">
                 <div class="login-email-password">
-                    <input class="input-field" type="email" placeholder="Email" required>
+                    <input id="email" class="input-field" type="email" placeholder="Email" required>
                     <div style="position: relative;">
-                        <input class="input-field" type="password" placeholder="Password"
+                        <input id="password" class="input-field" type="password" placeholder="Password"
                             onkeyup="checkInputPassword()">
                         <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
                         <div class="validation-password" style="display: none;">Wrong password Ups! Try again.</div>
@@ -42,7 +42,7 @@
             </div>
             <div class="login-buttons">
                 <button class="button-primary" type="submit">Log in</button>
-                <a class="button-secondary button-guest" href="summary/">Guest Log in</a>
+                <button class="button-secondary button-guest" onclick="loginGuest()">Guest Log in</button>
             </div>
         </form>
 
