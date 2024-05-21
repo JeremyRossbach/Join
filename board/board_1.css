@@ -16,7 +16,8 @@ body {
     display: none;
 }
 
-#background {
+#background,
+#addTaskBackground {
     position: fixed;
     display: none;
     justify-content: center;
@@ -289,7 +290,7 @@ p {
     background-color: rgba(69, 137, 255, 1);
 }
 
-.subtask {
+.boardSubtask {
     display: flex;
     font-weight: 400;
     font-size: 12px;

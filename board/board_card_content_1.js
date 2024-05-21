@@ -88,7 +88,7 @@ function content(containerId, i) {
             </div>
             <div id="progressbarAndSubtask${i}" class="progressbarAndSubtask">
                 <div id="progressbar${i}" class="progressbar"><div id="progress${i}" class="progress"></div></div>
-                <div id="subtasks${i}" class="subtasks"><div id="subtask${i}" class="subtask"></div></div>
+                <div id="subtasks${i}" class="subtasks"><div id="subtask${i}" class="boardSubtask"></div></div>
             </div>
             <div id="progressComment${i}" class="progressComment">${tasks[i]['numberOfDoneSubtasks']} von ${tasks[i]['subtask'].length} Subtasks erledigt</div>
             <div class="cardBottom">

@@ -13,7 +13,11 @@
     <link rel="stylesheet" href="../board/board_mobile_1.css">
     <link rel="stylesheet" href="../board/board_mobile_2.css">
     <link rel="stylesheet" href="../board/board_mobile_3.css">
+
+    <link rel="stylesheet" href="../task/task.css">
+    <link rel="stylesheet" href="../task/task_responsiv.css">
     <script src="../board/board_general.js"></script>
+    <script src="../board/board_addtask.js"></script>
     <script src="../board/board_card_content_1.js"></script>
     <script src="../board/board_card_content_2.js"></script>
     <script src="../board/board_card_edit_1.js"></script>
@@ -110,14 +114,14 @@
                         <input oninput="findTask()" id="input" type="text" placeholder="Find Task">
                         <img class="inputSearchImage" src="./img/spacer_search.svg">
                         <div onclick="focusOnFindTask()" id="searchButton"></div>
-                        <button onclick="   " id="addButton">Add task <img id="addImage" src="./img/add.svg"></button>
-                        <button onclick="   " class="responsiveAddButton"><img class="mobileAddImage" src="./img/mobileAdd.svg"></button>
+                        <button onclick="openAddTask()" id="addButton">Add task <img id="addImage" src="./img/add.svg"></button>
+                        <button onclick="openAddTask()" class="responsiveAddButton"><img class="mobileAddImage" src="./img/mobileAdd.svg"></button>
                     </div>
                 </header>
                 
                 <section id="sections">
                     <div id="toDoSection" ondrop="moveTo('To do'); removeHighlight('toDo')" ondragover="allowDrop(event)">
-                        <div id="toDoHeader"><p>To do</p><button onclick="" id="addToDo"></button></div>
+                        <div id="toDoHeader"><p>To do</p><button onclick="openAddTask()" id="addToDo"></button></div>
                         <div class="overflow-y" ondragenter="highlight('toDo')" ondragleave="removeHighlight('toDo')">
                             <p id="emptytoDoContentSection" class="emptySection">No tasks to do</p>
                             <div id="toDoHighlight"></div>
@@ -125,7 +129,7 @@
                         </div>
                     </div>
                     <div id="inProgressSection" ondrop="moveTo('In progress'); removeHighlight('inProgress')" ondragover="allowDrop(event)">
-                        <div id="inProgressHeader"><p>In progress</p><button onclick="" id="addInProgress"></button></div>
+                        <div id="inProgressHeader"><p>In progress</p><button onclick="openAddTask()" id="addInProgress"></button></div>
                         <div class="overflow-y" ondragenter="highlight('inProgress')" ondragleave="removeHighlight('inProgress')">
                             <p id="emptyinProgressContentSection" class="emptySection">No tasks in progress</p>
                             <div id="inProgressHighlight"></div>
@@ -133,7 +137,7 @@
                         </div>
                     </div>
                     <div id="awaitFeedbackSection" ondrop="moveTo('Await Feedback'); removeHighlight('awaitFeedback')" ondragover="allowDrop(event)">
-                        <div id="awaitFeedbackHeader"><p>Await Feedback</p><button onclick="" id="addAwaitFeedback"></button></div>
+                        <div id="awaitFeedbackHeader"><p>Await Feedback</p><button onclick="openAddTask()" id="addAwaitFeedback"></button></div>
                         <div class="overflow-y" ondragenter="highlight('awaitFeedback')" ondragleave="removeHighlight('awaitFeedback')">
                             <p id="emptyawaitFeedbackContentSection" class="emptySection">No task awaits feedback</p>
                             <div id="awaitFeedbackHighlight"></div>
@@ -156,7 +160,10 @@
     <background onclick="slideOut()" id="background">
         <card onclick="dontClosePopup(event)" id="cardPopup"></card>
     </background>
-    
+
+    <background onclick="slideOut()" id="addTaskBackground">
+        <card onclick="dontClosePopup(event)" id="addTask"></card>
+    </background>
 </body>
 
 </html>
