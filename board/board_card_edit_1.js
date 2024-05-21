@@ -5,7 +5,7 @@
  */
 function editTask(i) {
     cardPopup.innerHTML = /* html */`
-        <form>
+        <form onsubmit="ok(${i})">
             <div  class="scrollableCardPopup">
                 <div class="editTaskCloseImage">
                     <img onclick="closePopup()" class="closeImage" src="./img/close.svg">
@@ -25,9 +25,9 @@ function editTask(i) {
                 <div class="editPriorityAndButtons">
                     <p class="priorityText">Priority</p>
                     <div class="priorityButtons">
-                        <button onclick="editPrioButtonUrgent(${i})" id="urgentButton${i}" class="priorityButtonUrgent priorityButton">Urgent <img id="urgentImage${i}" class="prioImages" src="./img/urgent.svg"></button>
-                        <button onclick="editPrioButtonMedium(${i})" id="mediumButton${i}" class="priorityButtonMedium priorityButton">Medium <img id="mediumImage${i}" class="prioImages" src="./img/medium.svg"></button>
-                        <button onclick="editPrioButtonLow(${i})" id="lowButton${i}" class="priorityButtonLow priorityButton">Low <img id="lowImage${i}" class="prioImages" src="./img/low.svg"></button> 
+                        <button onclick="editPrioButtonUrgent(${i})" type="button" id="urgentButton${i}" class="priorityButtonUrgent priorityButton">Urgent <img id="urgentImage${i}" class="prioImages" src="./img/urgent.svg"></button>
+                        <button onclick="editPrioButtonMedium(${i})" type="button" id="mediumButton${i}" class="priorityButtonMedium priorityButton">Medium <img id="mediumImage${i}" class="prioImages" src="./img/medium.svg"></button>
+                        <button onclick="editPrioButtonLow(${i})" type="button" id="lowButton${i}" class="priorityButtonLow priorityButton">Low <img id="lowImage${i}" class="prioImages" src="./img/low.svg"></button> 
                     </div>
                 </div>
                 <div class="editAssignedToAndInput">
@@ -54,8 +54,8 @@ function editTask(i) {
                 </div>
             </div>
         
-            <div class="editTaskOkButton"> <!-- onsubmit does not activate ok function ??? -->
-                <button type="submit" onsubmit="ok(${i})" id="okButton">Ok <img class="checkImage" src="./img/check.svg"></button>
+            <div class="editTaskOkButton">
+                <button type="submit" id="okButton">Ok <img class="checkImage" src="./img/check.svg"></button>
             </div>
         </form>
     `;

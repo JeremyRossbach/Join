@@ -199,6 +199,7 @@ function moveTo(section) {
 
 function highlight(id) {
     let sectionHighlight = document.getElementById(id + 'Highlight');
+    console.log('Highlight: ', sectionHighlight);
     sectionHighlight.style.display = 'flex';
 }
 

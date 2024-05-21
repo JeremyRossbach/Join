@@ -310,7 +310,7 @@ function emptyInput(i) {
  * 
  * @param {number} i - This is the number of each task   
  */
-function ok(i) { /* onsubmit does not activate this function ??? */
+function ok(i) {
     updateTitle(i);
     updateDescription(i);
     updateDueDate(i);
