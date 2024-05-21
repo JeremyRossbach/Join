@@ -145,8 +145,7 @@ h1 {
 
 #sections {
     display: flex;
-    justify-content: space-evenly;
-    gap: 26px;
+    justify-content: space-evenly;    
     margin-bottom: 40px;
     padding-inline: 64px;
     margin-top: 34px;

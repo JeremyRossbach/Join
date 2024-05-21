@@ -23,64 +23,9 @@
 
     #nav_right_img {
         display: none;
-    }
-
-    #side {
-        width: 100%;
-        position: fixed;
-        top: auto;
-        right: 0;
-        left: 0;
-        z-index: 2;
-        padding: 0;
-    }
-
-    #side_menu {
-        display: flex;
-        width: 100%;
-        height: 110px;
-        justify-content: space-between;
-        align-content: center;
-    }
-
-    .side_undermenu {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .side_undermenu .addtask_icon_normal {
-        margin-right: 0;
-    }
-
-    .side_undermenu .summary_icon_normal {
-        margin-right: 0;
-    }
-
-    .side_undermenu .board_icon_normal {
-        margin-right: 0;
-    }
-
-    .side_undermenu .contacts_icon_normal {
-        margin-right: 0;
-    }
-
-    .side_menu_bg {
-        height: inherit;
-        cursor: pointer;
-        width: 25%;
-        display: flex;
-    }
+    }   
 
     .side_logo {
-        display: none;
-    }
-
-    #footer {
         display: none;
     }
 
@@ -88,15 +33,7 @@
         position: relative;
         top: 140px;
         scrollbar-width: none;
-    }
-
-    #join_logo_white {
-        display: none;
-    }
-
-    #header_content_position {
-        padding-left: 0;
-    }
+    }    
 }
 
 @media only screen and (max-width: 1214px) {
