@@ -87,9 +87,15 @@
                 <a href="../jura/legal.html" class="jura_undercontainer">Legal Notice</a>
                 <a href="../index.html" class="jura_undercontainer">Log out</a>
             </div>
-            <H1 class="H1">Add Task</H1>
-            <div class="content" id="content">
+
+            <div class="content" id="content">                
+                <div class="headline_title">Add Task</div>
                 <div class="innerContent">
+                    <div class="task_successfully_div" id="task_successfully_div" style="display: none;">
+                        <span class="task_successfully_message">
+                            Task successfully created
+                        </span>
+                    </div>
                     <div class="leftside">
                         <div class="container-title">
                             <span class="input-title-text">Title<span class="redStar">*</span></span>
@@ -105,11 +111,12 @@
                         <div class="container-assigned contactPosition">
                             <span class="input-title-text">Assigned to</span>
                             <div id="dropdownContent" class="dropdown">
-                                <button class="input-field input-field-button dropbtn" onclick="dropDownContacts()"><input oninput="searchContacts()"
+                                <button class="input-field input-field-button dropbtn"
+                                    onclick="dropDownContacts()"><input oninput="searchContacts()"
                                         id="filterContatcsInput" type="text" class="noDisplay"><span
                                         id="selectSpan">Select
-                                        contacts to assign </span><img id="arrow"
-                                        src="img/arrow down.svg" alt=""></button>
+                                        contacts to assign </span><img id="arrow" src="img/arrow down.svg"
+                                        alt=""></button>
                                 <div id="contacts_dropdown" class="contactsDropdown scroll-style">
                                     <div id="availableContacts"></div>
 
@@ -169,11 +176,7 @@
                         </div>
                     </div>
                 </div>
-
-
                 <!--  -->
-
-
             </div>
 
 

@@ -4,9 +4,9 @@ body {
     min-width: 320px;
 }
 
-#header {
+/* #header {
     box-shadow: 0px 4px 4px 0px #0000001A;
-}
+} */
 
 .scroll-style::-webkit-scrollbar {
     width: 8px;
@@ -46,14 +46,14 @@ body {
 
 
 
-.H1 {
+/* .H1 {
     margin-top: 206px;
     padding-bottom: 0px;
     margin-left: 96px;
     font-size: 61px;
-}
+} */
 
-#content {
+/* #content {
     position: relative;
     top: 0px;
     scrollbar-width: none;
@@ -61,7 +61,7 @@ body {
     margin-right: 96px;
     margin-top: 40px;
     padding: 0;
-}
+} */
 
 .innerContent {
     padding-top: 0px;
@@ -107,7 +107,7 @@ body {
 
 .container-assigned {
     width: 440px;
-    height: 80px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -355,7 +355,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 400px;
+    /* width: 400px; */
     align-content: center;
 }
 
@@ -419,11 +419,6 @@ body {
     background-color: rgb(41, 171, 226);
     box-shadow: 0px 4px 4px 0px #00000040;
 }
-
-
-
-
-
 
 .dropbtn {
     display: flex;
@@ -533,11 +528,12 @@ body {
 }
 
 .input-field-subtask img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     position: absolute;
     right: 16px;
+    padding-right: 16px;
 }
 
 .input-field-subtask {
@@ -607,25 +603,28 @@ body {
 
 .container-input-subtask {
     width: 440px;
-    height: 158px;
+    /* height: 158px; */
+    height: 200px;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
 .container-clear-create {
+    z-index: 1;
+    /* eingefügt siehe oben */
     display: flex;
     gap: 50px;
     height: 58px;
 }
 
-.bottom {
+.bottom {    
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-left: 96px;
     margin-right: 96px;
-    margin-top: 50px;
+    margin-top: 150px;
     height: 58px;
 }
 
@@ -644,4 +643,33 @@ body {
 
 ul {
     list-style-type: circle;
+}
+
+#pushedSubtasks{    
+    overflow: auto;
+}
+
+.task_successfully_div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.task_successfully_message {
+    height: 74px;
+    width: 326px;
+    border-radius: 20px;
+    color: white;
+    background-color: #2A3647;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.animate {
+    animation: successfully_message 4s forwards;
 }

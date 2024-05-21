@@ -29,9 +29,7 @@ function dropDownContacts() {
         inputContacts.focus();
         showaAvailableContacts();
     }
-
 }
-
 
 function openFindInput() {
     document.getElementById('filterContatcsInput').classList.remove('noDisplay');
@@ -197,4 +195,3 @@ function searchContacts() {
     let filteredContacts = currentNames.filter(contact => contact.name.toLowerCase().includes(search));
     showaAvailableContacts(filteredContacts);
 }
-

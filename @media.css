@@ -128,7 +128,7 @@
     }
 
     .headline_title {
-        font-size: 30px;
+        font-size: 41px;
     }
 
     #KMaaG {
@@ -144,7 +144,7 @@
     }
 
     .headline_title {
-        font-size: 20px;
+        font-size: 31px;
     }
 
     #KMaaG {
@@ -153,16 +153,16 @@
 }
 
 @media only screen and (max-width: 550px) {
-    .headline_title {
-        font-size: 20px;
-    }
+    /* .headline_title {
+        font-size: 31px;
+    } */
 }
 
 @media only screen and (max-width: 500px) {}
 
 @media (min-width: 320px) and (max-width: 399px) {
     .headline_title {
-        font-size: 16px;
+        font-size: 26px;
     }
 
     .side_menu_bg {
@@ -171,5 +171,8 @@
 
     .side_menu_bg.selected {
         width: 25%;
+    }
+    #content {
+        padding: 8px;
     }
 }
