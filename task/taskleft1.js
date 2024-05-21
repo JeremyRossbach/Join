@@ -30,7 +30,7 @@ function dropDownContacts() {
         inputContacts.value = '';
         openFindInput();
         inputContacts.focus();
-        showaAvailableContacts();
+        /* showaAvailableContacts(); */
     }
 }
 
