@@ -15,6 +15,9 @@ function initAddTasks() {
 }
 
 
+/**
+ * Toggles the visibility of the contacts dropdown menu and manages associated UI changes.
+ */
 function dropDownContacts() {
     document.getElementById("contacts_dropdown").classList.toggle("show");
     let selectSpan = document.getElementById('selectSpan');
@@ -31,16 +34,21 @@ function dropDownContacts() {
     }
 }
 
+/**
+ * Shows the contacts input field and hides the select span.
+ */
 function openFindInput() {
     document.getElementById('filterContatcsInput').classList.remove('noDisplay');
     document.getElementById('selectSpan').classList.add('noDisplay');
 
 }
 
+/**
+ * Hides the contacts input field and shows the select span.
+ */
 function closeFindInput() {
     let filterContatcsInput = document.getElementById("filterContatcsInput");
     let selectSpan = document.getElementById('selectSpan');
-
 
 
     filterContatcsInput.classList.add('noDisplay');
@@ -48,12 +56,17 @@ function closeFindInput() {
 
 }
 
-
+/**
+ * Closes all open contacts dropdown menus and updates the arrow direction.
+ */
 function dropDownCategory() {
     document.getElementById('availableCategory').classList.toggle("show");
     arrowChangeCategory();
 }
 
+/**
+ * Closes all open contacts dropdown menus and updates the arrow direction.
+ */
 function closeCategoryDropdowns() {
     var dropdowns = document.getElementsByClassName("availableCategory");
     for (var i = 0; i < dropdowns.length; i++) {
@@ -91,6 +104,9 @@ window.onclick = function (event) {
     }
 }
 
+/**
+ * Toggles the direction of an arrow icon between up and down.
+ */
 function arrowChange() {
     let arrow = document.getElementById("arrow");
     let arrowDown = "img/arrow down.svg";
@@ -102,6 +118,9 @@ function arrowChange() {
     }
 }
 
+/**
+ * Toggles the direction of an arrow icon between up and down.
+ */
 function arrowChangeCategory() {
     let arrow = document.getElementById("arrow_category");
     let arrowDown = "img/arrow down.svg";
@@ -114,6 +133,11 @@ function arrowChangeCategory() {
 
 }
 
+/**
+ * Displays available contacts in the UI.
+ *
+ * @param {Array} [filteredContacts=null] - Optional. An array of filtered contacts to display.
+ */
 function showaAvailableContacts(filteredContacts = null) {
     let availableContacts = document.getElementById("availableContacts");
     availableContacts.innerHTML = '';
@@ -134,7 +158,12 @@ function showaAvailableContacts(filteredContacts = null) {
     }
 }
 
-
+/**
+ * Handles the selection of a contact.
+ *
+ * @param {number} i - The index of the chosen contact in the currentNames array.
+ * @param {Object} currentContact - The chosen contact object.
+ */
 function chosenContacts(i, currentContact) {
     let chosenContact = currentNames[i];
     let selectionBox = document.getElementById(`selectionBox${i}`);
@@ -157,6 +186,12 @@ function chosenContacts(i, currentContact) {
     chosenContactsPush(i, selection_box_clicked);
 }
 
+/**
+ * Updates the task contacts array based on the selection status of a contact.
+ *
+ * @param {number} i - The index of the chosen contact in the currentNames array.
+ * @param {string} selection_box_clicked - The source image of the selection box when clicked.
+ */
 function chosenContactsPush(i, selection_box_clicked) {
     let selectionBox = document.getElementById(`selectionBox${i}`);
     let chosenContact = currentNames[i];
@@ -175,7 +210,11 @@ function chosenContactsPush(i, selection_box_clicked) {
 
 }
 
-
+/**
+ * Displays the initials of chosen contacts in the UI.
+ *
+ * @param {number} i - The index of the chosen contact in the currentNames array.
+ */
 function showchosenInitials(i) {
     let chosenInitals = document.getElementById('chosenInitals');
     chosenInitals.innerHTML = ""
@@ -190,6 +229,9 @@ function showchosenInitials(i) {
     }
 }
 
+/**
+ * Filters the available contacts based on the search input and displays them.
+ */
 function searchContacts() {
     let search = document.getElementById("filterContatcsInput").value.toLowerCase();
     let filteredContacts = currentNames.filter(contact => contact.name.toLowerCase().includes(search));
