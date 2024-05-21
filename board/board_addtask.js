@@ -1,11 +1,15 @@
 function openAddTask() {
+    let addTask = document.getElementById('addTask');
     document.body.style.overflow = 'hidden';
     document.getElementById('addTaskBackground').style.display = 'flex';
-    document.getElementById('addTask').innerHTML = /* html */`
+    addTask.innerHTML = /* html */`
         <div class="addTaskContent" id="addTaskContent">
-            <H1 class="H1">Add Task</H1>
+            <div class="h1AndClose">
+                <H1 class="H1">Add Task</H1>
+                <img onclick="addTaskSlideOut()" class="closeImage" src="./img/close.svg">
+            </div>
             <div class="innerContent">
-                <div class="leftside">
+                <div class="leftside gap_16">
                     <div class="container-title">
                         <span class="input-title-text">Title<span class="redStar">*</span></span>
                         <input id="titleInput" class="input-field" placeholder="Enter a title" type="text"
@@ -34,7 +38,7 @@ function openAddTask() {
                 </div>
                 <div class="roomdivider"></div>
         
-                <div class="rightside">
+                <div class="rightside gap_16">
                     <div class="container-input-date" class="datepicker">
                         <span class="input-title-text">Due date<span class="redStar">*</span></span>
                         <input type="date" id="date" class="input-field input-field-date" name="date"
@@ -97,4 +101,37 @@ function openAddTask() {
             </div>
         </div>
     `;
+    addTaskSlideIn();
+}
+
+
+function addTaskSlideIn() {
+    let addTask = document.getElementById('addTask');
+    addTask.classList.add('slideIn');
+    setTimeout(() => {
+        addTask.classList.remove('slideIn');
+    }, 500);
+
+    addTask.style.display = 'flex';
+}
+
+
+function addTaskSlideOut() {
+    let addTask = document.getElementById('addTask');
+    addTask.classList.add('slideOut');
+    setTimeout(() => {
+        addTask.classList.remove('slideOut');
+        closeAddTask();
+    }, 100);
+}
+
+
+function closeAddTask(event) {
+    document.body.style.overflow = '';
+    document.getElementById('addTask').style.display = 'none';
+    document.getElementById('addTaskBackground').style.display = 'none';
+    if (event) {
+        event.stopPropagation();
+    }
+    /* location.reload(); */
 }

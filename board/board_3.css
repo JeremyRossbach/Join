@@ -175,6 +175,7 @@ li {
 
 #addTask {
     position: absolute;
+    display: none;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;
@@ -191,9 +192,17 @@ li {
 }
 
 .addTaskContent {
+    width: -webkit-fill-available;
     margin-top: 64px;
     margin-bottom: 64px;
     margin-inline: 74px;
+}
+
+.h1AndClose {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .addTaskBottom {    
@@ -201,4 +210,8 @@ li {
     justify-content: space-between;
     align-items: flex-end;
     height: 58px;
+}
+
+.gap_16 {
+    gap: 16px;
 }

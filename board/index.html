@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="../board/board_mobile_1.css">
     <link rel="stylesheet" href="../board/board_mobile_2.css">
     <link rel="stylesheet" href="../board/board_mobile_3.css">
-
+    
+    <!-- addTask CSS files -->
     <link rel="stylesheet" href="../task/task.css">
     <link rel="stylesheet" href="../task/task_responsiv.css">
+
     <script src="../board/board_general.js"></script>
     <script src="../board/board_addtask.js"></script>
     <script src="../board/board_card_content_1.js"></script>
@@ -23,6 +25,12 @@
     <script src="../board/board_card_edit_1.js"></script>
     <script src="../board/board_card_edit_2.js"></script>
     <script src="../data.js"></script>
+
+    <!-- addTask JS files -->
+    <script src="../task/taskleft1.js"></script>
+    <script src="../task/taskright2.js"></script>
+    <script src="../task/createtask3.js"></script>
+    <script src="../task/event.js"></script>
     <link rel="icon" href="../img/join_logo_black.png">
 
     <title>Board</title>
@@ -161,7 +169,7 @@
         <card onclick="dontClosePopup(event)" id="cardPopup"></card>
     </background>
 
-    <background onclick="slideOut()" id="addTaskBackground">
+    <background onclick="addTaskSlideOut()" id="addTaskBackground">
         <card onclick="dontClosePopup(event)" id="addTask"></card>
     </background>
 </body>
