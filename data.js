@@ -249,7 +249,6 @@ async function putData(path = "", data = {}) {
 async function loadData(path = "") {
     let response = await fetch(STORAGE_URL + path + ".json");
     let responseAsJson = await response.json();
-
     return responseAsJson;
 }
 
@@ -260,34 +259,25 @@ function saveData(name, data) {
 }
 
 async function loadContacts() {
-    // Load contacts
-    // Kontakten werden geladen
-    contactData = await loadData("/contacts");
-
-    /* console.log(contactData); */
+    const contacts = await loadData("/contacts");
+    console.log("Contacts loaded:", contacts);
+    return contacts;
 }
-function saveContacts() {
-    // Load contacts
-    // Kontakten werden gespeichert
-    saveData("contacts", contactData);
 
-    /* console.log(contactData); */
+function saveContacts() {
+    saveData("contacts", contactData);
 }
 
 async function loadTasks() {
-    // Load tasks
-    // Tasks werden geladen
-    tasks = await loadData("/tasks");
-
-    /* console.log(tasks); */
+    const tasks = await loadData("/tasks");
+    console.log("Tasks loaded:", tasks);
+    return tasks;
 }
+
 function saveTasks() {
-    // Save tasks
-    // Tasks werden gespeichert
     saveData("tasks", tasks);
-
-    /* console.log(tasks); */
 }
+
 
 /**
  * Initializes shared components.

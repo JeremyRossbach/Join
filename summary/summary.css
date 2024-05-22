@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+#div_body{
+    display: contents;
+}
+
 #summary_container img {
     width: 69px;
     height: 69px;

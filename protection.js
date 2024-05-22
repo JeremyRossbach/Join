@@ -1,10 +1,14 @@
-createGuest();
 checkIsLogin();
+
+/* async function handleGuestLogin() {
+    loginGuest();
+    createGuest();
+} */
 
 /**
  * Save guest login details if not exists in the local storage
  */
-function createGuest() {
+/* function createGuest() {
     const usersObjectString = localStorage.getItem('users');
     if (!usersObjectString) {
         const userGuest = [{
@@ -17,7 +21,35 @@ function createGuest() {
         }];
         localStorage.setItem('users', JSON.stringify(userGuest));
     }
+} */
+
+async function createGuest() {
+    const usersObjectString = localStorage.getItem('users');
+    if (!usersObjectString) {
+       
+        const contacts = await loadContacts();
+        const tasks = await loadTasks();
+
+        const userGuest = [{
+            'name': 'Guest',
+            'email': 'guest@join.com',
+            'password': '',
+            'isLogin': false,
+            'contacts': contacts,  
+            'tasks': tasks        
+        }];
+
+        localStorage.setItem('users', JSON.stringify(userGuest));
+        console.log("Guest user created:", userGuest);
+    }
 }
+
+async function handleGuestLogin() {
+    loginGuest();
+    await createGuest();
+}
+
+
 
 /**
  * Redirect user only to areas where it is allowed
