@@ -37,3 +37,31 @@ function closeAddTask(event) {
     }
     /* location.reload(); */
 }
+
+
+function createTaskBoard() {
+    let titleInput = document.getElementById('titleInput');
+    let descriptionInput = document.getElementById('descriptionInput');
+    let date = document.getElementById('date');
+    
+    let newTask = {
+        'title': titleInput.value,
+        'description': descriptionInput.value,
+        'assignedTo': taskcontacts,
+        'dueDate': date.value,
+        'prio': prio,
+        'category': categorys,
+        'subtask': subtasks,
+        'doneSubtask': subtasks.map(() => false),
+        'numberOfDoneSubtasks': 0,
+        'section': 'To do'
+    }
+    closeAddTask(); /* schließt das addTask Popup */
+    emptyContentSections(); /* leert den kompletten Content */
+    init(); /* zeigt alle tasks an */
+    showCreateTaskMessage('task_successfully_div');
+    testtask.push(newTask);
+    clearForm();
+    putData("tasks", tasks)
+        .catch(error => console.error(error));
+}

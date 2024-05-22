@@ -29,7 +29,8 @@
     .dropdownContact,
     .priorityText,
     .priorityButton,
-    .addTaskInputPlaceholder {
+    .addTaskInputPlaceholder,
+    .responsiveFontSize {
         font-size: 18px;
     }
 
@@ -147,7 +148,8 @@
     .dropdownContact,
     .priorityText,
     .priorityButton,
-    .addTaskInputPlaceholder {
+    .addTaskInputPlaceholder,
+    .responsiveFontSize {
         font-size: 16px;
     }
 
