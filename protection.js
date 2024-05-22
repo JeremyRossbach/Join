@@ -21,14 +21,20 @@ function createGuest() {
  * Check if user is login to protect sensitiv areas like tasks, contacts...
  */
 function checkIsLogin() {
+    let isUserLogin = false;
     const usersObjectString = localStorage.getItem('users');
-    if (!usersObjectString) {
+    if (usersObjectString) {
         const users = JSON.parse(usersObjectString);
         for (let i = 0; i < users.length; i++) {
             const user = users[i];
-            if (!user.isLogin) {
-                window.location.href = '/';
+            if (user.isLogin) {
+                isUserLogin = true;
+                break;
             }
         }
+    }
+
+    if (!isUserLogin) {
+        window.location.href = '../';
     }
 }
