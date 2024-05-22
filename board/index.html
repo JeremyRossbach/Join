@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../board/board_mobile_1.css">
     <link rel="stylesheet" href="../board/board_mobile_2.css">
     <link rel="stylesheet" href="../board/board_mobile_3.css">
-    
+
     <!-- addTask CSS files -->
     <link rel="stylesheet" href="../task/task.css">
     <link rel="stylesheet" href="../task/task_responsiv.css">
@@ -27,16 +27,13 @@
     <script src="../data.js"></script>
 
     <!-- addTask JS files -->
-    <script src="../task/taskleft1.js"></script>
-    <script src="../task/taskright2.js"></script>
-    <script src="../task/createtask3.js"></script>
-    <script src="../task/event.js"></script>
+
     <link rel="icon" href="../img/join_logo_black.png">
 
     <title>Board</title>
 </head>
 
-<body onload="/* loadData() */;init();sharedInit()">
+<body onload="/* loadData() */;init();sharedInit();initAddTasks()">
     <!-- Das ist ein Template für alle andere Seiten -->
     <div id="div_body">
         <div id="side">
@@ -46,48 +43,46 @@
             <div id="side_menu">
                 <div class="side_menu_bg">
                     <a href="../summary" class="side_undermenu">
-                        <img class="summary_icon_normal menu_iconsWH" src="../img/menu_summary_icon.png"
-                            alt="Summary">
+                        <img class="summary_icon_normal menu_iconsWH" src="../img/menu_summary_icon.png" alt="Summary">
                         <img class="summary_icon_other menu_iconsWH" src="../img/menu_summary_icon_white.png"
                             alt="Summary">
                         <span class="side_menu_text_position">Summary</span>
-                    </a>                  
+                    </a>
 
-            </div>
-            <div class="side_menu_bg">
+                </div>
+                <div class="side_menu_bg">
                     <a href="../task" class="side_undermenu">
-                        <img class="addtask_icon_normal menu_iconsWH" src="../img/menu_addtask_icon.png"
-                            alt="Add Task">
+                        <img class="addtask_icon_normal menu_iconsWH" src="../img/menu_addtask_icon.png" alt="Add Task">
                         <img class="addtask_icon_other menu_iconsWH" src="../img/menu_addtask_icon_white.png"
                             alt="Add Task">
                         <span class="side_menu_text_position">Add Task</span>
-                    </a>                    
+                    </a>
+                </div>
+                <div class="side_menu_bg selected">
+                    <a href="../board" class="side_undermenu">
+                        <img class="board_icon_normal menu_iconsWH" src="../img/menu_board_icon.png" alt="Board">
+                        <img class="board_icon_other menu_iconsWH" src="../img/menu_board_icon_white.png" alt="Board">
+                        <span class="side_menu_text_position">Board</span>
+                    </a>
+                </div>
+                <div class="side_menu_bg">
+                    <a href="../contacts" class="side_undermenu">
+                        <img class="contacts_icon_normal menu_iconsWH" src="../img/menu_contacts_icon.png"
+                            alt="Contacts">
+                        <img class="contacts_icon_other menu_iconsWH" src="../img/menu_contacts_icon_white.png"
+                            alt="Contacts">
+                        <span class="side_menu_text_position">Contacts</span>
+                    </a>
+                </div>
             </div>
-            <div class="side_menu_bg selected">
-                <a href="../board" class="side_undermenu">
-                    <img class="board_icon_normal menu_iconsWH" src="../img/menu_board_icon.png" alt="Board">
-                    <img class="board_icon_other menu_iconsWH" src="../img/menu_board_icon_white.png" alt="Board">
-                    <span class="side_menu_text_position">Board</span>
-                </a>
+            <div id="footer">
+                <div class="side_menu_bg">
+                    <a href="../jura/privacy.html" id="priv_pol" class="side_undermenu">Privacy Policy</a>
+                </div>
+                <div class="side_menu_bg">
+                    <a href="../jura/legal.html" id="leg_not" class="side_undermenu">Legal Notice</a>
+                </div>
             </div>
-            <div class="side_menu_bg">
-                <a href="../contacts" class="side_undermenu">
-                    <img class="contacts_icon_normal menu_iconsWH" src="../img/menu_contacts_icon.png"
-                        alt="Contacts">
-                    <img class="contacts_icon_other menu_iconsWH" src="../img/menu_contacts_icon_white.png"
-                        alt="Contacts">
-                    <span class="side_menu_text_position">Contacts</span>
-                </a>
-            </div>
-        </div>
-        <div id="footer">
-            <div class="side_menu_bg">
-                <a href="../jura/privacy.html" id="priv_pol" class="side_undermenu">Privacy Policy</a> 
-            </div>
-            <div class="side_menu_bg">
-                <a href="../jura/legal.html" id="leg_not" class="side_undermenu">Legal Notice</a> 
-            </div>
-        </div>
         </div>
         <div id="header_content_position">
             <div id="header">
@@ -101,7 +96,7 @@
                     <a href="../help/index.html" id="nav_right_img">
                         <img src="../img/help_icon.png" alt="Summary">
                     </a>
-                    <div id="nav_right_menu" onclick="jura_window();">                        
+                    <div id="nav_right_menu" onclick="jura_window();">
                     </div>
                 </div>
             </div>
@@ -109,51 +104,71 @@
                 <a href="../help/index.html" class="jura_undercontainer" id="help_link">Help</a>
                 <a href="../jura/privacy.html" class="jura_undercontainer">Privacy Policy</a>
                 <a href="../jura/legal.html" class="jura_undercontainer">Legal Notice</a>
+<<<<<<< HEAD
+                <a href="../index.html" class="jura_undercontainer">Log out</a>
+=======
                 <a href="#" onclick="logout()" class="jura_undercontainer">Log out</a>                
+>>>>>>> b063eb0755bc84a6f379a3e42bedf7ebb5cec761
             </div>
             <!-- Hier kommt der HTML Code von Euch rein -->
             <div id="content">
                 <header>
                     <div class="h1AndButton">
                         <h1 class="headline_title">Board</h1>
-                        <button onclick="   " class="mobileAddButton"><img class="mobileAddImage" src="./img/mobileAdd.svg"></button>
+                        <button onclick="   " class="mobileAddButton"><img class="mobileAddImage"
+                                src="./img/mobileAdd.svg"></button>
                     </div>
                     <div class="inputAndButton">
                         <input oninput="findTask()" id="input" type="text" placeholder="Find Task">
                         <img class="inputSearchImage" src="./img/spacer_search.svg">
                         <div onclick="focusOnFindTask()" id="searchButton"></div>
-                        <button onclick="openAddTask()" id="addButton">Add task <img id="addImage" src="./img/add.svg"></button>
-                        <button onclick="openAddTask()" class="responsiveAddButton"><img class="mobileAddImage" src="./img/mobileAdd.svg"></button>
+                        <button onclick="openAddTask()" id="addButton">Add task <img id="addImage"
+                                src="./img/add.svg"></button>
+                        <button onclick="openAddTask()" class="responsiveAddButton"><img class="mobileAddImage"
+                                src="./img/mobileAdd.svg"></button>
                     </div>
                 </header>
-                
+
                 <section id="sections">
-                    <div id="toDoSection" ondrop="moveTo('To do'); removeHighlight('toDo')" ondragover="allowDrop(event); highlight('toDo')">
-                        <div id="toDoHeader"><p>To do</p><button onclick="openAddTask()" id="addToDo"></button></div>
+                    <div id="toDoSection" ondrop="moveTo('To do'); removeHighlight('toDo')"
+                        ondragover="allowDrop(event); highlight('toDo')">
+                        <div id="toDoHeader">
+                            <p>To do</p><button onclick="openAddTask()" id="addToDo"></button>
+                        </div>
                         <div class="overflow-y" ondragleave="removeHighlight('toDo')">
                             <p id="emptytoDoContentSection" class="emptySection">No tasks to do</p>
                             <div id="toDoHighlight"></div>
                             <div onclick="" id="toDoContent" class="content"></div>
                         </div>
                     </div>
-                    <div id="inProgressSection" ondrop="moveTo('In progress'); removeHighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')">
-                        <div id="inProgressHeader"><p>In progress</p><button onclick="openAddTask()" id="addInProgress"></button></div>
+                    <div id="inProgressSection" ondrop="moveTo('In progress'); removeHighlight('inProgress')"
+                        ondragover="allowDrop(event); highlight('inProgress')">
+                        <div id="inProgressHeader">
+                            <p>In progress</p><button onclick="openAddTask()" id="addInProgress"></button>
+                        </div>
                         <div class="overflow-y" ondragleave="removeHighlight('inProgress')">
                             <p id="emptyinProgressContentSection" class="emptySection">No tasks in progress</p>
                             <div id="inProgressHighlight"></div>
                             <div onclick="" id="inProgressContent" class="content"></div>
                         </div>
                     </div>
-                    <div id="awaitFeedbackSection" ondrop="moveTo('Await Feedback'); removeHighlight('awaitFeedback')" ondragover="allowDrop(event)">
-                        <div id="awaitFeedbackHeader"><p>Await Feedback</p><button onclick="openAddTask()" id="addAwaitFeedback"></button></div>
-                        <div class="overflow-y" ondragenter="highlight('awaitFeedback')" ondragleave="removeHighlight('awaitFeedback')">
+                    <div id="awaitFeedbackSection" ondrop="moveTo('Await Feedback'); removeHighlight('awaitFeedback')"
+                        ondragover="allowDrop(event)">
+                        <div id="awaitFeedbackHeader">
+                            <p>Await Feedback</p><button onclick="openAddTask()" id="addAwaitFeedback"></button>
+                        </div>
+                        <div class="overflow-y" ondragenter="highlight('awaitFeedback')"
+                            ondragleave="removeHighlight('awaitFeedback')">
                             <p id="emptyawaitFeedbackContentSection" class="emptySection">No task awaits feedback</p>
                             <div id="awaitFeedbackHighlight"></div>
                             <div onclick="" id="awaitFeedbackContent" class="content"></div>
                         </div>
                     </div>
-                    <div id="doneSection" ondrop="moveTo('Done'); removeHighlight('done')" ondragover="allowDrop(event)">
-                        <div id="doneHeader"><p>Done</p></div>
+                    <div id="doneSection" ondrop="moveTo('Done'); removeHighlight('done')"
+                        ondragover="allowDrop(event)">
+                        <div id="doneHeader">
+                            <p>Done</p>
+                        </div>
                         <div class="overflow-y" ondragenter="highlight('done')" ondragleave="removeHighlight('done')">
                             <p id="emptydoneContentSection" class="emptySection">No tasks done</p>
                             <div id="doneHighlight"></div>
@@ -177,7 +192,12 @@
                     <img onclick="addTaskSlideOut()" class="closeImage" src="./img/close.svg">
                 </div>
                 <div class="innerContent">
-                    <div class="leftside gap_16">
+                    <div class="task_successfully_div" id="task_successfully_div" style="display: none;">
+                        <span class="task_successfully_message">
+                            Task successfully created
+                        </span>
+                    </div>
+                    <div class="leftside">
                         <div class="container-title">
                             <span class="input-title-text">Title<span class="redStar">*</span></span>
                             <input id="titleInput" class="input-field" placeholder="Enter a title" type="text"
@@ -192,21 +212,23 @@
                         <div class="container-assigned contactPosition">
                             <span class="input-title-text">Assigned to</span>
                             <div id="dropdownContent" class="dropdown">
-                                <button class="input-field input-field-button dropbtn" onclick="dropDownContacts()"><input
-                                        oninput="searchContacts()" id="filterContatcsInput" type="text" class="noDisplay"><span
+                                <button class="input-field input-field-button dropbtn"
+                                    onclick="dropDownContacts()"><input oninput="searchContacts()"
+                                        id="filterContatcsInput" type="text" class="noDisplay"><span
                                         id="selectSpan">Select
-                                        contacts to assign </span><img id="arrow" src="img_addTask/arrow down.svg" alt=""></button>
+                                        contacts to assign </span><img id="arrow" src="img/arrow down.svg"
+                                        alt=""></button>
                                 <div id="contacts_dropdown" class="contactsDropdown scroll-style">
                                     <div id="availableContacts"></div>
-            
+
                                 </div>
                                 <div class="chosenInitals" id="chosenInitals"></div>
                             </div>
                         </div>
                     </div>
                     <div class="roomdivider"></div>
-            
-                    <div class="rightside gap_16">
+
+                    <div class="rightside">
                         <div class="container-input-date" class="datepicker">
                             <span class="input-title-text">Due date<span class="redStar">*</span></span>
                             <input type="date" id="date" class="input-field input-field-date" name="date"
@@ -218,11 +240,11 @@
                             <span class="input-title-text">Prio</span>
                             <div class="priobtns">
                                 <div id="urgentbtn" onclick="prioUrgent()" class="priobtn">Urgent <img id="highicon"
-                                        src="img_addTask/Prio high icon.svg" alt=""></div>
+                                        src="img/Prio high icon.svg" alt=""></div>
                                 <div id="midbtn" onclick="prioMed()" class="priobtn">Medium <img id='midicon'
-                                        src="img_addTask/Prio medi icon.svg" alt=""></div>
+                                        src="img/Prio medi icon.svg" alt=""></div>
                                 <div id="lowbtn" onclick="prioLow()" class="priobtn">Low <img id="lowicon"
-                                        src="img_addTask/Prio low icon.svg" alt=""></div>
+                                        src="img/Prio low icon.svg" alt=""></div>
                             </div>
                         </div>
                         <div class="container-input-category">
@@ -231,13 +253,14 @@
                                 <button id="dropBtnCategory" class="dropbtn input-field input-field-category"><span
                                         id="categorySpan">Select
                                         tasks
-                                        category</span><img id="arrow_category" src="img_addTask/arrow down.svg" alt=""></button>
+                                        category</span><img id="arrow_category" src="img/arrow down.svg"
+                                        alt=""></button>
                                 <div id="dropdown-content" class="dropdown">
                                     <div class="availableCategory" id="availableCategory">
                                         <div onclick="technicalTask()" class="choseCategory">Technical Task</div>
                                         <div onclick="userStory()" class="choseCategory">User Story</div>
                                     </div>
-            
+
                                 </div>
                             </div>
                         </div>
@@ -248,29 +271,37 @@
                             <span class="input-title-text">Subtasks</span>
                             <div class="input-field-subtask">
                                 <input id="subtask_input" class="input-field" placeholder="Add new subtask" on>
-                                <img onclick="pushSubtask()" src="img_addTask/subtaskPlus.svg" alt="">
+                                <img onclick="pushSubtask()" src="img/subtaskPlus.svg" alt="">
                             </div>
                             <div id="pushedSubtasks" class="pushedSubtasks scroll-style"></div>
                         </div>
                     </div>
                 </div>
-                <div class="addTaskBottom">
+                <div class="bottom">
                     <div class="field-required"><span class="redStar">*</span>This field is required</div>
                     <div class="container-clear-create">
                         <div onclick="clearForm()" class="clearBTN" id="clearBTN">Clear X</div>
                         <button id="alarmBTN" class="createBTN" onclick="alarmInput()">
                             <span>Create Task</span>
-                            <img src="img_addTask/createCheck.svg" alt="">
+                            <img src="img/createCheck.svg" alt="">
                             <button id="createBTN" class="noDisplay createBTN " onclick="createTask()">
                                 <span>Create Task</span>
-                                <img src="img_addTask/createCheck.svg" alt="">
+                                <img src="img/createCheck.svg" alt="">
                             </button>
                     </div>
                 </div>
             </div>
+            </div>
         </card>
     </background>
+<<<<<<< HEAD
+    <script src="../task/taskleft1.js"></script>
+    <script src="../task/taskright2.js"></script>
+    <script src="../task/createtask3.js"></script>
+    <script src="../task/event.js"></script>
+=======
     <script src="../protection.js"></script>
+>>>>>>> b063eb0755bc84a6f379a3e42bedf7ebb5cec761
 </body>
 
 </html>
