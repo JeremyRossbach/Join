@@ -58,7 +58,8 @@
     .editSubtasksInput,
     .dropdownContact,
     .priorityText,
-    .priorityButton {
+    .priorityButton,
+    .addTaskInputPlaceholder {
         font-size: 12px;
     }
 

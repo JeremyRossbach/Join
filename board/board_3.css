@@ -191,6 +191,20 @@ li {
     background-color: white;
 }
 
+@media (max-width: 1132px) {
+    #addTask {
+        width: 90%;
+        height: 90%;
+        overflow-y: scroll;
+    }
+
+    .addTaskBottom {
+        align-items: center !important;
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+    }
+}
+
 .addTaskContent {
     width: -webkit-fill-available;
     margin-top: 64px;
@@ -210,6 +224,24 @@ li {
     justify-content: space-between;
     align-items: flex-end;
     height: 58px;
+}
+
+@media(max-width: 700px) {
+    #addTask {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .addTaskContent {
+        margin-inline: 40px;
+    }
+
+    .addTaskBottom {
+        height: 126px !important;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 .gap_16 {

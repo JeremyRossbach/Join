@@ -311,6 +311,7 @@ function emptyInput(i) {
  * @param {number} i - This is the number of each task   
  */
 function ok(i) {
+    event.preventDefault();
     updateTitle(i);
     updateDescription(i);
     updateDueDate(i);

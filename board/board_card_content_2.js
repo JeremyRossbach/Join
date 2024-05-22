@@ -208,3 +208,44 @@ function removeHighlight(id) {
     let sectionHighlight = document.getElementById(id + 'Highlight');
     sectionHighlight.style.display = 'none';
 }
+
+
+/* let dragCounter = 0;
+
+
+function setupDragAndDrop(id) {
+    let dropZone = document.getElementById(id);
+    let highlightElement = document.getElementById(id + 'Highlight');
+
+    dropZone.addEventListener('dragenter', (event) => {
+        event.preventDefault();
+        dragCounter++;
+        if (dragCounter === 1) {
+            highlightElement.style.display = 'flex';
+        }
+    });
+
+    dropZone.addEventListener('dragover', (event) => {
+        event.preventDefault(); // Necessary to allow a drop
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+        dragCounter--;
+        if (dragCounter === 0) {
+            highlightElement.style.display = 'none';
+        }
+    });
+
+    dropZone.addEventListener('drop', (event) => {
+        event.preventDefault();
+        dragCounter = 0;
+        highlightElement.style.display = 'none';
+        // Handle the drop action here
+    });
+}
+
+// Call this function for each drop zone
+setupDragAndDrop('toDoSection');
+setupDragAndDrop('inProgressSection');
+setupDragAndDrop('awaitFeedbackSection');
+setupDragAndDrop('doneSection'); */
