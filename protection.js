@@ -21,16 +21,19 @@ function createGuest() {
  * Redirect user only to areas where it is allowed
  * @param {boolean} isLogin If use are login then it have access to protected areas
  */
-function redirectUser(isLogin) {
+function redirectUserProtection(isLogin) {
     if (!isLogin) {
-        if (window.location.pathname != '/') {
+        if (window.location.pathname.match('sign_up')) {
+
+        } else if (window.location.pathname.match('jura_no_login')) {
+
+        } else if (window.location.pathname != '/') {
             window.location.href = '../';
-        }
+        } 
     } else {
         if (
             window.location.pathname == '/' ||
             window.location.pathname.match('sign_up') ||
-            window.location.pathname.match('jura_no_login') ||
             window.location.pathname.match('jura_no_login')
         ) {
             window.location.href = '/summary'
@@ -55,7 +58,7 @@ function checkIsLogin() {
         }
     }
     
-    redirectUser(isUserLogin);
+    redirectUserProtection(isUserLogin);
 }
 
 /**
