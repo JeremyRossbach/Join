@@ -138,17 +138,3 @@ function loginGuest() {
         loginForm.submit();
     }
 }
-
-/**
- * Logout the user
- */
-function logout() {
-    const userObjectString = localStorage.getItem('user');
-
-    if (userObjectString) {
-        const user = JSON.parse(userObjectString);
-        user.isLogin = false;
-
-        localStorage.setItem('user', JSON.stringify(user));
-    }
-}

@@ -38,3 +38,19 @@ function checkIsLogin() {
         window.location.href = '../';
     }
 }
+
+/**
+ * Logout the user
+ */
+function logout() {
+    const usersObjectString = localStorage.getItem('users');
+    if (usersObjectString) {
+        const users = JSON.parse(usersObjectString);
+        for (let i = 0; i < users.length; i++) {
+            let user = users[i];
+            user.isLogin = false;
+        }
+        localStorage.setItem('users', JSON.stringify(users));
+    }
+    window.location.href = '../'
+}
