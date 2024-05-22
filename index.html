@@ -22,7 +22,7 @@
         </div>
 
 
-        <form class="login" action="summary/" onsubmit="return login()">
+        <form id="login-form" class="login" action="summary/" onsubmit="return login()">
             <h1>Log in</h1>
             <div class="login-inputs">
                 <div class="login-email-password">
@@ -31,7 +31,7 @@
                         <input id="password" class="input-field" type="password" placeholder="Password"
                             onkeyup="checkInputPassword()">
                         <div class="password-visibility" style="display: none;" onclick="hidePassword()"></div>
-                        <div class="validation-password" style="display: none;">Wrong password Ups! Try again.</div>
+                        <div id="alert-message" class="alert-message" style="display: none;">Wrong password Ups! Try again.</div>
                     </div>
                 </div>
                 <div class="login-remember-me">

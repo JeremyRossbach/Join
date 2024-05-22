@@ -5,19 +5,6 @@
  */
 const STORAGE_URL = "https://join-8aa83-default-rtdb.europe-west1.firebasedatabase.app/";
 
-// Init guest user login details
-const usersObjectString = localStorage.getItem('users');
-if (!usersObjectString) {
-    const userGuest = [{
-        'name': 'Guest',
-        'email': 'guest@join.com',
-        'password': '',
-        'isLogin': false
-    }];
-    localStorage.setItem('users', JSON.stringify(userGuest));
-}
-
-
 /**
  * An array containing contact data.
  * Ein Array mit Kontaktdaten.

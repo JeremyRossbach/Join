@@ -1,8 +1,16 @@
 let inputPassword = document.querySelector('input[type="password"]');
-let validationText = document.querySelector('div[class="validation-password"]');
+let alertMessage = document.getElementById('alert-message');
 let buttonsPasswordVisibility = document.querySelectorAll('div[class="password-visibility"]')
-const email = document.getElementById('email');
-const password = document.getElementById('password');
+let loginForm = document.getElementById('login-form');
+
+
+/**
+ * Show on the login the password false alert message
+ */
+function showAlertMessage() {
+    inputPassword.classList.add('input-danger');
+    alertMessage.style.display = '';
+}
 
 /**
  * Check if the user have left the password input empty or not
@@ -10,14 +18,12 @@ const password = document.getElementById('password');
  */
 function isPasswordNotEmtpy() {
     if (inputPassword.value.length < 1) {
-        validationText.style.display = '';
-        inputPassword.classList.add('input-danger');
+        showAlertMessage();
         return false;
     }
 
     return true;
 }
-
 
 /**
  * Show password in the password input
@@ -86,6 +92,8 @@ function hidePassword() {
 function login() {
     let users = [];
     let foundUser = false;
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
 
     if (!isPasswordNotEmtpy()) {
         return false;
@@ -109,6 +117,7 @@ function login() {
         return true;
     }
 
+    showAlertMessage();
     return false;
 }
 
@@ -126,7 +135,7 @@ function loginGuest() {
             }
         }
         localStorage.setItem('users', JSON.stringify(users))
-        window.location.href = '/summary'
+        loginForm.submit();
     }
 }
 
