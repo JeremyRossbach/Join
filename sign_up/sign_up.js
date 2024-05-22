@@ -21,14 +21,7 @@ function checkPasswordMatch() {
     }
     dialogMessage.style.display = '';
     setTimeout(function () {
-        signUpForm.submit();
-        users.push(
-            {
-                'email': 'bla@join.com',
-                'username': 'bla',
-                'password': '1234'
-            }
-        )
+        // signUpForm.submit();
     }, 1000);
     return false;
 }
@@ -48,14 +41,15 @@ function signup() {
             'name': name.value,
             'email': email.value,
             'password': password.value,
-            'isLogin': false
+            'isLogin': false,
+            'contacts': [],
+            'tasks': []
         }
         users.push(user);
         localStorage.setItem('users', JSON.stringify(users));
 
         window.scrollTo(0, 0);
         document.body.style.overflow = 'hidden';
-        // buttonSignup.setAttribute('disabled', '')
     }
 }
 
