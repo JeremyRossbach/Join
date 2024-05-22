@@ -73,3 +73,21 @@ function logout() {
     }
     window.location.href = '../'
 }
+
+/**
+ * It will return the current user where you are login
+ * @returns {Object} Return user data as dictionary, if not login then it will return a empty dictionary
+ */
+function getUser() {
+    const usersObjectString = localStorage.getItem('users');
+    if (usersObjectString) {
+        const users = JSON.parse(usersObjectString);
+        for (let i = 0; i < users.length; i++) {
+            let user = users[i];
+            if (user.isLogin) {
+                return user;
+            }
+        }
+    }
+    return {}
+}
