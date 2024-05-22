@@ -18,6 +18,27 @@ function createGuest() {
 }
 
 /**
+ * Redirect user only to areas where it is allowed
+ * @param {boolean} isLogin If use are login then it have access to protected areas
+ */
+function redirectUser(isLogin) {
+    if (!isLogin) {
+        if (window.location.pathname != '/') {
+            window.location.href = '../';
+        }
+    } else {
+        if (
+            window.location.pathname == '/' ||
+            window.location.pathname.match('sign_up') ||
+            window.location.pathname.match('jura_no_login') ||
+            window.location.pathname.match('jura_no_login')
+        ) {
+            window.location.href = '/summary'
+        }
+    }
+}
+
+/**
  * Check if user is login to protect sensitiv areas like tasks, contacts...
  */
 function checkIsLogin() {
@@ -33,10 +54,8 @@ function checkIsLogin() {
             }
         }
     }
-
-    if (!isUserLogin) {
-        window.location.href = '../';
-    }
+    
+    redirectUser(isUserLogin);
 }
 
 /**
