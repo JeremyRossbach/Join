@@ -11,7 +11,9 @@ function createGuest() {
             'name': 'Guest',
             'email': 'guest@join.com',
             'password': '',
-            'isLogin': false
+            'isLogin': false,
+            'contacts': contactData,
+            'tasks': tasks
         }];
         localStorage.setItem('users', JSON.stringify(userGuest));
     }
