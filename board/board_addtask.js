@@ -59,7 +59,11 @@ function createTaskBoard() {
     emptyContentSections(); /* leert den kompletten Content */
     init(); /* zeigt alle tasks an */
     showCreateTaskMessage('task_successfully_div');
-    testtask.push(newTask);
+    
+    let user = getUser();
+    user.tasks.push(newTask);
+    saveUser(user);
+
     clearForm();
     putData("tasks", tasks)
         .catch(error => console.error(error));

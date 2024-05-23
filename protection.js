@@ -103,3 +103,23 @@ function getUser() {
     }
     return {}
 }
+
+/**
+ * Save new data to user
+ * @param {Object} userObject Save user data
+ */
+function saveUser(userObject) {
+    const usersObjectString = localStorage.getItem('users');
+    if (usersObjectString) {
+        let users = JSON.parse(usersObjectString);
+        for (let i = 0; i < users.length; i++) {
+            let user = users[i];
+            console.log(user.email, userObject)
+            if (user.email == userObject.email) {
+                users[i] = userObject;
+                localStorage.setItem('users', JSON.stringify(users));
+                break;
+            }
+        }
+    }
+}

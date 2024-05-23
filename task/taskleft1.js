@@ -9,7 +9,7 @@ let currentNames = [];
 
 function initAddTasks() {
     currentNames = contactData;
-    loadSubtasks();
+    // loadSubtasks();
     renderSubtask();
     showaAvailableContacts();
 }
