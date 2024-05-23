@@ -304,20 +304,20 @@ function pushEditToArray(j) {
 /**
  * Saves the subtasks array .
  */
-function saveSubtusks() {
+/* function saveSubtusks() {
     let subtaskasText = JSON.stringify(subtasks);
     localStorage.setItem('subtasks', subtaskasText);
 }
-
+ */
 
 /**
  * Loads the subtasks array .
  */
-function loadSubtasks() {
+/* function loadSubtasks() {
     let subtaskasText = localStorage.getItem(subtasks)
     sub_tasks = JSON.parse(subtaskasText);
 
-}
+} */
 
 /**
  * Pushed the subtasks array .
