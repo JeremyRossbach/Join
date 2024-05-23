@@ -3,7 +3,7 @@ checkIsLogin();
 async function createGuest() {
     const usersObjectString = localStorage.getItem('users');
     if (!usersObjectString) {
-       
+
         const contacts = await loadContacts();
         const tasks = await loadTasks();
 
@@ -12,8 +12,8 @@ async function createGuest() {
             'email': 'guest@join.com',
             'password': '',
             'isLogin': false,
-            'contacts': contacts,  
-            'tasks': tasks        
+            'contacts': contacts,
+            'tasks': tasks
         }];
 
         localStorage.setItem('users', JSON.stringify(userGuest));
@@ -25,8 +25,6 @@ async function handleGuestLogin() {
     loginGuest();
     await createGuest();
 }
-
-
 
 /**
  * Redirect user only to areas where it is allowed
@@ -40,7 +38,7 @@ function redirectUserProtection(isLogin) {
 
         } else if (window.location.pathname != '/') {
             window.location.href = '../';
-        } 
+        }
     } else {
         if (
             window.location.pathname == '/' ||
@@ -68,7 +66,7 @@ function checkIsLogin() {
             }
         }
     }
-    
+
     redirectUserProtection(isUserLogin);
 }
 

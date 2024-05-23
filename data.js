@@ -284,8 +284,29 @@ function saveTasks() {
  * Initialisiert gemeinsame Komponenten.
  */
 function sharedInit() {
-    let loginInitial = document.getElementById(`nav_right_menu`);
-    loginInitial.innerHTML = getInitials(`Max Mustermann`);
+    setProfileLetters();
+}
+
+/**
+ * Set on the profile image the first letters from the username
+ */
+function setProfileLetters() {
+    let profile = document.getElementById('nav_right_menu');
+    if (profile) {
+        let user = getUser();
+        let firstAndLastName = user.name.split(" ");
+        let firstLetter = '';
+        let secondLetter = '';
+        if (firstAndLastName.length == 2) {
+            firstLetter = firstAndLastName[0][0];
+            secondLetter = firstAndLastName[1][0];
+        } else if(firstAndLastName.length == 1) {
+            firstLetter = firstAndLastName[0][0];
+        }
+        let letters = firstLetter + secondLetter;
+        profile.innerHTML = letters;
+    }
+
 }
 
 
