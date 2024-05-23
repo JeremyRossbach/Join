@@ -18,8 +18,7 @@ function saveTasks() {
 
 function loadDatas() {
     let tasksAsString = localStorage.getItem('tasks');
-    // tasks = JSON.parse(tasksAsString);
-    tasks = getUser().tasks;
+    tasks = JSON.parse(tasksAsString);
 }
 
 
