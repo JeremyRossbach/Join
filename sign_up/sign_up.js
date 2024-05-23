@@ -21,7 +21,7 @@ function checkPasswordMatch() {
     }
     dialogMessage.style.display = '';
     setTimeout(function () {
-        // signUpForm.submit();
+        signUpForm.submit();
     }, 1000);
     return false;
 }

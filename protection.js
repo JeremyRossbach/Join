@@ -1,28 +1,5 @@
 checkIsLogin();
 
-/* async function handleGuestLogin() {
-    loginGuest();
-    createGuest();
-} */
-
-/**
- * Save guest login details if not exists in the local storage
- */
-/* function createGuest() {
-    const usersObjectString = localStorage.getItem('users');
-    if (!usersObjectString) {
-        const userGuest = [{
-            'name': 'Guest',
-            'email': 'guest@join.com',
-            'password': '',
-            'isLogin': false,
-            'contacts': contactData,
-            'tasks': tasks
-        }];
-        localStorage.setItem('users', JSON.stringify(userGuest));
-    }
-} */
-
 async function createGuest() {
     const usersObjectString = localStorage.getItem('users');
     if (!usersObjectString) {
