@@ -6,6 +6,7 @@ async function init() {
     await loadTasks();
     showBoardInfos();
     displayGreeting();
+    setGreetingName();
 }
 
 /**
@@ -85,4 +86,14 @@ function displayGreeting() {
     const greetingDiv = document.getElementById("greet_info");
 
     greetingDiv.textContent = greeting;
+}
+
+/**
+ * Display the current username on the greeting screen at the beginning
+ * Zeigt am anfang der Summary den aktuellen Benutzernamen an
+ */
+function setGreetingName() {
+    let greetName = document.getElementById('greet_name');
+    let user = getUser();
+    greetName.innerHTML = user.name;
 }
