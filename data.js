@@ -254,13 +254,11 @@ async function loadData(path = "") {
 
 function saveData(name, data) {
     putData(name, data)
-        .then(response => console.log(response))
         .catch(error => console.error(error));
 }
 
 async function loadContacts() {
     const contacts = await loadData("/contacts");
-    console.log("Contacts loaded:", contacts);
     return contacts;
 }
 
@@ -270,7 +268,6 @@ function saveContacts() {
 
 async function loadTasks() {
     const tasks = await loadData("/tasks");
-    console.log("Tasks loaded:", tasks);
     return tasks;
 }
 

@@ -17,7 +17,6 @@ async function createGuest() {
         }];
 
         localStorage.setItem('users', JSON.stringify(userGuest));
-        console.log("Guest user created:", userGuest);
     }
 }
 
@@ -114,7 +113,6 @@ function saveUser(userObject) {
         let users = JSON.parse(usersObjectString);
         for (let i = 0; i < users.length; i++) {
             let user = users[i];
-            console.log(user.email, userObject)
             if (user.email == userObject.email) {
                 users[i] = userObject;
                 localStorage.setItem('users', JSON.stringify(users));
