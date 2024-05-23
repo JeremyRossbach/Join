@@ -5,7 +5,7 @@ function createTask() {
     let descriptionInput = document.getElementById('descriptionInput');
     let date = document.getElementById('date');
     
-    let newTask = {
+    let tasks = {
         'title': titleInput.value,
         'description': descriptionInput.value,
         'assignedTo': taskcontacts,
@@ -18,10 +18,10 @@ function createTask() {
         'section': 'To do'
     }
     showCreateTaskMessage('task_successfully_div');
-    testtask.push(newTask);
+    testtask.push(tasks);
     clearForm();
-    putData("tasks", tasks)
-        .catch(error => console.error(error));
+    saveTasks();
+      
 }
 
 
