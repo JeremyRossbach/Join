@@ -35,6 +35,7 @@
     #div_body {
         overflow: hidden;
         position: unset;
+        height: 1324px;
     }
 
     .clearBTN {
@@ -52,6 +53,8 @@
         margin-left: 16px !important;
         margin-right: 16px !important;
         margin-top: 113px !important;
+        text-align: center;
+        height: 100px !important;
     }
 
     .innerContent {
@@ -163,5 +166,22 @@
     100% {
         opacity: 0;
         transform: translateX(0);
+    }
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+    .headline_title {
+        font-size: 26px !important;
+    }
+
+    .side_menu_bg {
+        width: 25% !important;
+    }
+
+    .side_menu_bg.selected {
+        width: 25% !important;
+    }
+    #content {
+        padding: 8px !important;
     }
 }
