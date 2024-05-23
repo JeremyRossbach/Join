@@ -104,7 +104,7 @@
                 <a href="../help/index.html" class="jura_undercontainer" id="help_link">Help</a>
                 <a href="../jura/privacy.html" class="jura_undercontainer">Privacy Policy</a>
                 <a href="../jura/legal.html" class="jura_undercontainer">Legal Notice</a>
-                <a href="#" onclick="logout()" class="jura_undercontainer">Log out</a>                
+                <a href="#" onclick="logout()" class="jura_undercontainer">Log out</a>
             </div>
             <!-- Hier kommt der HTML Code von Euch rein -->
             <div id="content">
@@ -127,47 +127,46 @@
 
                 <section id="sections">
                     <div id="toDoSection" ondrop="moveTo('To do'); removeHighlight('toDo')"
-                        ondragover="allowDrop(event); highlight('toDo')">
+                        ondragover="allowDrop(event); highlight('toDo')" ondragleave="removeHighlight('toDo')">
                         <div id="toDoHeader">
                             <p>To do</p><button onclick="openAddTask()" id="addToDo"></button>
                         </div>
-                        <div class="overflow-y" ondragleave="removeHighlight('toDo')">
+                        <div class="overflow-y">
                             <p id="emptytoDoContentSection" class="emptySection">No tasks to do</p>
-                            <div id="toDoHighlight"></div>
+                            <!-- <div id="toDoHighlight"></div> -->
                             <div onclick="" id="toDoContent" class="content"></div>
                         </div>
                     </div>
                     <div id="inProgressSection" ondrop="moveTo('In progress'); removeHighlight('inProgress')"
-                        ondragover="allowDrop(event); highlight('inProgress')">
+                        ondragover="allowDrop(event); highlight('inProgress')" ondragleave="removeHighlight('inProgress')">
                         <div id="inProgressHeader">
                             <p>In progress</p><button onclick="openAddTask()" id="addInProgress"></button>
                         </div>
-                        <div class="overflow-y" ondragleave="removeHighlight('inProgress')">
+                        <div class="overflow-y">
                             <p id="emptyinProgressContentSection" class="emptySection">No tasks in progress</p>
-                            <div id="inProgressHighlight"></div>
+                            <!-- <div id="inProgressHighlight"></div> -->
                             <div onclick="" id="inProgressContent" class="content"></div>
                         </div>
                     </div>
                     <div id="awaitFeedbackSection" ondrop="moveTo('Await Feedback'); removeHighlight('awaitFeedback')"
-                        ondragover="allowDrop(event)">
+                        ondragover="allowDrop(event); highlight('awaitFeedback')" ondragleave="removeHighlight('awaitFeedback')">
                         <div id="awaitFeedbackHeader">
                             <p>Await Feedback</p><button onclick="openAddTask()" id="addAwaitFeedback"></button>
                         </div>
-                        <div class="overflow-y" ondragenter="highlight('awaitFeedback')"
-                            ondragleave="removeHighlight('awaitFeedback')">
+                        <div class="overflow-y">
                             <p id="emptyawaitFeedbackContentSection" class="emptySection">No task awaits feedback</p>
-                            <div id="awaitFeedbackHighlight"></div>
+                            <!-- <div id="awaitFeedbackHighlight"></div> -->
                             <div onclick="" id="awaitFeedbackContent" class="content"></div>
                         </div>
                     </div>
                     <div id="doneSection" ondrop="moveTo('Done'); removeHighlight('done')"
-                        ondragover="allowDrop(event)">
+                        ondragover="allowDrop(event); highlight('done')" ondragleave="removeHighlight('done')">
                         <div id="doneHeader">
                             <p>Done</p>
                         </div>
-                        <div class="overflow-y" ondragenter="highlight('done')" ondragleave="removeHighlight('done')">
+                        <div class="overflow-y">
                             <p id="emptydoneContentSection" class="emptySection">No tasks done</p>
-                            <div id="doneHighlight"></div>
+                            <!-- <div id="doneHighlight"></div> -->
                             <div onclick="" id="doneContent" class="content"></div>
                         </div>
                     </div>
@@ -210,8 +209,8 @@
                             <div id="dropdownContent" class="dropdown">
                                 <button class="input-field input-field-button dropbtn"
                                     onclick="dropDownContacts()"><input oninput="searchContacts()"
-                                        id="filterContatcsInput" type="text" class="noDisplay"><span
-                                        id="selectSpan" class="responsiveFontSize">Select
+                                        id="filterContatcsInput" type="text" class="noDisplay"><span id="selectSpan"
+                                        class="responsiveFontSize">Select
                                         contacts to assign </span><img id="arrow" src="img/arrow down.svg"
                                         alt=""></button>
                                 <div id="contacts_dropdown" class="contactsDropdown scroll-style">

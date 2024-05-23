@@ -128,7 +128,7 @@ function closePopup(event) {
     if (event) {
         event.stopPropagation();
     }
-    /* location.reload(); */
+    location.reload();
 }
 
 
@@ -197,20 +197,19 @@ function moveTo(section) {
 }
 
 
-/* function highlight(id) {
-    let sectionHighlight = document.getElementById(id + 'Highlight');
-    console.log('Highlight: ', sectionHighlight);
-    sectionHighlight.style.display = 'flex';
+function highlight(id) {
+    let sectionHighlight = document.getElementById(id + 'Content');
+    sectionHighlight.classList.add("highlight");
 }
 
 
 function removeHighlight(id) {
-    let sectionHighlight = document.getElementById(id + 'Highlight');
-    sectionHighlight.style.display = 'none';
-} */
+    let sectionHighlight = document.getElementById(id + 'Content');
+    sectionHighlight.classList.remove("highlight");
+}
 
 
-function highlight(id) {
+/* function highlight(id) {
     let sectionHighlight = document.getElementById(id + 'Highlight');
     if (sectionHighlight && sectionHighlight.style.display !== 'flex') {
         console.log('Highlight: ', sectionHighlight);
@@ -225,7 +224,7 @@ function removeHighlight(id) {
         console.log('Highlight: ', sectionHighlight);
         sectionHighlight.style.display = 'none';
     }
-}
+} */
 
 
 /* let dragCounter = 0;

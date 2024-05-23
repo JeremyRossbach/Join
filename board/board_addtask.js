@@ -35,7 +35,6 @@ function closeAddTask(event) {
     if (event) {
         event.stopPropagation();
     }
-    /* location.reload(); */
 }
 
 

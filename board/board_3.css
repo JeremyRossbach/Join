@@ -155,6 +155,7 @@ li {
     from {
         transform: translateX(200%);
     }
+
     to {
         transform: translateX(0);
     }
@@ -168,6 +169,7 @@ li {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(200%);
     }
@@ -219,7 +221,7 @@ li {
     margin-bottom: 30px;
 }
 
-.addTaskBottom {    
+.addTaskBottom {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -251,4 +253,11 @@ li {
 
 .input-field::placeholder {
     font-size: 20px !important;
+}
+
+.highlight {
+    padding: 6px;
+    background-color: #8080800f;
+    border-radius: 28px;
+    border: 1px dashed;
 }
