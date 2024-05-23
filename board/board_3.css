@@ -224,6 +224,7 @@ li {
     justify-content: space-between;
     align-items: flex-end;
     height: 58px;
+    padding-bottom: 64px;
 }
 
 @media(max-width: 700px) {
@@ -246,4 +247,8 @@ li {
 
 .gap_16 {
     gap: 16px;
+}
+
+.input-field::placeholder {
+    font-size: 20px !important;
 }

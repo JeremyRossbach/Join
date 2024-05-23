@@ -23,7 +23,7 @@
 
     #nav_right_img {
         display: none;
-    }   
+    }
 
     .side_logo {
         display: none;
@@ -33,7 +33,7 @@
         position: relative;
         top: 140px;
         scrollbar-width: none;
-    }    
+    }
 }
 
 @media only screen and (max-width: 1214px) {
@@ -148,6 +148,13 @@
     #awaitFeedbackHighlight,
     #doneHighlight {
         height: 190px;
+    }
+}
+
+@media (max-width: 1132px) {
+    #div_body {
+        height: auto !important;
+        padding-bottom: 140px;
     }
 }
 

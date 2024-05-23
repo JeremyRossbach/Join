@@ -197,7 +197,7 @@ function moveTo(section) {
 }
 
 
-function highlight(id) {
+/* function highlight(id) {
     let sectionHighlight = document.getElementById(id + 'Highlight');
     console.log('Highlight: ', sectionHighlight);
     sectionHighlight.style.display = 'flex';
@@ -207,6 +207,24 @@ function highlight(id) {
 function removeHighlight(id) {
     let sectionHighlight = document.getElementById(id + 'Highlight');
     sectionHighlight.style.display = 'none';
+} */
+
+
+function highlight(id) {
+    let sectionHighlight = document.getElementById(id + 'Highlight');
+    if (sectionHighlight && sectionHighlight.style.display !== 'flex') {
+        console.log('Highlight: ', sectionHighlight);
+        sectionHighlight.style.display = 'flex';
+    }
+}
+
+
+function removeHighlight(id) {
+    let sectionHighlight = document.getElementById(id + 'Highlight');
+    if (sectionHighlight && sectionHighlight.style.display !== 'none') {
+        console.log('Highlight: ', sectionHighlight);
+        sectionHighlight.style.display = 'none';
+    }
 }
 
 

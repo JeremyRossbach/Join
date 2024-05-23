@@ -6,6 +6,10 @@
     .emptySection {
         width: 1650px;
     }
+
+    .fs_40 {
+        font-size: 40px;
+    }
 }
 
 @media only screen and (max-width: 382px) {
