@@ -1,4 +1,4 @@
 git pull
 git add .
-git commit -m "taskleft1.js jsdoc"
+git commit -m "addtask last jsdoc"
 git push
