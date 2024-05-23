@@ -1,3 +1,11 @@
+
+/**
+ * Creates a new task and adds it to the current user's task list.
+ * - Retrieves input values for title, description, and due date from the respective input fields.
+ * - Creates a task object with the input values and additional properties.
+ * - Adds the new task to the current user's task list and saves the updated user data.
+ * - Displays a success message and clears the form.
+ */
 function createTask() {
     let titleInput = document.getElementById('titleInput');
     let descriptionInput = document.getElementById('descriptionInput');
@@ -50,7 +58,9 @@ function removeClassAnimate(messageDiv) {
     messageDiv.classList.remove("animate");
 }
 
-
+/**
+ * Clears the task creation form and resets related elements.
+ */
 function clearForm() {
     document.getElementById('titleInput').value = '';
     document.getElementById('descriptionInput').value = '';
@@ -70,6 +80,11 @@ function clearForm() {
 }
 
 inputDateColorChange();
+
+
+/**
+ * Changes the date input field's text color based on whether a date is selected.
+ */
 function inputDateColorChange() {
     let inputDate = document.getElementById('date');
     if (inputDate.value) {
@@ -79,6 +94,12 @@ function inputDateColorChange() {
     }
 }
 
+
+/**
+ * Enables or disables the create button based on the presence of title, date, and category.
+ * - Shows the create button and hides the alarm button if all required fields are filled.
+ * - Hides the create button and shows the alarm button otherwise.
+ */
 function createBtnEnable() {
     let alarmBTN = document.getElementById("alarmBTN");
     let createBTN = document.getElementById("createBTN");
@@ -93,6 +114,13 @@ function createBtnEnable() {
     }
 }
 
+
+/**
+ * Validates and styles the input fields for creating an alarm.
+ * - Adds a red border and displays a danger message if the title or date fields are empty.
+ * - Adds a red border and displays a danger message if no category is selected.
+ * - Removes the red border and hides the danger messages when the fields are valid.
+ */
 function alarmInput() {
     let dropBtnCategory = document.getElementById("dropBtnCategory")
     let titleInput = document.getElementById('titleInput');
