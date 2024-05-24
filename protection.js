@@ -21,8 +21,8 @@ async function createGuest() {
 }
 
 async function handleGuestLogin() {
-    loginGuest();
     await createGuest();
+    loginGuest();
 }
 
 /**

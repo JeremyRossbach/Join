@@ -275,6 +275,7 @@ function jura_window() {
 
     if (juraContainer.style.display == "none" || juraContainer.style.display == "") {
         juraContainer.style.display = "flex";
+        juraContainer.style.zIndex = "999";
     } else {
         juraContainer.style.display = "none";
     }

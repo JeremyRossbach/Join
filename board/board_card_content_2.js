@@ -188,11 +188,16 @@ function allowDrop(ev) {
  * @param {string} section - This is the section of each task 
  */
 function moveTo(section) {
-    tasks[currentDraggedElement]['section'] = section;
+    let user = getUser();
+    let task = user.tasks[currentDraggedElement];
+    task.section = section;
 
-    saveTasks(); /* muss noch ersetzt werden */
+    deleteUserTask(currentDraggedElement);
+    saveUserTask(task);
     emptyContentSections();
     init();
+
+    window.location.href = '/board';
 }
 
 

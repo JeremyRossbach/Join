@@ -3,10 +3,12 @@
  * Initialisiert das Board, indem die Board-Informationen und die Begrüßung angezeigt werden.
  */
 async function init() {
-    await loadTasks();
+    let user = getUser();
+    tasks = user.tasks;
+
     showBoardInfos();
     displayGreeting();
-    setGreetingName();
+    setGreetingName();    
 }
 
 /**
@@ -54,7 +56,9 @@ function showBoardInfos() {
 
     let nextDateTasks = tasks.filter(task => task.section != `Done`).sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
 
-    date.innerHTML = new Date(nextDateTasks[0].dueDate).toLocaleDateString('de-DE');
+    if (nextDateTasks.length > 0) {
+        date.innerHTML = new Date(nextDateTasks[0].dueDate).toLocaleDateString('de-DE');
+    }
 }
 
 /**
