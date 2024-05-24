@@ -1,4 +1,11 @@
-
+/**
+ * Sets the minimum selectable date to today.
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    let dateInput = document.getElementById('date');
+    let today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+});
 
 /**
  * Toggles the appearance of a high priority icon between clicked and unclicked states.
