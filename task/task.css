@@ -46,22 +46,7 @@ body {
 
 
 
-/* .H1 {
-    margin-top: 206px;
-    padding-bottom: 0px;
-    margin-left: 96px;
-    font-size: 61px;
-} */
 
-/* #content {
-    position: relative;
-    top: 0px;
-    scrollbar-width: none;
-    margin-left: 96px;
-    margin-right: 96px;
-    margin-top: 40px;
-    padding: 0;
-} */
 
 .innerContent {
     padding-top: 0px;
@@ -274,10 +259,13 @@ body {
 }
 
 .chosenInitals {
+    flex-wrap: wrap;
     display: flex;
     flex-direction: row;
-    height: 30px;
-    max-width: 400px;
+    height: 45px;
+    max-width: 440px;
+    max-height: 100px;
+    overflow-y: auto;
 }
 
 .choseCategory {

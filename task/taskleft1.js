@@ -2,7 +2,7 @@
 let categorys;
 let taskcontacts = [];
 let currentContact;
-let prio;
+let prio = 'Medium';
 let subtasks = [];
 let selectedContackts = [];
 let currentNames = [];
@@ -227,6 +227,7 @@ function showchosenInitials(i) {
             <div class="contact_initials" style="background-color: ${backgroundColor};">${getInitials(taskcontact)}</div>
         `
     }
+    checkScrollBar();
 }
 
 /**
@@ -236,4 +237,21 @@ function searchContacts() {
     let search = document.getElementById("filterContatcsInput").value.toLowerCase();
     let filteredContacts = currentNames.filter(contact => contact.name.toLowerCase().includes(search));
     showaAvailableContacts(filteredContacts);
+}
+
+
+/**
+ * Checks for subtask overflow and applies styles accordingly.
+ */
+function checkScrollBar() {
+    let containerchosenInitals = document.getElementById('chosenInitals');
+    let elements = containerchosenInitals.children;
+
+    if (elements.length > 6) {
+        containerchosenInitals.style.overflowY = 'scroll';
+        containerchosenInitals.style.maxHeight = '200px'; // Adjust as needed
+    } else {
+        containerchosenInitals.style.overflowY = 'unset';
+        containerchosenInitals.style.maxHeight = 'unset';
+    }
 }
