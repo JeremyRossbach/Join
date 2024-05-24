@@ -31,6 +31,7 @@ function createTask() {
     showCreateTaskMessage('task_successfully_div');
     clearForm();
     // saveTasks();
+    window.location.href = "../board";
 }
 
 
