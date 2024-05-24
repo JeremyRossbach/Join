@@ -94,7 +94,7 @@ function prioMed() {
     let medbtn = document.getElementById('midbtn');
     let medicon = document.getElementById('midicon');
     toggleMedIcon(medicon);
-    if (medicon.getAttribute('src') === "img/Prio media icon clicked.svg") {
+    if (medicon.getAttribute('src') !== "img/Prio media icon clicked.svg") {
         setButtonStyle(medbtn, 'rgb(255,168,0)', '#FFFFFF', 'unset');
         prio = 'Medium';
         prioLowSetBack();
