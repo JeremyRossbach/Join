@@ -110,88 +110,7 @@ let contactData = [
  * 
  * @type {Array<object>}
  */
-let tasks = [
-    {
-        'title': 'Contact Form & Imprint',
-        'description': 'Create a contact form and imprint page...',
-        'assignedTo': ['Anja Schulz', 'David Eisenberg', 'Eva Fischer'],
-        'dueDate': '01/01/2024',
-        'prio': 'Urgent',
-        'category': 'User Story',
-        'subtask': ['Contact form', 'Imprint page'],
-        'doneSubtask': [true, true],
-        'numberOfDoneSubtasks': 0,
-        'section': 'In progress'
-    },
-    {
-        'title': 'Contact Design',
-        'description': 'Work on contact design...',
-        'assignedTo': ['Anja Schulz', 'David Eisenberg'],
-        'dueDate': '01/01/2024',
-        'prio': 'Low',
-        'category': 'User Story',
-        'subtask': [],
-        'section': 'In progress'
-    },
-    {
-        'title': 'HTML Base Tamplate Creation',
-        'description': 'Create reusable HTML base tamplates...',
-        'assignedTo': ['David Eisenberg', 'Benedikt Ziegler', 'Anja Schulz'],
-        'dueDate': '01/01/2024',
-        'prio': 'Low',
-        'category': 'Technical Task',
-        'subtask': ['Reusable HTML base tamplates'],
-        'doneSubtask': [true],
-        'numberOfDoneSubtasks': 0,
-        'section': 'Await Feedback'
-    },
-    {
-        'title': 'Daily Kochwelt Recipe',
-        'description': 'Implement daily recipe and portion caltulator...',
-        'assignedTo': ['Eva Fischer', 'Anja Schulz', 'Tatjana Wolf'],
-        'dueDate': '01/01/2024',
-        'prio': 'Medium',
-        'category': 'User Story',
-        'subtask': ['Daily recipe and portion caltulator'],
-        'doneSubtask': [true],
-        'numberOfDoneSubtasks': 0,
-        'section': 'Await Feedback'
-    },
-    {
-        'title': 'Daily Kochwelt Header',
-        'description': 'Edit header design...',
-        'assignedTo': ['Anja Schulz', 'Tatjana Wolf'],
-        'dueDate': '01/01/2024',
-        'prio': 'Urgent',
-        'category': 'User Story',
-        'subtask': [],
-        'section': 'Await Feedback'
-    },
-    {
-        'title': 'CSS Architecture Planning',
-        'description': 'Define CSS naming conventions nad structure.',
-        'assignedTo': ['Sofia Müller', 'Benedikt Ziegler'],
-        'dueDate': '02/09/2023',
-        'prio': 'Urgent',
-        'category': 'Technical Task',
-        'subtask': ['Establish CSS Methodology', 'Setup Base Styles'],
-        'doneSubtask': [true, true],
-        'numberOfDoneSubtasks': 0,
-        'section': 'Done'
-    },
-    {
-        'title': 'Responsivity of all Site',
-        'description': 'Define CSS naming conventions and structure.',
-        'assignedTo': ['Eva Fischer', 'David Eisenberg'],
-        'dueDate': '05/15/2024',
-        'prio': 'Urgent',
-        'category': 'Technical Task',
-        'subtask': ['Establish CSS Methodology', 'Setup Base Styles'],
-        'doneSubtask': [true, true],
-        'numberOfDoneSubtasks': 0,
-        'section': 'To do'
-    }
-];
+let tasks = [];
 
 /**
  * An array containing color codes for UI elements.
@@ -250,6 +169,22 @@ async function loadData(path = "") {
     let response = await fetch(STORAGE_URL + path + ".json");
     let responseAsJson = await response.json();
     return responseAsJson;
+}
+
+function saveUserTask(task) {
+    let user = getUser();
+    user.tasks.push(task);
+    saveUser(user);
+}
+
+function deleteUserTask(i) {
+    let user = getUser();
+    user.tasks.splice(i, 1);
+    saveUser(user);
+}
+
+function loadUserTasks() {
+    tasks = getUser().tasks;
 }
 
 function saveData(name, data) {

@@ -79,7 +79,8 @@ function checkEmptySection(containerId) {
 function content(containerId, i) {
     let container = document.getElementById(containerId);
 
-    container.innerHTML += /* html */`
+    if ('subtask' in tasks[i]) {
+        container.innerHTML += /* html */`
         <div onclick="showCardPopup(${i})" draggable="true" ondragstart="startDragging(${i})" id="card${i}" class="card">
             <div id="category${i}" class="category">${tasks[i]['category']}</div>
             <div class="titleAndDescription">
@@ -97,11 +98,13 @@ function content(containerId, i) {
             </div>
         </div>
     `;
-    renderProgressbar(i);
-    renderSubtasks(i);
-    renderPrio(i);
-    renderAssignedTo(i);
-    saveTasks(); /* muss noch ersetzt werden */
+        renderProgressbar(i);
+        renderSubtasks(i);
+        renderPrio(i);
+        renderAssignedTo(i);
+        saveTasks(); /* muss noch ersetzt werden */
+    }
+
 }
 
 

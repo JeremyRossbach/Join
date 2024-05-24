@@ -144,9 +144,8 @@ function dontClosePopup(event) {
  * @param {*} event - ???
  */
 function deleteTask(i, event) {
-    tasks.splice(i, 1);
+    deleteUserTask(i)
     closePopup(event);
-    saveTasks(); /* muss noch ersetzt werden */
     emptyContentSections();
     init();
 }

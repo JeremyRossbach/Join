@@ -42,7 +42,7 @@ function createTaskBoard() {
     let titleInput = document.getElementById('titleInput');
     let descriptionInput = document.getElementById('descriptionInput');
     let date = document.getElementById('date');
-    
+
     let newTask = {
         'title': titleInput.value,
         'description': descriptionInput.value,
@@ -55,16 +55,13 @@ function createTaskBoard() {
         'numberOfDoneSubtasks': 0,
         'section': 'To do'
     }
+    saveUserTask(newTask)
     closeAddTask(); /* schließt das addTask Popup */
-    emptyContentSections(); /* leert den kompletten Content */
-    init(); /* zeigt alle tasks an */
+    emptyContentSections(); /* leert den kompletten Content */ /* zeigt alle tasks an */
     showCreateTaskMessage('task_successfully_div');
-    
-    let user = getUser();
-    user.tasks.push(newTask);
-    saveUser(user);
 
     clearForm();
     putData("tasks", tasks)
         .catch(error => console.error(error));
+    window.location.href = '/board';
 }

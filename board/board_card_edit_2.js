@@ -315,7 +315,9 @@ function ok(i) {
     updateTitle(i);
     updateDescription(i);
     updateDueDate(i);
-    saveTasks(); /* muss noch ersetzt werden */
+    // saveTasks(); /* muss noch ersetzt werden */
+    deleteUserTask(tasks[i])
+    saveUserTask(tasks[i]);
     emptyContentSections();
     init();
     document.getElementById('cardPopup').innerHTML = '';

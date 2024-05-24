@@ -10,18 +10,6 @@ function emptyContentSections() {
 }
 
 
-function saveTasks() {
-    let tasksAsString = JSON.stringify(tasks);
-    localStorage.setItem('tasks', tasksAsString);
-}
-
-
-function loadDatas() {
-    let tasksAsString = localStorage.getItem('tasks');
-    tasks = JSON.parse(tasksAsString);
-}
-
-
 function findTask() {
     let search = document.getElementById('input').value;
     search = search.toLowerCase();
