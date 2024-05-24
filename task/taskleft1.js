@@ -241,17 +241,15 @@ function searchContacts() {
 
 
 /**
- * Checks for subtask overflow and applies styles accordingly.
+ * Checks for chosenInitals overflow and applies styles accordingly.
  */
 function checkScrollBar() {
     let containerchosenInitals = document.getElementById('chosenInitals');
     let elements = containerchosenInitals.children;
 
     if (elements.length > 6) {
-        containerchosenInitals.style.overflowY = 'scroll';
-        containerchosenInitals.style.maxHeight = '200px'; // Adjust as needed
+        containerchosenInitals.classList.add('scroll-style');
     } else {
-        containerchosenInitals.style.overflowY = 'unset';
-        containerchosenInitals.style.maxHeight = 'unset';
+        containerchosenInitals.classList.remove('scroll-style');
     }
 }

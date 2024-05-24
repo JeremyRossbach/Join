@@ -337,13 +337,15 @@ body {
     flex-direction: row;
     gap: 4px;
     margin-right: 16px;
+    position: absolute;
+        right: 80px;
 }
 
 .editableSubtask {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* width: 400px; */
+   
     align-content: center;
 }
 
@@ -351,6 +353,9 @@ body {
     cursor: pointer;
     margin-right: 3px;
     opacity: 0;
+    display: flex;
+   
+
 }
 
 .subtaskHover {
@@ -362,6 +367,9 @@ body {
 }
 
 .subtaskHover:hover img {
+    opacity: 1;
+}
+.subtask:hover img{
     opacity: 1;
 }
 
