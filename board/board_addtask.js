@@ -58,10 +58,10 @@ function createTaskBoard() {
     saveUserTask(newTask)
     closeAddTask(); /* schließt das addTask Popup */
     emptyContentSections(); /* leert den kompletten Content */ /* zeigt alle tasks an */
+    init();
     showCreateTaskMessage('task_successfully_div');
 
     clearForm();
     putData("tasks", tasks)
         .catch(error => console.error(error));
-    window.location.href = '/board';
 }

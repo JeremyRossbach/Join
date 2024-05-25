@@ -196,8 +196,6 @@ function moveTo(section) {
     saveUserTask(task);
     emptyContentSections();
     init();
-
-    window.location.href = '/board';
 }
 
 

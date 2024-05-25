@@ -14,6 +14,7 @@ function focusOnFindTask() {
 
 
 async function init() {
+    loadUserTasks();
     renderContent('To do', 'toDoContent');
     renderContent('In progress', 'inProgressContent');
     renderContent('Await Feedback', 'awaitFeedbackContent');
@@ -179,9 +180,11 @@ function renderPrio(i) {
  */
 function renderAssignedTo(i) {
     for (let j = 0; j < tasks[i]['assignedTo'].length; j++) {
-        let name = tasks[i]['assignedTo'];
-        let initials = name[j].split(' ')[0].charAt(0) + name[j].split(' ')[1].charAt(0);
-        showAssignedTo(initials, i, j);
+        if (j + 1 <= 7) {
+            let name = tasks[i]['assignedTo'];
+            let initials = name[j].split(' ')[0].charAt(0) + name[j].split(' ')[1].charAt(0);
+            showAssignedTo(initials, i, j);
+        }
     }
 }
 
