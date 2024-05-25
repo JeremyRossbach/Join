@@ -314,6 +314,10 @@
 }
 
 @media only screen and (max-width: 442px) {
+    header {
+        margin-left: -10px;
+    }
+
     .overflow-y {
         width: 362px;
     }

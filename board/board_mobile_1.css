@@ -244,6 +244,10 @@
         margin-left: 304px;
     }
 
+    #sections {
+        margin-left: -20px;
+    }
+
     .overflow-y {
         width: 692px;
     }
