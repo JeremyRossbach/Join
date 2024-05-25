@@ -180,7 +180,7 @@ function renderPrio(i) {
  */
 function renderAssignedTo(i) {
     for (let j = 0; j < tasks[i]['assignedTo'].length; j++) {
-        if (j + 1 <= 7) {
+        if (j + 1 <= 6) {
             let name = tasks[i]['assignedTo'];
             let initials = name[j].split(' ')[0].charAt(0) + name[j].split(' ')[1].charAt(0);
             showAssignedTo(initials, i, j);

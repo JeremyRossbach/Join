@@ -338,14 +338,14 @@ body {
     gap: 4px;
     margin-right: 16px;
     position: absolute;
-        right: 80px;
+    right: 80px;
 }
 
 .editableSubtask {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-   
+
     align-content: center;
 }
 
@@ -354,7 +354,7 @@ body {
     margin-right: 3px;
     opacity: 0;
     display: flex;
-   
+
 
 }
 
@@ -369,7 +369,8 @@ body {
 .subtaskHover:hover img {
     opacity: 1;
 }
-.subtask:hover img{
+
+.subtask:hover img {
     opacity: 1;
 }
 
@@ -614,7 +615,7 @@ body {
     height: 58px;
 }
 
-.bottom {    
+.bottom {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -641,7 +642,7 @@ ul {
     list-style-type: circle;
 }
 
-#pushedSubtasks{    
+#pushedSubtasks {
     overflow: auto;
 }
 
@@ -656,6 +657,7 @@ ul {
     align-items: center;
     z-index: 1000;
 }
+
 .task_successfully_message {
     height: 74px;
     width: 326px;
@@ -666,6 +668,7 @@ ul {
     justify-content: center;
     align-items: center;
 }
+
 .animate {
     animation: successfully_message 2s forwards;
 }
