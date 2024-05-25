@@ -209,10 +209,12 @@ function showAssignedTo(initials, i, j) { /* solution for random colors missing 
  */
 function renderCategoryColor(i) {
     let content = document.getElementById(`category${i}`);
-    if (tasks[i]['category'] === 'Technical Task') {
-        content.style.backgroundColor = '#1FD7C1';
-    } else {
-        content.style.backgroundColor = '#0038FF';
+    if (content) {
+        if (tasks[i]['category'] === 'Technical Task') {
+            content.style.backgroundColor = '#1FD7C1';
+        } else {
+            content.style.backgroundColor = '#0038FF';
+        }
     }
 }
 
