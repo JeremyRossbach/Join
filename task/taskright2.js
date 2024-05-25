@@ -249,10 +249,12 @@ function generateSubtaskHTML(index, subtask) {
         <div class="subtask">
             <div class='subtaskHover'>
                 <div class='editableSubtask' id='editableSubtask${index}'>
+                <div class="separatIcons">
                     <span id='valueSpan${index}'>• ${subtask}</span>
                     <div id='subtaskHoverIcon${index}' class="subtaskHoverIcon">
                         <img onclick='subtasksEditAndDelete(${index})' src="img/subtaskPencil.svg">
                         <img onclick='deleteSubtask(${index})' src="img/subtaskDelete.svg">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -324,7 +326,7 @@ function loadSubtasks() {
     let subtaskasText = localStorage.getItem(subtasks)
     sub_tasks = JSON.parse(subtaskasText);
 
-} 
+}
 
 /**
  * Pushed the subtasks array .
@@ -332,7 +334,7 @@ function loadSubtasks() {
 function pushSubtask() {
     let subtaskinput = document.getElementById("subtask_input");
     let subtaskValue = subtaskinput.value.trim();
-   
+
     if (subtaskValue !== '') {
         subtasks.push(subtaskValue);
         subtaskinput.value = '';

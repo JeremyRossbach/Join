@@ -1,4 +1,4 @@
 git pull
 git add .
-git commit -m "addtask initals overflow"
+git commit -m "create btn go to board"
 git push
