@@ -28,10 +28,8 @@ function createTask() {
     user.tasks.push(task);
     saveUser(user);
     
-    showCreateTaskMessage('task_successfully_div');
     clearForm();
-    // saveTasks();
-    window.location.href = "../board";
+    showCreateTaskMessage('task_successfully_div');
 }
 
 
@@ -45,7 +43,8 @@ function showCreateTaskMessage(messageID) {
 
     setTimeout(function () {
         removeClassAnimate(messageDiv);
-    }, 5000);
+        window.location.href = "../board";
+    }, 2500);
 }
 
 
