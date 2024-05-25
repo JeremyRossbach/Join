@@ -1,3 +1,6 @@
+/**
+ * This function opens the addTask Popup 
+ */
 function openAddTask() {
     let addTask = document.getElementById('addTask');
     addTask.style.display = 'flex';
@@ -7,6 +10,9 @@ function openAddTask() {
 }
 
 
+/**
+ * This function slides in the addTask Popup
+ */
 function addTaskSlideIn() {
     let addTask = document.getElementById('addTask');
     addTask.classList.add('slideIn');
@@ -18,6 +24,9 @@ function addTaskSlideIn() {
 }
 
 
+/**
+ * This function slides out the addTask Popup
+ */
 function addTaskSlideOut() {
     let addTask = document.getElementById('addTask');
     addTask.classList.add('slideOut');
@@ -28,6 +37,9 @@ function addTaskSlideOut() {
 }
 
 
+/**
+ * This function closes the addTask Popup
+ */
 function closeAddTask(event) {
     document.body.style.overflow = '';
     document.getElementById('addTask').style.display = 'none';
@@ -38,6 +50,9 @@ function closeAddTask(event) {
 }
 
 
+/**
+ * This function creates a new task
+ */
 function createTaskBoard() {
     let titleInput = document.getElementById('titleInput');
     let descriptionInput = document.getElementById('descriptionInput');

@@ -8,11 +8,17 @@ const prioImages = {
 let currentDraggedElement;
 
 
+/**
+ * This function sets the focus on the findTask input
+ */
 function focusOnFindTask() {
     document.getElementById('input').focus();
 }
 
 
+/**
+ * This function renders the content on the board
+ */
 async function init() {
     loadUserTasks();
     renderContent('To do', 'toDoContent');

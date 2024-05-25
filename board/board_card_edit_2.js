@@ -17,6 +17,11 @@ function showContact(n, i) {
 }
 
 
+/**
+ * This function renders the dropdown menu
+ * 
+ * @param {number} i - This is the number of each task
+ */
 function dropdownMenu(i) {
     renderDropdownMenu(i);
 }
@@ -188,6 +193,9 @@ function unselectContact(i, n) {
 }
 
 
+/**
+ * This function opens the dropdown menu
+ */
 function openDropdownMenu() {
     document.getElementById('dropdownMenu').style.display = 'flex';
     let arrow = document.getElementById('arrow');
@@ -279,6 +287,11 @@ function createNewSubtask(i) {
 }
 
 
+/**
+ * This function sets the focus on the newSubtask input
+ * 
+ * @param {number} i - This is the number of each task
+ */
 function focusOnNewSubtask(i) {
     let input = document.getElementById(`editSubtasks${i}`);
     input.focus();
@@ -288,6 +301,11 @@ function focusOnNewSubtask(i) {
 }
 
 
+/**
+ * This function removes the focus on the newSubtask input
+ * 
+ * @param {number} i - This is the number of each task
+ */
 function noFocusOnNewSubtask(i) {
     let input = document.getElementById(`editSubtasks${i}`);
     input.blur();
@@ -297,6 +315,11 @@ function noFocusOnNewSubtask(i) {
 }
 
 
+/**
+ * This function clears the input value of the newSubtask input
+ * 
+ * @param {number} i - This is the number of each task
+ */
 function emptyInput(i) {
     let input = document.getElementById(`editSubtasks${i}`);
     input.focus();
@@ -361,12 +384,23 @@ function updateDueDate(i) {
 }
 
 
+/**
+ * This function checks the unchecked checkbox in the dropdown menu
+ * 
+ * @param {number} l - This is the number of each subtask of a specific task
+ */
 function clickeddropdownCheckbox(l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
     checkbox.src = "./img/checkbox_clicked.svg";
 }
 
 
+/**
+ * This function checks or unchecks a subtask of a specific task and increases or decreases the number of done subtasks
+ * 
+ * @param {number} i - This is the number of each task   
+ * @param {number} l - This is the number of each subtask of a specific task
+ */
 function checkbox(i, l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
 
@@ -386,6 +420,11 @@ function checkbox(i, l) {
 }
 
 
+/**
+ * This function checks the unchecked checkbox of a subtask
+ * 
+ * @param {number} l - This is the number of each subtask of a specific task
+ */
 function clickedCheckbox(l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
     checkbox.src = "./img/checkbox_clicked.svg";

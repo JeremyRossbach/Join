@@ -1,3 +1,6 @@
+/**
+ * This function clears the board
+ */
 function emptyContentSections() {
     document.getElementById('toDoContent').innerHTML = '';
     document.getElementById('inProgressContent').innerHTML = '';
@@ -10,6 +13,9 @@ function emptyContentSections() {
 }
 
 
+/**
+ * This function allows to search for a task
+ */
 function findTask() {
     let search = document.getElementById('input').value;
     search = search.toLowerCase();

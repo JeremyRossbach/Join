@@ -151,6 +151,9 @@ function deleteTask(i, event) {
 }
 
 
+/**
+ * This function slides in the card Popup
+ */
 function slideIn() {
     let cardPopup = document.getElementById('cardPopup');
     cardPopup.classList.add('slideIn');
@@ -162,6 +165,9 @@ function slideIn() {
 }
 
 
+/**
+ * This function slides out the card Popup
+ */
 function slideOut() {
     let cardPopup = document.getElementById('cardPopup');
     cardPopup.classList.add('slideOut');
@@ -199,72 +205,23 @@ function moveTo(section) {
 }
 
 
+/**
+ * This function adds a highlight on a specific section
+ * 
+ * @param {string} id - This is the id of each section
+ */
 function highlight(id) {
     let sectionHighlight = document.getElementById(id + 'Content');
     sectionHighlight.classList.add("highlight");
 }
 
 
+/**
+ * This function removes a highlight on a specific section
+ * 
+ * @param {string} id - This is the id of each section
+ */
 function removeHighlight(id) {
     let sectionHighlight = document.getElementById(id + 'Content');
     sectionHighlight.classList.remove("highlight");
 }
-
-
-/* function highlight(id) {
-    let sectionHighlight = document.getElementById(id + 'Highlight');
-    if (sectionHighlight && sectionHighlight.style.display !== 'flex') {
-        console.log('Highlight: ', sectionHighlight);
-        sectionHighlight.style.display = 'flex';
-    }
-}
-
-
-function removeHighlight(id) {
-    let sectionHighlight = document.getElementById(id + 'Highlight');
-    if (sectionHighlight && sectionHighlight.style.display !== 'none') {
-        console.log('Highlight: ', sectionHighlight);
-        sectionHighlight.style.display = 'none';
-    }
-} */
-
-
-/* let dragCounter = 0;
-
-
-function setupDragAndDrop(id) {
-    let dropZone = document.getElementById(id);
-    let highlightElement = document.getElementById(id + 'Highlight');
-
-    dropZone.addEventListener('dragenter', (event) => {
-        event.preventDefault();
-        dragCounter++;
-        if (dragCounter === 1) {
-            highlightElement.style.display = 'flex';
-        }
-    });
-
-    dropZone.addEventListener('dragover', (event) => {
-        event.preventDefault(); // Necessary to allow a drop
-    });
-
-    dropZone.addEventListener('dragleave', () => {
-        dragCounter--;
-        if (dragCounter === 0) {
-            highlightElement.style.display = 'none';
-        }
-    });
-
-    dropZone.addEventListener('drop', (event) => {
-        event.preventDefault();
-        dragCounter = 0;
-        highlightElement.style.display = 'none';
-        // Handle the drop action here
-    });
-}
-
-// Call this function for each drop zone
-setupDragAndDrop('toDoSection');
-setupDragAndDrop('inProgressSection');
-setupDragAndDrop('awaitFeedbackSection');
-setupDragAndDrop('doneSection'); */
