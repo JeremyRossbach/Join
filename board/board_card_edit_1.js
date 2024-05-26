@@ -4,6 +4,7 @@
  * @param {number} i - This is the number of each task 
  */
 function editTask(i) {
+    let today = new Date().toISOString().split('T')[0];
     cardPopup.innerHTML = /* html */`
         <form onsubmit="ok(${i})">
             <div  class="scrollableCardPopup">
@@ -20,7 +21,7 @@ function editTask(i) {
                 </div>
                 <div class="editDueDateAndInput">
                     <p class="dueDateText">Due Date</p>
-                    <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" onfocus="(this.type='date')" onblur="convertDateFormat(this)" required>
+                    <input id="editDueDate${i}" class="editDueDateInput editInputs" placeholder="dd/mm/yyyy" type="text" onfocus="(this.type='date')" onblur="convertDateFormat(this)" min="${today}" required>
                 </div>
                 <div class="editPriorityAndButtons">
                     <p class="priorityText">Priority</p>
