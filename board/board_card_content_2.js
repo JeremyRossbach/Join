@@ -106,10 +106,10 @@ function showPopupSubtasks(i, l) {
 function renderCheckboxImage(i, l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
 
-    if (tasks[i]['doneSubtask'][l] == false) {
+    if (tasks[i]['doneSubtask'][l] == true) {
         checkbox.src = './img/checkbox_clicked.svg';
     } else {
-        tasks[i]['doneSubtask'][l] = true;
+        tasks[i]['doneSubtask'][l] = false;
         checkbox.src = './img/checkbox.svg';
     }
 }

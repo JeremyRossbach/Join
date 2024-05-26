@@ -405,18 +405,16 @@ function checkbox(i, l) {
     let checkbox = document.getElementById(`checkBoxButton${l}`);
 
     if (tasks[i]['doneSubtask'][l] == true) {
-        tasks[i]['doneSubtask'][l] = false;
-        tasks[i]['numberOfDoneSubtasks']++;
+        saveUserSubtaskDone(i, l, false);
         clickedCheckbox(l);
     } else {
-        tasks[i]['doneSubtask'][l] = true
-        tasks[i]['numberOfDoneSubtasks']--;
+        saveUserSubtaskDone(i, l, true);
         checkbox.src = "./img/checkbox.svg"
     }
-    saveTasks(); /* muss noch ersetzt werden */
-    renderSubtasks(i);
     emptyContentSections();
     init();
+    renderSubtasks(i);
+    renderCheckboxImage(i, l);
 }
 
 

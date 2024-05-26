@@ -109,7 +109,7 @@ function content(containerId, i) {
         renderSubtasks(i);
         renderPrio(i);
         renderAssignedTo(i);
-        saveTasks(); /* muss noch ersetzt werden */
+        // saveTasks(); /* muss noch ersetzt werden */
     }
 
 }

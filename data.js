@@ -184,6 +184,24 @@ function saveUserTask(task) {
 
 
 /**
+ * Save current user subtask done
+ * @param {Integer} taskIndex 
+ * @param {Integer} subtaskIndex 
+ * @param {Boolean} state 
+ */
+function saveUserSubtaskDone(taskIndex, subtaskIndex, state) {
+    let user = getUser();
+    user.tasks[taskIndex].doneSubtask[subtaskIndex] = state
+    if (state == true) {
+        user.tasks[taskIndex].numberOfDoneSubtasks++;
+    } else {
+        user.tasks[taskIndex].numberOfDoneSubtasks--;
+    }
+    saveUser(user);
+}
+
+
+/**
  * Delete user task by index
  * @param {*} i the index
  */
