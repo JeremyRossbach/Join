@@ -32,7 +32,10 @@ function createTask() {
     showCreateTaskMessage('task_successfully_div');
 }
 
-
+/**
+ * Show message for create task
+ * @param {String} messageID id from element
+ */
 function showCreateTaskMessage(messageID) {
     /**
      * @type {HTMLElement}

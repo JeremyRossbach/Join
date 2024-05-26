@@ -1,5 +1,9 @@
 checkIsLogin();
 
+
+/**
+ * Create guest user and save in local storage
+ */
 async function createGuest() {
     const usersObjectString = localStorage.getItem('users');
     if (!usersObjectString) {
@@ -20,10 +24,15 @@ async function createGuest() {
     }
 }
 
+
+/**
+ * Handle guest login to login
+ */
 async function handleGuestLogin() {
     await createGuest();
     loginGuest();
 }
+
 
 /**
  * Redirect user only to areas where it is allowed
@@ -49,6 +58,7 @@ function redirectUserProtection(isLogin) {
     }
 }
 
+
 /**
  * Check if user is login to protect sensitiv areas like tasks, contacts...
  */
@@ -69,6 +79,7 @@ function checkIsLogin() {
     redirectUserProtection(isUserLogin);
 }
 
+
 /**
  * Logout the user
  */
@@ -84,6 +95,7 @@ function logout() {
     }
     window.location.href = '../'
 }
+
 
 /**
  * It will return the current user where you are login
@@ -102,6 +114,7 @@ function getUser() {
     }
     return {}
 }
+
 
 /**
  * Save new data to user

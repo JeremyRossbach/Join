@@ -7,6 +7,10 @@ let subtasks = [];
 let selectedContackts = [];
 let currentNames = [];
 
+
+/**
+ * Init functions from tasks
+ */
 function initAddTasks() {
     currentNames = contactData;
     // loadSubtasks();

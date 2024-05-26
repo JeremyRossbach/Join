@@ -171,41 +171,79 @@ async function loadData(path = "") {
     return responseAsJson;
 }
 
+
+/**
+ * Save task to current user
+ * @param {Object} task The task
+ */
 function saveUserTask(task) {
     let user = getUser();
     user.tasks.push(task);
     saveUser(user);
 }
 
+
+/**
+ * Delete user task by index
+ * @param {*} i the index
+ */
 function deleteUserTask(i) {
     let user = getUser();
     user.tasks.splice(i, 1);
     saveUser(user);
 }
 
+
+/**
+ * Load current user tasks
+ */
 function loadUserTasks() {
     tasks = getUser().tasks;
 }
 
+
+/**
+ * Save data
+ * @param {String} name 
+ * @param {String} data 
+ */
 function saveData(name, data) {
     putData(name, data)
         .catch(error => console.error(error));
 }
 
+
+/**
+ * Load contacts
+ * @returns {Array}
+ */
 async function loadContacts() {
     const contacts = await loadData("/contacts");
     return contacts;
 }
 
+
+/**
+ * Save contacts
+ */
 function saveContacts() {
     saveData("contacts", contactData);
 }
 
+
+/**
+ * Load tasks
+ * @returns {Array}
+ */
 async function loadTasks() {
     const tasks = await loadData("/tasks");
     return tasks;
 }
 
+
+/**
+ * Save tasks
+ */
 function saveTasks() {
     saveData("tasks", tasks);
 }
