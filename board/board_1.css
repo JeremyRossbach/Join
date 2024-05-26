@@ -52,6 +52,16 @@ h1 {
     color: #000000;
 }
 
+.categoryAndArrows {
+    display: flex;
+    justify-content: space-between;
+}
+
+.categoryAndArrows img {
+    width: 24px;
+    z-index: 9999;
+}
+
 .mobileAddButton,
 .responsiveAddButton {
     display: none;

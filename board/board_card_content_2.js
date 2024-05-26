@@ -204,6 +204,48 @@ function moveTo(section) {
     init();
 }
 
+function moveToArrow(i, direction) {
+    let user = getUser();
+    let task = user.tasks[i];
+
+    if (task.section == 'To do' && direction == 'up') {
+        task.section = 'Done';
+    }
+
+    if (task.section == 'To do' && direction == 'down') {
+        task.section = 'In progress';
+    }
+
+    if (task.section == 'In progress' && direction == 'up') {
+        task.section = 'To do';
+    }
+
+    if (task.section == 'In progress' && direction == 'down') {
+        task.section = 'Await Feedback';
+    }
+
+    if (task.section == 'Await Feedback' && direction == 'up') {
+        task.section = 'In progress';
+    }
+
+    if (task.section == 'Await Feedback' && direction == 'down') {
+        task.section = 'Done';
+    }
+
+    if (task.section == 'Done' && direction == 'up') {
+        task.section = 'Await Feedback';
+    }
+
+    if (task.section == 'Done' && direction == 'down') {
+        task.section = 'To do';
+    }
+
+    deleteUserTask(i);
+    saveUserTask(task);
+    emptyContentSections();
+    init();
+}
+
 
 /**
  * This function adds a highlight on a specific section

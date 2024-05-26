@@ -89,7 +89,13 @@ function content(containerId, i) {
     if ('subtask' in tasks[i]) {
         container.innerHTML += /* html */`
         <div onclick="showCardPopup(${i})" draggable="true" ondragstart="startDragging(${i})" id="card${i}" class="card">
-            <div id="category${i}" class="category">${tasks[i]['category']}</div>
+            <div class="categoryAndArrows">
+                <div id="category${i}" class="category">${tasks[i]['category']}</div>
+                <div>
+                    <img src="img/arrow_up.svg" onclick="moveToArrow(${i}, 'up')">
+                    <img src="img/arrow_down.svg" onclick="moveToArrow(${i}, 'down')">
+                </div>
+            </div>
             <div class="titleAndDescription">
                 <div class="title">${tasks[i]['title']}</div>
                 <div class="description">${tasks[i]['description']}</div>
