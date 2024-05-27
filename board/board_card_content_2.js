@@ -203,6 +203,12 @@ function moveTo(section) {
     init();
 }
 
+
+/**
+ * Move the card in the responsiv to a other section
+ * @param {*} i Index of task
+ * @param {*} direction Direction to move the card "up" or "down"
+ */
 function moveToArrow(i, direction) {
     event.stopPropagation();
     let user = getUser();
