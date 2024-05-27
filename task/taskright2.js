@@ -292,6 +292,7 @@ function deleteSubtask(j) {
     subtasks.splice(j, 1);
     saveSubtusks();
     renderSubtask();
+    subtaskOverflowCheck();
 }
 
 /**
