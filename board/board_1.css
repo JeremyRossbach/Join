@@ -59,7 +59,10 @@ h1 {
 
 .categoryAndArrows img {
     width: 24px;
-    z-index: 9999;
+}
+
+.cardArrows {
+    display: none;
 }
 
 .mobileAddButton,

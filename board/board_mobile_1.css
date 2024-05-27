@@ -21,6 +21,10 @@
         font-size: 61px;
     }
 
+    .cardArrows {
+        display: flex;
+    }
+
     .inputAndButton {
         display: flex;
         justify-content: center;

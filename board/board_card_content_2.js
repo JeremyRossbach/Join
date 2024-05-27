@@ -128,7 +128,6 @@ function closePopup(event) {
     if (event) {
         event.stopPropagation();
     }
-    location.reload();
 }
 
 
@@ -205,38 +204,25 @@ function moveTo(section) {
 }
 
 function moveToArrow(i, direction) {
+    event.stopPropagation();
     let user = getUser();
     let task = user.tasks[i];
-
+    
     if (task.section == 'To do' && direction == 'up') {
         task.section = 'Done';
-    }
-
-    if (task.section == 'To do' && direction == 'down') {
+    } else if (task.section == 'To do' && direction == 'down') {
         task.section = 'In progress';
-    }
-
-    if (task.section == 'In progress' && direction == 'up') {
+    } else if (task.section == 'In progress' && direction == 'up') {
         task.section = 'To do';
-    }
-
-    if (task.section == 'In progress' && direction == 'down') {
+    } else if (task.section == 'In progress' && direction == 'down') {
         task.section = 'Await Feedback';
-    }
-
-    if (task.section == 'Await Feedback' && direction == 'up') {
+    } else if (task.section == 'Await Feedback' && direction == 'up') {
         task.section = 'In progress';
-    }
-
-    if (task.section == 'Await Feedback' && direction == 'down') {
+    } else if (task.section == 'Await Feedback' && direction == 'down') {
         task.section = 'Done';
-    }
-
-    if (task.section == 'Done' && direction == 'up') {
+    } else if (task.section == 'Done' && direction == 'up') {
         task.section = 'Await Feedback';
-    }
-
-    if (task.section == 'Done' && direction == 'down') {
+    } else if (task.section == 'Done' && direction == 'down') {
         task.section = 'To do';
     }
 

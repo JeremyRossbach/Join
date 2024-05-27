@@ -29,8 +29,10 @@ async function createGuest() {
  * Handle guest login to login
  */
 async function handleGuestLogin() {
+    let loginForm = document.getElementById('login-form');
     await createGuest();
     loginGuest();
+    loginForm.submit();
 }
 
 

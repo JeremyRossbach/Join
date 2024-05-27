@@ -91,7 +91,7 @@ function content(containerId, i) {
         <div onclick="showCardPopup(${i})" draggable="true" ondragstart="startDragging(${i})" id="card${i}" class="card">
             <div class="categoryAndArrows">
                 <div id="category${i}" class="category">${tasks[i]['category']}</div>
-                <div>
+                <div class="cardArrows">
                     <img src="img/arrow_up.svg" onclick="moveToArrow(${i}, 'up')">
                     <img src="img/arrow_down.svg" onclick="moveToArrow(${i}, 'down')">
                 </div>
