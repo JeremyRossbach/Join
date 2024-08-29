@@ -3,7 +3,8 @@
  * The URL of the Firebase Realtime Database where data will be stored and retrieved.
  * Die URL der Firebase-Echtzeitdatenbank, in der Daten gespeichert und abgerufen werden.
  */
-const STORAGE_URL = "https://join-8aa83-default-rtdb.europe-west1.firebasedatabase.app/";
+const STORAGE_URL = "https://join-186b5-default-rtdb.europe-west1.firebasedatabase.app/";
+
 
 /**
  * An array containing contact data.
